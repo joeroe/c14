@@ -20,4 +20,4 @@ devtools::install_github("joeroe/c14")
 
 ## Usage
 
-See `vignette("tidy_radiocarbon")`.
+...

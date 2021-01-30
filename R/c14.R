@@ -17,11 +17,6 @@
 #' @export
 #'
 #' @family tidy radiocarbon functions
-#'
-#' @examples
-#' data("shub1_radiocarbon")
-#' shub1_radiocarbon %>%
-#'   dplyr::mutate(cal = c14_calibrate(cra, error))
 c14_calibrate <- function(cra, error, ...,
                           engine = c("rcarbon", "OxCal", "Bchron")) {
   engine <- rlang::arg_match(engine)
@@ -77,14 +72,6 @@ c14_calibrate <- function(cra, error, ...,
 #' a good idea to specify it.
 #'
 #' @family tidy radiocarbon functions
-#'
-#' @examples
-#' data("shub1_radiocarbon")
-#' shub1_radiocarbon %>%
-#'   dplyr::mutate(cal = c14_calibrate(cra, error, normalise = FALSE, verbose = FALSE)) %>%
-#'   dplyr::group_by(phase) %>%
-#'   dplyr::summarise(SPD = c14_sum(cal, spdnormalised = TRUE, verbose = FALSE),
-#'                    .groups = "drop_last")
 c14_sum <- function(cal, time_range = NA, ...) {
   cal_dates <- as.CalDates.cal(cal)
 

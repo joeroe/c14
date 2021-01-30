@@ -28,14 +28,6 @@ Unlike \code{\link[rcarbon:spd]{rcarbon::spd()}}, this function will attempt to 
 time range if it isn't explicitly specified with \code{time_range}. It's probably
 a good idea to specify it.
 }
-\examples{
-data("shub1_radiocarbon")
-shub1_radiocarbon \%>\%
-  dplyr::mutate(cal = c14_calibrate(cra, error, normalise = FALSE, verbose = FALSE)) \%>\%
-  dplyr::group_by(phase) \%>\%
-  dplyr::summarise(SPD = c14_sum(cal, spdnormalised = TRUE, verbose = FALSE),
-                   .groups = "drop_last")
-}
 \seealso{
 Other tidy radiocarbon functions: 
 \code{\link{c14_calibrate}()},

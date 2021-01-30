@@ -25,11 +25,6 @@ A thin wrapper of \code{\link[rcarbon:calibrate]{rcarbon::calibrate()}} that ret
 single list rather than a `CalDates`` object. Useful, for example, if you want
 to add a column of calibrated dates to an existing table with \code{\link[dplyr:mutate]{dplyr::mutate()}}
 }
-\examples{
-data("shub1_radiocarbon")
-shub1_radiocarbon \%>\%
-  dplyr::mutate(cal = c14_calibrate(cra, error))
-}
 \seealso{
 Other tidy radiocarbon functions: 
 \code{\link{c14_sum}()},
