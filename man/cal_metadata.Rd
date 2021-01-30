@@ -17,7 +17,6 @@ Extract metadata from a calibrated date
 }
 \seealso{
 Other functions for working with \code{cal} objects: 
-\code{\link{as.CalDates.cal}()},
 \code{\link{as_cal}()},
 \code{\link{cal}()}
 }

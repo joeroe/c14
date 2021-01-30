@@ -30,7 +30,6 @@ a good idea to specify it.
 }
 \seealso{
 Other tidy radiocarbon functions: 
-\code{\link{c14_calibrate}()},
-\code{\link{cal}()}
+\code{\link{c14_calibrate}()}
 }
 \concept{tidy radiocarbon functions}

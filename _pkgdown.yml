@@ -10,9 +10,19 @@ template:
 
 reference:
 - title: "Tidy radiocarbon"
-  desc: "Functions for working with radiocarbon data in a tidy framework."
+  desc: "Core functions for working with radiocarbon data in a tidy framework."
 - contents:
-  - starts_with("cal")
-  - as_cal
-  - starts_with("as.CalDates")
   - starts_with("c14_")
+  - starts_with("cal")
+- title: "cal vectors"
+  desc: "Functions for working with `cal` objects – vectors of calibrated radiocarbon dates."
+- contents:
+  - has_concept("functions for working with `cal` objects")
+- title: "Conversion"
+  desc: "Convert objects from other packages from or to c14 classes."
+- contents:
+  - has_concept("c14 conversion functions")
+- title: "Datasets"
+  desc: "Example data included with the package."
+- contents:
+  - ppnd

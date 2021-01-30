@@ -27,7 +27,6 @@ to add a column of calibrated dates to an existing table with \code{\link[dplyr:
 }
 \seealso{
 Other tidy radiocarbon functions: 
-\code{\link{c14_sum}()},
-\code{\link{cal}()}
+\code{\link{c14_sum}()}
 }
 \concept{tidy radiocarbon functions}
