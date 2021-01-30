@@ -10,7 +10,10 @@ URL: https://c14.joeroe.io, https://github.com/joeroe/c14
 BugReports: https://github.com/joeroe/c14/issues
 Encoding: UTF-8
 LazyData: true
+Depends: 
+    R (>= 2.10)
 Imports: 
+    rlang,
     dplyr,
     tibble,
     magrittr,
@@ -22,7 +25,6 @@ Imports:
     fs,
     glue,
     cli,
-    rlang,
     stringr,
     tidyr,
     ggplot2
@@ -34,10 +36,9 @@ Suggests:
     testthat,
     covr,
     Bchron,
-    readr
+    readr,
+    roxygen2
 VignetteBuilder: knitr
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.1.1
 RdMacros: Rdpack
-Depends: 
-    R (>= 2.10)
