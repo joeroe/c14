@@ -56,3 +56,31 @@ ppnd %>%
 #> 9 SI 925 Ganj…     34.2      47.5 Niv.E,…  8385    75 <NA>  CH       Hole 1987 
 #> # … with 1 more variable: cal <list>
 ```
+
+The result is a `cal` vector, which fits nicely into a data frame or
+tibble and comes with print methods etc.:
+
+``` r
+c14_calibrate(10000, 30, verbose = FALSE)
+#> [[1]]
+#> # Calibrated probability distribution from 11806 to 11251 cal BP
+#> 
+#>                        #     #####              ###                             
+#>                 ###   ##   ##########       ########                            
+#>                #####  ##  ############   ###########                            
+#>              #########################  #############        #                  
+#>            ###########################################       ##                 
+#>      #####################################################  #####               
+#>   |---------|--------------|--------------|--------------|--------------|------|
+#> 11300     11400          11500          11600          11700          11800  11900
+#> Lab ID: 1
+#> Uncalibrated: 10000±30 uncal BP
+#> era: cal BP
+#> curve: intcal20
+#> reservoir_offset: 0
+#> reservoir_offset_error: 0
+#> calibration_range: 55000–0 BP
+#> normalised: TRUE
+#> F14C: FALSE
+#> p_cutoff: 1e-05
+```

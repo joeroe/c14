@@ -47,3 +47,9 @@ ppnd %>%
   filter(site == "Ganj Dareh") %>% 
   mutate(cal = c14_calibrate(cra, error, verbose = FALSE))
 ```
+
+The result is a `cal` vector, which fits nicely into a data frame or tibble and comes with print methods etc.:
+
+```{r eg-cal}
+c14_calibrate(10000, 30, verbose = FALSE)
+```
