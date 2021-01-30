@@ -117,6 +117,30 @@
 <span class="co">#&gt; 8 SI 924 Ganj…     34.2      47.5 Niv. E   8640    90 &lt;NA&gt;  CH       Hole 1987 </span>
 <span class="co">#&gt; 9 SI 925 Ganj…     34.2      47.5 Niv.E,…  8385    75 &lt;NA&gt;  CH       Hole 1987 </span>
 <span class="co">#&gt; # … with 1 more variable: cal &lt;list&gt;</span></code></pre></div>
+<p>The result is a <code>cal</code> vector, which fits nicely into a data frame or tibble and comes with print methods etc.:</p>
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="reference/c14_calibrate.html">c14_calibrate</a></span><span class="op">(</span><span class="fl">10000</span>, <span class="fl">30</span>, verbose <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span>
+<span class="co">#&gt; [[1]]</span>
+<span class="co">#&gt; # Calibrated probability distribution from 11806 to 11251 cal BP</span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt;                        #     #####              ###                             </span>
+<span class="co">#&gt;                 ###   ##   ##########       ########                            </span>
+<span class="co">#&gt;                #####  ##  ############   ###########                            </span>
+<span class="co">#&gt;              #########################  #############        #                  </span>
+<span class="co">#&gt;            ###########################################       ##                 </span>
+<span class="co">#&gt;      #####################################################  #####               </span>
+<span class="co">#&gt;   |---------|--------------|--------------|--------------|--------------|------|</span>
+<span class="co">#&gt; 11300     11400          11500          11600          11700          11800  11900</span>
+<span class="co">#&gt; Lab ID: 1</span>
+<span class="co">#&gt; Uncalibrated: 10000±30 uncal BP</span>
+<span class="co">#&gt; era: cal BP</span>
+<span class="co">#&gt; curve: intcal20</span>
+<span class="co">#&gt; reservoir_offset: 0</span>
+<span class="co">#&gt; reservoir_offset_error: 0</span>
+<span class="co">#&gt; calibration_range: 55000–0 BP</span>
+<span class="co">#&gt; normalised: TRUE</span>
+<span class="co">#&gt; F14C: FALSE</span>
+<span class="co">#&gt; p_cutoff: 1e-05</span></code></pre></div>
 </div>
 </div>
   </div>
