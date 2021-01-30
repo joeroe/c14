@@ -5,7 +5,7 @@
 \alias{ppnd}
 \title{Radiocarbon dates from Neolithic Southwest Asia}
 \format{
-A data frame with 1059 rows and 10 variables:
+A data frame with 1049 rows and 10 variables:
 \describe{
 \item{lab_id}{Character. Laboratory code and ID of the dated sample.}
 \item{site}{Character. Name of the site from which the sample was retrieved.}
@@ -25,7 +25,7 @@ A data frame with 1059 rows and 10 variables:
 ppnd
 }
 \description{
-A dataset of 1059 radiocarbon dates from Epipalaeolithic and Neolithic sites
+A dataset of 1049 radiocarbon dates from Epipalaeolithic and Neolithic sites
 in Southwest Asia, collected in ex oriente's 'Platform for Neolithic
 Radiocarbon Dates' (PPND).
 }
