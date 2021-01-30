@@ -1,4 +1,4 @@
 library(testthat)
-library(stratigraphr)
+library(c14)
 
-test_check("stratigraphr")
+test_check("c14")
