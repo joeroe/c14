@@ -1,31 +1,23 @@
-# stratigraphr <img src="man/figures/logo.svg" align="right" height="180" />
+# c14
 
 <!-- badges: start -->
 [![Lifecycle: experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://www.tidyverse.org/lifecycle/#experimental)
-[![CRAN status](https://www.r-pkg.org/badges/version/stratigraphr)](https://CRAN.R-project.org/package=stratigraphr)
-[![R build status](https://github.com/joeroe/stratigraphr/workflows/R-CMD-check/badge.svg)](https://github.com/joeroe/stratigraphr/actions)
-[![Codecov test coverage](https://codecov.io/gh/joeroe/stratigraphr/branch/master/graph/badge.svg)](https://codecov.io/gh/joeroe/stratigraphr?branch=master)
+[![CRAN status](https://www.r-pkg.org/badges/version/c14)](https://CRAN.R-project.org/package=c14)
+[![R build status](https://github.com/joeroe/c14/workflows/R-CMD-check/badge.svg)](https://github.com/joeroe/c14/actions)
+[![Codecov test coverage](https://codecov.io/gh/joeroe/c14/branch/master/graph/badge.svg)](https://codecov.io/gh/joeroe/c14?branch=master)
 <!-- badges: end -->
 
-stratigraphr is a tidy framework for working with archaeological stratigraphy and chronology in R.
-It includes tools for reading, analysing, and visualising stratigraphies (Harris matrices) and sequences as directed graphs;
-helper functions for using radiocarbon dates in a tidy data analysis; 
-and an R interface to OxCal's Chronological Query Language (CQL).
+S3 classes and functions for tidy radiocarbon data, used to live in [stratigraphr](https://github.com/joeroe/stratigraphr).
 
 ## Installation
 
-You can install the development version of stratigraphr from GitHub:
+You can install the development version of c14 from GitHub:
 
 ```r
 # install.packages("devtools")
-devtools::install_github("joeroe/stratigraphr")
+devtools::install_github("joeroe/c14")
 ```
-
-Please note that this package is in an early stage of development.
-It is functional, but many features are missing and future versions are likely to contain breaking changes.
 
 ## Usage
 
-* Graph-bases stratigraphic analysis: see `vignette("stratigraph")`.
-* Tidy analysis of radiocarbon dates: see `vignette("tidy_radiocarbon")`.
-* Chronological query language: see `vignette("cql")`.
+See `vignette("tidy_radiocarbon")`.

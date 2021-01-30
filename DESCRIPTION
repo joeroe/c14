@@ -1,20 +1,13 @@
-Package: stratigraphr
+Package: c14
 Type: Package
-Title: Archaeological Stratigraphy and Chronological Sequences
-Version: 0.3.0.9000
-Date: 2020-10-01
+Title: Radiocarbon dates
+Version: 0.0.0.9000
 Authors@R: person("Joe", "Roe", email = "joe@joeroe.io",
   role = c("aut", "cre"), comment = c(ORCID = "0000-0002-1011-1244"))
-Description: A tidy framework for working with archaeological stratigraphy and
-    chronology. Includes tools for reading, analysing, and visualising
-    stratigraphy (Harris matrices) and sequences as directed graphs (Dye
-    & Buck 2015) <doi:10.1016/j.jas.2015.08.008>; helper functions for using 
-    radiocarbon dates in a tidy data analysis; and an R interface to the 
-    Chronological Query Language (CQL) used by 'OxCal' (Bronk Ramsey 2009)
-    <doi:10.1017/S0033822200033865>.
+Description: S3 classes and functions for tidy radiocarbon data.
 License: MIT + file LICENSE
-URL: https://stratigraphr.joeroe.io, https://github.com/joeroe/stratigraphr
-BugReports: https://github.com/joeroe/stratigraphr/issues
+URL: https://c14.joeroe.io, https://github.com/joeroe/c14
+BugReports: https://github.com/joeroe/c14/issues
 Encoding: UTF-8
 LazyData: true
 Imports: 
