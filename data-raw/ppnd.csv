@@ -1,0 +1,1060 @@
+lab_id,site,latitude,longitude,context,cra,error,d13c,material,references
+Ly-2805,Tell 'Abr 3,36.68194,38.08639,"Niveau I/South G4. US.118, 194. Contexte: M1a (communal building)",9705,60,?,S,Yartah 2013:72
+Ly-2806,Tell 'Abr 3,36.68194,38.08639,"Niveau: I/South, G4. US.118, 190 Context: M1a (communal building)",9690,60,?,S,Yartah 2013:72
+Ly-2807,Tell 'Abr 3,36.68194,38.08639,"Niveau: I/South G4, US. 118, 192 Context: M1a (communal building)",9705,55,?,S,Yartah 2013:72
+Ly-2808,Tell 'Abr 3,36.68194,38.08639,"Niveau: I/South, G5, US. 188, 193 Context: M1a (communal building)",9685,55,?,S,Yartah 2013:72
+Ly-5235,Tell 'Abr 3,36.68194,38.08639,"Niveau: I/North, D3, US 325, 332 Context: M10b (communal building)",9750,50,?,S,Yartah 2013:72
+Ly-5236,Tell 'Abr 3,36.68194,38.08639,"Niveau: I/North, D3, US.315, 332 Context: M10b (communal building)",9700,50,?,S,Yartah 2013:72
+Ly-5237,Tell 'Abr 3,36.68194,38.08639,"Niveau: I/North, D3, US.315, 332 Context: M10b (communal building)",9730,50,?,S,Yartah 2013:72
+RT 2453,Abu Gosh,31.80537,35.10833,"Sq A7, Basket 1343; Layer III, 649.78-649.72 ""First phase"" (Appendix I in: Khalaily, Marder 2003:143)",8895,60,,CH Cratagus,"Segal, Carmi 2003; Khalaily, Marder 2003."
+BM 1120,Abu Hureyra,35.86833,38.39333,"Trench E, Phase 3,4,6,7",8666,66,,CH,Moore 2000:255
+BM 1121,Abu Hureyra,35.86833,38.39333,E level 2/3,10792,82,,CH,Moore 2000:527
+BM 1122,Abu Hureyra,35.86833,38.39333,"Trench B, Phase 3",9374,72,,CH,Moore 2000:253-255
+BM 1423,Abu Hureyra,35.86833,38.39333,Trench C,8676,72,,CH,Moore 2000:529
+BM 1424,Abu Hureyra,35.86833,38.39333,"Trench B, Phase 7",8190,77,,CH,Moore 2000:253-255
+BM 1425,Abu Hureyra,35.86833,38.39333,"Trench C, = ca. Phase 8, Trench B",8393,72,,CH,Moore 2000:529
+BM 1718R,Abu Hureyra,35.86833,38.39333,E447,11140,140,,CH,Moore 2000:527
+BM 1719,Abu Hureyra,35.86833,38.39333,?,9120,50,,CH,"Radiocarbon 24/3,1982,284"
+BM 1719R,Abu Hureyra,35.86833,38.39333,Trench E,9100,100,,CH,Moore 2000:253-255
+BM 1721R,Abu Hureyra,35.86833,38.39333,"Trench D, Phase3",8490,110,,CH,Moore 2000:253-255
+BM 1722R,Abu Hureyra,35.86833,38.39333,"Trench B, Phase 4",8640,100,,CH,Moore 2000:253-255
+BM 1723R,Abu Hureyra,35.86833,38.39333,Trench E,10820,510,,CH,Moore 2000:253-255
+BM 1724R,Abu Hureyra,35.86833,38.39333,"Trench E, Phase 6",8020,100,,CH,Moore 2000:253-255
+OxA 1190,Abu Hureyra,35.86833,38.39333,"Trench B, Phase 2",8500,120,,S (eimmer/eink.),Moore 2000:253-255
+OxA 1227,Abu Hureyra,35.86833,38.39333,"Trench G, Phase 3 (younger than Phase 2)",8320,80,,CH,Moore 2000:255
+OxA 1228,Abu Hureyra,35.86833,38.39333,"Trench G, bottom phase 1",9680,90,,CH wood,Moore 2000:255
+OxA 170,Abu Hureyra,35.86833,38.39333,E405,10600,200,,S (wild einkorn),Byrd 1994
+OxA 171,Abu Hureyra,35.86833,38.39333,E457,10600,200,,S (wild einkorn),Moore 2000:527
+OxA 172,Abu Hureyra,35.86833,38.39333,E470,10900,200,,S (wild einkorn),Byrd 1994
+OxA 1930,Abu Hureyra,35.86833,38.39333,"Trench G, Phase 2",8180,100,,S (wild cereals),Moore 2000:255
+OxA 1931,Abu Hureyra,35.86833,38.39333,"Trench G, phase 2",7890,90,,S (dom.wheat),Moore 2000:255
+OxA 2167,Abu Hureyra,35.86833,38.39333,"Trench E, Phase 4",8270,100,,S,Moore 2000:253-255
+OxA 2168,Abu Hureyra,35.86833,38.39333,"Trench E, Phase 5 (above Phase 4)",8330,100,,CH,Moore 2000:253-255
+OxA 2169,Abu Hureyra,35.86833,38.39333,"Trench B, Phase 2",8640,110,,S (einkorn/brly),Moore 2000:253-255
+OxA 386,Abu Hureyra,35.86833,38.39333,E420,10800,160,,S (wild einkorn),Byrd 1994
+OxA 387,Abu Hureyra,35.86833,38.39333,E470,11070,160,,B (bos),"Gowlett, Hedges 1987"
+OxA 397,Abu Hureyra,35.86833,38.39333,E430,10420,140,,S (wild einkorn),Byrd 1994
+OxA 406,Abu Hureyra,35.86833,38.39333,Trench E,9300,250,,B,"Gowlett, Hedges 1987"
+OxA 407,Abu Hureyra,35.86833,38.39333,E419,10050,180,,B,Housley 1994:62
+OxA 408,Abu Hureyra,35.86833,38.39333,E419,10250,160,,H,"Gowlett, Hedges 1987"
+OxA 430,Abu Hureyra,35.86833,38.39333,E 460,11020,150,,"B, gazelle ch",Moore 2000:527
+OxA 431,Abu Hureyra,35.86833,38.39333,E460,10680,150,,H=OxA430,Moore 2000:527
+OxA 432,Abu Hureyra,35.86833,38.39333,Trench E,9540,170,,B,"Gowlett, Hedges 1987"
+OxA 433,Abu Hureyra,35.86833,38.39333,Trench E,9840,200,,H,"Gowlett, Hedges 1987"
+OxA 434,Abu Hureyra,35.86833,38.39333,E430,10490,150,,"B (gazelle, ch)","Gowlett, Hedges 1987"
+OxA 435,Abu Hureyra,35.86833,38.39333,E430,10450,180,,H=OxA434,"Gowlett, Hedges 1987"
+OxA 4660,Abu Hureyra,35.86833,38.39333,"Trench A, Phase 2 B",8180,200,,B Human,Moore 2000:528
+OxA 468,Abu Hureyra,35.86833,38.39333,E470,11090,150,,B =OxA 387; bos,"Gowlett, Hedges 1987"
+OxA 469,Abu Hureyra,35.86833,38.39333,E470,10920,140,,H,"Gowlett, Hedges 1987"
+OxA 470,Abu Hureyra,35.86833,38.39333,E470,10820,160,,H,"Gowlett, Hedges 1987"
+OxA 471,Abu Hureyra,35.86833,38.39333,E419,10620,150,,H,"Gowlett, Hedges 1987"
+OxA 472,Abu Hureyra,35.86833,38.39333,E425,10750,170,,H,"Gowlett, Hedges 1987"
+OxA 473,Abu Hureyra,35.86833,38.39333,E425,10000,170,,B (wild sheep ch,"Gowlett, Hedges 1987"
+OxA 474,Abu Hureyra,35.86833,38.39333,E429,10930,150,,B/H (wild sheep),"Gowlett, Hedges 1987"
+OxA 475,Abu Hureyra,35.86833,38.39333,E 252,9060,140,,"B (gazelle, ch)","Gowlett, Hedges 1987"
+OxA 476,Abu Hureyra,35.86833,38.39333,E430,9600,200,,F(=OxA 434),Gowlett; Hedges 1987
+OxA 5842,Abu Hureyra,35.86833,38.39333,E449,8260,75,,S (splt/br.wheat,Moore 2000:528
+OxA 5843,Abu Hureyra,35.86833,38.39333,E449,8275,65,,S (dom. rye),Moore 2000:528
+OxA 6336,Abu Hureyra,35.86833,38.39333,E405,8140,90,,S (dom. einkorn),Moore 2000:528
+OxA 6417,Abu Hureyra,35.86833,38.39333,E411,8170,90,,S (dom wheat),Moore 2000:528
+OxA 6418,Abu Hureyra,35.86833,38.39333,E438,8115,80,,S (dom.barl),Moore 2000:528
+OxA 6419,Abu Hureyra,35.86833,38.39333,E438,8230,80,,S (dom em.),Moore 2000:528
+OxA 6685,Abu Hureyra,35.86833,38.39333,E455,10930,120,,S (dom. rye),Moore 2000:527
+OxA 6995,Abu Hureyra,35.86833,38.39333,"Trench E,",8700,240,,S (dom einkorn),Moore 2000:253-255
+OxA 6996,Abu Hureyra,35.86833,38.39333,Trench E,9860,220,,S (dom. rye),Moore 2000:253-255
+OxA 7122,Abu Hureyra,35.86833,38.39333,E426,8290,75,,S (dom. einkorn),Moore 2000:528
+OxA 8718,Abu Hureyra,35.86833,38.39333,E418,11140,100,,S (dom. rye),Moore 2000:528
+OxA 8719,Abu Hureyra,35.86833,38.39333,E419,10610,100,,S (dom rye),Moore 2000:528
+OxA 876,Abu Hureyra,35.86833,38.39333,"Trench D, Phase 1",8500,90,,"B, onagger, wild",Moore 2000:253-255
+OxA 877,Abu Hureyra,35.86833,38.39333,"Trench D, Phase 1",8300,150,,"B,sheep/goat",Moore 2000:253-255
+OxA 879,Abu Hureyra,35.86833,38.39333,"Trench D, Phase4",8570,130,,"B,wild onagger",Moore 2000:253-255
+OxA 881,Abu Hureyra,35.86833,38.39333,"Trench D, Phase 6 (dislocated from a pit)",8870,100,,B (sheep/goat),Moore 2000:253-255
+OxA 883,Abu Hureyra,35.86833,38.39333,E470,11450,300,,S (wild einkorn),Housley 1994:62
+OxA 878,Abu Hureyra,35.86833,38.39333,"Trench D, Phase4",8490,110,,"B, wild onagger",Moore 2000:253-255
+Pta-2699,Abu Madi,28.55,34,Layer 8,10100,100,,,"Garfinkel, Dag 2006"
+Pta-4551,Abu Madi,28.55,34,Layer 11,9790,100,,,"Garfinkel, Dag 2006"
+Pta-4552,Abu Madi,28.55,34,Layer 11,9920,80,,,"Garfinkel, Dag 2006"
+Pta-4568,Abu Madi,28.55,34,Layer 10,9970,120,,,"Garfinkel, Dag 2006"
+Pta-4572,Abu Madi,28.55,34,Layer 10,9790,100,,,"Garfinkel, Dag 2006"
+Pta-4577,Abu Madi,28.55,34,Layer 12,9870,100,,,"Garfinkel, Dag 2006"
+Pta-4580,Abu Madi,28.55,34,Layer 12,9800,80,,,"Garfinkel, Dag 2006"
+I 5498,Abu Salem,30.50722,34.55306,15-20 cm,9970,150,,CH,Byrd 1994:219
+I 5499,Abu Salem,30.50722,34.55306,25-30 cm,10230,150,,CH,Byrd 1994:219
+I 5500,Abu Salem,30.50722,34.55306,45-55 cm,10230,150,,CH,Byrd 1994:219
+Pta 3289,Abu Salem,30.50722,34.55306,L1 155-160,10300,100,,CH,Byrd 1994:219
+Pta 3290,Abu Salem,30.50722,34.55306,L21 120-130,10340,90,,CH,Byrd 1994:219
+Pta 3291,Abu Salem,30.50722,34.55306,L22 120-130,10140,80,,CH,Byrd 1994:219
+Pta 3292,Abu Salem,30.50722,34.55306,L22 180-190,10550,90,,CH,Byrd 1994:219
+Pta 3293,Abu Salem,30.50722,34.55306,L24 190-200,10420,100,,CH,Byrd 1994:219
+A-11802,Ain Abu Nukhayla,29.54861,35.40694,"locus 2, level 9",8625,,,,Henry et al. 2003:13
+A-11803,Ain Abu Nukhayla,29.54861,35.40694,"locus 5, level 12",8465,,,,Henry et al. 2003:13
+A-11804,Ain Abu Nukhayla,29.54861,35.40694,"locus 20, level 7",8565,55,,,Henry et al. 2003:13
+A-11805,Ain Abu Nukhayla,29.54861,35.40694,"locus 20, level 10/11",8370,80,,,Henry et al. 2003:13
+A-11806,Ain Abu Nukhayla,29.54861,35.40694,"locus 22, level 15",8610,95,,,Henry et al. 2003:13
+A-11807,Ain Abu Nukhayla,29.54861,35.40694,"locus 25, level 13",8410,80,,,Henry et al. 2003:13
+GrA 22276,Ain el-Kerkh,29.54861,35.40694,"Square D6, Layer 9 AK 01 D6b-44",9240,50,,CH,Tsuneki et al. 2006
+GrA 22277,Ain el-Kerkh,29.54861,35.40694,"Square D6, Layer 9 AK 01 D6b-45",9350,90,,CH,Tsuneki et al. 2006
+Ly 12086,Ain el-Kerkh,29.54861,35.40694,"Square D6, Layer 8, AK 02 D6b-31",9205,60,,CH,Tsuneki et al. 2006
+OxA 2555,Ain el-Kerkh,29.54861,35.40694,"Square D6, Layer 7, AK 02 D6b-18",9250,40,,CH,Tsuneki et al. 2006
+OxA 2556,Ain el-Kerkh,29.54861,35.40694,"Square D6, Layer 7, AK 02 D6b-29",9165,40,,CH,Tsuneki et al. 2006
+,Ain Jammam,30.02028,35.46861,,8520,190,,,"Rollefson 2005,17"
+,Ain Jammam,30.02028,35.46861,,8030,120,,,Rollefson 2005:17
+Beta 138582,Akarçay,36.91917,38.02566,"Phase II, square 20M; feature 21",7470,80,,CH,canew.org; Balkan-Atlı 2002:289;Özbasaran and Duru 2011:167
+Beta 138583,Akarçay,36.91917,38.02566,"Phase IV, Square 20P; feature 24",8390,110,,CH,"canew.org; Bakan-Atlı 2002, 289; Özbasaran and Duru 2011:168"
+Beta 138584,Akarçay,36.91917,38.02566,Phase V; square 27 U; feature C.2,8750,40,,CH (AMS),"canew.org; Balkan-Atlı 2002, 289; Özbasaran and Duru 2011:168"
+Beta 138585,Akarçay,36.91917,38.02566,"Phase I, Square 19K; feature 9",7280,50,,CH (AMS),canew.org; Balkan-Atlı 2002:289; Özbasaran and Duru 2011:167
+Beta 138586,Akarçay,36.91917,38.02566,"Phase III, square 20N",7970,120,,CH,canew.org; Balkan-Atlı 2002:289
+Beta 174035,Akarçay,36.91917,38.02566,Square 27Y; feature 65,8560,40,,?,Özbasaran and Duru 2011:168
+Beta 174036,Akarçay,36.91917,38.02566,Square 27X; feature 42,8260,40,,?,Özbasaran and Duru 2011:168
+Beta 174037,Akarçay,36.91917,38.02566,Square 20P; feature 66,8310,130,,?,Özbasaran and Duru 2011:168
+Beta 174038,Akarçay,36.91917,38.02566,Square 28U; feature 18,7930,40,,?,Özbasaran and Duru 2011:168
+Beta 174039,Akarçay,36.91917,38.02566,Square 210; feature 42,7860,40,,?,Özbasaran and Duru 2011:167
+Beta 174040,Akarçay,36.91917,38.02566,"Square 19F, feature 32",7690,50,,?,Özbasaran and Duru 2011:167
+Beta 174041,Akarçay,36.91917,38.02566,Square 25U; feature 29,8300,40,,?,Özbasaran and Duru 2011:168
+KIA 31913,Akarçay,36.91917,38.02566,Square 27U; feature 118,8283,41,,?,Özbasaran and Duru 2011:168
+KIA 31914,Akarçay,36.91917,38.02566,Square 27U; Feature 108,8205,35,,?,Özbasaran and Duru 2011:168
+KIA 31915,Akarçay,36.91917,38.02566,Square 27U; feature 90,8293,39,,?,Özbasaran and Duru 2011:168
+KIA 31916,Akarçay,36.91917,38.02566,Square 27U; feature 106,8021,33,,?,Özbasaran and Duru 2011:168
+KIA 31917,Akarçay,36.91917,38.02566,Square 27U; feature 120,8132,40,,?,Özbasaran and Duru 2011:168
+KIA 31918,Akarçay,36.91917,38.02566,Square 27U; feature 113,8246,39,,?,Özbasaran and Duru 2011:168
+KIA 31919,Akarçay,36.91917,38.02566,Square 27U; feature 108,8181,45,,?,Özbasaran and Duru 2011:168
+KIA 31920,Akarçay,36.91917,38.02566,Square 27U; feature 108,8121,52,,?,Özbasaran and Duru 2011:168
+KIA 31921,Akarçay,36.91917,38.02566,Square 27V; feature 40,8146,36,,?,Özbasaran and Duru 2011:168
+KIA 31922,Akarçay,36.91917,38.02566,Square 27X; feature 123,8365,40,,?,Özbasaran and Duru 2011:168
+KIA 31923,Akarçay,36.91917,38.02566,Square 27X; feature 115,8309,49,,?,Özbasaran and Duru 2011:168
+KIA 31924,Akarçay,36.91917,38.02566,Square 27X; feature 116,8290,50,,?,Özbasaran and Duru 2011:168
+KIA 31925,Akarçay,36.91917,38.02566,"Square 27T, feature 43",7979,42,,?,Özbasaran and Duru 2011:168
+KIA 31926,Akarçay,36.91917,38.02566,"Square 29T, feature 64",8199,34,,?,Özbasaran and Duru 2011:167
+Gif 2369,Aswad,33.40417,36.55,"II, 0,25m E ?",8540,110,,,Stordeur et al. 2010:58
+Gif 2370,Aswad,33.40417,36.55,"Ib, 1,75m E (=moyenne)",9340,120,,,de Contenson 2000:21
+Gif 2371,Aswad,33.40417,36.55,"Ib, 2,35m E (=moyenne)",9270,120,,,de Contenson 2000:21
+Gif 2372,Aswad,33.40417,36.55,"Ia, 2,45m E (=ancienne)",9640,120,,CH,de Contenson 1973
+Gif 2373,Aswad,33.40417,36.55,"II, 0,30m W (moyenne/récente)",8560,110,,,de Contenson 2000:21; Stordeur et al. 2010:58
+Gif 2633,Aswad,33.40417,36.55,"Ia, 3,25m E (=ancienne)",9730,120,,CH,de Contenson 1973; Stordeur et al. 2010:58
+GrA 25913,Aswad,33.40417,36.55,"Ib, 1,80m E (ancienne/moyenne)",9020,60,,S,Stordeur et al. 2010:58
+GrA 25915,Aswad,33.40417,36.55,"Ia, 2,90m E (ancienne)",9300,60,,S,Stordeur et al. 2010:58
+GrA 25916,Aswad,33.40417,36.55,"Ib, 2,20m E (ancienne/moyenne)",9070,60,,S,Stordeur et al.2010:58
+GrA 25917,Aswad,33.40417,36.55,"Ia, 3,10m E (ancienne)",9280,50,,S,Stordeur et al. 2010:58
+GRN 6676,Aswad,33.40417,36.55,"II, 0,40m W (moyenne/récente)",8650,55,,,de Contenson 2000:21
+GRN 6677,Aswad,33.40417,36.55,"II, 0,90m W (=moyenne)",8720,75,,,de Contenson 2000:21
+GRN 6678,Aswad,33.40417,36.55,"II, 1,30m W (=moyenne)",8875,55,,,de Contenson 2000:21
+GRN 6679,Aswad,33.40417,36.55,"II, 2,30m W (=moyenne)",8865,60,,,de Contenson 2000:21
+Ly 11383,Aswad,33.40417,36.55,B5; E Moyenne (2); Niveau Ancien Sector B= Contenson Niveau 1 A (1:46),9285,51,,,"1) Stordeur 2003, 2) Stordeur et al. 2010:58"
+Ly 11384,Aswad,33.40417,36.55,B10 E; Niveau Ancien Sector B= Contenson Niveau 1 A (1:46),9220,70,,,1) Stordeur 2003 2) Stordeur et al. 2010:58
+Ly 11385,Aswad,33.40417,36.55,"? E ""ancienne/moyenne"" (2) Niveau Ancien Sector B= Contenson Niveau 1 A (1:46)",9805,115,,,1) Stordeur 2003 2) Stordeur et al. 2010:58
+Ly 11386,Aswad,33.40417,36.55,"?W ""moyenne"" (2) Phase II (=C)",8600,50,,,1) Stordeur 2003 2) Stordeur et al. 2010:58
+Ly 12107,Aswad,33.40417,36.55,"B0?, E; ""récente"" (1)",8835,50,,,Stordeur et al. 2010:58
+Ly 12781,Aswad,33.40417,36.55,"B 10?; E; ""ancienne"" US 382- ST 380 (2)",8765,80,,CH,"www.archeometrie.mom.fr/banadora/index.php, Stordeur et al. 2010:58"
+Ly 12782,Aswad,33.40417,36.55,"B 10?; E; ""ancienne"" US 350 mur 12 (2)",8935,50,,CH,1)www.archeometrie.mom.fr/banadora/index.php 2) Stordeur et al. 2010:58
+Ly 13696,Aswad,33.40417,36.55,B2; E; moyenne; C4-US 595,8800,45,,CH,1)www.archeometrie.mom.fr/banadora/index.php 2) Stordeur et al. 2010:58
+Ly 13697,Aswad,33.40417,36.55,"""moyenne"" C11-US622 EA 32; B7 E",9115,45,,CH,1)www.archeometrie.mom.fr/banadora/index.php 2) Stordeur et al. 2010:58
+Lyon 2756,Aswad,33.40417,36.55,US 344 - ST 339,9235,45,,CH,www.archeometrie.mom.fr/banadora/index.php
+Lyon 3465 (Gra),Aswad,33.40417,36.55,"B0; E, ""récente""; C 2/3/8 -US 443",9220,45,,S,1)www.archeometrie.mom.fr/banadora/index.php 2) Stordeur et al. 2010:58.
+Lyon 3466 (Gra),Aswad,33.40417,36.55,"B0; E ""récente"" C 12/18-US 518/519 (2)",9020,45,,CH,1)www.archeometrie.mom.fr/banadora/index.php 2) Stordeur et al. 2010:58
+Lyon 3467 (Gra),Aswad,33.40417,36.55,"B5; E; ""Moyenne"" C3-US 584 (2)",9170,40,,CH,1)www.archeometrie.mom.fr/banadora/index.php 2) Stordeur et al. 2010:58
+OxA-2412,Azraq,31.81667,36.8,"C, 19b",8275,80,,CH,Hedges et al. 1992
+OxA-870,Azraq,31.81667,36.8,"Sq1.1; no obvious traces of sturcutres, hearths, crude pavement",8350,120,,CH,Gowlett et al. 1987 (online version); Betts 1989
+Bln 5035,Ba'ja,30.41333,35.46111,"C22; loc. 18, Sample 7413; Raumverfüllung",7887,43,,CH (wood: juniperus),"Görsdorf 2002, Reinder Neef (pers. comm.)"
+Bln 5036,Ba'ja,30.41333,35.46111,"C22; loc. 3, Sample 7404",7910,44,,CH (wood;juniperus + indet),"Görsdorf 2002, Reinder Neef (pers. comm.)"
+Bln 5123,Ba'ja,30.41333,35.46111,"C12, loc. 20; Sample 1/99/14C; 7418",8100,33,,CH (wood: juniperus; pistacia),"Görsdorf 2002, Reinder Neef (pers. comm.)"
+GrN 14537,Basta,30.2275,35.53333,"500N/685 E, 23.46-33m (cultural debris above bedrock) (1:81)",8380,100,,?,Nissen et al. 1988
+GrN 14538,Basta,30.2275,35.53333,500N/690E (D) Locus 7,8155,50,,CH,Nissen et al. 1988
+KIA 30842,Basta,30.2275,35.53333,"50 cm below modern surface (Basta 17215): Area A, Room 11b, Locus 13, room fill (housing area).",8325,35,,CH,pers. comm. H.G.K. Gebel
+KIA 30843a,Basta,30.2275,35.53333,"1,50 m below modern surface (Basta 17229): Area A, Room 39, Locus 33, room fill (probably from erosion of house).",7990,35,,CH,pers. comm. H.G.K. Gebel
+KIA 30843b,Basta,30.2275,35.53333,"1,50 m below modern surface (Basta 17229).",7985,30,,H,pers. comm. H.G.K. Gebel
+KIA 30844,Basta,30.2275,35.53333,"1,50 m below modern surface (Basta 17751): Square B 68, Locus 35 (Building I), courtyard with oven installations (housing context)",7960,35,,CH,pers. comm. H.G.K. Gebel
+KIA 30845a,Basta,30.2275,35.53333,"90 cm (Basta 37212): Square B22, Locus 24 (Room Fill Building Phase I: eroding housing context)",8435,40,,CH,pers. comm. H.G.K. Gebel
+KIA 30845b,Basta,30.2275,35.53333,"90 cm (same sample as KIA 30845a) (Basta 37212): Square B22, Locus 24 (Room Fill Building Phase I: eroding housing context).",7840,160,,H,pers. comm. H.G.K. Gebel
+KIA 30846,Basta,30.2275,35.53333,"3,50 m (Basta 47239): Square B102/3, Locus 68, Room 33 (Architectural Phase BII), from a destroyed plaster floor containing charcoal (housing context).",8100,40,,CH,pers. comm. H.G.K. Gebel
+KIA 30847,Basta,30.2275,35.53333,"(Basta 47244) (humic fraction) +F187 Square B83, Locus 8 (Lower Rubble Layer), heath.",7910,55,,CH/H,pers. comm. H.G.K. Gebel
+KIA 30848a,Basta,30.2275,35.53333,"0,8 m below modern surface (Basta 47422): Square B52, Locus 43, Raum V.1, surrounding of samagah installation inside substructure (housing context).",8320,40,,CH,pers. comm. H.G.K. Gebel
+KIA 30848b,Basta,30.2275,35.53333,"same sample as KIA 30848a (Basta 47422): Square B52, Locus 43, Raum V.1, surrounding of samagah installation inside substructure (housing context).",8260,50,,H,pers. comm. H.G.K. Gebel
+AA 13036,Beidha,30.37083,35.44778,"A1 courtyard, hearth 5,",8830,70,,S pistacia,Byrd 2005:26
+AA 13037,Beidha,30.37083,35.44778,"Nonphased, Hearth B",7720,130,,legumes,Byrd 2005:26
+AA 13038,Beidha,30.37083,35.44778,"Nonphased, Hearth A",8765,80,,legumes,Byrd 2005:26
+AA 14109,Beidha,30.37083,35.44778,"A1 B. 49, upper floor",8646,69,,B,Byrd 2005:26
+AA 1461,Beidha,30.37083,35.44778,,8390,390,,CH,Byrd 1994:221
+AA 1462,Beidha,30.37083,35.44778,C01:lev.2,10910,520,,CH,Byrd 1994:221
+AA 1463,Beidha,30.37083,35.44778,C01 lev.4,12910,250,,CH,Byrd 1994:221
+AA 1464,Beidha,30.37083,35.44778,C01:lev. 4,12130,190,,CH,Byrd 1994:221
+AA 1465,Beidha,30.37083,35.44778,C00 lev.4,12450,170,,CH,Byrd 1994:221
+AA13035,Beidha,30.37083,35.44778,A1 courtyard,6535,70,,S pistacia,Byrd 2005:26
+beta 235214,Beidha,30.37083,35.44778,"1.20 m, late Natufian",11820,70,,CH,Rambeau et al. 2011:245-268
+beta 235215,Beidha,30.37083,35.44778,1.25 m; Late Natufian,11,60,,CH,Rambeau et al. 2011:245-268.
+beta 235216,Beidha,30.37083,35.44778,"3.35 m, neolithic layer right above sterile sand.",9,50,,CH,Rambeau et al. 2011:245-268.
+BM111,Beidha,30.37083,35.44778,"B B. 26, building debris",8790,200,,"CH, wood ?",Byrd 2005:26
+GrN 5063,Beidha,30.37083,35.44778,"A Haus 54, building debris = K 1082, P1379",8640,50,,S pistacia,Byrd 2005:26
+GrN 5136,Beidha,30.37083,35.44778,"A2 B. 74, central post = K 1083; P 1380",8810,50,,"CH, wood Pistacia",Byrd 2005:26
+GrN5062,Beidha,30.37083,35.44778,C2 B. 8,9030,50,,CH juniperus,Byrd 2005:26
+K 1083,Beidha,30.37083,35.44778,"A2 B. 74, central post = K 1083; P 1380",8640,160,,"CH, wood Pistacia",1) Byrd 2005:26
+K 1411,Beidha,30.37083,35.44778,"A1 B. 48, wall post",8770,150,,CH Quercus,Byrd 2005:26
+K-1086,Beidha,30.37083,35.44778,"A1 B. 18, roof beam?",8940,160,,"CH, Quercus",1) Kirkbride 1967:12 2) Byrd 2005:26
+K1082,Beidha,30.37083,35.44778,"A Haus 54, building debris = GrN 5063, K 1082, P1379",8710,130,,S pistacia,1) Kirkbride 1967:12 2) Byrd 2005:26
+K1084,Beidha,30.37083,35.44778,"B B. 26, building debris",8730,160,,"CH, wood ?",1) Kirkbride 1967:12 2) Byrd 2005:26
+K1085,Beidha,30.37083,35.44778,C2 B. 8,8550,160,,CH Juniperus,1) Kirkbride 1967:12 2) Byrd 2005:26
+K1410,Beidha,30.37083,35.44778,"A1 B. 48, roof beam",8850,150,,CH Juniperus,Byrd 2005:26
+K1412,Beidha,30.37083,35.44778,"A1 B. 48, central post",8720,150,,"CH, wood Pistacia",Byrd 2005:26
+P1378,Beidha,30.37083,35.44778,"A Haus 54, central post",8715,100,,"CH, wood ?",Byrd 2005:26
+P1379,Beidha,30.37083,35.44778,"A Haus 54, building debris = K 1082, GrN 5063",8546,100,,S pistacia,Byrd 2005:26
+P1380,Beidha,30.37083,35.44778,"A2 B. 74, central post = K 1083; P 1380",9128,103,,"CH, wood Pistacia",Byrd 2005:26
+P1381,Beidha,30.37083,35.44778,"A1 B. 18,filling",8765,102,,CH ?,Byrd 2005:26
+P1382,Beidha,30.37083,35.44778,C2 B. 8,8892,115,,CH ?,Byrd 2005:26
+Ly 2181,Cafer Höyük,38.41667,38.75,"layer E, in the wall, sounding 1",8450,160,,CH,"Cauvin, Aurenche 1982:127"
+Ly 2182,Cafer Höyük,38.41667,38.75,"sounding 2, lowest neolithic layer.",8990,160,,CH,"Cauvin, Aurenche 1982:127"
+Ly 2522,Cafer Höyük,38.41667,38.75,IV c,8400,220,,CH,Canew.org
+Ly 2523,Cafer Höyük,38.41667,38.75,"Ivc, West area",8600,120,,CH,Canew.org
+Ly 3089,Cafer Höyük,38.41667,38.75,"IV, D1a",8150,210,,CH,"Molist, Cauvin 1991"
+Ly 3090,Cafer Höyük,38.41667,38.75,"V, E 1c",8920,160,,CH,"Molist, Cauvin 1991"
+Ly 3091,Cafer Höyük,38.41667,38.75,"IV, D 3c [too old?; intrusiv?]",8980,150,,CH,"Molist, Cauvin 1991"
+Ly 3772,Cafer Höyük,38.41667,38.75,"VI, cell 65",8480,140,,CH,"Molist, Cauvin 1991"
+Ly 3773,Cafer Höyük,38.41667,38.75,"VI, foyer 33",7900,190,,CH,"Molist, Cauvin 1991"
+Ly 4436,Cafer Höyük,38.41667,38.75,XII,9560,190,,CH,"Molist, Cauvin 1991"
+Ly 4437,Cafer Höyük,38.41667,38.75,"XI, foyer 124",8950,80,,CH,"Molist, Cauvin 1991"
+GrN 10358,Çayönü,38.21917,39.72917,Level r3 later layers round building.,9180,80,,CH,www.canew.org
+GrN 10359,Çayönü,38.21917,39.72917,"Level r3, round building = Grill dates",9050,40,,CH,www.canew.org
+GrN 10360,Çayönü,38.21917,39.72917,later layers round building:,9300,140,,CH,www.canew.org
+GrN 10361,Çayönü,38.21917,39.72917,"level r4, later layers round building:",9290,110,,CH,www.canew.org
+GrN 13947,Çayönü,38.21917,39.72917,ch-1-4,9240,50,,CH,www.canew.org
+GrN 13949,Çayönü,38.21917,39.72917,ch-1-4,9205,45,,CH,www.canew.org
+GrN 14857,Çayönü,38.21917,39.72917,ch-1-4,9155,35,,CH,www.canew.org
+GrN 14859,Çayönü,38.21917,39.72917,ch-1-4,9170,50,,CH,www.canew.org
+GrN 14860,Çayönü,38.21917,39.72917,ch-1-4,9040,35,,CH,www.canew.org
+GrN 14861,Çayönü,38.21917,39.72917,"Levels g1-4. GH, outdoor",9090,50,,CH,www.canew.org
+GrN 14862,Çayönü,38.21917,39.72917,cp1-3,8920,130,,CH,www.canew.org
+GrN 16462,Çayönü,38.21917,39.72917,Levels g1-4. building GTc,9040,65,,CH,www.canew.org
+GrN 16463,Çayönü,38.21917,39.72917,nd EA floor,8040,60,,CH,www.canew.org
+GrN 19481,Çayönü,38.21917,39.72917,"Level r1, Square 29M",10020,240,,CH,www.canew.org
+GrN 19482,Çayönü,38.21917,39.72917,"Level r1, Square 30M",10230,200,,CH,www.canew.org
+GrN 4458,Çayönü,38.21917,39.72917,,9520,100,,CH,www.canew.org
+GrN 4459,Çayönü,38.21917,39.72917,,9200,60,,CH,www.canew.org
+GrN 5953,Çayönü,38.21917,39.72917,Base level?,9795,260,,CH,www.canew.org
+GrN 5954,Çayönü,38.21917,39.72917,nd fill,8055,75,,CH,www.canew.org
+GrN 6241,Çayönü,38.21917,39.72917,ch-1-4,9275,95,,CH,www.canew.org
+GrN 6242,Çayönü,38.21917,39.72917,cp1-3,8795,50,,CH,www.canew.org
+GrN 6243,Çayönü,38.21917,39.72917,"""Basal Pits""",9320,55,,CH,www.canew.org
+GrN 6244,Çayönü,38.21917,39.72917,ch-1-4,8980,80,,CH,www.canew.org
+GrN 8078,Çayönü,38.21917,39.72917,c1-3a-b,8355,50,,CH,www.canew.org
+GrN 8079,Çayönü,38.21917,39.72917,"""Basal Pits""",9250,60,,CH,www.canew.org
+GrN 8103,Çayönü,38.21917,39.72917,"""Base level""?",10430,80,,CH,www.canew.org
+GrN 8819,Çayönü,38.21917,39.72917,nd hearth,8080,90,,CH,www.canew.org
+GrN 8820,Çayönü,38.21917,39.72917,cp1-3,8865,45,,CH,www.canew.org
+GrN 8821,Çayönü,38.21917,39.72917,"""Basal Pits""",9175,55,,CH,www.canew.org
+GrN13948,Çayönü,38.21917,39.72917,cp1-3,8910,50,,CH,www.canew.org
+M 1609,Çayönü,38.21917,39.72917,,8790,250,,CH,www.canew.org
+M 1610,Çayönü,38.21917,39.72917,,8570,250,,CH,www.canew.org
+UCLA 1703 B,Çayönü,38.21917,39.72917,,8340,250,,B (Human),www.canew.org
+OxA-12488,Demirköy,37.88333,41.08333,Sample 22/2K 180436,9930,50,,"S, Lathyrus/Vicia","Higham et al. 2007 (online version), Rosenberg 2011:80"
+OxA-12489,Demirköy,37.88333,41.08333,Sample 23/2L 17 1225,9890,45,,"S, Lathyrus/Vicia","Higham et al. 2007 (online version), Rosenberg 2011:80"
+AA-38141,Dhra’,31.24722,35.58,"AMS, Trank trench 2.3",10031,69,,"CH, Holz","Kuijt, Finlayson 2001"
+AA-38142,Dhra’,31.24722,35.58,"AMS, Trank trench, 1.8m",10059,73,,"CH, Holz","Kuijt, Finlayson 2001"
+AA-38143,Dhra’,31.24722,35.58,"AMS, F6, Struktur 1, 1.31.m",9984,67,,"CH, Holz","Kuijt, Finlayson 2001"
+AA-38144,Dhra’,31.24722,35.58,"AMS, F6, Struktur 1, 1.01m",10000,68,,"CH, Holz","Kuijt, Finlayson 2001"
+ISGS-2898,Dhra’,31.24722,35.58,"Area I, Trank trench, 1.2 m",9960,110,,"CH, Holz","Kuijt, Finlayson 2001"
+ISGS-3277,Dhra’,31.24722,35.58,"F6, Struktur 1, 1.25m",9610,170,,"CH, Holz","Kuijt, Finlayson 2001"
+ISGS-3278,Dhra’,31.24722,35.58,"Trank Trench, 2.6m",9940,180,,"CH, Holz","Kuijt, Finlayson 2001"
+ISGS-A0246,Dhra’,31.24722,35.58,"AMS, F1, Struktur 4, 1.01m",9913,59,,"CH, Holz","Kuijt, Finlayson 2001"
+ISGS-A0248,Dhra’,31.24722,35.58,"AMS, F1, Struktur 4, 0.40m",9835,65,,"CH, Holz","Kuijt, Finlayson 2001"
+BM 2349,Dhuweila,32.25,37.5,,8190,60,,,Betts 1987:214
+OxA-1637,Dhuweila,32.25,37.5,2202/2133,8350,100,,CH,http://users.ox.ac.uk/~orau/dl_am9.html
+*Ly 14494,Dja’de,36.64306,38.20778,"Phase I, DJ07, BW, G10",8690,45,,contaminated during measurements with benzene (written comm. 5.2.15; E.Coqueugniot)),Coqueugniot 2014:107
+*Ly 14514,Dja’de,36.64306,38.20778,Phase II base; DJ07-E-K5; burnt building; probably contaminated,9345,40,,contaminated during measurements with benzene (written comm. 5.2.15; E.Coqueugniot)),Coqueugniot 2014:107
+*Ly 14515,Dja’de,36.64306,38.20778,"Phase II, base; DJ07-E-M3, contaminated",9155,40,,contaminated during measurements with benzene (written comm. 5.2.15; E.Coqueugniot)),Coqueugniot 2014:107
+*Lyon 6902 (GrA),Dja’de,36.64306,38.20778,Phase I (too young); DJ09-Bs (z=850).,9360,45,,AMS,Coqueugniot 2014:107
+Beta 268168,Dja’de,36.64306,38.20778,"natural soil; DJ09-B z=850; test cut behind, seed of Arnibia in the natural soil.",9560,50,,S (AMS),Coqueugniot 2014:107
+LTL 3332A,Dja’de,36.64306,38.20778,Phase I; DJ07-SB-base (beneath the floor of the 1st occupation),9562,65,,?,Coqueugniot 2014:107
+Ly 10845,Dja’de,36.64306,38.20778,Phase III; Sect C - CCHE G 11B,9175,55,,CH,www.archeometrie.mom.fr/banadora/echantillon.php?num=13124&cpt=5
+Ly 10846,Dja’de,36.64306,38.20778,Phase III; Sect. D - CCHE H2C,9250,55,,CH,www.archeometrie.mom.fr/banadora/echantillon.php?num=13125&cpt=6
+Ly 10847,Dja’de,36.64306,38.20778,Phase III; Sect. SF-CCHE DI,9210,55,,CH,www.archeometrie.mom.fr/banadora/echantillon.php?num=13126&cpt=7
+Ly 10848,Dja’de,36.64306,38.20778,Phase III; Sect SF-CCHE F11 A2,9150,55,,CH,www.archeometrie.mom.fr/banadora/echantillon.php?num=13127&cpt=8
+Ly 10849,Dja’de,36.64306,38.20778,Phase III; Sect. ST-CCHE F3,9210,95,,CH,www.archeometrie.mom.fr/banadora/echantillon.php?num=13128&cpt=9
+Ly 11328,Dja’de,36.64306,38.20778,Phase III; ECH.216-Sect.D- Couche G11B,9145,50,,CH (Bois),www.archeometrie.mom.fr/banadora/echantillon.php?num=14441&cpt=10
+Ly 11329,Dja’de,36.64306,38.20778,Phase I-II; ECH.233-SECT.B Couche K1,9480,50,,CH (Bois),www.archeometrie.mom.fr/banadora/echantillon.php?num=14442&cpt=11
+Ly 11330,Dja’de,36.64306,38.20778,Phase II; DJ01-ST-C2b.,9410,50,,CH,
+Ly 12110,Dja’de,36.64306,38.20778,Phase I-II ECH.289-DJ02-Locus W4,9570,50,,CH (Bois),www.archeometrie.mom.fr/banadora/echantillon.php?num=15548&cpt=12
+Ly 12112,Dja’de,36.64306,38.20778,Phase III; DJ02-CD-YZ56-COUCHE H6B,9290,45,,CH,www.archeometrie.mom.fr/banadora/echantillon.php?num=15550&cpt=14
+Ly 13628,Dja’de,36.64306,38.20778,Phase II; DJ04-E-H4a,9305,45,,?,Coqueugniot 2014:106
+Ly 13629,Dja’de,36.64306,38.20778,"Phase II, DJ04-EI1e",9440,45,,?,Coqueugniot 2014:106
+Ly 13630,Dja’de,36.64306,38.20778,"Phase II, DJ04-E-I2b",9000,40,,?,Coqueugniot 2014:106
+Ly 13631,Dja’de,36.64306,38.20778,"Phase II, DJ04-E-I5",9340,45,,?,Coqueugniot 2014:106
+Ly 14032,Dja’de,36.64306,38.20778,"Phase II, DJ06-BW-F1a;",9420,45,,"CH, poteau maison brûlée",Coqueugniot 2014:106
+Ly 14033,Dja’de,36.64306,38.20778,"Phase II, JD106-E-K5",9220,60,,?,Coqueugniot 2014:106
+Ly 15185,Dja’de,36.64306,38.20778,"Phase II, DJ05, BW-F1a",9345,45,,?,Coqueugniot 2014:107
+Ly 15186,Dja’de,36.64306,38.20778,"PHase II, DJ05-E-K1",9315,40,,?,Coqueugniot 2014:107
+Ly 15454,Dja’de,36.64306,38.20778,"Phase IIb, DJ10, F-E15b2 (fire place 736)",9320,45,,?,Coqueugniot 2014:107
+Ly 15455,Dja’de,36.64306,38.20778,"Phas II, DJ05, E-a1-K1, structure 549",9150,40,,?,Coqueugniot 2014:107
+Ly 5820,Dja’de,36.64306,38.20778,Phase III; DJ91-C-X4-F5,9540,290,,Très faible quantité de C,1) Coqueugniot 1999 2) homepage CNRS last access 16.9.08
+Ly 5821,Dja’de,36.64306,38.20778,Phase III; DJ91-B-X4-D4Très faible quantité de C,9610,170,,,Coqueugniot 1999
+Ly 5822,Dja’de,36.64306,38.20778,Phase III; DJ91-C->4-F4,9160,75,,Carbone abondant,Coqueugniot 1999
+Ly 5823,Dja’de,36.64306,38.20778,Phase III; DJ91-C-Y4-F4,9140,390,,Très faible quantité de C,Coqueugniot 1999
+Ly 6164,Dja’de,36.64306,38.20778,Phase III; DJ92-B-X-F4b,9070,220,,Très faible quantité de C,Coqueugniot 1999
+Ly 6165,Dja’de,36.64306,38.20778,Phase III; DJ92-B-X1/2-C4a(foyer XLI,9100,80,,,Coqueugniot 1999
+Ly 6166,Dja’de,36.64306,38.20778,Phase III; DJ92-B-Y3-F4,8990,100,,Très faible quantité de C,Coqueugniot 1999
+Ly 8841,Dja’de,36.64306,38.20778,Phase III; DJ95-B-X2-D4c,9280,60,,CH,www.archeometrie.mom.fr/banadora/echantillon.php?num=10230&cpt=4
+Ly 8842,Dja’de,36.64306,38.20778,Phase II; DJ96-Bsond-xy3-G3base,9370,75,,CH,www.archeometrie.mom.fr/banadora/echantillon.php?num=10229&cpt=3
+Ly 8843,Dja’de,36.64306,38.20778,Phase III; DJ95-C-VW1/3-F5b,9190,65,,CH,www.archeometrie.mom.fr/banadora/echantillon.php?num=10228&cpt=2
+Ly 8844,Dja’de,36.64306,38.20778,Phase III; DJ95-B-Y1/2-E3d (fosse 91),9245,65,,CH,www.archeometrie.mom.fr/banadora/echantillon.php?num=10227&cpt=1
+Lyon 2603 (Poz),Dja’de,36.64306,38.20778,"Phase I; DJ02-ST_C6c, on virgin soi, refuse pit.",9560,65,,S,"www.canew.org, Coqueugniot 2014:106"
+Lyon 2604 (Poz),Dja’de,36.64306,38.20778,"Phase I; DJ02-B-US 32, on virgin soil, painted house",9780,65,,S,"www.canew.org, Coqueugniot 2014:106"
+Lyon 2614 (Poz),Dja’de,36.64306,38.20778,Phase I; DJ02-SECT.B; COUCHE C12,8160,95,,B,www.archeometrie.mom.fr/banadora/echantillon.php?num=16020&cpt=16
+Lyon 4704,Dja’de,36.64306,38.20778,"PHase I, DJ07-BW-G16, at the base of the painted building.",9480,60,,AMS,Coqueugniot 2014:107
+Lyon 4705,Dja’de,36.64306,38.20778,"Phase II; DJ07, C-I17a",9380,60,,AMS,Coqueugniot 2014:107
+Lyon 7795 (GrA),Dja’de,36.64306,38.20778,"Phase Ia, DJ 10, B-x1 (floor 10, prof.- 945; Pit beneath the painted building)",9450,45,,AMS,Coqueugniot 2014:107
+UBA 16007,Dja’de,36.64306,38.20778,Phase Ia; DJ09-Bs(z=850); US 666/27; beyond 666.,9556,34,,AMS,Coqueugniot 2014:107
+UBA 16008,Dja’de,36.64306,38.20778,Phase I; DJ09-BE (z=850); 668.,9530,39,,AMS,Coqueugniot 2014:107
+UBA 16009,Dja’de,36.64306,38.20778,"Phase IIb, DJ 01, B-x2/3-K4c.",9483,30,,AMS,Coqueugniot 2014:107
+UtC-2369,Dja’de,36.64306,38.20778,Phase III; DJ91-C-x4-F6,9200,100,,AMS,Coqueugniot 1999
+Pta 1367,El Wad,32.67056,34.96528,same sample as RT 1367,10680,190,,CH,Byrd 1994:218
+Pta 5435,El Wad,32.67056,34.96528,middle of early Natufian layer,12620,110,,CH,Weinstein-Evron 1991:95
+RT 1367,El Wad,32.67056,34.96528,top of early Natufian layer,10740,200,,CH,Weinstein-Evron 1991:95
+RT 1368,El Wad,32.67056,34.96528,lower part of early Natufian layer,12950,200,,CH,Weinstein-Evron 1991:95
+UCLA?,El Wad,32.67056,34.96528,B2 Cave,11920,660,,B,Weinstein-Evron 1991:95
+UCLA?,El Wad,32.67056,34.96528,B2 Terrace,11475,600,,B,Weinstein-Evron 1991:95
+UCLA?,El Wad,32.67056,34.96528,B 1,9795,600,,B,Byrd 1994:218
+Bln 4968,Es Sifiya,31.43932,35.82238,"Area C, Quadrate 3, Loc. 05",7979,45,,CH,Görsdorf 2000
+Bln 4969,Es Sifiya,31.43932,35.82238,"Area C, Quadrate 7, Loc. 8",8024,44,,CH,Görsdorf 2000
+Bln 4970,Es Sifiya,31.43932,35.82238,"Area C, Quadrate 1, Loc. 06 (floor)",7921,48,,CH,Görsdorf 2000
+Bln 4971,Es Sifiya,31.43932,35.82238,"Area C, Quadrate 5, Loc. 09 (floor)",8001,44,,CH,Görsdorf 2000
+Bln 4972,Es Sifiya,31.43932,35.82238,"Area C, Quadrate 8, Loc. 08/9 (floor)",7990,48,,CH,Görsdorf 2000
+Bln 4973,Es Sifiya,31.43932,35.82238,"Area C, Quadrate 4, Loc. 08/04 (floor)",8040,44,,CH,Görsdorf 2000
+ISGS-3279,Es Sifiya,31.43932,35.82238,"Area A; floor of Room 11,",7930,70,,?; Delta 13c:25.2;,Mahasneh 1997
+GaK 807,Ganj Dareh,34.25,47.5,"Niv. E, base of the tell",10400,150,,CH,"Radiocarbon 9,1967,61"
+OxA 2099,Ganj Dareh,34.25,47.5,GD.Fl.70,8840,110,,S (hordeum),Hedges et al. 1990
+OxA 2100,Ganj Dareh,34.25,47.5,GD.Fl.110,9010,110,,S (hordeum),Hedges et al. 1990
+OxA 2101,Ganj Dareh,34.25,47.5,GD.Fl.129,8850,100,,S (hordeum),Hedges et al. 1990
+OxA 2102,Ganj Dareh,34.25,47.5,GD.Fl.136c,8690,110,,S (hordeum),Hedges et al. 1990
+SI 922,Ganj Dareh,34.25,47.5,Niv. E,8570,210,,CH,"Radiocarbon 15,1973,398"
+SI 923,Ganj Dareh,34.25,47.5,Niv.E,8625,195,,CH,Hole 1987
+SI 924,Ganj Dareh,34.25,47.5,Niv. E,8640,90,,CH,Hole 1987
+SI 925,Ganj Dareh,34.25,47.5,"Niv.E, below SI 924",8385,75,,CH,Hole 1987
+Pta 4595,Gesher,32.60306,35.55556,,9870,80,,,"Garfinkel, Dag 2006"
+Pta-4553,Gesher,32.60306,35.55556,,10020,100,,,"Garfinkel, Dag 2006"
+Rt 868a,Gesher,32.60306,35.55556,,9820,140,,,"Garfinkel, Dag 2006"
+Rt 868b,Gesher,32.60306,35.55556,,9790,140,,,"Garfinkel, Dag 2006"
+Beta140757,Ghuwayr 1,30.62306,35.50611,Area I/phaseIII,8390,50,,,"Simmons, Najjar 2006:80"
+Beta140758,Ghuwayr 1,30.62306,35.50611,Area I/phaseIII,8620,50,,,"Simmons, Najjar 2006:80"
+Beta140759,Ghuwayr 1,30.62306,35.50611,Area I/phaseIII,8610,50,,,"Simmons, Najjar 2006:80"
+DRI 3251,Ghuwayr 1,30.62306,35.50611,Area I/phase II,8806,52,,,"Finlayson, Mithen 2007:474"
+DRI 3252,Ghuwayr 1,30.62306,35.50611,Area I/phase II,8880,117,,,"Finlayson, Mithen 2007:474"
+DRI 3253,Ghuwayr 1,30.62306,35.50611,Area II/ phase II?,9027,116,,,"1) Simmons, Najjar 2006 2) n.Finlayson, Mithen 2007:474: 9037+/-116"
+DRI 3254,Ghuwayr 1,30.62306,35.50611,Area I/phase II,8659,178,,,"Simmons, Najjar 2006:80"
+DRI 3255,Ghuwayr 1,30.62306,35.50611,Area III/ phase II?,8755,111,,,"Finlayson, Mithen 2007:474"
+DRI 3256,Ghuwayr 1,30.62306,35.50611,Area II/ phase II?,8754,52,,,"Finlayson, Mithen 2007:474"
+Hd 17219-17541,Ghuwayr 1,30.62306,35.50611,Area I/phase I,8812,61,,,"Simmons, Najjar 2006:80"
+Hd17220-17550,Ghuwayr 1,30.62306,35.50611,Area I/phaseIII,8627,46,,,"Simmons, Najjar 2006:80"
+Hd17221-17359,Ghuwayr 1,30.62306,35.50611,AreaIV/II?,8528,89,,,"Simmons, Najjar 2006:80"
+ISGS 4325,Ghuwayr 1,30.62306,35.50611,Area II/ phase II?,8590,70,,,"Simmons, Najjar 2006:80"
+ISGS 4330,Ghuwayr 1,30.62306,35.50611,Area I/phase II,8870,70,,,"Finlayson, Mithen 2007:474"
+ISGS 4331,Ghuwayr 1,30.62306,35.50611,AreaIV/II?,8510,70,,,"Simmons, Najjar 2006:80"
+ISGS 4332,Ghuwayr 1,30.62306,35.50611,Area II/III?,8570,70,,,"Simmons, Najjar 2006:80"
+ISGS 4333,Ghuwayr 1,30.62306,35.50611,AreaIV/II?,8620,70,,,"Simmons, Najjar 2006:80"
+ISGS 4364,Ghuwayr 1,30.62306,35.50611,Area II/ phase I,8690,70,,,"Simmons, Najjar 2006:80"
+"ISGS 4364 (?, doppelt vergeben)",Ghuwayr 1,30.62306,35.50611,AreaIV/II?,8570,100,,,"Simmons, Najjar 2006:80"
+ISGS 4365,Ghuwayr 1,30.62306,35.50611,AreaIV/II?,8530,100,,,"Simmons, Najjar 2006:80"
+ISGS 4366,Ghuwayr 1,30.62306,35.50611,Area II/ phase I,9710,150,,,"Finlayson, Mithen 2007:474"
+Pta-4583,Gilgal,32.03278,35.47569,,9830,80,,CH,"Garfinkel, Dag 2006"
+Pta-4585,Gilgal,32.03278,35.47569,,9710,70,,CH,"Kuijt, Bar-Yosef 1994:238"
+Pta-4588,Gilgal,32.03278,35.47569,,9920,70,,CH,"Garfinkel, Dag 2006"
+RT-777-A,Gilgal,32.03278,35.47569,,9900,220,,CH,"Garfinkel, Dag 2006"
+RT-777-B,Gilgal,32.03278,35.47569,,9950,150,,CH,"Kuijt, Bar-Yosef 1994:238"
+Hd 20025,Göbekli Tepe,37.223,38.92236,"Enclosure A ""Schlangenpfeilergebäude"", Loc. 44.3, L9-75.",9452,73,not available,"S/CH, pistachio, almond","Kromer, Schmidt 1998"
+Hd 20036,Göbekli Tepe,37.223,38.92236,"Enclosure A, ""Schlangenpfeilergebäude""; L 9-75, Loc. 48.1",9559,53,not available,"S/CH, pistachio, almond","Kromer, Schmidt 1998"
+IGAS 2658,Göbekli Tepe,37.223,38.92236,Layer II; over filling of Enclosure D; L 9-68,8880,60,not available,humic acids,Dietrich 2011
+KIA 25373,Göbekli Tepe,37.223,38.92236,"Wallstone ""Terrace-Wall""; L9-79",8895,55,-14.27,pedogenic carbonate lamination,Pustovoytov et al. 2007a
+KIA 25467,Göbekli Tepe,37.223,38.92236,Layer III; Enclosure A; L 9-75,9290,70,-19.49,pedogenic carbonate lamination,Pustovoytov et al. 2007b; O. Dietrich pers. comm.
+KIA 26021,Göbekli Tepe,37.223,38.92236,Layer III; Enclosure A; L 9-65,9020,30,-12.5,pedogenic carbonate lamination,Pustovoytov et al. 2007a
+KIA 26168,Göbekli Tepe,37.223,38.92236,"Layer II; Wallstone Lionpillar-Building, surroundings; L 9-80",8625,45,-13.31,pedogenic carbonate lamination,Pustovoytov et al. 2007a
+KIA 26169,Göbekli Tepe,37.223,38.92236,Layer II; Lionspillar-Building outer wall; L 10-71,8440,40,-14.05,pedogenic carbonate lamination,Pustovoytov et al. 2007a
+KIA 28033,Göbekli Tepe,37.223,38.92236,"Layer II, upper part; gap at pillar XI; L 9-56",7180,40,-13.63,pedogenic carbonates,Dietrich 2011
+KIA 28406,Göbekli Tepe,37.223,38.92236,"Layer II, lower part; Pillar XI; L 9-56",7600,60,-13.19±0.25,pedogenic carbonates,Dietrich 2011
+KIA 28407 (A),Göbekli Tepe,37.223,38.92236,"Enclosure A ""Schlangepfeilergebäude""; CH of earth sample KIA 28407; L 9-75",9250,55,-24.82±0.11,CH,Dietrich 2011
+KIA 28407 (B),Göbekli Tepe,37.223,38.92236,"Enclosure A, under a fallen pillar fragment; L 9-75",6515,45,-27.92±0.12,humic acids,Dietrich 2011
+KIA 28965,Göbekli Tepe,37.223,38.92236,Layer III; Enclosure D; L 9-78,8485,40,-13.18±0.19,pedogenic carbonates,Dietrich 2011
+KIA 29564,Göbekli Tepe,37.223,38.92236,"""Atelier"", quarry on the plateau",7525,45,-11.33±0.19,pedogenic carbonates,Dietrich 2011
+KIA 38006,Göbekli Tepe,37.223,38.92236,Layer II; Loc. 48.4; L 9-66,6620,32,-12.80±0.24,Bone/Apatite,Dietrich 2011
+KIA 38007 (A),Göbekli Tepe,37.223,38.92236,"Layer III, Enclosure B, Loc. 107.1.; L 9-66",9065,35,-17.71±0.35,Bone/Collagen,Dietrich 2011
+KIA 38007 (B),Göbekli Tepe,37.223,38.92236,"Layer II, Enclosure B, Loc. 107.1; L 9-66.",6475,37,-17.71±0.35,Bone/Apatite,Dietrich 2011
+KIA 38008,Göbekli Tepe,37.223,38.92236,"Layer III, Enclosure D, Loc. 25.4; L 9-68",8930,45,-13.85±0.21,Bone/Apatite,Dietrich 2011
+KIA 42204,Göbekli Tepe,37.223,38.92236,"Layer III; Enclosure B, Loc. 113.1; L 9-66",8475,60,-12.35±0.19,Bone/Apatite,Dietrich 2011
+KIA 42205,Göbekli Tepe,37.223,38.92236,"Layer III, Enclosure B, Loc. 71.1; L9-66",9000,65,-11.81±0.16,Bone/Apatite,Dietrich 2011
+KIA 42206,Göbekli Tepe,37.223,38.92236,Layer II; Loc. 50.2; L 9-66,6745,30,-9.91±0.19,Bone/Apatite,Dietrich 2011
+KIA 42207,Göbekli Tepe,37.223,38.92236,Layer II; Loc. 28.1; L 9-68,7830,35,-12.86±0.18,Bone/Apatite,Dietrich 2011
+KIA 42208,Göbekli Tepe,37.223,38.92236,"Layer II; Enclosure F, Loc. 28.1; K 9-87",8380,40,-11.90±0.15,Bone/Apatite,Dietrich 2011
+KIA 42209,Göbekli Tepe,37.223,38.92236,Layer II; Loc. 24.4; L 9-17,5775,25,-9.83±0.16,Bone/Apatite,Dietrich 2011
+KIA 42210,Göbekli Tepe,37.223,38.92236,"Layer III; Enclosure D, Loc. 18.2; L 9-68",8370,35,-13.86±0.23,Bone/Apatite,Dietrich 2011
+KIA 42211,Göbekli Tepe,37.223,38.92236,"Layer ?; Enclosure G, Loc. 81.3; L 9-58",7985,45,-11.47±0.30,Bone/Apatite,Dietrich 2011
+KIA 42212,Göbekli Tepe,37.223,38.92236,"Layer III, Loc. 49.6; L 9-58",8665,45,-12.96±0.17,Bone/Apatite,Dietrich 2011
+KIA 42213,Göbekli Tepe,37.223,38.92236,"Layer II, Loc. 96.2; L 9-58",8860,80,-13.36±0.34,Bone/Apatite,Dietrich 2011
+KIA 42214,Göbekli Tepe,37.223,38.92236,"later pit feature, unclear; Loc. 4.19; L 9-58",8115,60,-12.62±0.21,Bone/Apatite,Dietrich 2011
+KIA 42216,Göbekli Tepe,37.223,38.92236,"Layer III, Enclosure D; Loc. 19.2; L 9-68",7735,40,-9.35±0.26,Bone/Apatite,Dietrich 2011
+KIA 42217,Göbekli Tepe,37.223,38.92236,Layer I; Loc. 10.1; L 9-68.,8860,50,-13.34±0.20,Bone/Apatite,Dietrich 2011
+KIA 42218,Göbekli Tepe,37.223,38.92236,"Layer III, Enclosure D, Loc. 25.2; L 9-68",8950,65,-12.34±0.16,Bone/Apatite,Dietrich 2011
+KIA 42219,Göbekli Tepe,37.223,38.92236,"Layer III; Enclosure D, Loc. 21.7; L9-68",9120,50,-8.53±0.24,Bone/Apatite,Dietrich 2011
+KIA 42221,Göbekli Tepe,37.223,38.92236,"Layer III; Enclosure B, Loc. 74.2; L9-66",9230,130,-15.37±0.16,Bone/Apatite,Dietrich 2011
+KIA 44149,Göbekli Tepe,37.223,38.92236,"Layer III; Enclosure D, Loc. 782.3; L9-68.",9984,42,-26.31±0.57,"CH, in wall plaster","Dietrich, Schmidt 2011:82-83."
+Ua 19561,Göbekli Tepe,37.223,38.92236,"Layer III; Enclosure C, wallstone near pillar 11, 115 cm below surface, L9-76.",8430,80,-11,pedogenic carbonate lamination,Pustovoytov et al. 2007a
+Ua 19562,Göbekli Tepe,37.223,38.92236,"Layer III; Enclosure B, Wallstone near Pillar 8, 105 cm below surface; L9-66",8960,85,-12,pedogenic carbonate lamination,Pustovoytov et al. 2007a
+Ua 21415,Göbekli Tepe,37.223,38.92236,"Layer II, Wallstone, Lionspillarbuilding, L 9-80",7450,85,-14.3,pedogenic carbonates,Dietrich 2011
+Ua 21416,Göbekli Tepe,37.223,38.92236,"Stone, fill of looters pit; L 9-87",6405,70,-10.8,pedogenic carbonates,Dietrich 2011
+KIA 44176,Gusir Höyük,37.223,38.92236,2 GSR,9920,40,,,Karul 2011:6
+KIA 44177,Gusir Höyük,37.223,38.92236,3GSR,9900,40,,,Karul 2011:6
+KIA 44179,Gusir Höyük,37.223,38.92236,5 GSR,9935,40,,,Karul 2011:6
+KIA 44180,Gusir Höyük,37.223,38.92236,6GSR,9590,45,,,Karul 2011:6
+KIA44178,Gusir Höyük,37.223,38.92236,4 GSR,9975,50,,,Karul 2011:6
+Beta-46647,Hallan Çemi,38.23333,41.25,,10040,160,,CH,www.canew.org
+Beta-46649,Hallan Çemi,38.23333,41.25,,10800,220,,CH,www.canew.org
+Beta-47211,Hallan Çemi,38.23333,41.25,central activity area,10060,120,,CH,www.canew.org
+Beta-47252,Hallan Çemi,38.23333,41.25,,11700,460,,CH,www.canew.org
+Beta-55049,Hallan Çemi,38.23333,41.25,,10050,80,,CH,www.canew.org
+Beta-55050,Hallan Çemi,38.23333,41.25,,9840,50,,CH,www.canew.org
+Beta-55051,Hallan Çemi,38.23333,41.25,,10500,170,,CH,www.canew.org
+Beta-55052,Hallan Çemi,38.23333,41.25,,10590,170,,CH,www.canew.org
+Beta-56102,Hallan Çemi,38.23333,41.25,,10590,260,,CH,www.canew.org
+Beta-66850,Hallan Çemi,38.23333,41.25,,9510,200,,CH,www.canew.org
+Beta-66852,Hallan Çemi,38.23333,41.25,,9600,180,,CH,www.canew.org
+Beta-66854,Hallan Çemi,38.23333,41.25,,9930,110,,CH,www.canew.org
+Beta-66855,Hallan Çemi,38.23333,41.25,,10060,90,,CH,www.canew.org
+Beta-66856,Hallan Çemi,38.23333,41.25,,9870,110,,CH,www.canew.org
+Beta-66858,Hallan Çemi,38.23333,41.25,"below house floor, fill",10320,110,,CH,www.canew.org
+Beta-67462,Hallan Çemi,38.23333,41.25,,10520,190,,CH,www.canew.org
+Beta-67463,Hallan Çemi,38.23333,41.25,,9890,90,,CH,www.canew.org
+Beta-67464,Hallan Çemi,38.23333,41.25,,10000,80,,CH,www.canew.org
+OxA-12298,Hallan Çemi,38.23333,41.25,2/6H 07 0979,9980,60,,S Pistacia,Higham et al. 2007 (online version)
+OxA-12299,Hallan Çemi,38.23333,41.25,14/6G 12 1809,10020,45,,S Lathyrus/Vicia,Higham et al. 2007 (online version)
+OxA-12328,Hallan Çemi,38.23333,41.25,1/5G 47 1034,9960,45,,S Pistacia,Higham et al. 2007 (online version)
+OxA-12329,Hallan Çemi,38.23333,41.25,3/6H 100978,10085,45,,S Pisum/Vicia,Higham et al. 2007 (online version)
+OxA-12330,Hallan Çemi,38.23333,41.25,4/5H 56 1145,9980,45,,S Amygdalus,Higham et al. 2007 (online version)
+OxA-12331,Hallan Çemi,38.23333,41.25,5/5H 57 1146,9975,45,,S Amygdalus,Higham et al. 2007 (online version)
+OxA-12332,Hallan Çemi,38.23333,41.25,6/6E 121652,9935,45,,S Pisum/Vicia,Higham et al. 2007 (online version)
+OxA-12333,Hallan Çemi,38.23333,41.25,7/6E 17166,10050,45,,S Lathyrus/Vicia,Higham et al. 2007 (online version)
+OxA-12334,Hallan Çemi,38.23333,41.25,8/5H 99 2049,9970,45,,S Scirpus maritimus,Higham et al. 2007 (online version)
+OxA-12335,Hallan Çemi,38.23333,41.25,9/5H 99 2046,9995,40,,S Lathyrus/Vicia,Higham et al. 2007 (online version)
+OxA-12336,Hallan Çemi,38.23333,41.25,10/5G 72 2184,10020,40,,S Pistacia,Higham et al. 2007 (online version)
+OxA-12337,Hallan Çemi,38.23333,41.25,13/6G 12 1803,9965,40,,S Pisum/Vicia,Higham et al. 2007 (online version)
+OxA-12338,Hallan Çemi,38.23333,41.25,17/6F 07 1209,9970,40,,S Pisum/Vicia,Higham et al. 2007 (online version)
+OxA-12339,Hallan Çemi,38.23333,41.25,18/6F 07 1215,9955,40,,S Lathyrus/Vicia,Higham et al. 2007 (online version)
+OxA-12340,Hallan Çemi,38.23333,41.25,19/6F07 1218,9980,40,,S Amygdalus,Higham et al. 2007 (online version)
+OxA-12341,Hallan Çemi,38.23333,41.25,21/6F 07 1226-1227,10045,45,,S Amygdalus,Higham et al. 2007 (online version)
+OxA-12769,Hallan Çemi,38.23333,41.25,16/6F 07 1207,10010,40,,S Lathyrus/Vicia,Higham et al. 2007 (online version)
+OxA-12878,Hallan Çemi,38.23333,41.25,12/6G 12 1802,9535,75,,S Lathyrus/Vicia,Higham et al. 2007 (online version)
+OxA-12879,Hallan Çemi,38.23333,41.25,15/6G 12 1810,9560,100,,S Lathyrus/Vicia,Higham et al. 2007 (online version)
+*Beta 101605,Halula,36.41639,38.19028,"Nivel: S2/4-XIII, secotr: II, D. A10c",13860,120,,CH,Molist et al. 2013:91
+*Beta 206827,Halula,36.41639,38.19028,"Nivel: S2/4-XI, sector S2-4, 4H, A24",8200,160,,CH,Molist et al. 2013:90
+*Beta 58931,Halula,36.41639,38.19028,"Nivel: S 2/4-XIII, sector II, D, A6a",35800,530,,"CH, Sediment",Molist et al. 2013:91
+*Beta 61488,Halula,36.41639,38.19028,"Nivel: S2/4VIII, sector IV C, B1e (too old)",9520,180,,CH,Molist 1996; Molist et al. 2013:90
+*Beta 70359,Halula,36.41639,38.19028,"Nivel: S2/4-XII, sector II D, E45.",8350,210,,CH,Molist et al. 2013:91
+*Beta 90616,Halula,36.41639,38.19028,"Nivel: S 2/4-II, sector IV, B, F6",10770,160,,CH,Molist et al. 2013:90
+*UBAR 290,Halula,36.41639,38.19028,"Nivel: S2B/C-II, sector I A, B2",7930,310,,CH,Molist et al. 2013:91
+*UBAR 396,Halula,36.41639,38.19028,"Nivel: S2/4-IX, sector IV B, B1b",8800,1890,,CH,Molist et al. 2013:90
+*UBAR- 384,Halula,36.41639,38.19028,"Nivel: S2B/C-IV, sector II C, D1a.",8860,410,,CH,Molist et al. 2013:91
+*UBAR- 394,Halula,36.41639,38.19028,"Nivel: S2/4-XII; sector II D, A6b",8570,440,,CH,Molist et al. 2013:91
+Beta 101602,Halula,36.41639,38.19028,"Nivel: S2/4-II, sector IV, C, E51 (B)",8630,70,,CH (AMS),Molist et al. 2013:90
+Beta 101603,Halula,36.41639,38.19028,"Nivel: S2/4-IX, sector IV, C, A12",8710,70,,CH (AMS),Molist et al. 2013:90
+Beta 101604,Halula,36.41639,38.19028,"Nivel:S2/4-IX?; sector IV, D, A2g",8310,110,,CH,Molist et al. 2013:90
+Beta 101605,Halula,36.41639,38.19028,"Nivel: S2/4-XIII, secotr: II, D. A10c",13860,120,,CH,Molist et al. 2013:91
+Beta 101606,Halula,36.41639,38.19028,"Nivel; S2/4-XI, sector II, D, E24",8450,100,,CH,Molist et al 2013:90
+Beta 121012,Halula,36.41639,38.19028,"Nivel: S2/4-XII, S2-4, 4D, D3a",8600,60,,CH,Molist et al. 2013:90
+Beta 206820,Halula,36.41639,38.19028,"Nivel: S2/4-XI, sector S2-4, 4H, E84",8460,40,,S (AMS),Molist et al. 2013:90
+Beta 206821,Halula,36.41639,38.19028,"Nivel: S2/4-XII, sector S2-4, 4J, E59",8490,40,,S (AMS),Molist et 2013:91
+Beta 206822,Halula,36.41639,38.19028,"Nivel: S2/4-X, sector S2-4, 4I?, E28?",8500,50,,S (AMS),Molist et al. 2013:90
+Beta 206824,Halula,36.41639,38.19028,"Nivel: S2/4-XIV, S2-4, 4J, A10",8270,50,,S (AMS),Molist et al. 2013:91
+Beta 206825,Halula,36.41639,38.19028,"Nivel: S2/4-XIII, sector: S2-4, 4J, A18a",8370,50,,S (AMS),Molist et al 2013:91
+Beta 206826,Halula,36.41639,38.19028,"Nivel: S2/4-XII, sector S2-4, 4H, A13",8340,130,,CH,Molist et al. 2013:91
+Beta 206829,Halula,36.41639,38.19028,"Nivel: S2/4-VIII, S2-4, 4D, E105",8500,40,,CH (AMS),Molist et al. 2013:90
+Beta 50856,Halula,36.41639,38.19028,"Nivel; S2B/C-III, sector I A, B2",8655,75,,CH (AMS),Molist 1996; Molist et al. 2013:90
+Beta 50857,Halula,36.41639,38.19028,"Nivel: 2B/C-II, sector IA, B3C",8300,60,,CH (AMS),Molist 1996
+Beta 58928,Halula,36.41639,38.19028,"Nivel: S2/4-VIII, Sector IV B, C1f",8700,60,,CH (AMS),Molist 1996; Molist 2013:90 (Lab-ID not identical)
+Beta 58930,Halula,36.41639,38.19028,"Nivel: S2B/C-I, I, B, A7b",7990,70,,CH (AMS),Molist et al. 2013:91
+Beta 80636,Halula,36.41639,38.19028,"Nivel: S2/4-I, sector IV, B, F8",8750,60,,CH (AMS),Molist et al. 2013:90
+Beta 90618,Halula,36.41639,38.19028,"Nivel: S2/4-V, sector IV, B, D9a",8810,80,,CH,Molist et al. 2013:90
+OxA 393,Hammeh 27 (Wadi el-),32.46639,35.61,,11920,150,,Humic acids; S,Edwards 1988
+OxA 394,Hammeh 27 (Wadi el-),32.46639,35.61,,12200,160,,CH; S,Edwards 1988
+OxA 507,Hammeh 27 (Wadi el-),32.46639,35.61,,11950,160,,CH; S,Edwards 1988
+MTC-16066,Hasankeyf Höyük,32.46639,35.61,"Structure 8, G13",9860,82,,,Miyake et al. 2012:4
+MTC-16067,Hasankeyf Höyük,32.46639,35.61,"Structure 1, G12/13",9827,69,,,Miyake et al. 2012:4
+MTC-16068,Hasankeyf Höyük,32.46639,35.61,"Structure 2, G12",9920,83,,,Miyake et al. 2012:4
+MTC-16069,Hasankeyf Höyük,32.46639,35.61,Square H-12,9652,77,,,Miyake et al. 2012:4
+MTC-16070,Hasankeyf Höyük,32.46639,35.61,"Structure 2, G12",10006,83,,,Miyake et al. 2012:4
+MTC-16071,Hasankeyf Höyük,32.46639,35.61,"Structure 1, G12/13",9597,66,,,Miyake et al. 2012:4
+MTC-16072,Hasankeyf Höyük,32.46639,35.61,"Structure 8, G13",9828,76,,,Miyake et al. 2012:4
+MTC-16073,Hasankeyf Höyük,32.46639,35.61,"Structure 1, G12/13",9674,72,,,Miyake et al. 2012:4
+MTC-16074,Hasankeyf Höyük,32.46639,35.61,"Structure 2, G12",9527,71,,,Miyake et al. 2012:4
+MTC-16075,Hasankeyf Höyük,32.46639,35.61,"Structure 2, G12",9708,77,,,Miyake et al. 2012:4
+MTC-16076,Hasankeyf Höyük,32.46639,35.61,"Structure 8, G13",9778,69,,,Miyake et al. 2012:4
+MTC-16077,Hasankeyf Höyük,32.46639,35.61,"Structure 1, G12/13",9916,82,,,Miyake et al. 2012:4
+MTC-16078,Hasankeyf Höyük,32.46639,35.61,"Structure 2, G12",9831,90,,,Miyake et al. 2012:4
+MTC-16079,Hasankeyf Höyük,32.46639,35.61,"Structure 8, G13",9784,95,,,Miyake et al. 2012:4
+MTC-16080,Hasankeyf Höyük,32.46639,35.61,"Structure 1, G 12/13",9733,68,,,Miyake et al. 2012:4
+Gif A 91141,Hatula,31.82574,34.98756,"Sec.A, 1,50m",11020,120,,B,"Valladas, Arnold 1994:5"
+Gif A91138,Hatula,31.82574,34.98756,Secteur F/Sultanien,8890,120,,B,"Valladas, Arnold 1994:35"
+Gif A91139,Hatula,31.82574,34.98756,Secteur F/Khiamien,10170,120,,B,"Valladas, Arnold 1994:35"
+Gif A91360,Hatula,31.82574,34.98756,Secteur F/Sultanien,10030,140,,B,"Valladas, Arnold 1994:35"
+GrN 12510,Hayaz Höyük,37.49528,38.34056,no information,8300,60,,?,Roodenberg 1989:92
+GrN 12512,Hayaz Höyük,37.49528,38.34056,no information,8040,170,,?,Roodenberg 1989:92
+OxA 742,Hayonim Cave,32.92167,35.21667,"Base of layer, H77 4(9.7)",12360,160,,S,Belfer-Cohen 1988
+OxA 743,Hayonim Cave,32.92167,35.21667,"Base of layer, H76 4(5)",12010,180,,S,Belfer-Cohen 1988
+OxA 1899,Hayonim Terrace,32.92167,35.21667,N 28-2168,10000,100,,S,Housley 1994:60
+OxA 1900,Hayonim Terrace,32.92167,35.21667,N 35-1894,6970,80,,S,Housley 1994:60
+Oxa 2568,Hayonim Terrace,32.92167,35.21667,FL. K-L- M/33.34,17420,170,,CH/B,Housley 1994:60
+OxA 2569,Hayonim Terrace,32.92167,35.21667,FL. K-L- M/33.34,11220,110,,CH/B,Housley 1994:60
+OxA 2570,Hayonim Terrace,32.92167,35.21667,House 4,11820,120,,CH/B,Housley 1994:60
+OxA 2571,Hayonim Terrace,32.92167,35.21667,Firepl. 8,9640,100,,CH/B,Housley 1994:60
+OxA 2572,Hayonim Terrace,32.92167,35.21667,Early Layer II,11460,110,,CH/B,Housley 1994:60
+OxA 2573,Hayonim Terrace,32.92167,35.21667,House 9,10100,160,,CH/B,Housley 1994:60
+OxA 2974,Hayonim Terrace,32.92167,35.21667,Fire pit 8,16810,210,,CH/B,Housley 1994:60
+OxA 2975,Hayonim Terrace,32.92167,35.21667,Fill behind,11790,120,,CH/B,Housley 1994:60
+OxA 2976,Hayonim Terrace,32.92167,35.21667,House 4,14050,140,,CH/B,Housley 1994:60
+OxA 2977,Hayonim Terrace,32.92167,35.21667,House 4,11720,120,,CH/B,Housley 1994:60
+SMU 231,Hayonim Terrace,32.92167,35.21667,D,11920,90,,CH,Byrd 1994:218
+RTT 3760,Hilazon Tachtit,32.86667,35.3,,10750,,,CH,"Grosman, Munro 2007"
+RTT 4592,Hilazon Tachtit,32.86667,35.3,,10530,,,CH,"Grosman, Munro 2007"
+RTT 4593,Hilazon Tachtit,32.86667,35.3,,10770,,,CH,"Grosman, Munro 2007"
+RT 1396,Horvat Galil,33.05,35.25,"Pfostenloch, Str.1",8950,100,,,Edwards et al. 2004
+RT 1397,Horvat Galil,33.05,35.25,Square G11d,9340,70,,,Edwards et al. 2004
+AA-38140,Iraq ed Dubb,32.39083,35.71598,"Structure 1, Locus 005, D10/8a",9592,64,,"CH, AMS,",Kuijt 2002-2004:295
+AA-38145,Iraq ed Dubb,32.39083,35.71598,"Structure 2, Locus 031, D12/2a",9941,72,,"CH, AMS,",Kuijt 2002-2004:295
+AA-38278,Iraq ed Dubb,32.39083,35.71598,"Structure 1, Locus 011, E 10/9a",10657,82,,"Pistacia, Amygalus sp. AMS",Kuijt 2002-2004:295
+AA-38279,Iraq ed Dubb,32.39083,35.71598,"Structure 2, Locus 025, D10/14a",10723,68,,"Pistacia, Amygalus sp. AMS",Kuijt 2002-2004:295
+GX-17077,Iraq ed Dubb,32.39083,35.71598,"Structure 1, Locus 21, D 10/8a",11145,120,,"CH, conventional",Kuijt 2002-2004:295
+GX-17398,Iraq ed Dubb,32.39083,35.71598,"Structure 2, Locus 048, D 12/2d",11175,400,,"CH, conventional","Kuijt 2002-2004, 295"
+GX-17399,Iraq ed Dubb,32.39083,35.71598,"Structure 1, Locus 004, D 10/11a",10785,285,,"CH, conventional","Kuijt 2002-2004, 295"
+OxA-2567,Iraq ed Dubb,32.39083,35.71598,"Structure 1, Locus 007",9950,100,,"CH, AMS,",Hedges et al. 1992
+Hv 2597,Iraq el Barud (Sefunim),32.73889,34.97889,Layer V,7730,,,?,1) Edwards et al. 2004 2) Sayej 2004:43
+Hv 3368,Iraq el Barud (Sefunim),32.73889,34.97889,Layer V,9395,,,?,1) Edwards et al. 2004 2) Sayej 2004:43.
+KN-I 366,Iraq el Barud (Sefunim),32.73889,34.97889,Layer V,9120,,,?,1) Edwards et al. 2004 2) Sayej 2004:43
+Beta-257748,Jeftelik,35.3,36.51667,DF906 Stratigraphic unit 38,12100,70,,CH (short lived Rosaceae tp. Prunus),"Rodríguez Rodríguez A. et al. 2010; Ibánez et al. 2012: 11, footnote 8"
+CNA-527,Jeftelik,35.3,36.51667,"DHI906, US 28",12075,45,,CH,Ibánez et al. 2012:11; footnote 9
+CNA-528,Jeftelik,35.3,36.51667,"DJ907, US 22",12110,45,,CH,"Ibánez et al. 2012:11, footnote 10"
+Beta-71866,Jerf el Ahmar,36.39167,38.20833,AreaA,9740,60,,,1) Willocox 1996:144; www.canew.org
+Beta-71870,Jerf el Ahmar,36.39167,38.20833,Area C2,9810,60,,,1) Willocox 1996:144; www.canew.org
+Ly 10647,Jerf el Ahmar,36.39167,38.20833,"C 99-43, Niveau -I, (EA 53), ""transitional phase PPNA-PPNB"" (1:47)",9395,55,,CH,"1) Edwards et al. 2004, 2) Sayej 2004)"
+Ly 10648,Jerf el Ahmar,36.39167,38.20833,"C 99-46, Niv. III/E, (EA 47)",9855,70,,CH,Sayej 2004
+Ly 10649,Jerf el Ahmar,36.39167,38.20833,C 98-34 Niv. II/W (EA 30) (1:47),9445,75,,CH,"1)Edwards et al. 2004, 2) Sajey 2004"
+Ly 10650,Jerf el Ahmar,36.39167,38.20833,C 75,9065,95,,CH,www.archeometrie.mom.fr/bandadora/echantillon.php?num=13104&cpt=8
+Ly 10651,Jerf el Ahmar,36.39167,38.20833,"C 88, Niv. V/E (floor)",9965,55,,CH,Sayej 2004
+Ly 10652,Jerf el Ahmar,36.39167,38.20833,C 72,9705,135,,CH,www.archeometrie.mom.fr/bandadora/echantillon.php?num=13106&cpt=10)
+Ly 10653,Jerf el Ahmar,36.39167,38.20833,C2001,9810,55,,CH,www.archeometrie.mom.fr/bandadora/echantillon.php?num=13107&cpt=11)
+Ly 275 (OxA),Jerf el Ahmar,36.39167,38.20833,,9790,80,,,Sayej 2004
+Ly 7489,Jerf el Ahmar,36.39167,38.20833,A 15 C6,9680,90,,CH,Sayej 2004
+Lyon 1578,Jerf el Ahmar,36.39167,38.20833,C2002,9440,60,,S (graines),www.arhceometrie.mom.fr/bandadora/echantillon.php?num=13108&cpt=12
+Lyon 1579,Jerf el Ahmar,36.39167,38.20833,"C2003 Building 10, room 2",9620,60,,"S(Brassica,Sinapis sp.)",www.arhceometrie.mom.fr/bandadora/echantillon.php?num=13109&cpt=13; www.canew.org
+Lyon 2332,Jerf el Ahmar,36.39167,38.20833,68-632,9570,70,,S (cereales),www.archeometrie.mom.fr/bandadora/echantillon.php?num=15704&cpt=17
+Lyon 2333,Jerf el Ahmar,36.39167,38.20833,69-541,9815,70,,S (graines),www.archeometrie.mom.fr/bandadora/echantillon.php?num=15705&cpt=18
+Lyon 2334,Jerf el Ahmar,36.39167,38.20833,71-480 - US 28,9980,70,,S (graines),www.archeometrie.mom.fr/bandadora/echantillon.php?num=15707&cpt=20
+Lyon 2335,Jerf el Ahmar,36.39167,38.20833,72-578 - US 202 Est,10280,70,,S (graines),www.archeometrie.mom.fr/bandadora/echantillon.php?num=15708&cpt=21
+Lyon 2336,Jerf el Ahmar,36.39167,38.20833,75-631,9545,70,,S (graines),www.archeometrie.mom.fr/bandadora/echantillon.php?num=15711&cpt=24
+Lyon 2337,Jerf el Ahmar,36.39167,38.20833,77-636-US 199 Ouest,9900,70,,S (graines),www.archeometrie.mom.fr/bandadora/echantillon.php?num=15713&cpt=26
+Lyon 2597,Jerf el Ahmar,36.39167,38.20833,61-305 - US E9,9960,70,,S (cereales),www.archeometrie.mom.fr/bandadora/echantillon.php?num=15702&cpt=15
+Lyon 2598,Jerf el Ahmar,36.39167,38.20833,64-262 - US C4A,9715,65,,S (cereales),www.archeometrie.mom.fr/bandadora/echantillon.php?num=15703&cpt=16
+Lyon 2599,Jerf el Ahmar,36.39167,38.20833,70-614,9890,60,,S (graines),www.archeometrie.mom.fr/bandadora/echantillon.php?num=15706&cpt=19
+Lyon 2600,Jerf el Ahmar,36.39167,38.20833,74-514 - US 12,10595,75,,S (graines),www.archeometrie.mom.fr/bandadora/echantillon.php?num=15710&cpt=23
+Lyon 2601,Jerf el Ahmar,36.39167,38.20833,76-564- US 131 Ouest,9580,65,,S (graines),www.archeometrie.mom.fr/bandadora/echantillon.php?num=15712&cpt=25
+Lyon 2602,Jerf el Ahmar,36.39167,38.20833,78-654 US 209 Ouest,9835,70,,S (graines),www.archeometrie.mom.fr/bandadora/echantillon.php?num=15714&cpt=27
+Lyon 2809,Jerf el Ahmar,36.39167,38.20833,EA 47-Niv3/Est-135,9835,55,,S (graines),www.archeometrie.mom.fr/bandadora/echantillon.php?num=17445&cpt=28
+BM 105,Jericho,31.87106,35.44392,FI IVA.iiib,10250,200,,CH,Burleigh 1981:504
+BM 106,Jericho,31.87106,35.44392,"D I, VIA x-xi[1]",10300,200,,CH,Burleigh 1981:503
+BM 110,Jericho,31.87106,35.44392,"D II, IX xxii-xxiii",10180,200,,CH,Burleigh 1981:503
+BM 115,Jericho,31.87106,35.44392,"E I, II, V XII.xliia",9170,200,,CH,Burleigh 1981:504
+BM 1320,Jericho,31.87106,35.44392,MI XI lv,8540,65,,CH,Burleigh 1981:504
+BM 1321,Jericho,31.87106,35.44392,FI VIIIA.xvib,9230,80,,CH,Burleigh 1981:504
+BM 1322,Jericho,31.87106,35.44392,FI IVA.iiib,9380,85,,CH,Burleigh 1981:504
+BM 1323,Jericho,31.87106,35.44392,"D I, VIA x-xi",9380,85,,CH,Burleigh 1981:503
+BM 1324,Jericho,31.87106,35.44392,E VI.xxvii,9430,85,,CH,Burleigh 1981:503
+BM 1326,Jericho,31.87106,35.44392,FI VIIIA.xvib,9230,220,,CH,Burleigh 1981:504
+BM 1327,Jericho,31.87106,35.44392,FI IVA.iiib,9560,65,,CH,Burleigh 1981:504
+BM 1407,Jericho,31.87106,35.44392,"EI,II,V ph I,ii",11090,90,,CH,Burleigh 1981:503
+BM 1769,Jericho,31.87106,35.44392,MI XI lvia,8700,110,,CH,Burleigh 1983:763
+BM 1770,Jericho,31.87106,35.44392,MI XI.lxa,8680,70,,CH,Burleigh 1983:763
+BM 1771,Jericho,31.87106,35.44392,MI XIII.lxxa,8660,260,,CH,Burleigh 1983:763
+BM 1772,Jericho,31.87106,35.44392,MI XIII.lxxiv-XIV.lxxv,8810,100,,CH,Burleigh 1983:763
+BM 1773,Jericho,31.87106,35.44392,MI XIV.lxxvi,8730,80,,CH,Burleigh 1983:763
+BM 1787,Jericho,31.87106,35.44392,FI VIIIA.xv,9280,100,,CH,Burleigh 1983:763
+BM 1789,Jericho,31.87106,35.44392,FI IX.xx-xxia,9200,70,,CH,Burleigh 1983:763
+BM 1793,Jericho,31.87106,35.44392,DI XIV.xxxvii,8660,130,,CH,Burleigh 1983:763
+BM 250,Jericho,31.87106,35.44392,"D I, IVA iva",10300,500,,CH,Burleigh 1981:503
+BM 251,Jericho,31.87106,35.44392,"D II, VI via",9390,150,,CH,Burleigh 1981:503
+BM 252,Jericho,31.87106,35.44392,"D I, VIIIA xvia",9320,150,,CH,Burleigh 1981:503
+BM 253,Jericho,31.87106,35.44392,"E I, II, V XIII.i",8710,150,,CH,Burleigh 1981:504
+GL 28,Jericho,31.87106,35.44392,"EI, II, V XIII.lív",8200,200,,CH,Burleigh 1981:504
+GL 36,Jericho,31.87106,35.44392,"EI, II, V XIII.li",8390,200,,CH,Burleigh 1981:504
+GL 38,Jericho,31.87106,35.44392,FI XVII.xxx,7800,160,,CH,Burleigh 1981:504
+GL 39,Jericho,31.87106,35.44392,FI VIIIB.xviia,8870,150,,CH,Burleigh 1981:504
+GL 40,Jericho,31.87106,35.44392,FI VIIIB.xviia,8690,150,,CH,Burleigh 1981:504
+GL 41,Jericho,31.87106,35.44392,FI XVII.xxx,8670,150,,CH,Burleigh 1981:504
+GL 42,Jericho,31.87106,35.44392,FI XVII.xxx,8700,200,,CH,Burleigh 1981:504
+GL 43,Jericho,31.87106,35.44392,FI VIIIB.xviia,8895,150,,CH,Burleigh 1981:504
+GL 46,Jericho,31.87106,35.44392,FI VIIIB.xviia,7300,200,,CH,Burleigh 1981:504
+GL 69,Jericho,31.87106,35.44392,"EI,II,V ph I,ii",9850,240,,CH,Burleigh 1981:503
+GL 70,Jericho,31.87106,35.44392,"EI,II,V ph I,ii",10800,180,,CH,Burleigh 1981:503
+GL 72,Jericho,31.87106,35.44392,"EI,II,V ph I,ii",9800,240,,CH,Burleigh 1981:503
+GrN 942,Jericho,31.87106,35.44392,FI XVII.xxx,9140,70,,CH,Burleigh 1981:504
+GrN 963,Jericho,31.87106,35.44392,FI XVII.xxx,9025,100,,CH,Burleigh 1981:504
+P 376,Jericho,31.87106,35.44392,"EI,II,V ph I,ii",11166,107,,CH,Burleigh 1981:503
+P 377,Jericho,31.87106,35.44392,E IV.viii,9582,89,,CH,Burleigh 1981:503
+P 378,Jericho,31.87106,35.44392,FI IVA.iiib,9775,110,,CH,Burleigh 1981:504
+P 379,Jericho,31.87106,35.44392,"D I, VIA x-xi",9655,84,,CH,Burleigh 1981:503
+P 380,Jericho,31.87106,35.44392,"DI, XV A xxxviiia",8610,75,,CH,Burleigh 1981:504
+P 381,Jericho,31.87106,35.44392,"E I, II, V X.xlii",8658,101,,CH,Burleigh 1981:504
+P 382,Jericho,31.87106,35.44392,"EI, II, V XII.xlviia",8956,103,,CH,Burleigh 1981:504
+OxA-1799,Jilat 7 (Wadi el-),31.5,36.41667,Area A C,5840,100,,,Edwards et al. 2004
+OxA-2413,Jilat 7 (Wadi el-),31.5,36.41667,"Area A-C, artifacts point to early PPNB, but date is probably intrusive from upper M/LPPNB-layers (1:193)",8390,80,,,Garrard et al. 1994
+OxA-526,Jilat 7 (Wadi el-),31.5,36.41667,early occupational fill,8810,110,,,Garrard et al. 1994
+OxA-527,Jilat 7 (Wadi el-),31.5,36.41667,middle occupational fill,8520,110,,,Garrard et al. 1994
+OxA 2798,Kebara Cave,32.57361,34.96882,D19R,12470,180,,B,Housley 1994:59
+UCLA?,Kebara Cave,32.57361,34.96882,B,11150,400,,B,Byrd 1994:218
+RTT 3733.1,Kfar HaHoresh,32.70556,35.27444,"""not possible to confidently place this sample within any specific stratigraphic level"" (1)",8650,50,,,"Goring-Morris, Boaretto, Weiner 2001"
+Beta 221347,Khirbet Hammam,30.98417,35.66583,Trench 2 - Level 3,8310,40,,CH,Peterson 2007:3
+Beta 223148,Khirbet Hammam,30.98417,35.66583,Trench 2- Level 4,8440,40,,CH,Peterson 2007:3
+GX-26146,Khirbet Hammam,30.98417,35.66583,5 cm above plaster floor; South unit.,8120,60,,CH,Peterson 2004:5
+GX-26147 AMS,Khirbet Hammam,30.98417,35.66583,"Cobble foundatin layer, underlying plaster-lined structure; South unit",8370,40,,CH,Peterson 2004:5
+Beta-178241,Körtik Tepe,37.81444,40.98389,,8370,40,,animal bone,"Özkaya, Coskun 2007; Özkaya, San 2007"
+Beta-178242,Körtik Tepe,37.81444,40.98389,,9870,40,,animal bone,"Özkaya, Coskun 2007; Özkaya, San 2007"
+ETH-38848,Körtik Tepe,37.81444,40.98389,"A80, Phase V, -365 cm",9985,40,-25.3,"CH, Quercus",Benz et al. 2010
+ETH-38849,Körtik Tepe,37.81444,40.98389,"A80, Phase II, -218 cm",10065,40,-25.2,"CH, Quercus",Benz et al. 2010
+ETH-38850,Körtik Tepe,37.81444,40.98389,"A80, Phase II, -238 cm",10035,40,-25.4,"CH, Pistacia",Benz et al. 2010
+ETH-38851,Körtik Tepe,37.81444,40.98389,"A 84, Phase III, -227 cm",10075,40,-25.3,"CH, Tamarix",Benz et al. 2010
+ETH-38852,Körtik Tepe,37.81444,40.98389,"A 84, Destruction level of Phase II, -198 cm",9965,45,-33,"CH, Tamarix",Benz et al. 2010
+ETH-38853,Körtik Tepe,37.81444,40.98389,"A80, Phase IV, -275 cm",10015,45,-25.1,CH Amygdalus,Benz et al. 2010
+ETH-38854,Körtik Tepe,37.81444,40.98389,"A 84, Phase IV, -284 cm",10000,40,-23.5,"CH, Populus",Benz et al. 2010
+ETH-38855,Körtik Tepe,37.81444,40.98389,"A 84, Phase IV, -285 cm",10040,40,-24,"CH, indet",Benz et al. 2010
+ETH-39509,Körtik Tepe,37.81444,40.98389,"A80, Phase VI, -427cm",9960,60,-29.9,"CH, Populus/Salix",Benz et al. 2010
+ETH-39510,Körtik Tepe,37.81444,40.98389,"A80, Phase I.2/II, -207 cm",9925,45,-34.4,"CH, Tamarix",Benz et al. 2010
+ETH-39511,Körtik Tepe,37.81444,40.98389,"A80, Phase III, -194 cm",10100,60,-27.6,"CH, Rhamnus",Benz et al. 2010
+ETH-39512,Körtik Tepe,37.81444,40.98389,"A80, Phase V, -348 cm",9955,45,-28.5,"CH, Tamarix",Benz et al. 2010
+ETH-45333,Körtik Tepe,37.81444,40.98389,"A104, Loc. 5, -459 cm",10155,50,-23.7,"CH, indet.",Coskun et al. 2012:28
+ETH-45334,Körtik Tepe,37.81444,40.98389,"A104, Loc.5, -468 cm",10205,40,-27.2,Populus/Salix,coskun et al. 2012:28
+ETH-45335,Körtik Tepe,37.81444,40.98389,"A104, Loc 5_2, -507 cm",10330,70,-34.1,Populus/Salix,Coskun et al. 2012:28
+ETH-45336,Körtik Tepe,37.81444,40.98389,"A104, Loc.5_2, -512 cm",10270,95,-26.1,"CH, indet.",Coskun et al. 2012:28
+ETH-45340,Körtik Tepe,37.81444,40.98389,"A80, C5, Phase VIII, -521 cm",10030,40,-25.1,indet. dicotyl.,Coskun et al. 2012:28
+ETH-45341,Körtik Tepe,37.81444,40.98389,"A 85, D5, -120m (probably old wood effect)",10015,40,-25.7+/-1.1,vitis fragment,nd Körtik Tepe Archive
+ETH-45342,Körtik Tepe,37.81444,40.98389,"A 85, D5, - 120 m.",9835,35,-25.0+/-1.1,CH populus/salix,nd Körtik Tepe Archive
+ETH-45344,Körtik Tepe,37.81444,40.98389,"A80, C4, -525 cm",10090,40,-26.4,"CH, fragm. of bark",Coskun et al. 2012
+KIA 44864,Körtik Tepe,37.81444,40.98389,"A 84; B-C5; BP 191., -374 cm.",10252,60,-24.3,Rye Seed,Özkaya and Coşkun (2011:103).
+Pta 3371,Maaleh Ramon East,30.58,34.75472,L1 30-35,10530,100,,CH,Byrd 1994:219
+Pta 3483,Maaleh Ramon East,30.58,34.75472,L1 25-30,10430,80,,CH,Byrd 1994:219
+Pta 3687,Maaleh Ramon West,30.56417,34.71139,?,10400,100,,CH,Schyle 1996:204
+RT 1068N,Maaleh Ramon West,30.56417,34.71139,?,10000,200,,CH,Byrd 1994:219
+GifA 100400,Mallaha,33.08289,35.57384,Niv. Ib2 (FIN),10540,90,,,Bocquentin 2007:67
+GifA 70012,Mallaha,33.08289,35.57384,"Niv. IB1, Structure 200",8740,40,,CH/B colletive sample,"Valladas, Kalteneker 2007"
+GifA 70013,Mallaha,33.08289,35.57384,"Niv. IB1, structure 230",10200,50,,CH/B colletive sample,"Valladas, Kalkeneker 2007"
+GifA 70014,Mallaha,33.08289,35.57384,Locus 239 (burials 174-178).,12250,60,,CH/B colletive sample,"Valladas, Kalkeneker 2007"
+GifA 99332,Mallaha,33.08289,35.57384,Niv. Ib2 (FIN),10530,100,,,Bocquentin 2007:67
+Ly 1660,Mallaha,33.08289,35.57384,Niv. IV House 131,11590,540,,CH,Byrd 1994:218
+Ly 1661,Mallaha,33.08289,35.57384,Niv. III House 51,11740,570,,CH,Byrd 1994:218
+Ly 1662,Mallaha,33.08289,35.57384,Niv. III- House 51,11310,880,,CH,Byrd 1994:218
+RTT 4577,Motza,31.79333,35.16895,"3612 sq.B upper, L 2082; Sample ID: 37",8965,45,,CH,Khalaily et al. 2007
+RTT 4579,Motza,31.79333,35.16895,"3612, sq B upper, L 2138; Sample ID: 45",8890,45,,CH,Khalaily et al. 2007
+RTT 4749,Motza,31.79333,35.16895,"N19a, Depth: 587.91",9130,30,,B,Yizhaq et al. 2005
+RTT 4750,Motza,31.79333,35.16895,"N18d, Depth: 587.97",9310,30,,B,Yizhaq et al. 2005
+RTT 4751,Motza,31.79333,35.16895,"N18d, Depth: 588.18",9100,30,,B,Yizhaq et al. 2005
+RTT 4752,Motza,31.79333,35.16895,"N18a, Depth: 588.35",9210,25,,B,Yizhaq et al. 2005
+RTT 4753,Motza,31.79333,35.16895,"O19c, Depth: 589.01",8995,35,,B,Yizhaq et al. 2005
+RTT 4865,Motza,31.79333,35.16895,"N19a, Depth 588.88",9080,30,,CH,Yizhaq et al. 2005
+RTT 4866,Motza,31.79333,35.16895,east wall depth: 588.19,9150,35,,CH,Yizhaq et al. 2005
+RTT 4867,Motza,31.79333,35.16895,"East wall, deapth: 588.24",9200,40,,CH,Yizhaq et al. 2005
+TO 11710,Motza,31.79333,35.16895,"""PPNA?"" Sample: 41286",9870,90,,CH,Khalaily et al. 2007
+TO 11711,Motza,31.79333,35.16895,"EPPNB, Sample: 50761",9050,80,,CH,Khalaily et al. 2007
+TO 11712,Motza,31.79333,35.16895,"EPPNB, Sample: 50779",9170,80,,CH,Khalaily et al. 2007
+M-1792,Munhata,32.60306,35.55333,,7370,400,,,Perrot 1964; 1966
+M-1793,Munhata,32.60306,35.55333,,9160,500,,,Perrot 1964; 1966
+GrA-20636 (Lyon -1928),Mureybet,36.06833,38.09056,"Phase IVA;Niv. 19; AD34, 9,35-9,42.",9300,70,,Z,"Evin, Stordeur 2008:27"
+Lv 604,Mureybet,36.06833,38.09056,Phase III,9730,140,,CH,Hours et al. 1994:405
+Lv 605,Mureybet,36.06833,38.09056,"Phase IB [n. Cauvin]; Phase IIA , Niv. 6 [n. Evin, Stordeur]; Fosse-foyer 10",10590,170,,CH,Cauvin 1987:326
+Lv 606,Mureybet,36.06833,38.09056,"Phase IIB, Fosse-foyer 2",10460,200,,CH,Cauvin 1987:326
+Lv 607,Mureybet,36.06833,38.09056,"Phase IB; Niv. 4; -P32,B4",10590,140,,CH,Cauvin 1978:326
+Ly-11.625,Mureybet,36.06833,38.09056,Phase IIIA; Niv.13; Maison 57,9435,90,,CH,"Evin, Stordeur 2008:29"
+Ly-11.628,Mureybet,36.06833,38.09056,"Phase IIIB; Niv. 16b; Maison 19, so.",9320,50,,CH,"Evin, Stordeur 2008:28"
+Ly-11.629,Mureybet,36.06833,38.09056,Phase IIIB; Niv. 16b; Fosse-Foyer 16,8510,80,,CH,"Evin, Stordeur 2008:28"
+Ly11.623,Mureybet,36.06833,38.09056,Phase IA?;Niv. 2?; Fosse-foyer 25,9940,50,,CH,"Evin, Stordeur 2008:29"
+Ly11.624,Mureybet,36.06833,38.09056,"Phase IIB, Niv. 8; Q32A2 base",9080,155,,CH,"Evin, Stordeur 2008:29"
+Ly11.626,Mureybet,36.06833,38.09056,"Phase IIIA, Niv. 14a Bâtiment 47",9455,45,,CH,"Evin, Stordeur 2008:28"
+Ly11.627,Mureybet,36.06833,38.09056,"Phase IIIA, Niv.14a; Fosse-foyer 31",9400,110,,CH,"Evin, Stordeur 2008:28"
+Ly11.630,Mureybet,36.06833,38.09056,"Phase IIIA, Niv. 14b Bâtiment 46",9505,50,,CH,"Evin, Stordeur 2008:28"
+Ly11.787,Mureybet,36.06833,38.09056,"Phase IB, Niv. 3; Q33 B3b",9905,60,,CH,"Evin, Stordeur 2008:29"
+Ly11.788,Mureybet,36.06833,38.09056,"Phase IIA, Niv.6; Q32C7",9945,50,,CH,"Evin, Stordeur 2008:29"
+Ly11622,Mureybet,36.06833,38.09056,"Phase IA, Niv 2, Fosse-foyer 32",16560,70,,CH,"Evin, Stordeur 2008.29"
+Lyon OxA 2158,Mureybet,36.06833,38.09056,Phase IVB;Niv. 20; AD28; Niv 14,9190,55,,S,"Evin, Stordeur 2008:27"
+MC 611,Mureybet,36.06833,38.09056,"Phase IIIB, S32 A2",9840,200,,CH,Cauvin 1987:327
+MC 612,Mureybet,36.06833,38.09056,"Phase IIIB, Niv. 16-17; S32 A2",9520,150,,CH,Cauvin 1987:327
+MC 613,Mureybet,36.06833,38.09056,"Phase IIIB, Niv. 16b; Maison 14",9620,200,,CH,Cauvin 1987:327
+MC 614,Mureybet,36.06833,38.09056,"Phase IIIB, Niv.16b; Fosse-foyer 16.",9570,200,,CH,Cauvin 1987:327
+MC 615,Mureybet,36.06833,38.09056,"Phase IIIB, Niv.15a S32 C1",9540,110,,CH,Cauvin 1987:327
+MC 616,Mureybet,36.06833,38.09056,"Phase IIIA, Niv. 14a; Maison 22",9675,110,,CH,Cauvin 1987:327
+MC 635,Mureybet,36.06833,38.09056,"Phase IA; Niv 2?; Q33, B4, Fosse-foyer 25",10170,200,,CH,Byrd 1994:221
+MC 674,Mureybet,36.06833,38.09056,"Phase IA; Niv.2?; Q33, B4, Fosse-foyer 25",10090,170,,CH,"Evin, Stordeur 2008:29"
+MC 675,Mureybet,36.06833,38.09056,"Phase IA; Niv 2; Q33, B4",10350,150,,CH,Byrd 1994:221
+MC 731,Mureybet,36.06833,38.09056,"Phase IA; Niv 1; Q22,B4",10230,170,,CH,Byrd 1994:221
+MC 732,Mureybet,36.06833,38.09056,"Phase IA; Niv 2; Q32,E1c",10230,170,,CH,Byrd 1994:221
+MC 733,Mureybet,36.06833,38.09056,"Phase IA; Niv 2; R34, B1a",10030,150,,CH,"Evin, Stordeur 2008:29"
+MC 734,Mureybet,36.06833,38.09056,Phase IIIA; Niv. 14a; Bâtiment 47,9950,150,,CH,Cauvin 1987:327
+MC 862,Mureybet,36.06833,38.09056,"Phase IVA;Niv. 19; AD34, 8,94m",9130,150,,,Hours et al. 1994:248
+MC-736,Mureybet,36.06833,38.09056,Phase IVB;Niv. 20; AD28; Niv. 14,9280,150,,,Hours et al. 1994:248
+MC-737,Mureybet,36.06833,38.09056,Phase IVB;Niv. 20; AD28; Niv. 15,8910,150,,,Hours et al. 1994:248
+MC-861,Mureybet,36.06833,38.09056,"Phase IVA;Niv. 19; AD34, 8,34m",9600,150,,,Hours et al. 1994:248
+MC-863,Mureybet,36.06833,38.09056,"Phase IVA;Niv.19; AD34, 9,20m",9030,150,,,Hours et al. 1994:248
+MC735,Mureybet,36.06833,38.09056,Phase IIIA; Niv. 14a; Maison 22,9730,150,,CH,Cauvin 1987:327
+P 1215,Mureybet,36.06833,38.09056,Phase II?Level I v. Loon,10006,96,,CH,"Radiocarbon 11, 1969, 151"
+P 1216,Mureybet,36.06833,38.09056,Phase II;Level I v. Loon,10092,118,,CH,"Radiocarbon 11, 1969, 151"
+P 1217,Mureybet,36.06833,38.09056,Phase II?Level II v. Loon,10215,117,,CH,"Radiocarbon 11, 1969, 151"
+P 1220,Mureybet,36.06833,38.09056,Phase IIIA?,9885,115,,CH,Cauvin 1987:327
+P 1224,Mureybet,36.06833,38.09056,Phase IIIB?,9492,122,,CH,Cauvin 1987:327
+P1222,Mureybet,36.06833,38.09056,Phase IIIB?,9904,114,,CH,"Radiocarbon 11, 1969, 152"
+Gd 4465,M’lefaat,36.3,43.55,Upper Layer: hearth A,10850,200,,CH,Kozlowski 1994:262f.
+Gd 4483,M’lefaat,36.3,43.55,"House 4, fill",12810,660,,CH,Kozlowski 1994:262f.
+Gd 4652,M’lefaat,36.3,43.55,"House 8, fill",13830,300,,CH,Kozlowski 1994:262f.
+Gd 4658,M’lefaat,36.3,43.55,"House 8, foundation",12360,280,,CH,Kozlowski 1994:262f.
+Gd 6149,M’lefaat,36.3,43.55,"House 3A, fill",10290,180,,CH,Kozlowski 1994:262f.
+Gd 6150,M’lefaat,36.3,43.55,Upper Layer: hearth B,10890,140,,CH,Kozlowski 1994:262f.
+Gd 6356,M’lefaat,36.3,43.55,"House 8, floor",9630,130,,CH,Kozlowski 1994:262f.
+Gd 6363,M’lefaat,36.3,43.55,Upper Layer: house fill 3,13540,180,,CH,Kozlowski 1994:262f.
+OxA 3747,M’lefaat,36.3,43.55,"Houses 3, upper layer",9870,140,,S (Lens sp.),Kozlowski 1994:262f.; Kozlowski 1998 b.
+OxA 3748,M’lefaat,36.3,43.55,"House 8, bottom layer",9890,120,,S (Lens sp.),"Kozlowski 1994:262f., Kozlowski 1998b."
+OxA 3749,M’lefaat,36.3,43.55,"House 8, bottom layer",9660,250,,S (Lens sp.),"Kozlowski 1994:262f., Kozlowski 1998b."
+OxA 3819,M’lefaat,36.3,43.55,"House 3, upper layer",9680,100,,S (Lens sp.),"Kozlowski 1994:262f., Kozlowski 1998b."
+I 9766,Nachcharini Cave,34.06667,36.5,Niveau 4c,7340,165,,?,Hours et al. 1994:407
+I 9768,Nachcharini Cave,34.06667,36.5,Niveau 4d1,8980,275,,?,Hours et al. 1994:407
+I-9567,Nachcharini Cave,34.06667,36.5,Niveau 4a,7505,140,,,Hours et al. 1994:254
+I-5501,Nahal Divshon,30.83333,34.78333,Layer 6,8620,140,,,"Kuijt, Bar-Yosef 1994:240"
+SMU-3,Nahal Divshon,30.83333,34.78333,Layer 6,8900,180,,,"Kuijt, Bar-Yosef 1994:240"
+Tx-1125,Nahal Divshon,30.83333,34.78333,Layer 5/6,8170,165,,,"Kuijt, Bar-Yosef 1994:240"
+BM 2298,Nahal Hemar Cave,31.14167,35.37222,Stratum 3A,8250,70,,CH,"Bar-Yosef, Alon 1988"
+BM 2300,Nahal Hemar Cave,31.14167,35.37222,Stratum 3B,8690,70,,String,"Bar-Yosef, Alon 1988"
+BM2299,Nahal Hemar Cave,31.14167,35.37222,Stratum 4,9210,300,,Linen,"Bar-Yosef, Alon 1988"
+OxA 1014,Nahal Hemar Cave,31.14167,35.37222,Stratum 3A,8600,120,,net fragments,"Bar-Yosef, Alon 1988"
+Oxa 1015,Nahal Hemar Cave,31.14167,35.37222,Stratum 3A,8500,220,,Piece of twined napkin,"Bar-Yosef, Alon 1988"
+OxA 1016,Nahal Hemar Cave,31.14167,35.37222,Stratum 4,8810,120,,"""knotted fabric""","Bar-Yosef, Alon 1988"
+Pta 3625,Nahal Hemar Cave,31.14167,35.37222,Stratum 4,8850,90,,Linen,"Bar-Yosef, Alon 1988"
+Pta 3650,Nahal Hemar Cave,31.14167,35.37222,Stratum 3A,8270,80,,CH,"Bar-Yosef, Alon 1988"
+RT 650,Nahal Hemar Cave,31.14167,35.37222,Stratum 3A,8100,100,,CH,"1) Bar-Yosef, Alon 1988 2) Bar-Yosef 2003."
+Pta 2999,Nahal Issaron,29.88333,35,Layer B,8460,80,,CH,"Kuijt, Bar-Yosef 1994:240"
+Pta 3000,Nahal Issaron,29.88333,35,Layer C,8430,80,,CH,"Kuijt, Bar-Yosef 1994:240"
+Pta 3376,Nahal Issaron,29.88333,35,Layer C,8050,80,,CH,"Kuijt, Bar-Yosef 1994:240"
+Pta 3377,Nahal Issaron,29.88333,35,Layer C,8180,80,,CH,"Kuijt, Bar-Yosef 1994:240"
+BM 764,Nahal Oren,32.71639,34.98333,,10046,,,CH,Bocquentin 2003:169
+OxA 5010,Nahal Oren,32.71639,34.98333,,9480,,,CH/B,"Archaeometry 38,1,1996,196"
+Pta 2848,Nahal Reu'el,29.96278,34.97694,,8670,60,,CH,"Kuijt, Bar-Yosef 1994:240"
+Pta 3137,Nahal Reu'el,29.96278,34.97694,,8620,60,,CH,"Kuijt, Bar-Yosef 1994:240"
+Pta 3202,Nahal Reu'el,29.96278,34.97694,,8550,60,,CH,"Kuijt, Bar-Yosef 1994:240"
+Gd 2637+,Nemrik 9,36.71667,42.85,"Phase 4, stone pavement Are 96",8440,130,,SH,Kozlowski 1994:261f.
+Gd 2714+,Nemrik 9,36.71667,42.85,Phase 2,10900,140,,SH,Kozlowski 1994:261f.
+Gd 2766,Nemrik 9,36.71667,42.85,Phase 3 collapsed roof of house 1A,9570,130,,CH,Kozlowski 1994:261f.
+Gd 2773,Nemrik 9,36.71667,42.85,"Phase 3, collapsed roof of house 1A",9480,170,,CH,Kozlowski 1994:261f.
+Gd 2778+,Nemrik 9,36.71667,42.85,"Phase 3, collapsed roof of house 1A",9010,170,,CH,Kozlowski 1994:261f.
+Gd 2936,Nemrik 9,36.71667,42.85,Phase 4,9170,130,,CH,Kozlowski 1994:261f.
+Gd 2937+,Nemrik 9,36.71667,42.85,Phase 4,9740,150,,CH,Kozlowski 1994:261f.
+Gd 2963,Nemrik 9,36.71667,42.85,Phase 2,9780,130,,CH,Kozlowski 1994:261f.
+Gd 2966,Nemrik 9,36.71667,42.85,Phase 3,9440,160,,CH,Kozlowski 1994:261f.
+Gd 2970,Nemrik 9,36.71667,42.85,Phase 2,10070,120,,CH,Kozlowski 1994:261f.
+Gd 2971+,Nemrik 9,36.71667,42.85,Phase 3,10330,150,,CH,Kozlowski 1994:261f.
+Gd 2972,Nemrik 9,36.71667,42.85,Phase 3,9490,170,,CH,Kozlowski 1994:261f.
+Gd 2973,Nemrik 9,36.71667,42.85,Phase 2,10400,190,,CH,Kozlowski 1994:261f.
+Gd 4193,Nemrik 9,36.71667,42.85,Phase 3 collapsed roof of house 1A,9500,130,,CH,Kozlowski 1994:261f.
+Gd 4204+,Nemrik 9,36.71667,42.85,Phase 2,7980,140,,CH,Kozlowski 1994:261f.
+Gd 4205+,Nemrik 9,36.71667,42.85,"Phase 2, middle cultural layer; near house 1A",9000,150,,CH,Kozlowski 1994:261f.
+Gd 4208+,Nemrik 9,36.71667,42.85,Phase 3,10100,130,,CH,Kozlowski 1994:261f.
+Gd 4209+,Nemrik 9,36.71667,42.85,Phase 3,10040,130,,CH,Kozlowski 1994:261f.
+Gd 4210,Nemrik 9,36.71667,42.85,Phase 3/4 collapsed roof of house 1A,10180,190,,CH,Kozlowski 1994:261f.
+Gd 4211,Nemrik 9,36.71667,42.85,Phase 3 collapsed roof of house 1A,10260,170,,CH,Kozlowski 1994:261f.
+Gd 4212,Nemrik 9,36.71667,42.85,Phase 3 collapsed roof Haus 1A,10480,180,,CH,Kozlowski 1994:261f.
+Gd 4213,Nemrik 9,36.71667,42.85,Phase 4,9410,550,,CH,Kozlowski 1994:261f.
+Gd 4224,Nemrik 9,36.71667,42.85,Phase 3,9930,230,,CH,Kozlowski 1994:261f.
+Gd 4364,Nemrik 9,36.71667,42.85,Phase 2,9030,400,,CH,Kozlowski 1994:261f.
+Gd 4365,Nemrik 9,36.71667,42.85,Phase 3,9140,150,,CH,Kozlowski 1994:261f.
+Gd 4371,Nemrik 9,36.71667,42.85,Phase 2,9770,520,,CH,Kozlowski 1994:261f.
+Gd 4372,Nemrik 9,36.71667,42.85,Phase 2,9770,240,,CH,Kozlowski 1994:261f.
+Gd 4453,Nemrik 9,36.71667,42.85,Phase 3,9639,160,,CH,Kozlowski 1994:261f.
+Gd 4463,Nemrik 9,36.71667,42.85,Phase 2,8910,220,,CH,Kozlowski 1994:261f.
+Gd 4469,Nemrik 9,36.71667,42.85,Phase 1/2,11090,190,,CH,Kozlowski 1994:261f.
+Gd 4473,Nemrik 9,36.71667,42.85,Phase 3,12240,340,,CH,Kozlowski 1994:261f.
+Gd 4474,Nemrik 9,36.71667,42.85,Phase 3,9640,300,,CH,Kozlowski 1994:261f.
+Gd 4475,Nemrik 9,36.71667,42.85,Phase 2,10370,330,,CH,Kozlowski 1994:261f.
+Gd 4477,Nemrik 9,36.71667,42.85,Phase 2,11150,560,,CH,Kozlowski 1994:261f.
+Gd 4478,Nemrik 9,36.71667,42.85,Phase 3,10700,190,,CH,Kozlowski 1994:261f.
+Gd 5186,Nemrik 9,36.71667,42.85,"Phase 4, house 4, 8m NE of House 1",9170,90,,SH,Kozlowski 1994:261f.
+Gd 5240+,Nemrik 9,36.71667,42.85,Phase 3,9130,60,,CH,Kozlowski 1994:261f.
+Gd 5249+,Nemrik 9,36.71667,42.85,"Phase 3, pit 18, house 1A",11180,90,,CH,Kozlowski 1994:261f.
+Gd 5257,Nemrik 9,36.71667,42.85,Phase 3,10020,180,,CH,Kozlowski 1994:261f.
+Gd 5421,Nemrik 9,36.71667,42.85,Phase 3,9250,70,,CH,Kozlowski 1994:261f.
+Gd 5422+,Nemrik 9,36.71667,42.85,Phase 4,8750,80,,CH,Kozlowski 1994:261f.
+Gd 5424+,Nemrik 9,36.71667,42.85,Phase 4,9140,90,,CH,Kozlowski 1994:261f.
+Gd 5425+,Nemrik 9,36.71667,42.85,Phase 3,9140,90,,CH,Kozlowski 1994:261f.
+Gd 5443+,Nemrik 9,36.71667,42.85,Phase 2,9420,90,,CH,Kozlowski 1994:261f.
+Gd 5451+,Nemrik 9,36.71667,42.85,Phase 3,10700,120,,CH,Kozlowski 1994:261f.
+Gd 5595+,Nemrik 9,36.71667,42.85,Phase 4,9950,100,,CH,Kozlowski 1994:261f.
+Gd 6108+,Nemrik 9,36.71667,42.85,Phase 4,8300,130,,CH,Kozlowski 1994:261f.
+Gd 6110,Nemrik 9,36.71667,42.85,Phase 2,9970,170,,CH,Kozlowski 1994:261f.
+Gd 6111,Nemrik 9,36.71667,42.85,Phase 2,10130,180,,CH,Kozlowski 1994:261f.
+Gd 6113+,Nemrik 9,36.71667,42.85,Phase 4,8570,150,,CH,Kozlowski 1994:261f.
+Gd 6119+,Nemrik 9,36.71667,42.85,Phase 3,8300,150,,CH,Kozlowski 1994:261f.
+Gd 6120,Nemrik 9,36.71667,42.85,Phase 3,9530,140,,CH,Kozlowski 1994:261f.
+Gd 6121,Nemrik 9,36.71667,42.85,Phase 2,9780,180,,CH,Kozlowski 1994:261f.
+Gd 6127,Nemrik 9,36.71667,42.85,Phase 2,9800,160,,CH,Kozlowski 1994:261f.
+Gd 6128,Nemrik 9,36.71667,42.85,Phase 1,9870,160,,CH,Kozlowski 1994:261f.
+Gd 6129,Nemrik 9,36.71667,42.85,Phase 3,9510,150,,CH,Kozlowski 1994:261f.
+Gd 6130,Nemrik 9,36.71667,42.85,Phase 3,9230,160,,CH,Kozlowski 1994:261f.
+Gd 6131,Nemrik 9,36.71667,42.85,Phase 3,9370,120,,CH,Kozlowski 1994:261f.
+Gd 6143,Nemrik 9,36.71667,42.85,Phase 2,9900,140,,CH,Kozlowski 1994:261f.
+Gd 6152+,Nemrik 9,36.71667,42.85,Phase 4,9800,130,,CH,Kozlowski 1994:261f.
+OxA 744,Netiv Hagdud,31.98333,35.45,Loc.1004,9700,150,,S,"Bar-Yosef, Gopher 1997:67"
+Pta 4555,Netiv Hagdud,31.98333,35.45,Loc.1012,9750,90,,CH,"Bar-Yosef, Gopher 1997:67"
+Pta 4556,Netiv Hagdud,31.98333,35.45,Loc.1006,9660,70,,CH,"Bar-Yosef, Gopher 1997:67"
+Pta 4557,Netiv Hagdud,31.98333,35.45,Loc.1001,9780,90,,CH,"Bar-Yosef, Gopher 1997:67"
+Pta 4590,Netiv Hagdud,31.98333,35.45,Loc.1007,9700,80,,CH,"Bar-Yosef, Gopher 1997:67"
+RT 502A,Netiv Hagdud,31.98333,35.45,"Section, ""may correspond to the level of loci 1004, 1006"" (1:66)",9730,380,,CH,"Bar-Yosef, Gopher 1997"
+RT 502C,Netiv Hagdud,31.98333,35.45,"1,5m",10180,300,,CH,"Bar-Yosef, Gopher 1997:66"
+RT 762A,Netiv Hagdud,31.98333,35.45,Loc.1000,9680,140,,CH,"Bar-Yosef, Gopher 1997:67"
+RT 762B,Netiv Hagdud,31.98333,35.45,Loc. 1002,9600,170,,CH,"Bar-Yosef, Gopher 1997:67"
+RT 762C,Netiv Hagdud,31.98333,35.45,Loc.1004,9970,150,,CH,"Bar-Yosef, Gopher 1997:67"
+RT 762D,Netiv Hagdud,31.98333,35.45,Loc. 1001,9400,180,,CH,"Bar-Yosef, Gopher 1997:67"
+RT 762F,Netiv Hagdud,31.98333,35.45,Loc.1006,9780,150,,CH,"Bar-Yosef, Gopher 1997:67"
+Hd 16781-835,Nevalı Çori,37.58333,38.66667,I/II,9261,181,,?,Morsch 2002
+Hd 16782-351,Nevalı Çori,37.58333,38.66667,I/II,9243,55,,Cereal,"Morsch 2002; Grupe, Peters 2008"
+Hd16783-769,Nevalı Çori,37.58333,38.66667,I/II,9212,76,,Cereal,"Morsch 2002; Grupe, Peters 2008."
+Hd16784-768,Nevalı Çori,37.58333,38.66667,"III-V (?) (area H5, pit 277)",9882,224,,,www.canew.org
+KIA 14756,Nevalı Çori,37.58333,38.66667,"III-V (area H5, pit 277, NC 0108)",9263,42,,B (animal),"www.canew.org; Grupe, Peters 2008"
+KIA 14757,Nevalı Çori,37.58333,38.66667,"III-V (area G4/5, House 1, NC 0107)",9020,41,,B (animal),"www.canew.org; Grupe, Peters 2008"
+KIA 14758,Nevalı Çori,37.58333,38.66667,"III-V (area F7, pit 291, NC 0106)",8864,48,,B (animal),"www.canew.org; Grupe, Peters 2008"
+KIA 14759,Nevalı Çori,37.58333,38.66667,"III-V (area H4N, pit 278, spit 29, NC 0105)",8213,132,,,www.canew.org
+KIA 14760,Nevalı Çori,37.58333,38.66667,"III-V (area F5, pit 217, NC 0104)",9100,43,,B (animal),"www.canew.org; Grupe, Peters 2008"
+KIA 14761,Nevalı Çori,37.58333,38.66667,"III-V (area F5, pit 176, NC 0103)",8778,46,,B (animal),"www.canew.org; Grupe, Peters 2008"
+KIA 14762,Nevalı Çori,37.58333,38.66667,"III-V (area G7, pit 314, NC 0102)",9207,43,,B (animal),"www.canew.org; Grupe, Peters 2008"
+KIA 14763,Nevalı Çori,37.58333,38.66667,"III-V (area F5, pit 249, NC 0101)",8381,157,,,www.canew.org
+OxA 8234,Nevalı Çori,37.58333,38.66667,"II (burial 81, area FG 5, house 25, room 2)",8930,60,,B (human),www.canew.org
+OxA 8235,Nevalı Çori,37.58333,38.66667,"I (burial 89, area G8, house 25.",9180,60,,B (human),www.canew.org
+OxA 8236,Nevalı Çori,37.58333,38.66667,"I (burial 90, area G8, house 25, room 2",8960,60,,B (human),www.canew.org
+OxA 8247,Nevalı Çori,37.58333,38.66667,"IIIB (burial 72, area G5, house 6, roomo 4, wall 6).",8610,90,,B (human),"www.canew.org; Grupe, Peters 2008"
+OxA 8302,Nevalı Çori,37.58333,38.66667,"IIIA (burial 55, area G4/76-77, house 2, room 10, pit 22).",9205,55,,,www.canew.org
+OxA 8303,Nevalı Çori,37.58333,38.66667,"I (burial 86, area FG5, house 21A, room 4.",9280,55,,B (human),www.canew.org
+OxA 8381,Nevalı Çori,37.58333,38.66667,"IIIA (burial 61, area G4, house 2, room 8)",8710,100,,B (human),"www.canew.org; Grupe, Peters 2008"
+OxA 8382,Nevalı Çori,37.58333,38.66667,"IIIA (burial 76, area FG6, house 7, room 9).",8990,90,,B (human),"www.canew.org; Grupe, Peters 2008"
+Gd 11627,Qaramel (Tell),36.37778,37.27500,"Horizon 2, QRM 920/12",10170,70,,,Mazurowski et al. 2009
+Gd 11673,Qaramel (Tell),36.37778,37.27500,"Horizon 1, QRM 993/14",10280,90,,,Mazurowski et al. 2009
+Gd 11741,Qaramel (Tell),36.37778,37.27500,"Horizon 1, QRM 1442",10680,60,,,Mazurowski et al. 2009
+Gd 12502,Qaramel (Tell),36.37778,37.27500,"Horizon 2, QRM 894/13",10140,110,,,Mazurowski et al. 2009
+Gd 12503,Qaramel (Tell),36.37778,37.27500,"Horizon 1, QRM 948/9",10245,95,,,Mazurowski et al. 2009
+Gd 12504,Qaramel (Tell),36.37778,37.27500,"Horizon 2, QRM 926/10",10350,120,,,Mazurowski et al. 2009
+Gd 12506,Qaramel (Tell),36.37778,37.27500,"Horizon 1, QRM 958/19",10360,95,,,Mazurowski et al. 2009
+Gd 12510,Qaramel (Tell),36.37778,37.27500,"Horizon 1, QRM 918/18",10015,90,,,Mazurowski et al. 2009
+Gd 12514,Qaramel (Tell),36.37778,37.27500,"Horizon 1, QRM 893/21",10310,130,,,Mazurowski et al. 2009
+Gd 12515,Qaramel (Tell),36.37778,37.27500,"Horizon 1, QRM 988/15",10510,95,,,Mazurowski et al. 2009
+Gd 12637,Qaramel (Tell),36.37778,37.27500,"Horizon 3, QRM 1172",8220,100,,,Mazurowski et al. 2009
+Gd 12638,Qaramel (Tell),36.37778,37.27500,"Horizon 2, QRM 1275",7370,80,,,Mazurowski et al. 2009
+Gd 12639,Qaramel (Tell),36.37778,37.27500,"Horizon 1, QRM 1468",10250,80,,,Mazurowski et al. 2009
+Gd 12649,Qaramel (Tell),36.37778,37.27500,"Horizon 1, QRM 1445",9830,100,,,Mazurowski et al. 2009
+Gd 12651,Qaramel (Tell),36.37778,37.27500,"Horizon 1, QRM 1444",10080,90,,,Mazurowski et al. 2009
+Gd 12652,Qaramel (Tell),36.37778,37.27500,"Horizon 2, QRM 1325",10090,100,,,Mazurowski et al. 2009
+Gd 12797,Qaramel (Tell),36.37778,37.27500,"Horizon 2, QRM 2091/6",10440,120,,,Mazurowski et al. 2009
+Gd 12798,Qaramel (Tell),36.37778,37.27500,"Horizon 3, QRM 2055/4",10900,110,,,Mazurowski et al. 2009
+Gd 12799,Qaramel (Tell),36.37778,37.27500,"Horizon 1, QRM 1990/14",10620,120,,,Mazurowski et al. 2009
+Gd 12802,Qaramel (Tell),36.37778,37.27500,"Horizon 0, QRM 2056/13",11420,130,,,Mazurowski et al. 2009
+Gd 12811,Qaramel (Tell),36.37778,37.27500,"Horizon 2, QRM 1843/7",10180,110,,,Mazurowski et al. 2009
+Gd 12816,Qaramel (Tell),36.37778,37.27500,"Horizon 3, QRM 2079/3",9870,95,,,Mazurowski et al. 2009
+Gd 12817,Qaramel (Tell),36.37778,37.27500,"Horizon 3, QRM 1928/16",9420,100,,,Mazurowski et al. 2009
+Gd 12819,Qaramel (Tell),36.37778,37.27500,"Horizon 2, QRM 1882/11",9950,110,,,Mazurowski et al. 2009
+Gd 12820,Qaramel (Tell),36.37778,37.27500,"Horizon 3, QRM 2077/10",9880,80,,,Mazurowski et al. 2009
+Gd 15477,Qaramel (Tell),36.37778,37.27500,"Horizon 2, QRM 925/11",8860,110,,,Mazurowski et al. 2009
+Gd 15486,Qaramel (Tell),36.37778,37.27500,Horizon 1; QRM 949/25,10220,140,,,Mazurowski et al. 2009
+Gd 15488,Qaramel (Tell),36.37778,37.27500,"Horizon 3, QRM 1014/17",10590,150,,,Mazurowski et al. 2009
+Gd 15502,Qaramel (Tell),36.37778,37.27500,"Horizon 3, QRM 921/24",7490,185,,,Mazurowski et al. 2009
+Gd 15676,Qaramel (Tell),36.37778,37.27500,"Horizon 1, QRM 1324",10230,120,,,Mazurowski et al. 2009
+Gd 15679,Qaramel (Tell),36.37778,37.27500,"Horizon 1, QRM 1398",10700,140,,,Mazurowski et al. 2009
+Gd 15680,Qaramel (Tell),36.37778,37.27500,"Horizon 3, QRM 1268",10350,150,,,Mazurowski et al. 2009
+Gd 15681,Qaramel (Tell),36.37778,37.27500,"Horizon 1, QRM 1443",10280,150,,,Mazurowski et al. 2009
+Gd 16285,Qaramel (Tell),36.37778,37.27500,"Horizon 3, QRM 1420",10050,140,,,Mazurowski et al. 2009
+Gd 17124,Qaramel (Tell),36.37778,37.27500,"Horizon 0, QRM 651/8",11900,610,,,Mazurowski et al. 2009
+Gd 17249,Qaramel (Tell),36.37778,37.27500,"Horizon 1, QRM 919/20",10170,280,,,Mazurowski et al. 2009
+Gd 17293,Qaramel (Tell),36.37778,37.27500,"Horizon 0, QRM 1206",15020,280,,,Mazurowski et al. 2009
+Gd 18035,Qaramel (Tell),36.37778,37.27500,"Horizon 2, QRM 653/7",10130,540,,,Mazurowski et al. 2009
+Gd 18036,Qaramel (Tell),36.37778,37.27500,"Horizon 2, QRM 646/5",10040,460,,,Mazurowski et al. 2009
+Gd 18038,Qaramel (Tell),36.37778,37.27500,"Horizon 1, QRM 650/6",10320,440,,,Mazurowski et al. 2009
+Gd 18296,Qaramel (Tell),36.37778,37.27500,"Horizon 0, QRM 1202",14190,210,,,Mazurowski et al. 2009
+Gd 30004,Qaramel (Tell),36.37778,37.27500,"Horizon 2, QRM 524/1",9990,120,,,Mazurowski et al. 2009
+Gd 30005,Qaramel (Tell),36.37778,37.27500,"Horizon 2, QRM 652/2",10295,85,,,Mazurowski et al. 2009
+Gd 30006,Qaramel (Tell),36.37778,37.27500,"Horizon 2, QRM 612/3",9120,230,,,Mazurowski et al. 2009
+Gd 30007,Qaramel (Tell),36.37778,37.27500,"Horizon 2, QRM 647/4",9850,160,,,Mazurowski et al. 2009
+Gd 30017,Qaramel (Tell),36.37778,37.27500,"Horizon 4, QRM 904/16",9690,100,,,Mazurowski et al. 2009
+Gd 30062,Qaramel (Tell),36.37778,37.27500,"Horizon 2, QRM 1399",10360,80,,,Mazurowski et al. 2009
+Gd 30070,Qaramel (Tell),36.37778,37.27500,"Horizon 3, QRM 1248",10260,130,,,Mazurowski et al. 2009
+GdA 466,Qaramel (Tell),36.37778,37.27500,"Horizon 3, QRM 1379",9850,110,,,Mazurowski et al. 2009
+GdA 467,Qaramel (Tell),36.37778,37.27500,"Horizon 3, QRM 1422",8370,90,,,Mazurowski et al. 2009
+GdS 358,Qaramel (Tell),36.37778,37.27500,"Horizon 3, QRM 2068/9",9640,60,,,Mazurowski et al. 2009
+GdS 359,Qaramel (Tell),36.37778,37.27500,"Horizon 2, QRM 2078/5",9710,70,,,Mazurowski et al. 2009
+GdS 360,Qaramel (Tell),36.37778,37.27500,"Horizon 3, QRM 2059/15",9520,70,,,Mazurowski et al. 2009
+GdS 361,Qaramel (Tell),36.37778,37.27500,"Horizon 3, QRM 2067/8",9770,110,,,Mazurowski et al. 2009
+GdS 362,Qaramel (Tell),36.37778,37.27500,"Horizon 3, QRM 2066/12",9840,70,,,Mazurowski et al. 2009
+GdS 363,Qaramel (Tell),36.37778,37.27500,"Horizon 3, QRM 1964/1",9550,65,,,Mazurowski et al. 2009
+GdS 364,Qaramel (Tell),36.37778,37.27500,"Horizon 2, QRM 1975/2",9980,70,,,Mazurowski et al. 2009
+Beta-262212,Qarassa,,,"UV-67, lower level of architectural structure",8940,50,?,S,Ibáñez et al. 2010
+Beta-262213,Qarassa,,,Y67-D3 funerary level,9100,60,-24.1,S (cerealia),Ibáñez et al. 2014
+Beta-262292,Qarassa,,,"Structure 4, SU3",120,40,,CH,Terradas et al. 2013:52
+Beta-267370,Qarassa,,,"Structure 4, SU4",110,40,,CH,Terradas et al. 2013:52
+Beta-272103,Qarassa,,,Y67-E2 Phase 2,9320,50,-20.9,S (cerealia),Ibáñez et al. 2014
+Beta-274098,Qarassa,,,V67 Funerary level,9030,60,-24.4,S (cerealia),Ibáñez et al. 2014
+Beta-277177,Qarassa,,,Y67-E2 Phase 2,9300,50,-23.9,S (cerealia),Ibáñez et al. 2014
+Beta-280907,Qarassa,,,"Structure 10, SU3",40,30,,CH,Terradas et al. 2013:53
+Beta-280908,Qarassa,,,"Structure 10, SU3",1730,60,,B (gazella),Terradas et al. 2013:53
+Beta-290929,Qarassa,,,Y67-E3 Phase 1,9340,50,-22.7,S (Triticum monococcum sp.),Ibáñez et al. 2014; Balbo et al. 2012:8
+CNA-1058,Qarassa,,,"Zone 2, lower layer, J 41-42",9010,45,,?,Santana et al. 2012:206
+CNA-1059,Qarassa,,,"Zone 2, upper layer K-L 41-42",9110,35,,?,Santana et al. 2012:206
+CNA-1060,Qarassa,,,"Zone 2, lower layer, J41-42",9145,40,,?,Santana et al. 2012:206
+CNA-1065,Qarassa,,,Building roof construction,9300,45,,CH (charred branch BB 48; Pistacia sp.),Balbo et al. 2012:8
+CNA-1074,Qarassa,,,"Zone 2, upper layer, K-L 41-42",8960,45,,?,Santana et al. 2012:206
+OxA 3752,Qermez Dere,36.38333,42.43333,"CBR lower layers, same sample as OxA 3753 (2:29)",10145,90,,S (Lens sp.),"Archaeometry 38,1,1996"
+OxA 3753,Qermez Dere,36.38333,42.43333,"CBR lower layers, same sample as OxA 3752; collection of seed fragments (2:29)",11990,100,,S,Watkins 1995
+OxA 3754,Qermez Dere,36.38333,42.43333,RCK 501.1.,9580,95,,S (Lens sp.),"Archaeometry 38,1,1996"
+OxA 3755,Qermez Dere,36.38333,42.43333,RDI stratigraphically identical with RM,9710,85,,S (Lens sp.),"Archaeometry 38,1,1996"
+OxA 3756,Qermez Dere,36.38333,42.43333,RDM above RDN,10115,95,,S (Vicieae),"Archaeometry 38,1,1996"
+OxA 3757,Qermez Dere,36.38333,42.43333,RDN below RDM,9640,85,,S (Lens sp.),"Archaeometry 38,1,1996"
+I 7030,Rakefet Cave,32.65472,35.0725,,10580,140,,B,Byrd 1994:218
+I 7032,Rakefet Cave,32.65472,35.0725,,10980,260,,B,Byrd 1994:218
+GrN-4426,Ramad,33.42389,36.10778,"Niv I (base du carré ouest, est, sommet due carré nord)",8210,50,,,de Contenson 2000:21
+GrN-4427,Ramad,33.42389,36.10778,"Niv II (carrés ouest, est, nord) PPNB final!",7920,50,,,de Contenson 2000:21
+GrN-4428,Ramad,33.42389,36.10778,,8200,80,,,de Contenson 2000:21
+GrN-4821,Ramad,33.42389,36.10778,,8090,50,,,de Contenson 2000:21
+GrN-4822,Ramad,33.42389,36.10778,,7900,50,,,de Contenson 2000:21
+GrN-4823,Ramad,33.42389,36.10778,,7880,55,,,de Contenson 2000:21
+Pta 3001,Ramat Harif,30.50167,34.55389,L3 220-225,10300,100,,CH,Byrd 1994:219
+Pta 3009,Ramat Harif,30.50167,34.55389,L3 280,10500,100,,CH,Byrd 1994:219
+Pta 3284,Ramat Harif,30.50167,34.55389,L3 275-280,10380,100,,CH,Byrd 1994:219
+Pta 3285,Ramat Harif,30.50167,34.55389,L3 210-220,10390,100,,CH,Byrd 1994:219
+Pta 3286,Ramat Harif,30.50167,34.55389,L7 180-185,10100,100,,CH,Byrd 1994:219
+Pta 3288,Ramat Harif,30.50167,34.55389,L7 220-225,10250,100,,CH,Byrd 1994:219
+Gif-102,Ras Shamra,35.60167,35.78333,"niv: V C1-3 (14,80-13.10m)",9030,400,,,Hours et al. 1994:285
+Gif-3960,Ras Shamra,35.60167,35.78333,"niv: V C1-3 (14,80-13.10m)",7900,140,,,Hours et al. 1994:285
+P-459,Ras Shamra,35.60167,35.78333,"niv: V C1-3 (14,80-13.10m)",8142,100,,,Hours et al. 1994:285
+P-460,Ras Shamra,35.60167,35.78333,"niv: V C1-3 (14,80-13.10m)",8364,100,,,Hours et al. 1994:285
+OxA 2136,Saflulim,30.50222,34.57056,J21c 145-150,10930,130,,CH,Byrd 1994:218
+OxA 2869,Saflulim,30.50222,34.57056,?,11150,100,,CH,Byrd 1994:218
+Hv 2597,Sefunim Terrace,32.73889,35.97889,Layer V,7730,115,,,1) Edwards et al. 2004 2) Sayej 2004:43
+Hv 3368,Sefunim Terrace,32.73889,35.97889,Layer V,9395,130,,,1) Edwards et al. 2004 2) Sayej 2004:43
+KN-I 366,Sefunim Terrace,32.73889,35.97889,Layer V,9120,85,,,1) Edwards et al. 2004 2) Sayej 2004:43
+W179,Shanidar,36.83333,44.33333,B2,12400,400,,CH,Kozlowski 1994:261
+W667,Shanidar,36.83333,44.33333,B1,10600,300,,CH,Kozlowski 1994:261
+Aar-9335,Shkârat Msaied,30.44583,35.43972,Unit C In stone cist.,8880,80,,CH. Ephedra,Hermansen et al. 2006
+Aar-9336,Shkârat Msaied,30.44583,35.43972,Unit E,9590,90,,"CH, juniperus",Hermansen et al. 2006
+Aar-9337,Shkârat Msaied,30.44583,35.43972,Unit E,8885,70,,"CH, pistacia",Hermansen et al. 2006
+Wk-15159,Shkârat Msaied,30.44583,35.43972,Unit E,8977,60,,"CH, wood",Hermansen et al. 2006
+Wk-15160,Shkârat Msaied,30.44583,35.43972,Unit E,9144,55,,"CH, wood",Hermansen et al. 2006
+Pta 3003,Shunera,30.95056,34.58361,,11000,140,,,Hours et al. 1994:319
+Pta 3690,Shunera,30.95056,34.58361,,11700,140,,,Hours et al. 1994:319
+GrN-9831,Sinn (Tell el-),35.5,40.41667,,8170,100,,,Hours et al. 1994:322
+GrN-9832,Sinn (Tell el-),35.5,40.41667,,8280,40,,,Hours et al. 1994:322
+GrN-9833,Sinn (Tell el-),35.5,40.41667,,8650,50,,,Hours et al. 1994:322
+NITA2-11406,Wadi Abu Tulayha,30.50819,35.97139,,8409,41,,,Fujii 2007
+NITA2-11408,Wadi Abu Tulayha,30.50819,35.97139,,8464,51,,,Fujii 2007
+NITA2-11409,Wadi Abu Tulayha,30.50819,35.97139,,8443,51,,,Fujii 2007
+Beta 120204,Wadi Faynan,30.66083,35.45574,"Trench 1, 110",13010,50,,SH,"Mithen, Finlayson 2007:461"
+Beta-120205,Wadi Faynan,30.66083,35.45574,"Trench 1, 111",9690,50,,"CH wood, indet","Mithen, Finlayson 2007:461"
+Beta-120206,Wadi Faynan,30.66083,35.45574,"Trench 1, 111",9420,50,,"CH wood, indet","Mithen, Finlayson 2007:461"
+Beta-120207,Wadi Faynan,30.66083,35.45574,"Trench 1, 112",9400,50,,"CH wood, indet","Mithen, Finlayson 2007:461"
+Beta-120208,Wadi Faynan,30.66083,35.45574,"Trench 1, 112",12830,50,,SH,"Mithen, Finlayson 2007:461"
+Beta-120209,Wadi Faynan,30.66083,35.45574,"Trench 1, 114",11830,50,,SH,"Mithen, Finlayson 2007:461"
+Beta-120210,Wadi Faynan,30.66083,35.45574,"Trench 2, 210",10190,50,,CH wood indet.,"Mithen, Finlayson 2007:461"
+Beta-120211,Wadi Faynan,30.66083,35.45574,"Trench 2, 211",9890,50,,CH wood indet,"Mithen, Finlayson 2007:461"
+Beta-135110,Wadi Faynan,30.66083,35.45574,"Trench 3, 329",9180,50,,CH wood indet.,"Mithen, Finlayson 2007:461"
+Beta-135111,Wadi Faynan,30.66083,35.45574,"Trench 3, 332",10220,50,,CH wood indet.,"Mithen, Finlayson 2007:461"
+Beta-192520,Wadi Faynan,30.66083,35.45574,"Trench 1, 126",9900,40,,CH wood (ficus sp.),"Mithen, Finlayson 2007:461"
+Beta-192521,Wadi Faynan,30.66083,35.45574,"Trench 1, 130",10500,40,,CH wood (cupressaceae),"Mithen, Finlayson 2007:461"
+Beta-192522,Wadi Faynan,30.66083,35.45574,"Trench 1, 148",9880,40,,CH wood (tamarix sp.),"Mithen, Finlayson 2007:461"
+Beta-192523,Wadi Faynan,30.66083,35.45574,"Trench 1, 151",9920,40,,CH wood (ficus sp.),"Mithen, Finlayson 2007:461"
+Beta-192524,Wadi Faynan,30.66083,35.45574,"Trench 2, 232",10150,40,,CH wood (cupressaecea),"Mithen, Finlayson 2007:461"
+Beta-192525,Wadi Faynan,30.66083,35.45574,"Trench 2, 239",10350,40,,"CH, wood (cupressaceae)","Mithen, Finlayson 2007:461"
+Beta-192526,Wadi Faynan,30.66083,35.45574,"Trench 2, 241",10420,40,,CH wood (cupressaceae),"Mithen, Finlayson 2007:461"
+Beta-192527,Wadi Faynan,30.66083,35.45574,"Trench 2, 243",10440,40,,CH wood (cupressaceae),"Mithen, Finlayson 2007:461"
+Beta-192529,Wadi Faynan,30.66083,35.45574,"Trench 3, 330",9870,40,,CH wood indet.,"Mithen, Finlayson 2007:461"
+Beta-192530,Wadi Faynan,30.66083,35.45574,"Trench 3, 332",10340,40,,CH wood (cupressaceae),"Mithen, Finlayson 2007:461"
+Beta-192531,Wadi Faynan,30.66083,35.45574,"Trench 3, 327",9950,40,,CH wood (tamarix),"Mithen, Finlayson 2007:461"
+Beta-208671,Wadi Faynan,30.66083,35.45574,"Trench 2, 239",9560,40,,S (Barley),"Mithen, Finlayson 2007:461"
+Beta-208672,Wadi Faynan,30.66083,35.45574,"Trench 2, 238",9430,40,,S (Bromus),"Mithen, Finlayson 2007:461"
+Beta-209010,Wadi Faynan,30.66083,35.45574,"Trench 3, 310",9140,40,,CH wood indet.,"Mithen, Finlayson 2007:461"
+Beta-253738,Wadi Faynan,30.66083,35.45574,340: Fill of hearth within midden in O75.,9950,70,,"twig, tamarix",Finalyson et al. 2011a
+Beta-253739,Wadi Faynan,30.66083,35.45574,340: Fill of hearth within midden in O75,9660,70,,"twig, tamarix",Finlayson et al. 2011a
+Beta-271680,Wadi Faynan,30.66083,35.45574,"747: Fill of hearth cut into secondary floor surface, O75",9380,60,,"twig, possibly Salicaceae",Finlayson et al. 2011a:4
+Beta-271681,Wadi Faynan,30.66083,35.45574,"757:Fill of basal posthole, O75.",9940,60,,unident. twig,Finlayson et al. 2011a:4
+SMU 803,Wadi Judayid,29.94917,35.49111,Layer C,10834,660,,CH,Henry 1988
+SMU 805,Wadi Judayid,29.94917,35.49111,Layer C,11950,800,,CH,Henry 1988
+SMU 806,Wadi Judayid,29.94917,35.49111,Layer C,12090,800,,CH,Henry 1988
+Beta-35080/WS-1,Wadi Shu'eib,31.97333,35.72778,"Area I, LPPNB",10220,250,,,Simmons et al. 2001:28
+Beta-35082/WS-3,Wadi Shu'eib,31.97333,35.72778,"Area I, MPPNB",8670,210,,,Simmons et al. 2001:28
+Beta-35083/WS 5&8,Wadi Shu'eib,31.97333,35.72778,"Area II, PPNC",8760,280,,,Simmons et al. 2001:28
+Beta-35084/WS-6,Wadi Shu'eib,31.97333,35.72778,"Area II, LPPNB",7660,210,,,Simmons et al. 2001:28
+Beta-35085/WS-6,Wadi Shu'eib,31.97333,35.72778,"Area II, PPNC",8120,280,,,Simmons et al. 2001:28
+Beta-35086/WS-9,Wadi Shu'eib,31.97333,35.72778,Area II; LPPNB,8500,160,,,Simmons et al. 2001:28
+Beta-35087/WS-10&12,Wadi Shu'eib,31.97333,35.72778,"Area II, LPPNB",9100,140,,,Simmons et al. 2001:28
+Beta-35088/WS-11,Wadi Shu'eib,31.97333,35.72778,"Area II, LPPNB",7810,340,,,Simmons et al. 2001:28
+beta-35089/WS-13&14,Wadi Shu'eib,31.97333,35.72778,"Area III, MPPNB",9160,190,,,Simmons et al. 2001:28
+Beta-353081/WS-2,Wadi Shu'eib,31.97333,35.72778,"Area I, MPPNB",8600,100,,,Simmons et al. 2001:28
+Pta 2700,Wadi Tbeik,28.76667,33.95,Struct. 13,10350,100,,,Gopher 1994; Hours et al. 338
+Pta-4242,Yiftahel,32.75571,35.23022,"locus 719, Schicht 2, ante burial",8870,90,,S horsbeen seed,Garfinkel 1987
+Pta-4245,Yiftahel,32.75571,35.23022,"locus 710, Schicht 2, ante burial",8720,70,,S lentil seed,Garfinkel 1987
+RT-736a,Yiftahel,32.75571,35.23022,"locus 719, Schicht 2, ante burial",8570,130,,"S, horsebeen seed",Garfinkel 1987
+RT-736b,Yiftahel,32.75571,35.23022,"locus 710, Schicht 2, ante burial",8890,120,,"S, lentil seed",Garfinkel 1987
+OZE-605,Zahrat adh-Dhra’ 2 (ZAD 2),31.25528,35.56611,"Structure 3, Sq V22, Loc. 3.1. Calibrated range von 3 daten 2 Sigma: 9150-8550 BC (1:6)",9490,50,,,Edwards et al. 2002
+OZE-606,Zahrat adh-Dhra’ 2 (ZAD 2),31.25528,35.56611,"Structure 3, Sq V22, Loc. 7.2.",9440,50,,,Edwards et al. 2002
+OZE-607,Zahrat adh-Dhra’ 2 (ZAD 2),31.25528,35.56611,"Structure 3, Sq V 22, Loc 7.2.",9470,50,,,Edwards et al. 2002
+Wk 9444,Zahrat adh-Dhra’ 2 (ZAD 2),31.25528,35.56611,"upppermost level structure 2, locus 3.2., Square L23, ""Phase 2""",9323,59,,,1) Edwards et al. 2004 2) Sayej 2004:61
+Wk 9445,Zahrat adh-Dhra’ 2 (ZAD 2),31.25528,35.56611,"Structure 1, Phase2, Locus 22.3. (2:60)",9552,59,,,1) Edwards et al. 2004 2) Sayej 2004
+Wk 9447,Zahrat adh-Dhra’ 2 (ZAD 2),31.25528,35.56611,"Square K22, Locus 6.1. lowest level",9603,59,,,Edwards et al. 2004
+Wk 9568,Zahrat adh-Dhra’ 2 (ZAD 2),31.25528,35.56611,"Locus 3.3.; Square K22, ""Phase 2""",9623,91,,,1) Edwards et al. 2004 2) Sayej 2004:61
+Wk 9570,Zahrat adh-Dhra’ 2 (ZAD 2),31.25528,35.56611,"Structure 3, Locus 5.4=7.4. Square U22",9528,61,,,Edwards et al. 2004
+WK 9633,Zahrat adh-Dhra’ 2 (ZAD 2),31.25528,35.56611,"Structure 1, Phase 2: E 28, 20.1",9635,59,,,Sayej 2004
+W 681,Zawi Chemi,36.83333,44.33333,"455,foyer 129m; Schicht B",10870,300,,CH,Hours et al. 1994:415
+AA 25424,’Ain Ghazal,31.98694,35.97611,"Central, 3876.128, PPNC",8030,65,,"CH, Wall mortar",Rollefson 1998:9
+AA 25429,’Ain Ghazal,31.98694,35.97611,"North 5717.146, LPPNB",7980,55,,"Lentils, above mud fill behind ""shrine""",Rollefson 1998:9
+AA-1164,’Ain Ghazal,31.98694,35.97611,"3273, MPPNB",9100,140,,"Erbsen, selbe Probe wie GrN14258",Rollefson et al 1992:445
+AA-1167,’Ain Ghazal,31.98694,35.97611,"East 8547.014, M/LPPNB",8570,180,,"CH, Firepit",Rollefson et al 1992:445
+AA-25037,’Ain Ghazal,31.98694,35.97611,"East, F-14.037, MPPNB",8775,75,,"CH, Chipping floor ""Earlier than expected""",Rollefson 1998:9
+AA-25425,’Ain Ghazal,31.98694,35.97611,"East, E-13.032, PPNC",8080,65,,"CH, ""temple"" floor.",Rollefson 1998:9
+AA-25426,’Ain Ghazal,31.98694,35.97611,"East, F-12.037",8205,65,,"CH, Firepit",Rollefson 1998:9
+AA-25427,’Ain Ghazal,31.98694,35.97611,"East, PPNC, g-28.020.",7910,60,,"CH, Ash, circular structure",Rollefson 1998:9
+AA-25428,’Ain Ghazal,31.98694,35.97611,"East, PPNC, g-28.016.",7910,60,,"CH, Ash, circular structure",Rollefson 1998:9
+AA-5196,’Ain Ghazal,31.98694,35.97611,"Central 3275.007,PPNC",7670,100,,CH,Rollefson et al 1992:445
+AA-5197,’Ain Ghazal,31.98694,35.97611,"Central 3275.022, LPPNB",8090,75,,"CH, Firepit",Rollefson et al 1992:445
+AA-5198,’Ain Ghazal,31.98694,35.97611,"Central 3276.009, PPNC",7960,75,,"CH, Fill",Rollefson et al 1992:445
+AA-5199,’Ain Ghazal,31.98694,35.97611,"Central 3300.047, LPPNB",8270,75,,Ashy pit fill,Rollefson et al 1992:445
+AA-5200,’Ain Ghazal,31.98694,35.97611,"Central, MPPNB, 3300.068",8780,70,,,Rollefson et al 1992:445
+AA-5201,’Ain Ghazal,31.98694,35.97611,"4453.130, LPPNB?",8325,70,,,Rollefson et al 1992:445
+AA-5202,’Ain Ghazal,31.98694,35.97611,"4453.153, LPPNB?",8310,70,,,Rollefson et al 1992:445
+AA-5203,’Ain Ghazal,31.98694,35.97611,"4454.073, PPNC",8200,75,,,Rollefson et al 1992:445
+AA-5205,’Ain Ghazal,31.98694,35.97611,"4655030, PPNC",7895,95,,,Rollefson et al 1992:445
+AA-5206,’Ain Ghazal,31.98694,35.97611,"5518007, LPPNB",7990,80,,"Peas, Floor deposit",Rollefson et al 1992:445
+AA98396,’Ain Ghazal,31.98694,35.97611,"large ash (""open air dump""?) nearby a major LPPNB chipping floor. LPPNB.",7975,56,-25,CH,"Kafafi, Z. et al. 2012:36.; G. Rollefson (pers. communication 22/08/13)."
+AA983965,’Ain Ghazal,31.98694,35.97611,"Trench III.2, Loc. 018. Clay lined pit; Yarmourkian.",6873,64,-24.9,Ashy soil,"Kafafi, Z. et al. 2012:38; G. Rollefson (pers. communication 22/08/13)."
+Bta-19906,’Ain Ghazal,31.98694,35.97611,"3282, MPPNB1",8970,150,,CH,Rollefson et al 1992:445
+GrN 12966,’Ain Ghazal,31.98694,35.97611,"3083, MPPNB1",9200,110,,CH,Rollefson et al 1992:445
+GrN 12970,’Ain Ghazal,31.98694,35.97611,"Central, 3273.028, MPPNB-3",8650,200,,"CH, Fill between floors",Rollefson et al 1992:445
+GrN-12959,’Ain Ghazal,31.98694,35.97611,"3076, MPPNB2",9000,90,,"CH Burial, post quem for Statues 1983",Rollefson et al 1992:445
+GrN-12960,’Ain Ghazal,31.98694,35.97611,"3080, MPPNB2",9030,80,,"CH, ashy pit fill",Rollefson et al 1992:445
+GrN-12961,’Ain Ghazal,31.98694,35.97611,"3080, MPPNB2",8930,60,,CH; fill between floors,Rollefson et al 1992:445
+GrN-12962,’Ain Ghazal,31.98694,35.97611,"3080, MPPNB2",8680,190,,"CH, Ash pit",Rollefson et al 1992:445
+GrN-12963,’Ain Ghazal,31.98694,35.97611,"3081, MPPNB1",8970,80,,"CH,",Rollefson et al 1992:445
+GrN-12964,’Ain Ghazal,31.98694,35.97611,"3081, MPPNB2",8970,80,,"CH, floor surface",Rollefson et al 1992:445
+GrN-12965,’Ain Ghazal,31.98694,35.97611,"3081, MPPNB1",9050,80,,"CH, ashy pit fill, Terminus ante quem 3 plaster masks",Rollefson et al 1992:445
+GrN-12967,’Ain Ghazal,31.98694,35.97611,"3083, MPPNB2",8930,80,,"CH, Burial",Rollefson et al 1992:445
+GrN-12968,’Ain Ghazal,31.98694,35.97611,"3083, MPPNB2",8970,110,,"CH, firepit, hearth",Rollefson et al 1992:445
+GrN-12969,’Ain Ghazal,31.98694,35.97611,"Central 3273.013, MPPNB4",8810,80,,,Rollefson et al 1992:445
+GrN-12971,’Ain Ghazal,31.98694,35.97611,"4048, LPPNB",8460,90,,,Rollefson et al 1992:445
+GrN-12972,’Ain Ghazal,31.98694,35.97611,"4452, LPPNB",8165,50,,,Rollefson et al 1992:445
+GrN-14257,’Ain Ghazal,31.98694,35.97611,"3081, MPPNB1",8750,80,,"CH, same locus as GrN 12963",Rollefson et al 1992:445
+GrN-14258,’Ain Ghazal,31.98694,35.97611,"3273, MPPNB3",8610,160,,Erbsen,Rollefson et al 1992:445
+GrN-17494,’Ain Ghazal,31.98694,35.97611,"Central 3275.021,PPNC",7825,65,,"CH, Firepit",Rollefson et al 1992:445
+GrN-17495,’Ain Ghazal,31.98694,35.97611,"Central 3275.022, PPNC",7915,95,,"CH, Firepit",Rollefson et al 1992:445
+KN 4877,’Ain Ghazal,31.98694,35.97611,"Central, 3275.029, LPPNB",8208,77,,"CH, Firepit",Rollefson 1998:9
+KN 4878,’Ain Ghazal,31.98694,35.97611,"Central, 3275.030",8253,76,,"CH, Firepit",Rollefson 1998:9
+KN-4879,’Ain Ghazal,31.98694,35.97611,North 5718.074 LPPNB?,7952,77,,CH,Rollefson 1998:9
+KN-4880,’Ain Ghazal,31.98694,35.97611,"North, 5718.080, LPPNB zu jung",7726,73,,Lentil,Rollefson 1998:9
+KN-4881,’Ain Ghazal,31.98694,35.97611,"North, 5718.111, LPPNB room fill",7880,82,,Lentil,Rollefson 1998:9
+KN-4882,’Ain Ghazal,31.98694,35.97611,"North, 5717.070, LPPNB zu jung",7809,74,,Lentil,Rollefson 1998:9
+KN-4883,’Ain Ghazal,31.98694,35.97611,"North, 5918.013",8230,76,,"CH, Firepit",Rollefson 1998:9
+KN-4884,’Ain Ghazal,31.98694,35.97611,"North, 5918.046, PPNC",7857,74,,Lentil,Rollefson 1998:9
+KN-4885,’Ain Ghazal,31.98694,35.97611,"North, 5918.045 LPPNB",7939,87,,CH,Rollefson 1998:9
+KN-5054,’Ain Ghazal,31.98694,35.97611,"North, 5717.149.149",8236,81,,"CH, Firepit, associated with apsidial building/""shrine""",Rollefson 1998:9
+KN-5055,’Ain Ghazal,31.98694,35.97611,North 5718.142,8162,62,,"CH, Firepit, associated with apsidial building/""shrine""",Rollefson 1998:9
+KN-5056,’Ain Ghazal,31.98694,35.97611,"East, D-13.023, LPPNB",8083,47,,"CH, Firepit, beneath ""temple""",Rollefson 1998:9
+OxA-1742,’Ain Ghazal,31.98694,35.97611,"3076, MPPNB3",8660,80,,CH,Rollefson et al 1992:445
+OxA-1743,’Ain Ghazal,31.98694,35.97611,"3076, MPPNB3",8700,80,,CH,Rollefson et al 1992:445
+UCR 1718,’Ain Ghazal,31.98694,35.97611,L 3073.175,8470,650,,CH,"MDOG 117, 1985:111"
+UCR 1721,’Ain Ghazal,31.98694,35.97611,L 3073.294,8620,320,,CH,"MDOG 117, 1985:111"
+UCR 1722,’Ain Ghazal,31.98694,35.97611,L 3074.157,8070,230,,CH,"MDOG 117, 1985:111"
+UCR 1723,’Ain Ghazal,31.98694,35.97611,"L 3076.159, der Nähe des Figurencage, aber wenig Material",11875,670,,CH,"MDOG 117, 1985:111"
+UCR 1724,’Ain Ghazal,31.98694,35.97611,"L 3076.294 in der Nähe des Figurencage, aber wenig Material",10850,610,,CH,"MDOG 117, 1985:111"
+UCR 1725,’Ain Ghazal,31.98694,35.97611,"L 3076.048 in der Nähe des Figurencage, aber wenig Material",5130,315,,CH,"MDOG 117, 1985:111"
