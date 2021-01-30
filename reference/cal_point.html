@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Function reference • c14</title>
+<title>Point estimates of calibrated radiocarbon dates — cal_point • c14</title>
 
 <!-- favicons -->
 <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
@@ -46,7 +46,14 @@
 
 
 
-<meta property="og:title" content="Function reference" />
+<meta property="og:title" content="Point estimates of calibrated radiocarbon dates — cal_point" />
+<meta property="og:description" content="This function implements a number of methods for deriving a single point
+estimate of calendar age from calibrated radiocarbon dates. Note that none of
+these methods produce a good estimate (Michczyński 2007)
+,
+and should only be used as a last resort if the probability distribution
+function or an interval estimate is not appropriate, in which case
+method = &quot;mode&quot; (the default) is recommended." />
 <meta property="og:image" content="/logo.svg" />
 <meta name="twitter:card" content="summary" />
 <meta name="twitter:creator" content="@joeroe90" />
@@ -69,7 +76,7 @@
   </head>
 
   <body data-spy="scroll" data-target="#toc">
-    <div class="container template-reference-index">
+    <div class="container template-reference-topic">
       <header>
       <div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
@@ -119,123 +126,76 @@
       </header>
 
 <div class="row">
-  <div class="contents col-md-9">
+  <div class="col-md-9 contents">
     <div class="page-header">
-      <h1>Reference</h1>
+    <h1>Point estimates of calibrated radiocarbon dates</h1>
+    <small class="dont-index">Source: <a href='https://github.com/joeroe/c14/blob/master/R/cal_summary.R'><code>R/cal_summary.R</code></a></small>
+    <div class="hidden name"><code>cal_point.Rd</code></div>
     </div>
 
-    <table class="ref-index">
+    <div class="ref-description">
+    <p>This function implements a number of methods for deriving a single point
+estimate of calendar age from calibrated radiocarbon dates. Note that none of
+these methods produce a <em>good</em> estimate (Michczyński 2007)
+,
+and should only be used as a last resort if the probability distribution
+function or an interval estimate is not appropriate, in which case
+<code>method = "mode"</code> (the default) is recommended.</p>
+    </div>
 
-    <colgroup>
-      
-      <col class="alias" />
-      <col class="title" />
-    </colgroup>
+    <pre class="usage"><span class='fu'>cal_point</span><span class='op'>(</span>
+  <span class='va'>x</span>,
+  method <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"mode"</span>, <span class='st'>"median"</span>, <span class='st'>"mean"</span>, <span class='st'>"local_mode"</span>, <span class='st'>"central"</span><span class='op'>)</span>,
+  interval <span class='op'>=</span> <span class='fl'>0.954</span>
+<span class='op'>)</span></pre>
 
-    <tbody>
-      <tr>
-        <th colspan="2">
-          <h2 id="section-tidy-radiocarbon" class="hasAnchor"><a href="#section-tidy-radiocarbon" class="anchor"></a>Tidy radiocarbon</h2>
-          <p class="section-desc"><p>Core functions for working with radiocarbon data in a tidy framework.</p></p>
-        </th>
-      </tr>
-      
-      
-    </tbody><tbody>
-      
-      
-      <tr>
-        
-        <td>
-          <p><code><a href="c14_calibrate.html">c14_calibrate()</a></code> </p>
-        </td>
-        <td><p>Calibrate radiocarbon dates</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="c14_sum.html">c14_sum()</a></code> </p>
-        </td>
-        <td><p>Sum radiocarbon dates with tidy syntax</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="cal.html">cal()</a></code> <code><a href="cal.html">print(<i>&lt;cal&gt;</i>)</a></code> </p>
-        </td>
-        <td><p>Calibrated radiocarbon dates</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="cal_metadata.html">cal_metadata()</a></code> </p>
-        </td>
-        <td><p>Extract metadata from a calibrated date</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="cal_point.html">cal_point()</a></code> </p>
-        </td>
-        <td><p>Point estimates of calibrated radiocarbon dates</p></td>
-      </tr>
-    </tbody><tbody>
-      <tr>
-        <th colspan="2">
-          <h2 id="section-cal-vectors" class="hasAnchor"><a href="#section-cal-vectors" class="anchor"></a>cal vectors</h2>
-          <p class="section-desc"><p>Functions for working with <code>cal</code> objects – vectors of calibrated radiocarbon dates.</p></p>
-        </th>
-      </tr>
-      
-      
-    </tbody><tbody>
-      
-      
-      
-    </tbody><tbody>
-      <tr>
-        <th colspan="2">
-          <h2 id="section-conversion" class="hasAnchor"><a href="#section-conversion" class="anchor"></a>Conversion</h2>
-          <p class="section-desc"><p>Convert objects from other packages from or to c14 classes.</p></p>
-        </th>
-      </tr>
-      
-      
-    </tbody><tbody>
-      
-      
-      <tr>
-        
-        <td>
-          <p><code><a href="as.CalDates.cal.html">as.CalDates.cal()</a></code> </p>
-        </td>
-        <td><p>Convert cal objects to an rcarbon CalDates object</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="as_cal.html">as_cal()</a></code> </p>
-        </td>
-        <td><p>Convert a foreign object to a cal object</p></td>
-      </tr>
-    </tbody><tbody>
-      <tr>
-        <th colspan="2">
-          <h2 id="section-datasets" class="hasAnchor"><a href="#section-datasets" class="anchor"></a>Datasets</h2>
-          <p class="section-desc"><p>Example data included with the package.</p></p>
-        </th>
-      </tr>
-      
-      
-    </tbody><tbody>
-      
-      
-      <tr>
-        
-        <td>
-          <p><code><a href="ppnd.html">ppnd</a></code> </p>
-        </td>
-        <td><p>Radiocarbon dates from Neolithic Southwest Asia</p></td>
-      </tr>
-    </tbody>
+    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
+    <table class="ref-arguments">
+    <colgroup><col class="name" /><col class="desc" /></colgroup>
+    <tr>
+      <th>x</th>
+      <td><p><code>cal</code> object. A vector of calibrated radiocarbon dates.</p></td>
+    </tr>
+    <tr>
+      <th>method</th>
+      <td><p>Character. Method of estimation:</p><dl>
+<dt><code>"mode"</code> (default)</dt><dd><p>age corresponding to the maximum peak of the probability distribution</p></dd>
+<dt><code>"median"</code></dt><dd><p>age corresponding to the median quantile of the probability distribution</p></dd>
+<dt><code>"mean"</code></dt><dd><p>mean age weighted by probability density</p></dd>
+<dt><code>"local_mode"</code></dt><dd><p>age corresponding to the maximum peak of the probability
+distribution within the confidence range specified by <code>interval</code> (<strong>not yet
+implemented</strong>)</p></dd>
+<dt><code>"central"</code></dt><dd><p>age corresponding to the central point of the probability
+density within the confidence range specified by <code>interval</code> (<strong>not yet
+implemented</strong>)</p></dd>
+
+</dl></td>
+    </tr>
+    <tr>
+      <th>interval</th>
+      <td><p>Numeric. Only used for <code>method = "local_mode"</code> and
+<code>method = "central"</code>.</p></td>
+    </tr>
     </table>
-  </div>
 
+    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
+
+    <p>Numeric vector the same length as <code>x</code> giving the point estimate for each
+calibrated date.</p>
+    <h2 class="hasAnchor" id="references"><a class="anchor" href="#references"></a>References</h2>
+
+    <p>Michczyński A (2007).
+&#8220;Is it Possible to Find a Good Point Estimate of a Calibrated Radiocarbon Date?&#8221;
+<em>Radiocarbon</em>, <b>49</b>(2), 393--401.
+ISSN 0033-8222, 1945-5755, doi: <a href='https://doi.org/10.1017/S0033822200042326'>10.1017/S0033822200042326</a>
+, <a href='https://doi.org/10.1017/S0033822200042326'>https://doi.org/10.1017/S0033822200042326</a>.</p>
+
+    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
+    <pre class="examples"><div class='input'><span class='fu'>cal_point</span><span class='op'>(</span><span class='fu'><a href='c14_calibrate.html'>c14_calibrate</a></span><span class='op'>(</span><span class='fl'>10000</span>, <span class='fl'>30</span>, verbose <span class='op'>=</span> <span class='cn'>FALSE</span><span class='op'>)</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; [[1]]
+#&gt; [1] 11399
+#&gt; </div></pre>
+  </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
       <h2 data-toc-skip>Contents</h2>
