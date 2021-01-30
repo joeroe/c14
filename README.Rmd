@@ -38,4 +38,12 @@ devtools::install_github("joeroe/c14")
 
 ## Usage
 
-...
+Tidy radiocarbon calibration:
+
+```{r eg-calibrate, message=FALSE}
+library("c14")
+library("dplyr")
+ppnd %>% 
+  filter(site == "Ganj Dareh") %>% 
+  mutate(cal = c14_calibrate(cra, error, verbose = FALSE))
+```
