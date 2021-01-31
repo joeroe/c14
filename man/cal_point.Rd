@@ -47,3 +47,4 @@ cal_point(c14_calibrate(10000, 30, verbose = FALSE))
 \references{
 \insertAllCited{}
 }
+\concept{functions for summarising calibrated radiocarbon dates}

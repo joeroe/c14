@@ -33,6 +33,8 @@
 #' @references
 #' \insertAllCited{}
 #'
+#' @family functions for summarising calibrated radiocarbon dates
+#'
 #' @export
 #'
 #' @examples

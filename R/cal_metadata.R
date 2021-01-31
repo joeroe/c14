@@ -8,7 +8,7 @@
 #' @return
 #' A named list of metadata attributes.
 #'
-#' @family functions for working with `cal` objects
+#' @family cal class methods
 #'
 #' @export
 cal_metadata <- function(x) {

@@ -12,12 +12,16 @@ reference:
 - title: "Tidy radiocarbon"
   desc: "Core functions for working with radiocarbon data in a tidy framework."
 - contents:
-  - starts_with("c14_")
-  - starts_with("cal")
-- title: "cal vectors"
-  desc: "Functions for working with `cal` objects – vectors of calibrated radiocarbon dates."
+  - c14_calibrate
+  - c14_sum
+- title: "Summarise calibrated dates"
+  desc: "Functions for summarising calibrated radiocarbon dates."
 - contents:
-  - has_concept("functions for working with `cal` objects")
+  - has_concept("functions for summarising calibrated radiocarbon dates")
+- title: "cal class methods"
+  desc: "Methods for the `cal` class – vectors of calibrated radiocarbon dates."
+- contents:
+  - has_concept("cal class methods")
 - title: "Conversion"
   desc: "Convert objects from other packages from or to c14 classes."
 - contents:
