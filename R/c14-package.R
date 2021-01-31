@@ -6,3 +6,10 @@
 ## usethis namespace: start
 ## usethis namespace: end
 NULL
+
+#' Internal vctrs methods
+#'
+#' @import vctrs
+#' @keywords internal
+#' @name c14-vctrs
+NULL
