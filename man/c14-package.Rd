@@ -4,7 +4,7 @@
 \name{c14-package}
 \alias{c14}
 \alias{c14-package}
-\title{c14: Tidy radiocarbon data}
+\title{c14: Tidy Radiocarbon Data}
 \description{
 S3 classes and functions for tidy radiocarbon data.
 }

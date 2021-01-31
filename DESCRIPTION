@@ -1,6 +1,6 @@
 Package: c14
 Type: Package
-Title: Tidy radiocarbon data
+Title: Tidy Radiocarbon Data
 Version: 0.0.0.9000
 Authors@R: person("Joe", "Roe", email = "joe@joeroe.io",
   role = c("aut", "cre"), comment = c(ORCID = "0000-0002-1011-1244"))
