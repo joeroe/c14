@@ -60,6 +60,7 @@ or other calendar-based probability distribution.
 }
 \seealso{
 Other cal class methods: 
+\code{\link{as_cal}()},
 \code{\link{cal_metadata}()}
 }
 \concept{cal class methods}

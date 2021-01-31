@@ -40,8 +40,12 @@ These functions are intended for complex S3 objects from other packages.
 See \code{\link[=cal]{cal()}} for a more generic constructor, e.g. using a data frame.
 }
 \seealso{
+Other cal class methods: 
+\code{\link{cal_metadata}()},
+\code{\link{cal}()}
+
 Other c14 conversion functions: 
 \code{\link{as.CalDates.cal}()}
 }
 \concept{c14 conversion functions}
-\concept{functions for working with \code{cal} objects}
+\concept{cal class methods}

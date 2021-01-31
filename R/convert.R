@@ -22,7 +22,7 @@
 #' the calibrated probability distribution. All other values are stored as
 #' attributes and can be accessed with [cal_metadata()].
 #'
-#' @family functions for working with `cal` objects
+#' @family cal class methods
 #' @family c14 conversion functions
 #'
 #' @export

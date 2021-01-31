@@ -17,6 +17,7 @@ Extract metadata from a calibrated date
 }
 \seealso{
 Other cal class methods: 
+\code{\link{as_cal}()},
 \code{\link{cal}()}
 }
 \concept{cal class methods}
