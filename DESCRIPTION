@@ -13,31 +13,29 @@ LazyData: true
 Depends: 
     R (>= 2.10)
 Imports: 
-    utils,
-    rlang,
-    vctrs,
-    dplyr,
-    tibble,
-    magrittr,
-    rcarbon,
-    purrr,
     Rdpack,
     checkmate,
-    fs,
-    glue,
     cli,
+    dplyr,
+    era,
+    glue,
+    magrittr,
+    purrr,
+    rcarbon,
+    rlang,
+    stats,
     stringr,
-    tidyr,
-    ggplot2,
-    era
+    utils,
+    vctrs
 Suggests: 
-    knitr,
-    rmarkdown,
-    readxl,
-    testthat,
     covr,
+    knitr,
     readr,
-    roxygen2
+    readxl,
+    rmarkdown,
+    roxygen2,
+    testthat,
+    tibble
 Enhances:
     Bchron,
     oxcAAR
