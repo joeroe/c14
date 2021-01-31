@@ -34,12 +34,13 @@ Suggests:
     knitr,
     rmarkdown,
     readxl,
-    oxcAAR,
     testthat,
     covr,
-    Bchron,
     readr,
     roxygen2
+Enhances:
+    Bchron,
+    oxcAAR
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.1.1
 RdMacros: Rdpack
