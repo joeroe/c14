@@ -22,6 +22,10 @@ reference:
   desc: "Convert objects from other packages from or to c14 classes."
 - contents:
   - has_concept("c14 conversion functions")
+- title: "Calibration curves"
+  desc: "Data, classes and functions for radiocarbon calibration curves."
+- contents:
+  - has_concept("calibration curve functions")
 - title: "Datasets"
   desc: "Example data included with the package."
 - contents:
