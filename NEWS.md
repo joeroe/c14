@@ -1,5 +1,7 @@
 # c14 development version
 
+* Added summary functions for calibrated dates (`cal` class):
+  * `c14_point()` for point estimates
 * Added classes, functions and datasets for calibration curves:
   * `c14_curve` is a vctrs record class representing a calibration curve, with
     subclasses `c14_curve_14c` and `c14_curve_f14c` for CRA-based and F14C-based
