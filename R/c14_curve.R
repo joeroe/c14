@@ -39,7 +39,11 @@
 #' \insertRef{Stenstrom2011}{c14}
 #'
 #' @export
-c14_curve <- function(cal_age, c14_age, c14_error, d14c = NA, d14c_error = NA) {
+c14_curve <- function(cal_age = era::yr(),
+                      c14_age = numeric(),
+                      c14_error = numeric(),
+                      d14c = numeric(),
+                      d14c_error = numeric()) {
   if (!era::is_yr(cal_age)) {
     cal_age <- vec_cast(cal_age, numeric())
     cal_age <- era::yr(cal_age, "cal BP")
@@ -64,7 +68,9 @@ c14_curve <- function(cal_age, c14_age, c14_error, d14c = NA, d14c_error = NA) {
 
 #' @rdname c14_curve
 #' @export
-c14_fcurve <- function(cal_age, f14c, f14c_error) {
+c14_fcurve <- function(cal_age = era::yr(),
+                       f14c = numeric(),
+                       f14c_error = numeric()) {
   if (!era::is_yr(cal_age)) {
     cal_age <- vec_cast(cal_age, numeric())
     cal_age <- era::yr(cal_age, "cal BP")

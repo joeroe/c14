@@ -5,9 +5,15 @@
 \alias{c14_fcurve}
 \title{Radiocarbon calibration curve class}
 \usage{
-c14_curve(cal_age, c14_age, c14_error, d14c = NA, d14c_error = NA)
+c14_curve(
+  cal_age = era::yr(),
+  c14_age = numeric(),
+  c14_error = numeric(),
+  d14c = numeric(),
+  d14c_error = numeric()
+)
 
-c14_fcurve(cal_age, f14c, f14c_error)
+c14_fcurve(cal_age = era::yr(), f14c = numeric(), f14c_error = numeric())
 }
 \arguments{
 \item{cal_age}{Vector of calendar ages. If \code{cal_age} is an object of class
