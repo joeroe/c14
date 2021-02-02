@@ -1,5 +1,8 @@
 # c14 development version
 
+* Revised `cal` class, representing calibrated radiocarbon dates:
+  * Probability distributions are now represented by `calp` class.
+  * `as_calp()` converts objects from other packages (`rcarbon::calGrid`) to `calp`.
 * Added summary functions for calibrated dates (`cal` class):
   * `c14_point()` for point estimates
 * Added classes, functions and datasets for calibration curves:

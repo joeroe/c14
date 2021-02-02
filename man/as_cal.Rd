@@ -19,12 +19,10 @@ as_cal(x)
 \method{as_cal}{BchronCalibratedDates}(x)
 }
 \arguments{
-\item{x}{object to be converted to a \code{cal} object.}
+\item{x}{Object from another package to be converted to a \code{cal} object.}
 }
 \value{
-\code{cal} object: a data frame with two columns, \code{year} and \code{p}, representing
-the calibrated probability distribution. All other values are stored as
-attributes and can be accessed with \code{\link[=cal_metadata]{cal_metadata()}}.
+Vector of class \code{c14_cal} (\link{cal}).
 }
 \description{
 \code{as_cal()} converts objects from other packages that represent calibrated
@@ -42,7 +40,7 @@ See \code{\link[=cal]{cal()}} for a more generic constructor, e.g. using a data 
 \seealso{
 Other cal class methods: 
 \code{\link{cal_metadata}()},
-\code{\link{cal}()}
+\code{\link{cal_txtplot}()}
 
 Other c14 conversion functions: 
 \code{\link{as.CalDates.cal}()}
