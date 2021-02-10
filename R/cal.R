@@ -2,79 +2,24 @@
 
 # Constructor functions ---------------------------------------------------
 
-#' Calibrated radiocarbon dates
-#'
-#' `cal()` constructs a generic representation of a calibrated radiocarbon date
-#' or other calendar-based probability distribution.
-#'
-#' @param x                       A `data.frame` with two columns, with calendar years and associated probabilities.
-#' @param curve                   (Optional) `character`. Atmospheric curve used for calibration, e.g. "intcal20".
-#' @param era                     (Optional) `character`. Calendar system used. Default: `cal BP`.
-#' @param lab_id                  (Optional) `character`. Lab code or other label for the calibrated sample.
-#' @param cra                     (Optional) `integer`. Uncalibrated conventional radiocarbon age (CRA) of the sample.
-#' @param error                   (Optional) `integer`. Error associated with the uncalibrated sample.
-#' @param reservoir_offset        (Optional) `integer`. Marine reservoir offset used in the calibration, if any.
-#' @param reservoir_offset_error  (Optional) `integer`. Error associated with the marine reservoir offset.
-#' @param calibration_range       (Optional) `integer` vector of length 2. The range of years over which the calibration was performed, i.e. `c(start, end)`.
-#' @param F14C                    (Optional) `logical`. Whether the calibration was calculated using F14C values instead of the CRA.
-#' @param normalised              (Optional) `logical`. Whether the calibrated probability densities were normalised.
-#' @param p_cutoff                (Optional) `numeric`. Lower threshold beyond which probability densities were considered zero.
-#' @param ...                     (Optional) Arguments based to other functions.
-#'
-#' @return
-#' `cal` object: a data frame with two columns, `year` and `p`, representing
-#' the calibrated probability distribution. All other values are stored as
-#' attributes and can be accessed with [cal_metadata()].
-#'
-#' @family cal class methods
-#'
-#' @export
-cal <- function(x,
-                era = c("cal BP"),
-                lab_id = NA,
-                cra = NA,
-                error = NA,
-                curve = NA,
-                reservoir_offset = NA,
-                reservoir_offset_error = NA,
-                calibration_range = NA,
-                F14C = NA,
-                normalised = NA,
-                p_cutoff = NA) {
-  checkmate::assert_data_frame(x, ncols = 2)
-
-  new_cal(x,
-          era = era,
-          lab_id = lab_id,
-          cra = cra,
-          error = error,
-          curve = curve,
-          reservoir_offset = reservoir_offset,
-          reservoir_offset_error = reservoir_offset_error,
-          calibration_range = calibration_range,
-          F14C = F14C,
-          normalised = normalised,
-          p_cutoff = p_cutoff)
-}
-
-new_cal <- function(x = data.frame(year = integer(0), p = numeric(0)), ...) {
-  if (ncol(x) == 2) {
-    colnames(x) <- c("year", "p")
-  }
-  else if (ncol(x) == 3) {
-    colnames(x) <- c("year", "p", "bayesian")
-  }
-  else {
-    stop("`x` must be a data frame with 2 or 3 columns.")
-  }
-
-  attrs <- list(...)
-
-  class(x) <- c("cal", "data.frame")
-  attributes(x) <- c(attributes(x), attrs)
-
-  return(x)
-}
+# new_cal <- function(x = data.frame(year = integer(0), p = numeric(0)), ...) {
+#   if (ncol(x) == 2) {
+#     colnames(x) <- c("year", "p")
+#   }
+#   else if (ncol(x) == 3) {
+#     colnames(x) <- c("year", "p", "bayesian")
+#   }
+#   else {
+#     stop("`x` must be a data frame with 2 or 3 columns.")
+#   }
+#
+#   attrs <- list(...)
+#
+#   class(x) <- c("cal", "data.frame")
+#   attributes(x) <- c(attributes(x), attrs)
+#
+#   return(x)
+# }
 
 
 # validate_cal <- function() {
@@ -85,41 +30,40 @@ new_cal <- function(x = data.frame(year = integer(0), p = numeric(0)), ...) {
 # Print methods --------------------------------------------------------------
 
 #' @rdname cal
-#' @export
-print.cal <- function(x, ...) {
-  #TODO: Method for Bayesian calibrated dates
-  if ("bayesian" %in% names(x)) {
-    x <- x[x$bayesian == "prior",]
-  }
-
-  start <- max(x$year)
-  end <- min(x$year)
-  era <- attr(x, "era")
-
-  metadata <- cal_metadata(x)
-
-  cli::cli_text("# Calibrated probability distribution from {start} to {end} {era}")
-  cli::cat_line()
-  cal_txtplot(x)
-  cli::cat_line()
-  # TODO: Messy – should probably refactor into its own function
-  if(!is.null(metadata$lab_id)) {
-    cli::cli_dl(list(`Lab ID` = metadata$lab_id))
-    metadata$lab_id <- NULL
-  }
-  if(!is.null(metadata$cra)) {
-    cli::cli_dl(list(`Uncalibrated` = glue::glue("{metadata$cra}\u00B1{metadata$error} uncal BP")))
-    metadata$cra <- NULL
-    metadata$error <- NULL
-  }
-  if(!is.null(metadata$calibration_range) &&
-     !all(is.na(metadata$calibration_range))) {
-    metadata$calibration_range <- glue::glue("{metadata$calibration_range[1]}\u2013{metadata$calibration_range[2]} BP")
-  }
-  cli::cli_dl(metadata)
-
-  invisible(x)
-}
+# print.cal <- function(x, ...) {
+#   #TODO: Method for Bayesian calibrated dates
+#   if ("bayesian" %in% names(x)) {
+#     x <- x[x$bayesian == "prior",]
+#   }
+#
+#   start <- max(x$year)
+#   end <- min(x$year)
+#   era <- attr(x, "era")
+#
+#   metadata <- cal_metadata(x)
+#
+#   cli::cli_text("# Calibrated probability distribution from {start} to {end} {era}")
+#   cli::cat_line()
+#   cal_txtplot(x)
+#   cli::cat_line()
+#   # TODO: Messy – should probably refactor into its own function
+#   if(!is.null(metadata$lab_id)) {
+#     cli::cli_dl(list(`Lab ID` = metadata$lab_id))
+#     metadata$lab_id <- NULL
+#   }
+#   if(!is.null(metadata$cra)) {
+#     cli::cli_dl(list(`Uncalibrated` = glue::glue("{metadata$cra}\u00B1{metadata$error} uncal BP")))
+#     metadata$cra <- NULL
+#     metadata$error <- NULL
+#   }
+#   if(!is.null(metadata$calibration_range) &&
+#      !all(is.na(metadata$calibration_range))) {
+#     metadata$calibration_range <- glue::glue("{metadata$calibration_range[1]}\u2013{metadata$calibration_range[2]} BP")
+#   }
+#   cli::cli_dl(metadata)
+#
+#   invisible(x)
+# }
 
 cal_txtplot <- function(x, height = 8, margin = 2) {
   width <- cli::console_width()

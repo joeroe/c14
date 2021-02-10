@@ -26,18 +26,14 @@ cal_metadata <- function(x) {
 cal_metadata_thesaurus <- function(what = NA) {
   thesaurus <- tibble::tribble(
     ~cal,                      ~CalDates,
-    "era",                     NA,
-    "lab_id",                  "DateID",
-    "cra",                     "CRA",
-    "error",                   "Error",
+    "label",                   "DateID",
+    "c14_age",                 "CRA",
+    "c14_error",               "Error",
     NA,                        "Details",
     "curve",                   "CalCurve",
-    "reservoir_offset",        "ResOffsets",
-    "reservoir_offset_error",  "ResErrors",
-    "calibration_range",       "StartBP",
-    "calibration_range",       "EndBP",
+    "offset",                  "ResOffsets",
+    "offset_error",            "ResErrors",
     "normalised",              "Normalised",
-    "F14C",                    "F14C",
     "p_cutoff",                "CalEPS"
   )
 

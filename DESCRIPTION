@@ -26,7 +26,8 @@ Imports:
     stats,
     stringr,
     utils,
-    vctrs (>= 0.3.3)
+    vctrs (>= 0.3.3),
+    methods
 Suggests: 
     covr,
     knitr,

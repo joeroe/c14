@@ -18,6 +18,6 @@ Extract metadata from a calibrated date
 \seealso{
 Other cal class methods: 
 \code{\link{as_cal}()},
-\code{\link{cal}()}
+\code{\link{cal_txtplot}()}
 }
 \concept{cal class methods}
