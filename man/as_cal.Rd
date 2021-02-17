@@ -40,7 +40,7 @@ See \code{\link[=cal]{cal()}} for a more generic constructor, e.g. using a data 
 \seealso{
 Other cal class methods: 
 \code{\link{cal_metadata}()},
-\code{\link{cal_txtplot}()}
+\code{\link{cal}()}
 
 Other c14 conversion functions: 
 \code{\link{as.CalDates.cal}()}

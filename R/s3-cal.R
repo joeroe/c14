@@ -99,6 +99,26 @@ format.c14_cal <- function(x, ...) {
 # Casting/coercion --------------------------------------------------------
 
 
+# Maths -------------------------------------------------------------------
+
+#' @export
+min.cal <- function(...) {
+  # TODO: Probably broken
+  cals <- rlang::list2(...)
+  cals <- dplyr::bind_rows(cals)
+  cals[cals$p <= 0] <- NULL
+  max(cals$year)
+}
+
+#' @export
+max.cal <- function(...) {
+  # TODO: Probably broken
+  cals <- rlang::list2(...)
+  cals <- dplyr::bind_rows(cals)
+  cals[cals$p <= 0] <- NULL
+  min(cals$year)
+}
+
 # Attributes --------------------------------------------------------------
 
 
