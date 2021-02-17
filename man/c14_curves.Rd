@@ -132,10 +132,5 @@ from the southern hemisphere; or \code{Marine20} for samples that obtained their
 \references{
 \insertAllCited{}
 }
-\seealso{
-Other calibration curve functions: 
-\code{\link{c14_curve}()},
-\code{\link{read_14c}()}
-}
-\concept{calibration curve functions}
+\concept{calibration curves}
 \keyword{datasets}

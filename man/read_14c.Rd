@@ -51,7 +51,6 @@ read_14c("http://intcal.org/curves/intcal20.14c")
 }
 \seealso{
 Other calibration curve functions: 
-\code{\link{c14_curves}},
 \code{\link{c14_curve}()}
 }
 \concept{calibration curve functions}

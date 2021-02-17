@@ -18,6 +18,10 @@
   * `?c14_curves`: exported datasets for the IntCal20, SHCal20, Marine20,
     IntCal13, SHCal13, Marine13, IntCal09, Marine09, IntCal04, SHCal04, 
     Marine04, IntCal98, and Marine98 curves.
+* Added functions and datasets for working with radiocarbon measurements:
+  * `c14_age()` for calculating a radiocarbon age from fraction modern.
+  * `c14_f14c()` for reverse-calculating fraction modern from a radiocarbon age.
+  * Decay constants `c14_decay_libby` and `c14_decay_cambridge`.
 
 # c14 0.0.0
 

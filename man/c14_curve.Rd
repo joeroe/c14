@@ -54,7 +54,6 @@ typically used for "post-bomb" calibration.
 }
 \seealso{
 Other calibration curve functions: 
-\code{\link{c14_curves}},
 \code{\link{read_14c}()}
 }
 \concept{calibration curve functions}

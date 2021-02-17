@@ -60,7 +60,7 @@
 #'
 #' @name c14_curves
 #'
-#' @family calibration curve functions
+#' @family calibration curves
 #'
 #' @source
 #' <http://intcal.org/curves/> and <http://calib.org/CALIBomb/>

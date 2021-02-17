@@ -35,6 +35,7 @@ Suggests:
     readxl,
     rmarkdown,
     roxygen2,
+    mathjaxr,
     testthat,
     tibble
 Enhances:
@@ -42,4 +43,4 @@ Enhances:
     oxcAAR
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.1.1
-RdMacros: Rdpack
+RdMacros: Rdpack, mathjaxr

@@ -14,6 +14,10 @@ reference:
 - contents:
   - c14_calibrate
   - c14_sum
+- title: "Radiocarbon measurements"
+  desc: "Functions for working with uncalibrated radiocarbon measurements."
+- contents:
+  - has_concept("functions for working with radiocarbon measurements")
 - title: "Summarise calibrated dates"
   desc: "Functions for summarising calibrated radiocarbon dates."
 - contents:
@@ -31,6 +35,8 @@ reference:
 - contents:
   - has_concept("calibration curve functions")
 - title: "Datasets"
-  desc: "Example data included with the package."
+  desc: "Data included with the package."
 - contents:
   - ppnd
+  - has_concept("calibration curves")
+  - has_concept("radiocarbon-related constants")
