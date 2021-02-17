@@ -6,9 +6,9 @@
 \alias{c14_f14c}
 \title{Radiocarbon unit calculations}
 \usage{
-c14_age(x, decay = c14_decay_libby)
+c14_age(x, decay = c14::c14_decay_libby)
 
-c14_f14c(x, decay = c14_decay_libby)
+c14_f14c(x, decay = c14::c14_decay_libby)
 }
 \arguments{
 \item{x}{For \code{c14_age()}, a vector of fraction modern

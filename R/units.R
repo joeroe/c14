@@ -59,12 +59,12 @@ NULL
 
 #' @rdname c14_units
 #' @export
-c14_age <- function(x, decay = c14_decay_libby) {
+c14_age <- function(x, decay = c14::c14_decay_libby) {
   exp(-decay * x)
 }
 
 #' @rdname c14_units
 #' @export
-c14_f14c <- function(x, decay = c14_decay_libby) {
+c14_f14c <- function(x, decay = c14::c14_decay_libby) {
   -(1 / decay) * log(x)
 }
