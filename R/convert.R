@@ -36,7 +36,7 @@ as_cal.CalDates <- function(x) {
   caldates <- cal_recode_metadata(x$metadata, "CalDates", "cal")
   caldates$pd <- purrr::map(x$grids, as_calp)
   caldates$engine <- "rcarbon"
-  caldates$engine_version <- packageVersion("rcarbon")
+  caldates$engine_version <- utils::packageVersion("rcarbon")
 
   do.call(new_cal, caldates)
 }
