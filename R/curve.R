@@ -1,5 +1,5 @@
-# c14_curve.R
-# S3 class `c14_curve` – calibration curves
+# curve.R
+# S3 record class c14_curve: radiocarbon calibration curves
 
 
 # Constructors ------------------------------------------------------------

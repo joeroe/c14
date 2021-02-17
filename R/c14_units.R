@@ -1,3 +1,5 @@
+# c14_units.R
+# Functions for working with uncalibrated radiocarbon measurements and units
 
 #' Radiocarbon unit calculations
 #'

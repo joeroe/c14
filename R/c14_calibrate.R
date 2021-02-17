@@ -1,4 +1,5 @@
-# Functions for tidy radiocarbon data
+# c14_calibrate.R
+# Functions for tidy radiocarbon calibration
 
 #' Calibrate radiocarbon dates
 #'

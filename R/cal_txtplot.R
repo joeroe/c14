@@ -1,3 +1,7 @@
+# cal_txtplot.R
+# Functions for plotting calibrated radiocarbon distributions in the console.
+# Questioning: I may have been drunk when I wrote it
+
 cal_txtplot <- function(x, height = 8, margin = 2) {
   width <- cli::console_width()
   if (width > 80) width <- 80

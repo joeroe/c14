@@ -1,5 +1,5 @@
-# convert.R
-# Functions for converting foreign objects to or from c14 classes
+# cal_convert.R
+# Functions for converting foreign objects to or from the c14 cal class
 
 #' Convert a foreign object to a cal object
 #'

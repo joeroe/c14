@@ -1,4 +1,4 @@
-# s3-calp.R
+# calp.R
 # data.frame subclass c14_calp (calp): calibrated/calendar probability distributions
 
 # Register formal class for S4 compatibility
