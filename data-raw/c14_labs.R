@@ -33,4 +33,8 @@ c14_labs %>%
   filter(lab_code != "LABORATORY") ->
   c14_labs
 
+# Hotfix awkward lab codes
+c14_labs$lab_code[c14_labs$lab_code == "Ki"] <- "Ki(KIEV)"
+c14_labs$lab_code[c14_labs$lab == "A Gif-sur-Yvette and Orsay"] <- "GifA"
+
 usethis::use_data(c14_labs, overwrite = TRUE)
