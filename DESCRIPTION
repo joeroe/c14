@@ -16,3 +16,5 @@ Suggests:
     usethis
 Depends: 
     R (>= 2.10)
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.1.1
