@@ -81,19 +81,14 @@ c14_fix_lab_id <- function(x) {
   y <- x
 
   # Variant delimiters
-  y[!c14_is_lab_id(y)] <- stringr::str_replace(
-    y[!c14_is_lab_id(y)],
-    "[\u2010\u2013_#\\.\\+]",
-    "-"
-    )
+  broken <- !c14_is_lab_id(y) & !is.na(y)
+  y[broken] <- stringr::str_replace(y[broken], "[\u2010\u2013_#\\.\\+]", "-")
 
   # Lab code but no number
+  broken <- !c14_is_lab_id(y) & !is.na(y)
   bare_lab_code <- stringr::str_detect(y, paste0(c14_lab_code_std(), "$"))
-  y[!c14_is_lab_id(y) & bare_lab_code] <- stringr::str_replace(
-    y[!c14_is_lab_id(y) & bare_lab_code],
-    "$",
-    "-"
-  )
+  y[broken & bare_lab_code] <- stringr::str_replace(y[broken & bare_lab_code],
+                                                    "$", "-")
 
   # Only replace if we've managed to make it valid
   x[!c14_is_lab_id(x) & c14_is_lab_id(y)] <- y[!c14_is_lab_id(x) & c14_is_lab_id(y)]
@@ -104,7 +99,7 @@ c14_fix_lab_id <- function(x) {
 #' @rdname c14_fix_lab_id
 #' @export
 c14_is_lab_id <- function(x) {
-  stringr::str_detect(x, c14_lab_id_std())
+  stringr::str_detect(x, c14_lab_id_std()) & !is.na(x)
 }
 
 #' Standard radiocarbon lab ID regex
