@@ -1,855 +1,697 @@
-variant
-(OxA
-0xA
-10
-10121
-102
-103
-110
-117
-120
-121Gif
-147Pa
-1619
-1620
-1621
-1622
-1623
-1624
-1625
-1626
-1627
-1628
-163
-170
-17479
-174Gif
-1BoR
-1Tucson
-207Gif
-21
-210Gif
-211Gif
-215C
-284R
-290R
-2BoR
-36Gif
-41Hv
-44Gif
-47H
-48H
-5052
-5065
-56Gd
-57Gd
-58Gd
-59Gd
-6
-60Pi
-61Pi
-62Sa
-65Pi
-68UQ
-69UQ
-70UQ
-71UQ
-72UQ
-73UQ
-74UQ
-75UQ
-76UQ
-77UQ
-78UQ
-79UQ
-80UQ
-81UQ
-82UQ
-84Gif
-8649
-8Gif
-9372
-9373
-A
-à
-AA
-AAMS
-AAMSA
-AAr
-AAR
-AECV
-AEVC
-AHU
-Aiw
-Aix
-Alday
-Alg
-ALG
-Alger
-AMM
-AMS
-ANL
-ANSTO
-ANTW
-ANU
-ANU/AMS
-ANUA
-ANUI
-Arc
-ARC
-Arias
-Ariz
-Arizona
-ARL
-ARP
-Auck
-Auckland
-average
-AxA
-AXX
-AZ
-B
-B/n
-Ba
-BA
-Ballyg
-Bash
-BASH
-Bata
-BC
-Bdy
-BE
-Bea
-Bera
-Berlin
-beta
-Beta
-BETA
-Betra
-BI
-Bin
-Birm
-BIRM
-BK
-BKY
-BL
-BLMP
-Bln
-BM
-Bn
-BO
-Bon
-bone
-Bonn
-BONN
-BOR
-BRAMS
-Brindisi
-Brm
-Bta
-C
-CAMP
-CAMS
-CAN
-CAR
-Caucade
-CAV
-CEDAD
-CENA
-CHC
-CI
-CINCDR
-CIRAM
-CIRCE
-CNA
-CNA2488
-cog
-Col
-COL
-COL1956
-COL1957
-COL1958
-COL2578
-COL2579
-COL2714
-COL2715
-COL2716
-COL3761
-COL3762
-COL3763
-COL3764
-COL3765
-COL3766
-COL3767
-COL3768
-COL3769
-COL3770
-COL3771
-COL3772
-COL3773
-COL3774
-COL3775
-COL3776
-COL3777
-COL3778
-COL3779
-COL3780
-COL4018
-COL4019
-COL4208
-CR
-CRC
-CRCA
-crg
-Crg
-CrG
-CRG
-Crl
-CRL
-CS
-CSIC
-CSIC554
-CSIG
-CSIRO
-CU
-CURL
-CUTL
-CZ
-D
-D05/17
-D19
-D28/15
-D29
-D82
-Dak
-Dalc
-DAMS
-DAS
-DCI
-DeA
-deb
-Deb
-DEM
-df
-DHS
-DIC
-DR
-DRI
-DSA
-DSH
-DU
-EHT
-ELS
-ENEA
-Er
-Erj
-erl
-Erl
-ERL
-Erll
-eth
-Eth
-ETH
-EVA
-F
-Fait
-Fi
-FM2
-Fr
-Fra
-G123
-Gado
-Gak
-GaK
-GAK
-GAL
-GAMS
-GANOP
-García
-Gc
-Gd
-GD
-GdA
-GdC
-GdrA
-GdS
-GeN
-GEO
-Gi
-GiA
-GIA
-gif
-Gif
-GiF
-GIF
-Gif_A
-Gif/LSM
-Gif/LSN
-Gifa
-GifA
-GifA1
-GifaA
-GifLSM
-GifSLM
-GifT
-GifTAN
-GIFTAN
-GIM
-Gin
-GIN
-GINCD
-GL
-GofA
-Gr
-GR
-Gra
-GrA
-GRA
-GrB
-GrD
-GrM
-Grn
-GrN
-GRn
-GRN
-Gro
-GrO
-GRO
-GS/CC
-GS/CC291
-GS/CC292
-GS/CC293
-Gsy
-GsY
-GSY
-Gu
-GU
-Gx
-GX
-GxA
-GxO
-GXO
-GY
-h
-H
-H192
-H204
-H29/146
-H2935
-H2936
-H2937
-H2938
-H2939
-H7877
-Ha
-HaK
-Ham
-HAM
-Har
-HAR
-Hd
-HD
-HdT131
-HdT133
-Hel
-Hela
-HH
-HU
-HUR
-hv
-Hv
-HV
-I
-IAAA
-IAB
-ICEN
-ICFN
-ICIAMS
-ICN
-IEMAE
-IEMEZG
-IEMEZH
-IEN
-IEPA
-IERZ
-IERZG
-IFAO
-IGAN
-IGAS
-IGS
-II
-IM
-INAH
-ind
-indet
-IRPA
-ISGS
-Isotopes
-ITL
-IU
-IVIC
-K
-K1N2933
-Ka
-KAERI
-Kanada
-KBN
-Ke
-KEEA
-ki
-Ki
-KI
-Ki(Kiev)
-kia
-Kia
-KiA
-KIa
-KIA
-Kiel
-Kiev
-KIK
-Kl
-KL
-KlA
-Kln
-KM
-kn
-Kn
-KN
-KN1021
-KnI
-KNI
-KRIL
-KSU
-Ky
-Kyev
-l
-L
-Lab
-Lamont
-Le
-LE
-LE(RUL)
-Lecce
-LFM
-LG
-LGd
-LGD
-LGQ
-LGU
-LIH
-liv
-Lj
-LJ
-LL
-LLNL
-LLUNK
-ln
-LOCEAN
-Lod
-LOD
-Loean
-Löschen
-LSC
-Lt
-LT
-LTA
-LTD
-Ltl
-LtL
-LTL
-LTU
-Lu
-LU
-LuA
-LUa
-LUNK
-LuS
-lv
-Lv
-LV
-Lv)
-Ly
-LY
-Ly55
-Ly56
-LYAON
-Lyhon
-Lyion
-Lyon
-LYON
-Lyx
-Lyyon
-LZ
-M
-MA
-MAD
-MAG
-MAMœS
-Mams
-MAMS
-MATJ
-MB
-MBN
-Mc
-MC
-mean
-METU
-MKL
-ML
-MNHN
-Mo
-MO
-MOC
-Monanco
-MP
-MTC
-Mura
-MURR
-Muse
-MUSE
-N
-n/a
-n/a1
-n/a2
-n/a3
-n/a4
-Nancy
-nd
-Nd
-Newt
-NIA
-NIESÄ
-NITA2
-NMB
-no
-No
-non
-NOSAMS
-Not
-NPL
-NskA
-NSKA
-NSLR
-NSRL
-NSW
-NUT
-NUTA
-NUTA2
-Nv
-Ny
-NY
-NZ
-Nza
-NzA
-NZA
-O
-OA
-OBDY
-ODT
-ODTÃœ
-ODTK
-ODTÜ
-ODTÜ_K
-ODTUK
-OFZ
-OrsA
-ORSA
-Orsay
-ORSAY
-Orstom
-OS
-OST
-OWU
-Ox
-Ox131b10
-Ox131b11
-Ox131b18
-Ox131b19
-Ox131b9
-Oxa
-OxA
-OXA
-OxA/Lyon
-OxA/OxA
-OxAQ
-OxAX
-OxAZ
-OxBGA
-OXC
-Oxford
-OxQ
-OxX
-OZ
-OZA
-OZB
-Ozc
-OZC
-OZD
-OZE
-OZF
-OZG
-OZH
-OZI
-OZJ
-OZK
-OZL
-OZM
-OZN
-OZQ689
-OZQ694
-OZS
-OZV
-P
-P/GX
-P1065
-P1066
-P1067
-P1068
-P1069
-P1070
-P1072
-P1080
-P934
-Pa
-PA
-Pal
-Paris
-PED
-Péras
-Pertus
-Pi
-PI
-Pioz
-PIT
-PITT
-Pl
-PL
-PLD
-Por
-poz
-Poz
-PoZ
-POZ
-Poznan
-Pr
-PR
-PRL
-PSU
-PSUAMS
-PT
-Pta
-PxA
-Pz
-Q
-QC
-QDes
-QL
-QLDesco
-QTL
-QU
-QUB
-Quechon
-R
-R11746
-R11769/4
-R11769/5
-R1250/1
-R1250/2
-R1250/3
-R2040/4
-R2040/5
-R2526/13
-R2526/17
-R2526/21
-R2526/25
-R2526/29
-R2526/33
-R2618/1
-R2618/2
-R5001/3
-R5001/4
-Rabat
-Rabet
-Rasilla
-RCD
-RDT
-RHM
-RHO
-RI
-RICH
-RIDDL
-RL
-RM
-RoAMS
-ROM
-Rome
-ROME
-Romito
-RP
-RPA
-Rt
-RT
-RTA
-RTD
-RTF
-RTK
-RTT
-RUL
-RW
-S
-S05/17
-Sa
-SA
-Sac
-SAC
-SacA
-SaCA
-SAMS
-Sanu
-SANU
-Sh
-Si
-SI
-Sidi
-Sl
-SL
-SMU
-SN
-SNU02
-SNU03
-SOAN
-SPb
-Spr
-SR
-SRLA
-SRR
-ss
-SS
-SSR
-St
-ST
-SU
-SUa
-SUA
-SUARC
-SUERC
-SUREC
-SWA
-T
-Ta
-TA
-Talba
-Tan
-TAN
-TB
-TBN
-Teled
-Teledyne
-TERR
-TERRA
-TF
-TH
-TK
-Tka
-TKa
-TKA
-TL
-TO
-TRa
-TRD
-TRRA
-TU
-Tua
-TUa
-Tuc
-tucson
-Tucson
-TUNC
-Tx
-TX
-U
-U2AM
-U9bb
-ua
-Ua
-UA
-UB
-UBA
-UBAR
-UC
-UCAL
-UCD
-UCH
-UCI
-UCIAMS
-UCKA
-UCL
-UCLA
-UClAMS
-UCR
-UD
-UG
-Uga
-UGa
-UGA
-UGAM
-UGAMS
-UGra
-UGrA
-UGRA
-UIC
-UJ
-UL
-UlOa
-UlOb
-UM
-UMCO
-unreport
-UOC
-UPI
-UPITT
-UPS
-UPSa
-UPSb
-UQ
-URU
-USGS
-Utc
-UtC
-UTC
-UW
-uz
-Uz
-UZ
-V
-VEI
-Ventana
-Vera
-VERA
-VR
-VRI
-vs
-Vs
-W
-W1S1168
-Wait
-WAIT
-WASH
-WAT
-Wis
-WIS
-Wk
-WK
-Wl
-WSU
-WT
-WW
-x
-X
-Y
-YU
-z
-Z
-zFEAZEQ
-ZU
+canon	variant
+(OxA	(OxA
+A	A
+à	à
+AA	AA
+AAMS	AAMS
+AAMSA	AAMSA
+AAr	AAr
+AAR	AAR
+AECV	AECV
+AEVC	AEVC
+AHU	AHU
+Aiw	Aiw
+Aix	Aix
+Alday	Alday
+Alg	Alg
+ALG	ALG
+Alge	Alge
+Alger	Alger
+AMM	AMM
+AMS	AMS
+ANL	ANL
+ANSTO	ANSTO
+ANTW	ANTW
+ANU	ANU
+ANU/AMS	ANU/AMS
+ANUA	ANUA
+ANUI	ANUI
+Arc	Arc
+ARC	ARC
+Arias	Arias
+Ariz	Ariz
+Arizon	Arizon
+Arizona	Arizona
+ARL	ARL
+ARP	ARP
+Auck	Auck
+Auckland	Auckland
+average	average
+AxA	AxA
+AXX	AXX
+AZ	AZ
+B	B
+B/n	B/n
+Ba	Ba
+BA	BA
+Ballyg	Ballyg
+Bash	Bash
+BASH	BASH
+Bata	Bata
+BC	BC
+Bdy	Bdy
+BE	BE
+Bea	Bea
+Bera	Bera
+Berli	Berli
+Berlin	Berlin
+Bet	Bet
+beta	beta
+Beta	Beta
+BETA	BETA
+Betra	Betra
+BI	BI
+Bin	Bin
+Birm	Birm
+BIRM	BIRM
+BK	BK
+BKY	BKY
+BL	BL
+BLMP	BLMP
+Bln	Bln
+BM	BM
+Bn	Bn
+BO	BO
+bon	bon
+Bon	Bon
+Bonn	Bonn
+BONN	BONN
+BOR	BOR
+BRAMS	BRAMS
+Brindisi	Brindisi
+Brm	Brm
+Bta	Bta
+C	C
+CAMP	CAMP
+CAMS	CAMS
+CAN	CAN
+CAR	CAR
+Caucade	Caucade
+CAV	CAV
+Cava	Cava
+Caval	Caval
+CEDA	CEDA
+CEDAD	CEDAD
+CENA	CENA
+CHC	CHC
+CI	CI
+CINCDR	CINCDR
+CIRAM	CIRAM
+CIRCE	CIRCE
+CNA	CNA
+cog	cog
+Col	Col
+COL	COL
+COLL	COLL
+CR	CR
+CRC	CRC
+CRCA	CRCA
+crg	crg
+Crg	Crg
+CrG	CrG
+CRG	CRG
+Crl	Crl
+CRL	CRL
+CS	CS
+CSIC	CSIC
+CSIG	CSIG
+CSIRO	CSIRO
+CU	CU
+CURL	CURL
+CUTL	CUTL
+CZ	CZ
+D	D
+Dak	Dak
+Dalc	Dalc
+DAMS	DAMS
+DAS	DAS
+DCI	DCI
+DeA	DeA
+deb	deb
+Deb	Deb
+DEM	DEM
+df	df
+DHS	DHS
+DIC	DIC
+DR	DR
+DRI	DRI
+DSA	DSA
+DSH	DSH
+DU	DU
+EHT	EHT
+ELS	ELS
+ENEA	ENEA
+Er	Er
+Erj	Erj
+erl	erl
+Erl	Erl
+ERL	ERL
+Erll	Erll
+eth	eth
+Eth	Eth
+ETH	ETH
+EVA	EVA
+F	F
+Fait	Fait
+Fi	Fi
+FM	FM
+Fr	Fr
+Fra	Fra
+G	G
+Gado	Gado
+Gak	Gak
+GaK	GaK
+GAK	GAK
+GAL	GAL
+GAMS	GAMS
+GANOP	GANOP
+García	García
+Gc	Gc
+Gd	Gd
+GD	GD
+GdA	GdA
+GdC	GdC
+GdrA	GdrA
+GdS	GdS
+GeN	GeN
+GEO	GEO
+Gi	Gi
+GiA	GiA
+GIA	GIA
+gif	gif
+Gif	Gif
+GiF	GiF
+GIF	GIF
+Gif/LS	Gif/LS
+Gif/LSM	Gif/LSM
+Gif/LSN	Gif/LSN
+Gifa	Gifa
+GifA	GifA
+GifaA	GifaA
+GifLSM	GifLSM
+GifSLM	GifSLM
+GifT	GifT
+GifTAN	GifTAN
+GIFTAN	GIFTAN
+GIM	GIM
+Gin	Gin
+GIN	GIN
+GINCD	GINCD
+GL	GL
+GofA	GofA
+Gr	Gr
+GR	GR
+Gra	Gra
+GrA	GrA
+GRA	GRA
+GrB	GrB
+GrD	GrD
+GrM	GrM
+Grn	Grn
+GrN	GrN
+GRn	GRn
+GRN	GRN
+Gro	Gro
+GrO	GrO
+GRO	GRO
+GS/CC	GS/CC
+Gsy	Gsy
+GsY	GsY
+GSY	GSY
+Gu	Gu
+GU	GU
+Gx	Gx
+GX	GX
+GxA	GxA
+GxO	GxO
+GXO	GXO
+GY	GY
+h	h
+H	H
+Ha	Ha
+Hacettep	Hacettep
+HaK	HaK
+Ham	Ham
+HAM	HAM
+Har	Har
+HAR	HAR
+Hd	Hd
+HD	HD
+HdT	HdT
+Hel	Hel
+Hela	Hela
+HH	HH
+HU	HU
+HUR	HUR
+hv	hv
+Hv	Hv
+HV	HV
+I	I
+IAAA	IAAA
+IAB	IAB
+ICEN	ICEN
+ICFN	ICFN
+ICIAMS	ICIAMS
+ICN	ICN
+IEMAE	IEMAE
+IEMEZG	IEMEZG
+IEMEZH	IEMEZH
+IEN	IEN
+IEPA	IEPA
+IERZ	IERZ
+IERZG	IERZG
+IFAO	IFAO
+IGAN	IGAN
+IGAS	IGAS
+IGS	IGS
+II	II
+IM	IM
+INAH	INAH
+ind	ind
+indet	indet
+IRPA	IRPA
+ISGS	ISGS
+Isotopes	Isotopes
+ITL	ITL
+IU	IU
+IVIC	IVIC
+K	K
+Ka	Ka
+KAERI	KAERI
+Kanad	Kanad
+KBN	KBN
+Ke	Ke
+KEEA	KEEA
+ki	ki
+Ki	Ki
+KI	KI
+Ki(Kiev)	Ki(Kiev)
+kia	kia
+Kia	Kia
+KiA	KiA
+KIa	KIa
+KIA	KIA
+Kiel	Kiel
+Kiev	Kiev
+KIK	KIK
+Kl	Kl
+KL	KL
+KlA	KlA
+Kln	Kln
+KM	KM
+kn	kn
+Kn	Kn
+KN	KN
+KnI	KnI
+KNI	KNI
+KRIL	KRIL
+KSU	KSU
+Ky	Ky
+Kye	Kye
+l	l
+L	L
+Lab	Lab
+Labcode	Labcode
+Lamont	Lamont
+Le	Le
+LE	LE
+LE(RUL)	LE(RUL)
+Lecce	Lecce
+LFM	LFM
+LG	LG
+LGd	LGd
+LGD	LGD
+LGQ	LGQ
+LGU	LGU
+LIH	LIH
+liv	liv
+Lj	Lj
+LJ	LJ
+LL	LL
+LLNL	LLNL
+LLUNK	LLUNK
+ln	ln
+LOCEAN	LOCEAN
+Lod	Lod
+LOD	LOD
+Loean	Loean
+Lösche	Lösche
+LSC	LSC
+Lt	Lt
+LT	LT
+LTA	LTA
+LTD	LTD
+Ltl	Ltl
+LtL	LtL
+LTL	LTL
+LTU	LTU
+Lu	Lu
+LU	LU
+LuA	LuA
+LUa	LUa
+LUNK	LUNK
+LuS	LuS
+lv	lv
+Lv	Lv
+LV	LV
+Lv)	Lv)
+Ly	Ly
+LY	LY
+LYAON	LYAON
+Lyhon	Lyhon
+Lyion	Lyion
+Lyon	Lyon
+LYON	LYON
+Lyx	Lyx
+Lyyon	Lyyon
+LZ	LZ
+M	M
+MA	MA
+MAD	MAD
+MAG	MAG
+MAMœS	MAMœS
+Mams	Mams
+MAMS	MAMS
+MATJ	MATJ
+MB	MB
+MBN	MBN
+Mc	Mc
+MC	MC
+mean	mean
+METU	METU
+Minnesot	Minnesot
+MKL	MKL
+ML	ML
+MNHN	MNHN
+Mo	Mo
+MO	MO
+MOC	MOC
+Monanc	Monanc
+Montelib	Montelib
+MP	MP
+MTC	MTC
+Mura	Mura
+MURR	MURR
+Muse	Muse
+MUSE	MUSE
+N	N
+n/a	n/a
+Nanc	Nanc
+nd	nd
+Newt	Newt
+NIA	NIA
+NIESÄ	NIESÄ
+NITA	NITA
+NMB	NMB
+no	no
+No	No
+non	non
+NOSAMS	NOSAMS
+Not	Not
+Novosibi	Novosibi
+NPL	NPL
+NskA	NskA
+NSKA	NSKA
+NSLR	NSLR
+NSRL	NSRL
+NSW	NSW
+NUT	NUT
+NUTA	NUTA
+Nv	Nv
+Ny	Ny
+NY	NY
+NZ	NZ
+Nza	Nza
+NzA	NzA
+NZA	NZA
+O	O
+OA	OA
+OBDY	OBDY
+ODT	ODT
+ODTÃœ	ODTÃœ
+ODTK	ODTK
+ODTÜ	ODTÜ
+ODTUK	ODTUK
+OFZ	OFZ
+OrsA	OrsA
+ORSA	ORSA
+Orsay	Orsay
+ORSAY	ORSAY
+Orstom	Orstom
+OS	OS
+OST	OST
+OWU	OWU
+Ox	Ox
+Oxa	Oxa
+OxA	OxA
+OXA	OXA
+OxA/Lyon	OxA/Lyon
+OxA/OxA	OxA/OxA
+OxAQ	OxAQ
+OxAX	OxAX
+OxAZ	OxAZ
+OxBGA	OxBGA
+OXC	OXC
+Oxfor	Oxfor
+Oxford	Oxford
+OxQ	OxQ
+OxX	OxX
+OZ	OZ
+OZA	OZA
+OZB	OZB
+Ozc	Ozc
+OZC	OZC
+OZD	OZD
+OZE	OZE
+OZF	OZF
+OZG	OZG
+OZH	OZH
+OZI	OZI
+OZJ	OZJ
+OZK	OZK
+OZL	OZL
+OZM	OZM
+OZN	OZN
+OZQ	OZQ
+OZS	OZS
+OZV	OZV
+P	P
+P/GX	P/GX
+Pa	Pa
+PA	PA
+Pal	Pal
+Paris	Paris
+PED	PED
+Péras	Péras
+Pertus	Pertus
+Pi	Pi
+PI	PI
+Pioz	Pioz
+PIT	PIT
+PITT	PITT
+Pl	Pl
+PL	PL
+PLD	PLD
+Por	Por
+poz	poz
+Poz	Poz
+PoZ	PoZ
+POZ	POZ
+Pozna	Pozna
+Pr	Pr
+PR	PR
+PRL	PRL
+PSU	PSU
+PSUAMS	PSUAMS
+PT	PT
+Pta	Pta
+PxA	PxA
+Pz	Pz
+Q	Q
+QC	QC
+QDes	QDes
+QL	QL
+QLDesco	QLDesco
+QTL	QTL
+QU	QU
+QUB	QUB
+Quechon	Quechon
+R	R
+Rabat	Rabat
+Rabet	Rabet
+Rasilla	Rasilla
+RCD	RCD
+RDT	RDT
+RHM	RHM
+RHO	RHO
+RI	RI
+RICH	RICH
+RIDDL	RIDDL
+RL	RL
+RM	RM
+RoAMS	RoAMS
+ROM	ROM
+Rome	Rome
+ROME	ROME
+Romito	Romito
+RP	RP
+RPA	RPA
+Rt	Rt
+RT	RT
+RTA	RTA
+RTD	RTD
+RTF	RTF
+RTK	RTK
+RTT	RTT
+RUL	RUL
+RW	RW
+s	s
+S	S
+Sa	Sa
+SA	SA
+Sac	Sac
+SAC	SAC
+SacA	SacA
+SaCA	SaCA
+SAMS	SAMS
+Sanu	Sanu
+SANU	SANU
+Sh	Sh
+Si	Si
+SI	SI
+Sidi	Sidi
+Sl	Sl
+SL	SL
+SMU	SMU
+SN	SN
+SNU	SNU
+SOAN	SOAN
+SPb	SPb
+Spr	Spr
+SR	SR
+SRLA	SRLA
+SRR	SRR
+SS	SS
+SSR	SSR
+St	St
+ST	ST
+SU	SU
+SUa	SUa
+SUA	SUA
+SUARC	SUARC
+SUERC	SUERC
+SUREC	SUREC
+SWA	SWA
+T	T
+Ta	Ta
+TA	TA
+Talba	Talba
+Tan	Tan
+TAN	TAN
+TB	TB
+TBN	TBN
+Teled	Teled
+Teledyne	Teledyne
+TERR	TERR
+TERRA	TERRA
+TF	TF
+TH	TH
+TK	TK
+Tka	Tka
+TKa	TKa
+TKA	TKA
+TL	TL
+TO	TO
+TRa	TRa
+TRD	TRD
+TRRA	TRRA
+TU	TU
+Tua	Tua
+TUa	TUa
+Tuc	Tuc
+tucson	tucson
+Tucson	Tucson
+TUNC	TUNC
+Tx	Tx
+TX	TX
+U	U
+ua	ua
+Ua	Ua
+UA	UA
+UB	UB
+UBA	UBA
+UBAR	UBAR
+UC	UC
+UCAL	UCAL
+UCD	UCD
+UCH	UCH
+UCI	UCI
+UCIAMS	UCIAMS
+UCKA	UCKA
+UCL	UCL
+UCLA	UCLA
+UClAMS	UClAMS
+UCR	UCR
+UD	UD
+UDescono	UDescono
+UG	UG
+Uga	Uga
+UGa	UGa
+UGA	UGA
+UGAM	UGAM
+UGAMS	UGAMS
+UGra	UGra
+UGrA	UGrA
+UGRA	UGRA
+UIC	UIC
+UJ	UJ
+UL	UL
+UlO	UlO
+UM	UM
+UMCO	UMCO
+Universi	Universi
+unreport	unreport
+UOC	UOC
+UPI	UPI
+UPIT	UPIT
+UPS	UPS
+UQ	UQ
+URU	URU
+USGS	USGS
+Utc	Utc
+UtC	UtC
+UTC	UTC
+UW	UW
+uz	uz
+Uz	Uz
+UZ	UZ
+V	V
+VEI	VEI
+Ventana	Ventana
+Vera	Vera
+VERA	VERA
+VR	VR
+VRI	VRI
+vs	vs
+Vs	Vs
+W	W
+Wait	Wait
+WAIT	WAIT
+WAS	WAS
+WAT	WAT
+Wis	Wis
+WIS	WIS
+Wk	Wk
+WK	WK
+Wl	Wl
+WSU	WSU
+WT	WT
+WW	WW
+x	x
+X	X
+Y	Y
+YU	YU
+z	z
+Z	Z
+zFEAZE	zFEAZE
+ZU	ZU
