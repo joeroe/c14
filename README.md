@@ -4,6 +4,7 @@
 <!-- badges: start -->
 [![Lifecycle:
 experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://www.tidyverse.org/lifecycle/#experimental)
+[![R-CMD-check](https://github.com/joeroe/cleanc14/workflows/R-CMD-check/badge.svg)](https://github.com/joeroe/cleanc14/actions)
 <!-- badges: end -->
 
 **cleanc14** provides some utility functions for cleaning radiocarbon data in R.
