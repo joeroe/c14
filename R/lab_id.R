@@ -62,8 +62,8 @@ c14_parse_lab_id <- function(x, fix = TRUE) {
 #'
 #' @details
 #' The regular expression used to test for the conventional format is
-#' `"^([\w\(\)/]{1,8})[ -](.*)$"`. This accepts unusual but parsable
-#' variants such as `"Ki(KIEV)-1234"` or `"Gif/LSN-5678"`
+#' `"^([[:alpha:]\(\)/]{1,8})[ -\u2010\u2013_#\.\+](.*)$"`. This accepts unusual
+#' but parsable variants such as `"Ki(KIEV)-1234"` or `"Gif/LSN_5678"`
 #'
 #' @return
 #' `c14_is_lab_id()` returns a logical vector the same length as `x`.
@@ -74,21 +74,17 @@ c14_parse_lab_id <- function(x, fix = TRUE) {
 #' @export
 #'
 #' @examples
-#' c14_is_lab_id(c("OxA-1234", "OxA_4567"))
-#'
-#' c14_fix_lab_id(c("OxA-1234", "OxA_4567"))
 c14_fix_lab_id <- function(x) {
   y <- x
-
-  # Variant delimiters
-  broken <- !c14_is_lab_id(y) & !is.na(y)
-  y[broken] <- stringr::str_replace(y[broken], "[\u2010\u2013_#\\.\\+]", "-")
 
   # Lab code but no number
   broken <- !c14_is_lab_id(y) & !is.na(y)
   bare_lab_code <- stringr::str_detect(y, paste0(c14_lab_code_std(), "$"))
   y[broken & bare_lab_code] <- stringr::str_replace(y[broken & bare_lab_code],
                                                     "$", "-")
+
+  # TODO: spaces in lab code, e.g. c14_parse_lab_id("Ki (KIEV)-14546")
+  # TODO: digits in lab code?
 
   # Only replace if we've managed to make it valid
   x[!c14_is_lab_id(x) & c14_is_lab_id(y)] <- y[!c14_is_lab_id(x) & c14_is_lab_id(y)]
@@ -106,10 +102,14 @@ c14_is_lab_id <- function(x) {
 #'
 #' @keywords internal
 #' @noRd
-c14_lab_id_std <- function() paste0(c14_lab_code_std(), "[ -](.*)$")
+c14_lab_id_std <- function() paste0(c14_lab_code_std(),
+                                    c14_lab_delim_std(),
+                                    "(.*)$")
 
 #' Standard radiocarbon lab ID regex
 #'
 #' @keywords internal
 #' @noRd
-c14_lab_code_std <- function() "^([\\w\\(\\)/]{1,8})"
+c14_lab_code_std <- function() "^([[:alpha:]\\(\\)/]{1,8})"
+
+c14_lab_delim_std <- function() "[ -\u2010\u2013_#\\.\\+]"

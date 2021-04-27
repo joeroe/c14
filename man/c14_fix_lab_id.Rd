@@ -27,11 +27,6 @@ fixing common issues and variant forms.
 }
 \details{
 The regular expression used to test for the conventional format is
-\code{"^([\\w\\(\\)/]{1,8})[ -](.*)$"}. This accepts unusual but parsable
-variants such as \code{"Ki(KIEV)-1234"} or \code{"Gif/LSN-5678"}
-}
-\examples{
-c14_is_lab_id(c("OxA-1234", "OxA_4567"))
-
-c14_fix_lab_id(c("OxA-1234", "OxA_4567"))
+\code{"^([[:alpha:]\\(\\)/]{1,8})[ -\\u2010\\u2013_#\\.\\+](.*)$"}. This accepts unusual
+but parsable variants such as \code{"Ki(KIEV)-1234"} or \code{"Gif/LSN_5678"}
 }
