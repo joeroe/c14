@@ -1,7 +1,7 @@
 # Script to prepare dataset `c14_labs`: table of active and defunct radiocarbon
 #  laboratories and lab codes.
-# Source: *Radiocarbon*, http://radiocarbon.webhost.uits.arizona.edu/node/11
-# Version: 9 April 2021
+# Sources:
+# - *Radiocarbon* list, 9 April 2021, <http://radiocarbon.webhost.uits.arizona.edu/node/11>
 library(dplyr)
 library(stringr)
 library(tabulizer)
@@ -36,5 +36,10 @@ c14_labs %>%
 # Hotfix awkward lab codes
 c14_labs$lab_code[c14_labs$lab_code == "Ki"] <- "Ki(KIEV)"
 c14_labs$lab_code[c14_labs$lab == "A Gif-sur-Yvette and Orsay"] <- "GifA"
+
+# Addendum
+c14_labs_addendum <- readr::read_tsv("data-raw/c14_labs_addendum.tsv",
+                                     col_types = "clcc")
+c14_labs <- bind_rows(c14_labs, c14_labs_addendum)
 
 usethis::use_data(c14_labs, overwrite = TRUE)

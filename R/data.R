@@ -1,9 +1,10 @@
 #' Radiocarbon laboratories
 #'
-#' A list of known active and defunct radiocarbon laboratories and lab codes,
-#' maintained by the journal *Radiocarbon*. Last updated 9 April 2021.
+#' Active and defunct radiocarbon laboratories with their standard lab codes.
+#' Based on the list maintained by the journal *Radiocarbon* (updated 9 April
+#' 2021), with a few additions.
 #'
-#' @format A data frame with 283 rows and 4 variables:
+#' @format A data frame with 285 rows and 4 variables:
 #' \describe{
 #'   \item{lab_code}{Character. Laboratory code, used to identify published
 #'   dates as from this lab.}
