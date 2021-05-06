@@ -1,87 +1,112 @@
 # cal.R
-# S3 record class c14_cal (cal): calibrated radiocarbon dates
+# vector list_of class c14_cal (cal): calibrated radiocarbon dates and other
+# calendar probability distributions
 
 # Register formal class for S4 compatibility
 # https://vctrs.r-lib.org/articles/s3-vector.html#implementing-a-vctrs-s3-class-in-a-package-1
-methods::setOldClass(c("c14_cal", "vctrs_vctr"))
+methods::setOldClass(c("c14_cal", "vctrs_list_of"))
 
 # Constructors ------------------------------------------------------------
 
 #' Calibrated radiocarbon dates
 #'
-#' The `cal` class represents a calibrated radiocarbon date.
+#' @description
+#' The `cal` class represents a vector of calendar probability distribution;
+#' typically calibrated radiocarbon dates.
 #'
-#' @param x                       A `data.frame` with two columns, with calendar years and associated probabilities.
-#' @param curve                   (Optional) `character`. Atmospheric curve used for calibration, e.g. "intcal20".
-#' @param era                     (Optional) `character`. Calendar system used. Default: `cal BP`.
-#' @param lab_id                  (Optional) `character`. Lab code or other label for the calibrated sample.
-#' @param cra                     (Optional) `integer`. Uncalibrated conventional radiocarbon age (CRA) of the sample.
-#' @param error                   (Optional) `integer`. Error associated with the uncalibrated sample.
-#' @param reservoir_offset        (Optional) `integer`. Marine reservoir offset used in the calibration, if any.
-#' @param reservoir_offset_error  (Optional) `integer`. Error associated with the marine reservoir offset.
-#' @param calibration_range       (Optional) `integer` vector of length 2. The range of years over which the calibration was performed, i.e. `c(start, end)`.
-#' @param F14C                    (Optional) `logical`. Whether the calibration was calculated using F14C values instead of the CRA.
-#' @param normalised              (Optional) `logical`. Whether the calibrated probability densities were normalised.
-#' @param p_cutoff                (Optional) `numeric`. Lower threshold beyond which probability densities were considered zero.
-#' @param ...                     (Optional) Arguments based to other functions.
+#' `cal()` constructs a new `cal` vector from a set of data frames containing
+#' the raw probability distributions.
+#'
+#' @param ... <[dynamic-dots][rlang::dyn-dots]> A set of data frames. Each
+#'  should have two columns, the first a vector of calendar ages, and the second
+#'  a vector of associated probability densities. If the first column is not an
+#'  [era::yr()] vector, it is coerced to one using the time scale specified by
+#'  `.era`.
+#' @param .era [era::era()] object describing the time scale used for ages.
+#'  Defaults to calendar years Before Present (`era("cal BP")`). Not used if
+#'  the ages specified in `...` are already `era::yr()` vectors.
 #'
 #' @return
-#' `cal` object: a data frame with two columns, `year` and `p`, representing
-#' the calibrated probability distribution. All other values are stored as
-#' attributes and can be accessed with [cal_metadata()].
-#'
-#' @family cal class methods
+#' A list of data frames with class `cal` (`c14_cal`). Each element has two
+#' columns: `age` and `pdens`.
 #'
 #' @export
-cal <- function(label = character(),
-                c14_age = numeric(),
-                c14_error = numeric(),
-                curve = c14_curve(),
-                offset = numeric(),
-                offset_error = numeric(),
-                pd = calp(),
-                normalised = logical(),
-                p_cutoff = numeric(),
-                engine = character(),
-                engine_version = character()) {
-  new_cal(label,
-          c14_age,
-          c14_error,
-          curve,
-          offset,
-          offset_error,
-          pd,
-          normalised,
-          p_cutoff,
-          engine,
-          engine_version)
+#'
+#' @examples
+#' # Uniform distribution between 1 and 10 BP:
+#' cal(data.frame(age = era::yr(1:10, "cal BP"), pdens = rep(0.1, 10)))
+cal <- function(..., .era = era::era("cal BP")) {
+  # TODO: If ... is a single list, unlist it (? – maybe too clever)
+  # if (rlang::is_bare_list(..., n = 1))
+
+  x <- rlang::list2(...)
+
+  # x <- purrr::map(x, vctrs::vec_assert, ptype = cal_atomic_ptype())
+
+  new_cal(x)
+
+  # Coerce first columns to yr (with message)
+  # Coerce second columns to numeric
+
+  # missing_age <- missing(age)
+  #
+  # if (!era::is_yr(age)) {
+  #   age <- vec_cast(age, numeric())
+  #   age <- era::yr(age, "cal BP")
+  #   if (!missing_age) {
+  #     rlang::warn(
+  #       'era of `age` not specified, defaulting to "cal BP".',
+  #       i = "Use era::yr() to specify the era used."
+  #     )
+  #   }
+  # }
+  # pdens <- vec_cast(pdens, numeric())
+  #
+  # new_cal(age, pdens)
 }
 
-new_cal <- function(label = character(),
-                    c14_age = numeric(),
-                    c14_error = numeric(),
-                    curve = c14_curve(),
-                    offset = numeric(),
-                    offset_error = numeric(),
-                    pd = calp(),
-                    normalised = logical(),
-                    p_cutoff = numeric(),
-                    engine = character(),
-                    engine_version = character()) {
-  new_rcrd(list(
-    label = label,
-    c14_age = c14_age,
-    curve = curve,
-    offset = offset,
-    offset_error = offset_error,
-    pd = pd,
-    normalised = normalised,
-    p_cutoff = p_cutoff,
-    engine = engine,
-    engine_version = engine_version
-  ),
-  class = "c14_cal")
+#' Construct a `c14_cal` object
+#'
+#' @description
+#' `c14_cal` (abbreviated `cal`) is a list of data frames representing
+#' calibrated radiocarbon or other calendar-based probability distributions.
+#' Inputs are recycled using vctrs::vec_recycle_common().
+#'
+#' This function should only be used internally. The user-friendly constructor
+#' is [cal()].
+#'
+#' @param x List of data frames.
+#'
+#' @return
+#' [vctrs::new_list_of] subclass `c14_cal`.
+#'
+#' @noRd
+#' @keywords Internal
+new_cal <- function(x = list()) {
+  new_list_of(x,
+              ptype = cal_atomic_ptype(),
+              class = "c14_cal")
 }
+
+#' Shorthand prototype for individual elements of a cal vector
+#'
+#' @noRd
+#' @keywords Internal
+cal_atomic_ptype <- function() data.frame(age = era::yr(), pdens = numeric())
+
+
+# Conversion --------------------------------------------------------------
+
+#' @rdname calp
+#' @export
+as_calp <- function(x, ...) UseMethod("as_calp")
+
+#' @method as_calp calGrid
+#' @export
+as_calp.calGrid <- function(x, ...) {
+  new_calp(era::yr(x$calBP, "cal BP"), x$PrDens)
+}
+
 
 # Validators --------------------------------------------------------------
 
@@ -89,36 +114,25 @@ new_cal <- function(label = character(),
 # Print/format ------------------------------------------------------------
 
 #' @export
+format.c14_cal <- function(x, ...) {
+  s <- cal_point(x)
+  # Clean up after era_yr to character cast is implemented:
+  # https://github.com/joeroe/era/issues/11
+  paste(vec_data(s), era::era_label(era::yr_era(s)))
+}
+
+#' @export
+vec_ptype_full.c14_cal <- function(x, ...) "c14_cal"
+
+#' @export
 vec_ptype_abbr.c14_cal <- function(x, ...) "cal"
 
 #' @export
-format.c14_cal <- function(x, ...) {
-  format(field(x, "label"))
+obj_print_data.c14_cal <- function(x, ...) {
+  print(format(x), quote = FALSE)
 }
 
 # Casting/coercion --------------------------------------------------------
 
-
-# Maths -------------------------------------------------------------------
-
-#' @export
-min.cal <- function(...) {
-  # TODO: Probably broken
-  cals <- rlang::list2(...)
-  cals <- dplyr::bind_rows(cals)
-  cals[cals$p <= 0] <- NULL
-  max(cals$year)
-}
-
-#' @export
-max.cal <- function(...) {
-  # TODO: Probably broken
-  cals <- rlang::list2(...)
-  cals <- dplyr::bind_rows(cals)
-  cals[cals$p <= 0] <- NULL
-  min(cals$year)
-}
-
-# Attributes --------------------------------------------------------------
 
 

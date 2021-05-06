@@ -4,58 +4,31 @@
 \alias{cal}
 \title{Calibrated radiocarbon dates}
 \usage{
-cal(
-  label = character(),
-  c14_age = numeric(),
-  c14_error = numeric(),
-  curve = c14_curve(),
-  offset = numeric(),
-  offset_error = numeric(),
-  pd = calp(),
-  normalised = logical(),
-  p_cutoff = numeric(),
-  engine = character(),
-  engine_version = character()
-)
+cal(..., .era = era::era("cal BP"))
 }
 \arguments{
-\item{curve}{(Optional) \code{character}. Atmospheric curve used for calibration, e.g. "intcal20".}
+\item{...}{<\link[rlang:dyn-dots]{dynamic-dots}> A set of data frames. Each
+should have two columns, the first a vector of calendar ages, and the second
+a vector of associated probability densities. If the first column is not an
+\code{\link[era:yr]{era::yr()}} vector, it is coerced to one using the time scale specified by
+\code{.era}.}
 
-\item{normalised}{(Optional) \code{logical}. Whether the calibrated probability densities were normalised.}
-
-\item{p_cutoff}{(Optional) \code{numeric}. Lower threshold beyond which probability densities were considered zero.}
-
-\item{x}{A \code{data.frame} with two columns, with calendar years and associated probabilities.}
-
-\item{era}{(Optional) \code{character}. Calendar system used. Default: \verb{cal BP}.}
-
-\item{lab_id}{(Optional) \code{character}. Lab code or other label for the calibrated sample.}
-
-\item{cra}{(Optional) \code{integer}. Uncalibrated conventional radiocarbon age (CRA) of the sample.}
-
-\item{error}{(Optional) \code{integer}. Error associated with the uncalibrated sample.}
-
-\item{reservoir_offset}{(Optional) \code{integer}. Marine reservoir offset used in the calibration, if any.}
-
-\item{reservoir_offset_error}{(Optional) \code{integer}. Error associated with the marine reservoir offset.}
-
-\item{calibration_range}{(Optional) \code{integer} vector of length 2. The range of years over which the calibration was performed, i.e. \code{c(start, end)}.}
-
-\item{F14C}{(Optional) \code{logical}. Whether the calibration was calculated using F14C values instead of the CRA.}
-
-\item{...}{(Optional) Arguments based to other functions.}
+\item{.era}{\code{\link[era:era]{era::era()}} object describing the time scale used for ages.
+Defaults to calendar years Before Present (\code{era("cal BP")}). Not used if
+the ages specified in \code{...} are already \code{era::yr()} vectors.}
 }
 \value{
-\code{cal} object: a data frame with two columns, \code{year} and \code{p}, representing
-the calibrated probability distribution. All other values are stored as
-attributes and can be accessed with \code{\link[=cal_metadata]{cal_metadata()}}.
+A list of data frames with class \code{cal} (\code{c14_cal}). Each element has two
+columns: \code{age} and \code{pdens}.
 }
 \description{
-The \code{cal} class represents a calibrated radiocarbon date.
+The \code{cal} class represents a vector of calendar probability distribution;
+typically calibrated radiocarbon dates.
+
+\code{cal()} constructs a new \code{cal} vector from a set of data frames containing
+the raw probability distributions.
 }
-\seealso{
-Other cal class methods: 
-\code{\link{as_cal}()},
-\code{\link{cal_metadata}()}
+\examples{
+# Uniform distribution between 1 and 10 BP:
+cal(data.frame(age = era::yr(1:10, "cal BP"), pdens = rep(0.1, 10)))
 }
-\concept{cal class methods}

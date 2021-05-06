@@ -54,7 +54,8 @@ cal_point <- function(x,
     central = cal_central
   )
 
-  purrr::map(x, f, interval)
+  # Flatten to era_yr
+  vec_c(!!!purrr::map(x, f, interval))
 }
 
 #' Mode of a calibrated radiocarbon date
@@ -67,7 +68,7 @@ cal_point <- function(x,
 #' @noRd
 #' @keywords internal
 cal_mode <- function(x, ...) {
-  y <- x$year[x$p == max(x$p)]
+  y <- x$age[x$pdens == max(x$pdens)]
   if (length(y) > 1) {
     y <- y[1]
     rlang::warn(
@@ -87,7 +88,7 @@ cal_mode <- function(x, ...) {
 #' @noRd
 #' @keywords internal
 cal_median <- function(x, ...) {
-  x$year[x$p == stats::quantile(x$p, 0.5)]
+  x$age[x$pdens == stats::quantile(x$pdens, 0.5)]
 }
 
 #' Mean of a calibrated radiocarbon date
@@ -99,7 +100,7 @@ cal_median <- function(x, ...) {
 #' @noRd
 #' @keywords internal
 cal_mean <- function(x, ...) {
-  stats::weighted.mean(x$year, x$p)
+  stats::weighted.mean(x$age, x$pdens)
 }
 
 #' Local mode of a calibrated radiocarbon date
