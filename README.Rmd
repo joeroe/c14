@@ -40,7 +40,7 @@ devtools::install_github("joeroe/c14")
 
 Tidy radiocarbon calibration:
 
-```{r eg-calibrate, message=FALSE, eval=FALSE}
+```{r eg-calibrate, message=FALSE}
 library("c14")
 library("dplyr")
 ppnd %>% 
@@ -50,6 +50,6 @@ ppnd %>%
 
 The result is a `cal` vector, which fits nicely into a data frame or tibble and comes with print methods etc.:
 
-```{r eg-cal, eval=FALSE}
+```{r eg-cal}
 c14_calibrate(10000, 30, verbose = FALSE)
 ```

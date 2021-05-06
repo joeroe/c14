@@ -42,6 +42,19 @@ library("dplyr")
 ppnd %>% 
   filter(site == "Ganj Dareh") %>% 
   mutate(cal = c14_calibrate(cra, error, verbose = FALSE))
+#> # A tibble: 9 x 11
+#>   lab_id  site  latitude longitude context   cra error d13c  material references
+#>   <chr>   <chr>    <dbl>     <dbl> <chr>   <int> <int> <chr> <chr>    <chr>     
+#> 1 GaK 807 Ganj…     34.2      47.5 Niv. E… 10400   150 <NA>  CH       Radiocarb…
+#> 2 OxA 20… Ganj…     34.2      47.5 GD.Fl.…  8840   110 <NA>  S (hord… Hedges et…
+#> 3 OxA 21… Ganj…     34.2      47.5 GD.Fl.…  9010   110 <NA>  S (hord… Hedges et…
+#> 4 OxA 21… Ganj…     34.2      47.5 GD.Fl.…  8850   100 <NA>  S (hord… Hedges et…
+#> 5 OxA 21… Ganj…     34.2      47.5 GD.Fl.…  8690   110 <NA>  S (hord… Hedges et…
+#> 6 SI 922  Ganj…     34.2      47.5 Niv. E   8570   210 <NA>  CH       Radiocarb…
+#> 7 SI 923  Ganj…     34.2      47.5 Niv.E    8625   195 <NA>  CH       Hole 1987 
+#> 8 SI 924  Ganj…     34.2      47.5 Niv. E   8640    90 <NA>  CH       Hole 1987 
+#> 9 SI 925  Ganj…     34.2      47.5 Niv.E,…  8385    75 <NA>  CH       Hole 1987 
+#> # … with 1 more variable: cal <cal>
 ```
 
 The result is a `cal` vector, which fits nicely into a data frame or
@@ -49,4 +62,6 @@ tibble and comes with print methods etc.:
 
 ``` r
 c14_calibrate(10000, 30, verbose = FALSE)
+#> <c14_cal[1]>
+#> [1] 11399 cal BP
 ```
