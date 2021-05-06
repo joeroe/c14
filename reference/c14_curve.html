@@ -131,7 +131,7 @@ typically used for &quot;post-bomb&quot; calibration." />
   <div class="col-md-9 contents">
     <div class="page-header">
     <h1>Radiocarbon calibration curve class</h1>
-    <small class="dont-index">Source: <a href='https://github.com/joeroe/c14/blob/master/R/c14_curve.R'><code>R/c14_curve.R</code></a></small>
+    <small class="dont-index">Source: <a href='https://github.com/joeroe/c14/blob/master/R/curve.R'><code>R/curve.R</code></a></small>
     <div class="hidden name"><code>c14_curve.Rd</code></div>
     </div>
 
@@ -147,9 +147,15 @@ optionally with their associated d14C values.</p>
 typically used for "post-bomb" calibration.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>c14_curve</span><span class='op'>(</span><span class='va'>cal_age</span>, <span class='va'>c14_age</span>, <span class='va'>c14_error</span>, d14c <span class='op'>=</span> <span class='cn'>NA</span>, d14c_error <span class='op'>=</span> <span class='cn'>NA</span><span class='op'>)</span>
+    <pre class="usage"><span class='fu'>c14_curve</span><span class='op'>(</span>
+  cal_age <span class='op'>=</span> <span class='fu'>era</span><span class='fu'>::</span><span class='fu'><a href='https://era.joeroe.io/reference/yr.html'>yr</a></span><span class='op'>(</span><span class='op'>)</span>,
+  c14_age <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/numeric.html'>numeric</a></span><span class='op'>(</span><span class='op'>)</span>,
+  c14_error <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/numeric.html'>numeric</a></span><span class='op'>(</span><span class='op'>)</span>,
+  d14c <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/numeric.html'>numeric</a></span><span class='op'>(</span><span class='op'>)</span>,
+  d14c_error <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/numeric.html'>numeric</a></span><span class='op'>(</span><span class='op'>)</span>
+<span class='op'>)</span>
 
-<span class='fu'>c14_fcurve</span><span class='op'>(</span><span class='va'>cal_age</span>, <span class='va'>f14c</span>, <span class='va'>f14c_error</span><span class='op'>)</span></pre>
+<span class='fu'>c14_fcurve</span><span class='op'>(</span>cal_age <span class='op'>=</span> <span class='fu'>era</span><span class='fu'>::</span><span class='fu'><a href='https://era.joeroe.io/reference/yr.html'>yr</a></span><span class='op'>(</span><span class='op'>)</span>, f14c <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/numeric.html'>numeric</a></span><span class='op'>(</span><span class='op'>)</span>, f14c_error <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/numeric.html'>numeric</a></span><span class='op'>(</span><span class='op'>)</span><span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -198,7 +204,6 @@ Technical Report LUNFD6(NFFR-3111)/1-17/(2011), Lund University, Nuclear Physics
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
     <div class='dont-index'><p>Other calibration curve functions: 
-<code><a href='c14_curves.html'>c14_curves</a></code>,
 <code><a href='read_14c.html'>read_14c</a>()</code></p></div>
 
   </div>

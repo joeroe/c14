@@ -56,7 +56,8 @@ BchronCalibratedDates: from Bchron::BchronCalibrate()
 
 
 These functions are intended for complex S3 objects from other packages.
-See cal() for a more generic constructor, e.g. using a data frame." />
+The generic constructor cal() can be used for data frames and other base
+structures." />
 <meta property="og:image" content="/logo.svg" />
 <meta name="twitter:card" content="summary" />
 <meta name="twitter:creator" content="@joeroe90" />
@@ -132,7 +133,7 @@ See cal() for a more generic constructor, e.g. using a data frame." />
   <div class="col-md-9 contents">
     <div class="page-header">
     <h1>Convert a foreign object to a cal object</h1>
-    <small class="dont-index">Source: <a href='https://github.com/joeroe/c14/blob/master/R/convert.R'><code>R/convert.R</code></a></small>
+    <small class="dont-index">Source: <a href='https://github.com/joeroe/c14/blob/master/R/cal_convert.R'><code>R/cal_convert.R</code></a></small>
     <div class="hidden name"><code>as_cal.Rd</code></div>
     </div>
 
@@ -141,12 +142,13 @@ See cal() for a more generic constructor, e.g. using a data frame." />
 radiocarbon dates to the c14 <code>cal</code> class.
 Methods are currently implemented for:</p><ul>
 <li><p><code>CalDates</code>: from <code><a href='https://rdrr.io/pkg/rcarbon/man/calibrate.html'>rcarbon::calibrate()</a></code></p></li>
-<li><p><code>oxcAARCalibratedDate</code> and <code>oxcAARCalibratedDatesList</code>: from <code><a href='https://rdrr.io/pkg/oxcAAR/man/oxcalCalibrate.html'>oxcAAR::oxcalCalibrate()</a></code></p></li>
-<li><p><code>BchronCalibratedDates</code>: from <code><a href='https://andrewcparnell.github.io/Bchron/reference/BchronCalibrate.html'>Bchron::BchronCalibrate()</a></code></p></li>
+<li><p><code>oxcAARCalibratedDate</code> and <code>oxcAARCalibratedDatesList</code>: from <code>oxcAAR::oxcalCalibrate()</code></p></li>
+<li><p><code>BchronCalibratedDates</code>: from <code>Bchron::BchronCalibrate()</code></p></li>
 </ul>
 
 <p>These functions are intended for complex S3 objects from other packages.
-See <code><a href='cal.html'>cal()</a></code> for a more generic constructor, e.g. using a data frame.</p>
+The generic constructor <code><a href='cal.html'>cal()</a></code> can be used for data frames and other base
+structures.</p>
     </div>
 
     <pre class="usage"><span class='fu'>as_cal</span><span class='op'>(</span><span class='va'>x</span><span class='op'>)</span>
@@ -168,21 +170,16 @@ See <code><a href='cal.html'>cal()</a></code> for a more generic constructor, e.
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
       <th>x</th>
-      <td><p>object to be converted to a <code>cal</code> object.</p></td>
+      <td><p>Object from another package to be converted to a <code>cal</code> object.</p></td>
     </tr>
     </table>
 
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p><code>cal</code> object: a data frame with two columns, <code>year</code> and <code>p</code>, representing
-the calibrated probability distribution. All other values are stored as
-attributes and can be accessed with <code><a href='cal_metadata.html'>cal_metadata()</a></code>.</p>
+    <p>Vector of class <code>c14_cal</code> (<a href='cal.html'>cal</a>).</p>
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
-    <div class='dont-index'><p>Other cal class methods: 
-<code><a href='cal_metadata.html'>cal_metadata</a>()</code>,
-<code><a href='cal.html'>cal</a>()</code></p>
-<p>Other c14 conversion functions: 
+    <div class='dont-index'><p>Other c14 conversion functions: 
 <code><a href='as.CalDates.cal.html'>as.CalDates.cal</a>()</code></p></div>
 
   </div>

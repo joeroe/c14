@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Sum radiocarbon dates with tidy syntax — c14_sum • c14</title>
+<title>Radiocarbon decay constants — c14_decay • c14</title>
 
 <!-- favicons -->
 <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
@@ -46,10 +46,10 @@
 
 
 
-<meta property="og:title" content="Sum radiocarbon dates with tidy syntax — c14_sum" />
-<meta property="og:description" content="A wrapper for rcarbon::spd() that takes a list of calibrated dates rather
-than a CalDates object. This allows you to use the output of c14_calibrate() and
-take advantage of tidy summary syntax (dplyr::group_by(), etc.)" />
+<meta property="og:title" content="Radiocarbon decay constants — c14_decay" />
+<meta property="og:description" content="
+
+Decay constants used in the calculation of radiocarbon ages (see c14_age())." />
 <meta property="og:image" content="/logo.svg" />
 <meta name="twitter:card" content="summary" />
 <meta name="twitter:creator" content="@joeroe90" />
@@ -124,50 +124,37 @@ take advantage of tidy summary syntax (dplyr::group_by(), etc.)" />
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Sum radiocarbon dates with tidy syntax</h1>
-    <small class="dont-index">Source: <a href='https://github.com/joeroe/c14/blob/master/R/c14_calibrate.R'><code>R/c14_calibrate.R</code></a></small>
-    <div class="hidden name"><code>c14_sum.Rd</code></div>
+    <h1>Radiocarbon decay constants</h1>
+    <small class="dont-index">Source: <a href='https://github.com/joeroe/c14/blob/master/R/data-constants.R'><code>R/data-constants.R</code></a></small>
+    <div class="hidden name"><code>c14_decay.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>A wrapper for <code><a href='https://rdrr.io/pkg/rcarbon/man/spd.html'>rcarbon::spd()</a></code> that takes a list of calibrated dates rather
-than a <code>CalDates</code> object. This allows you to use the output of <code><a href='c14_calibrate.html'>c14_calibrate()</a></code> and
-take advantage of tidy summary syntax (<code><a href='https://dplyr.tidyverse.org/reference/group_by.html'>dplyr::group_by()</a></code>, etc.)</p>
+    <p><script id="MathJax-script" async src="../../mathjaxr/doc/mathjax/es5/tex-chtml-full.js"></script>
+
+Decay constants used in the calculation of radiocarbon ages (see <code><a href='c14_units.html'>c14_age()</a></code>).</p>
     </div>
 
-    <pre class="usage"><span class='fu'>c14_sum</span><span class='op'>(</span><span class='va'>cal</span>, time_range <span class='op'>=</span> <span class='cn'>NA</span>, <span class='va'>...</span><span class='op'>)</span></pre>
+    <pre class="usage"><span class='va'>c14_decay_libby</span>
 
-    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
-    <table class="ref-arguments">
-    <colgroup><col class="name" /><col class="desc" /></colgroup>
-    <tr>
-      <th>cal</th>
-      <td><p>A list of <code>cal</code> objects.</p></td>
-    </tr>
-    <tr>
-      <th>time_range</th>
-      <td><p>Vector of length 2 indicating the range of calendar dates
-over which to sum. If left <code>NA</code>, the maximum range of the
-<code>cal</code> will be used. See details.</p></td>
-    </tr>
-    <tr>
-      <th>...</th>
-      <td><p>Optional arguments to be passed to <code><a href='https://rdrr.io/pkg/rcarbon/man/spd.html'>rcarbon::spd()</a></code></p></td>
-    </tr>
-    </table>
+<span class='va'>c14_decay_cambridge</span></pre>
 
-    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>A <code>calGrid</code> object containing the summed probability distribution.</p>
-    <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
+    <h2 class="hasAnchor" id="format"><a class="anchor" href="#format"></a>Format</h2>
 
-    <p>Unlike <code><a href='https://rdrr.io/pkg/rcarbon/man/spd.html'>rcarbon::spd()</a></code>, this function will attempt to guess an appropriate
-time range if it isn't explicitly specified with <code>time_range</code>. It's probably
-a good idea to specify it.</p>
-    <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
+    <p>A numeric of length 1:</p><dl>
+<dt>c14_decay_libby</dt><dd><p>The Libby decay constant, \(\lambda_L=8033^{-1}\). The standard for calculating the conventional radiocarbon age (CRA).</p></dd>
+<dt>c14_decay_cambridge</dt><dd><p>The Cambridge decay constant, \(\lambda_C=8267^{-1}\).</p></dd>
 
-    <div class='dont-index'><p>Other tidy radiocarbon functions: 
-<code><a href='c14_calibrate.html'>c14_calibrate</a>()</code></p></div>
+</dl>
+
+<p>An object of class <code>numeric</code> of length 1.</p>
+<p>An object of class <code>numeric</code> of length 1.</p>
+    <h2 class="hasAnchor" id="source"><a class="anchor" href="#source"></a>Source</h2>
+
+    <p>Stenström KE, Skog G, Georgiadou E, Genberg J, Johansson A (2011).
+&#8220;A guide to radiocarbon units and calculations.&#8221;
+Technical Report LUNFD6(NFFR-3111)/1-17/(2011), Lund University, Nuclear Physics.</p>
 
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">

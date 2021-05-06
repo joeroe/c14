@@ -105,42 +105,23 @@
   <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">site</span> <span class="op">==</span> <span class="st">"Ganj Dareh"</span><span class="op">)</span> <span class="op">%&gt;%</span> 
   <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span>cal <span class="op">=</span> <span class="fu"><a href="reference/c14_calibrate.html">c14_calibrate</a></span><span class="op">(</span><span class="va">cra</span>, <span class="va">error</span>, verbose <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span><span class="op">)</span>
 <span class="co">#&gt; # A tibble: 9 x 11</span>
-<span class="co">#&gt;   lab_id site  latitude longitude context   cra error d13c  material references</span>
-<span class="co">#&gt;   &lt;chr&gt;  &lt;chr&gt;    &lt;dbl&gt;     &lt;dbl&gt; &lt;chr&gt;   &lt;int&gt; &lt;int&gt; &lt;chr&gt; &lt;chr&gt;    &lt;chr&gt;     </span>
-<span class="co">#&gt; 1 GaK 8… Ganj…     34.2      47.5 Niv. E… 10400   150 &lt;NA&gt;  CH       Radiocarb…</span>
-<span class="co">#&gt; 2 OxA 2… Ganj…     34.2      47.5 GD.Fl.…  8840   110 &lt;NA&gt;  S (hord… Hedges et…</span>
-<span class="co">#&gt; 3 OxA 2… Ganj…     34.2      47.5 GD.Fl.…  9010   110 &lt;NA&gt;  S (hord… Hedges et…</span>
-<span class="co">#&gt; 4 OxA 2… Ganj…     34.2      47.5 GD.Fl.…  8850   100 &lt;NA&gt;  S (hord… Hedges et…</span>
-<span class="co">#&gt; 5 OxA 2… Ganj…     34.2      47.5 GD.Fl.…  8690   110 &lt;NA&gt;  S (hord… Hedges et…</span>
-<span class="co">#&gt; 6 SI 922 Ganj…     34.2      47.5 Niv. E   8570   210 &lt;NA&gt;  CH       Radiocarb…</span>
-<span class="co">#&gt; 7 SI 923 Ganj…     34.2      47.5 Niv.E    8625   195 &lt;NA&gt;  CH       Hole 1987 </span>
-<span class="co">#&gt; 8 SI 924 Ganj…     34.2      47.5 Niv. E   8640    90 &lt;NA&gt;  CH       Hole 1987 </span>
-<span class="co">#&gt; 9 SI 925 Ganj…     34.2      47.5 Niv.E,…  8385    75 &lt;NA&gt;  CH       Hole 1987 </span>
-<span class="co">#&gt; # … with 1 more variable: cal &lt;list&gt;</span></code></pre></div>
+<span class="co">#&gt;   lab_id  site  latitude longitude context   cra error d13c  material references</span>
+<span class="co">#&gt;   &lt;chr&gt;   &lt;chr&gt;    &lt;dbl&gt;     &lt;dbl&gt; &lt;chr&gt;   &lt;int&gt; &lt;int&gt; &lt;chr&gt; &lt;chr&gt;    &lt;chr&gt;     </span>
+<span class="co">#&gt; 1 GaK 807 Ganj…     34.2      47.5 Niv. E… 10400   150 &lt;NA&gt;  CH       Radiocarb…</span>
+<span class="co">#&gt; 2 OxA 20… Ganj…     34.2      47.5 GD.Fl.…  8840   110 &lt;NA&gt;  S (hord… Hedges et…</span>
+<span class="co">#&gt; 3 OxA 21… Ganj…     34.2      47.5 GD.Fl.…  9010   110 &lt;NA&gt;  S (hord… Hedges et…</span>
+<span class="co">#&gt; 4 OxA 21… Ganj…     34.2      47.5 GD.Fl.…  8850   100 &lt;NA&gt;  S (hord… Hedges et…</span>
+<span class="co">#&gt; 5 OxA 21… Ganj…     34.2      47.5 GD.Fl.…  8690   110 &lt;NA&gt;  S (hord… Hedges et…</span>
+<span class="co">#&gt; 6 SI 922  Ganj…     34.2      47.5 Niv. E   8570   210 &lt;NA&gt;  CH       Radiocarb…</span>
+<span class="co">#&gt; 7 SI 923  Ganj…     34.2      47.5 Niv.E    8625   195 &lt;NA&gt;  CH       Hole 1987 </span>
+<span class="co">#&gt; 8 SI 924  Ganj…     34.2      47.5 Niv. E   8640    90 &lt;NA&gt;  CH       Hole 1987 </span>
+<span class="co">#&gt; 9 SI 925  Ganj…     34.2      47.5 Niv.E,…  8385    75 &lt;NA&gt;  CH       Hole 1987 </span>
+<span class="co">#&gt; # … with 1 more variable: cal &lt;cal&gt;</span></code></pre></div>
 <p>The result is a <code>cal</code> vector, which fits nicely into a data frame or tibble and comes with print methods etc.:</p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="reference/c14_calibrate.html">c14_calibrate</a></span><span class="op">(</span><span class="fl">10000</span>, <span class="fl">30</span>, verbose <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span>
-<span class="co">#&gt; [[1]]</span>
-<span class="co">#&gt; # Calibrated probability distribution from 11806 to 11251 cal BP</span>
-<span class="co">#&gt; </span>
-<span class="co">#&gt;                        #     #####              ###                             </span>
-<span class="co">#&gt;                 ###   ##   ##########       ########                            </span>
-<span class="co">#&gt;                #####  ##  ############   ###########                            </span>
-<span class="co">#&gt;              #########################  #############        #                  </span>
-<span class="co">#&gt;            ###########################################       ##                 </span>
-<span class="co">#&gt;      #####################################################  #####               </span>
-<span class="co">#&gt;   |---------|--------------|--------------|--------------|--------------|------|</span>
-<span class="co">#&gt; 11300     11400          11500          11600          11700          11800  11900</span>
-<span class="co">#&gt; Lab ID: 1</span>
-<span class="co">#&gt; Uncalibrated: 10000±30 uncal BP</span>
-<span class="co">#&gt; era: cal BP</span>
-<span class="co">#&gt; curve: intcal20</span>
-<span class="co">#&gt; reservoir_offset: 0</span>
-<span class="co">#&gt; reservoir_offset_error: 0</span>
-<span class="co">#&gt; calibration_range: 55000–0 BP</span>
-<span class="co">#&gt; normalised: TRUE</span>
-<span class="co">#&gt; F14C: FALSE</span>
-<span class="co">#&gt; p_cutoff: 1e-05</span></code></pre></div>
+<span class="co">#&gt; &lt;c14_cal[1]&gt;</span>
+<span class="co">#&gt; [1] 11399 cal BP</span></code></pre></div>
 </div>
 </div>
   </div>

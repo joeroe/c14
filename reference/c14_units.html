@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Sum radiocarbon dates with tidy syntax — c14_sum • c14</title>
+<title>Radiocarbon unit calculations — c14_units • c14</title>
 
 <!-- favicons -->
 <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
@@ -46,10 +46,14 @@
 
 
 
-<meta property="og:title" content="Sum radiocarbon dates with tidy syntax — c14_sum" />
-<meta property="og:description" content="A wrapper for rcarbon::spd() that takes a list of calibrated dates rather
-than a CalDates object. This allows you to use the output of c14_calibrate() and
-take advantage of tidy summary syntax (dplyr::group_by(), etc.)" />
+<meta property="og:title" content="Radiocarbon unit calculations — c14_units" />
+<meta property="og:description" content="
+
+Functions for calculating basic units used in radiocarbon measurements.
+c14_age() calculates the conventional radiocarbon age (CRA) from a fraction
+modern measurement.
+c14_f14c() reverse-calculates the fractionation-corrected fraction modern
+value (\(F^{14}C\) or \(pM\)) of a radiocarbon age." />
 <meta property="og:image" content="/logo.svg" />
 <meta name="twitter:card" content="summary" />
 <meta name="twitter:creator" content="@joeroe90" />
@@ -124,51 +128,85 @@ take advantage of tidy summary syntax (dplyr::group_by(), etc.)" />
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Sum radiocarbon dates with tidy syntax</h1>
-    <small class="dont-index">Source: <a href='https://github.com/joeroe/c14/blob/master/R/c14_calibrate.R'><code>R/c14_calibrate.R</code></a></small>
-    <div class="hidden name"><code>c14_sum.Rd</code></div>
+    <h1>Radiocarbon unit calculations</h1>
+    <small class="dont-index">Source: <a href='https://github.com/joeroe/c14/blob/master/R/c14_units.R'><code>R/c14_units.R</code></a></small>
+    <div class="hidden name"><code>c14_units.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>A wrapper for <code><a href='https://rdrr.io/pkg/rcarbon/man/spd.html'>rcarbon::spd()</a></code> that takes a list of calibrated dates rather
-than a <code>CalDates</code> object. This allows you to use the output of <code><a href='c14_calibrate.html'>c14_calibrate()</a></code> and
-take advantage of tidy summary syntax (<code><a href='https://dplyr.tidyverse.org/reference/group_by.html'>dplyr::group_by()</a></code>, etc.)</p>
+    <p><script id="MathJax-script" async src="../../mathjaxr/doc/mathjax/es5/tex-chtml-full.js"></script>
+
+Functions for calculating basic units used in radiocarbon measurements.</p>
+<p><code>c14_age()</code> calculates the conventional radiocarbon age (CRA) from a fraction
+modern measurement.</p>
+<p><code>c14_f14c()</code> reverse-calculates the fractionation-corrected fraction modern
+value (\(F^{14}C\) or \(pM\)) of a radiocarbon age.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>c14_sum</span><span class='op'>(</span><span class='va'>cal</span>, time_range <span class='op'>=</span> <span class='cn'>NA</span>, <span class='va'>...</span><span class='op'>)</span></pre>
+    <pre class="usage"><span class='fu'>c14_age</span><span class='op'>(</span><span class='va'>x</span>, decay <span class='op'>=</span> <span class='fu'>c14</span><span class='fu'>::</span><span class='va'><a href='c14_decay.html'>c14_decay_libby</a></span><span class='op'>)</span>
+
+<span class='fu'>c14_f14c</span><span class='op'>(</span><span class='va'>x</span>, decay <span class='op'>=</span> <span class='fu'>c14</span><span class='fu'>::</span><span class='va'><a href='c14_decay.html'>c14_decay_libby</a></span><span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
-      <th>cal</th>
-      <td><p>A list of <code>cal</code> objects.</p></td>
+      <th>x</th>
+      <td><p>For <code>c14_age()</code>, a vector of fraction modern
+(\(F^{14}C\)) measurements. For <code>c14_f14c()</code>, a vector of
+conventional radiocarbon ages.</p></td>
     </tr>
     <tr>
-      <th>time_range</th>
-      <td><p>Vector of length 2 indicating the range of calendar dates
-over which to sum. If left <code>NA</code>, the maximum range of the
-<code>cal</code> will be used. See details.</p></td>
-    </tr>
-    <tr>
-      <th>...</th>
-      <td><p>Optional arguments to be passed to <code><a href='https://rdrr.io/pkg/rcarbon/man/spd.html'>rcarbon::spd()</a></code></p></td>
+      <th>decay</th>
+      <td><p>Decay constant. The default is the Libby
+constant (<code>c14_decay_libby</code>), which is the standard for calculating
+conventional radiocarbon ages. Use <code>c14_decay_cambridge</code> for the Cambridge
+constant, or a single numeric for other values.</p></td>
     </tr>
     </table>
 
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>A <code>calGrid</code> object containing the summed probability distribution.</p>
+    <p>Vector the same length as <code>x</code>.</p>
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
-    <p>Unlike <code><a href='https://rdrr.io/pkg/rcarbon/man/spd.html'>rcarbon::spd()</a></code>, this function will attempt to guess an appropriate
-time range if it isn't explicitly specified with <code>time_range</code>. It's probably
-a good idea to specify it.</p>
-    <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
+    <p><code>c14_age()</code> calculates the conventional radiocarbon age, \(t\),
+as defined by Stuiver and Polach (1977)
+:</p>
+<p>\[t = -\frac{1}{\lambda}\ln{F^{14}C}\]</p>
+<p><code>c14_f14c()</code> implements the inverse of this function:</p>
+<p>\[F^{14}C = e^{-\lambda t}\]</p>
+<p>The decay constant conventionally used for calculating radiocarbon ages is
+the Libby decay constant, \(\lambda_L=8033^{-1}\).
+An alternative is the Cambridge decay constant,
+\(\lambda_C=8267^{-1}\) (Stenström et al. 2011)
+.</p>
+<p>Reported radiocarbon ages are usually rounded based on the magnitude of the
+error (Stuiver and Polach 1977)
+. For this reason, reverse-calculating
+fraction modern from a radiocarbon age is unlikely to return the precise
+original measurement of the sample.</p>
+<p>Where available, fraction modern is the recommended measurement for
+calibration (Bronk Ramsey 2008)
+.</p>
+    <h2 class="hasAnchor" id="references"><a class="anchor" href="#references"></a>References</h2>
 
-    <div class='dont-index'><p>Other tidy radiocarbon functions: 
-<code><a href='c14_calibrate.html'>c14_calibrate</a>()</code></p></div>
+    <p>Bronk Ramsey C (2008).
+&#8220;Radiocarbon dating: revolutions in understanding.&#8221;
+<em>Archaeometry</em>, <b>50</b>(2), 249--275.
+ISSN 0003-813X, 1475-4754, doi: <a href='https://doi.org/10.1111/j.1475-4754.2008.00394.x'>10.1111/j.1475-4754.2008.00394.x</a>
+, <a href='https://doi.org/10.1111/j.1475-4754.2008.00394.x'>https://doi.org/10.1111/j.1475-4754.2008.00394.x</a>.<br /><br /> Stenström KE, Skog G, Georgiadou E, Genberg J, Johansson A (2011).
+&#8220;A guide to radiocarbon units and calculations.&#8221;
+Technical Report LUNFD6(NFFR-3111)/1-17/(2011), Lund University, Nuclear Physics.<br /><br /> Stuiver M, Polach HA (1977).
+&#8220;Reporting of 14C Data.&#8221;
+<em>Radiocarbon</em>, <b>19</b>(3), 355--363.
+ISSN 0033-8222, 1945-5755, doi: <a href='https://doi.org/10.1017/S0033822200003672'>10.1017/S0033822200003672</a>
+, <a href='https://doi.org/10.1017/S0033822200003672'>https://doi.org/10.1017/S0033822200003672</a>.</p>
 
+    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
+    <pre class="examples"><div class='input'><span class='fu'>c14_age</span><span class='op'>(</span><span class='fl'>0.9239</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; [1] 0.999885</div><div class='input'><span class='fu'>c14_f14c</span><span class='op'>(</span><span class='fl'>636</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; [1] -51854.61</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
