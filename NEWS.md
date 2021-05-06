@@ -1,11 +1,9 @@
 # c14 development version
 
-* Revised the `cal` class, representing calibrated radiocarbon dates:
-  * `cal` is now a `vctrs::rcrd` subclass with fields for metadata and the probability distribution (see below)
-  * Metadata specification has been changed.
-* Probability distributions are now represented by `calp`, a data frame subclass.
-  * The `age` column of a `calp` object is an `era::yr` vector, removing the need to specify the epoch used as part of the `cal` metadata.
-  * `as_calp()` converts objects from other packages (`rcarbon::calGrid`) to `calp`.
+* Revised the definition of the `cal` class, representing calibrated radiocarbon dates:
+  * `cal` is now a `vctrs::list_of` subclass; a list of two-column data frames representing the probability distribution
+  * The `age` column of a `cal` element is now an `era::yr` vector.
+  * "Metadata" has been removed from the class definition
 * Added summary functions for calibrated dates (`cal` class):
   * `c14_point()` for point estimates
 * Added classes, functions and datasets for calibration curves:
