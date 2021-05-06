@@ -83,19 +83,6 @@ new_cal <- function(x = list()) {
 cal_atomic_ptype <- function() data.frame(age = era::yr(), pdens = numeric())
 
 
-# Conversion --------------------------------------------------------------
-
-#' @rdname calp
-#' @export
-as_calp <- function(x, ...) UseMethod("as_calp")
-
-#' @method as_calp calGrid
-#' @export
-as_calp.calGrid <- function(x, ...) {
-  new_calp(era::yr(x$calBP, "cal BP"), x$PrDens)
-}
-
-
 # Validators --------------------------------------------------------------
 
 
