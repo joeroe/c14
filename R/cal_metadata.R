@@ -1,77 +1,15 @@
 # cal_metadata.R
 # Functions for working with calibration metadata
 
-#' Extract metadata from a calibrated date
+#' Repair calibration range
 #'
-#' @param x  A `cal` object. See [cal()].
+#' rcarbon functions like spd() expect the StartBP and EndBP metadata to be set,
+#' but if the dates came from another source, they might be missing. This function
+#' reconstructs them from the probability distribution.
+#' x should be a cal object.
 #'
-#' @return
-#' A named list of metadata attributes.
-#'
-#' @family cal class methods
-#'
-#' @export
-cal_metadata <- function(x) {
-  attrs <- attributes(x)
-  attrs$names <- NULL
-  attrs$row.names <- NULL
-  attrs$class <- NULL
-
-  return(attrs)
-}
-
-
-# Utility functions (internal) -------------------------------------------
-
-cal_metadata_thesaurus <- function(what = NA) {
-  thesaurus <- tibble::tribble(
-    ~cal,                      ~CalDates,
-    "label",                   "DateID",
-    "c14_age",                 "CRA",
-    "c14_error",               "Error",
-    NA,                        "Details",
-    "curve",                   "CalCurve",
-    "offset",                  "ResOffsets",
-    "offset_error",            "ResErrors",
-    "normalised",              "Normalised",
-    "p_cutoff",                "CalEPS"
-  )
-
-  if(!is.na(what)) {
-    return(thesaurus[[what]])
-  }
-  else {
-    return(thesaurus)
-  }
-}
-
-cal_recode_metadata <- function(x,
-                                from = c("CalDates", "cal"),
-                                to = c("cal", "CalDates")) {
-  from <- match.arg(from)
-  to <- match.arg(to)
-
-  thes <- stats::setNames(cal_metadata_thesaurus(from), cal_metadata_thesaurus(to))
-  thes <- thes[!is.na(names(thes))]
-
-  x <- x[thes]
-  names(x) <- names(thes)
-
-  # Vectors
-  if(to == "CalDates") {
-    x$StartBP <- x$StartBP[1]
-    x$EndBP <- x$EndBP[2]
-  }
-
-  x[sapply(x, is.null)] <- NA
-
-  return(x)
-}
-
-# rcarbon functions like spd() expect the StartBP and EndBP metadata to be set,
-# but if the dates came from another source, they might be missing. This function
-# reconstructs them from the probability distribution.
-# x should be a cal object.
+#' @noRd
+#' @keywords Internal
 cal_repair_calibration_range <- function(x) {
   if(is.null(attr(x, "calibration_range")) ||
      any(is.na(attr(x, "calibration_range")))) {
