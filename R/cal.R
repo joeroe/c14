@@ -42,28 +42,16 @@ cal <- function(..., .era = era::era("cal BP")) {
   x <- rlang::list2(...)
 
   # x <- purrr::map(x, vctrs::vec_assert, ptype = cal_atomic_ptype())
+  x <- purrr::map(x, purrr::set_names, nm = c("age", "pdens"))
+  # TODO: Message if coerced?
+  x <- purrr::map_if(x, ~!era::is_yr(.[["age"]]),
+                     ~data.frame(age = era::yr_set_era(.[["age"]], .era),
+                                 pdens = .[["pdens"]]))
 
   new_cal(x)
-
-  # Coerce first columns to yr (with message)
-  # Coerce second columns to numeric
-
-  # missing_age <- missing(age)
-  #
-  # if (!era::is_yr(age)) {
-  #   age <- vec_cast(age, numeric())
-  #   age <- era::yr(age, "cal BP")
-  #   if (!missing_age) {
-  #     rlang::warn(
-  #       'era of `age` not specified, defaulting to "cal BP".',
-  #       i = "Use era::yr() to specify the era used."
-  #     )
-  #   }
-  # }
-  # pdens <- vec_cast(pdens, numeric())
-  #
-  # new_cal(age, pdens)
 }
+
+
 
 #' Construct a `c14_cal` object
 #'

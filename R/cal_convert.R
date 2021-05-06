@@ -1,6 +1,11 @@
 # cal_convert.R
 # Functions for converting foreign objects to or from the c14 cal class
 
+
+# rcarbon (CalDates) ------------------------------------------------------
+
+
+
 #' Convert a foreign object to a cal object
 #'
 #' @description
@@ -13,7 +18,8 @@
 #' * `BchronCalibratedDates`: from [Bchron::BchronCalibrate()]
 #'
 #' These functions are intended for complex S3 objects from other packages.
-#' See [cal()] for a more generic constructor, e.g. using a data frame.
+#' The generic constructor [cal()] can be used for data frames and other base
+#' structures.
 #'
 #' @param x  Object from another package to be converted to a `cal` object.
 #'
@@ -29,17 +35,92 @@ as_cal <- function(x) UseMethod("as_cal")
 #' @rdname as_cal
 #' @export
 as_cal.CalDates <- function(x) {
-  if(!is.na(x$calmatrix)) {
-    warning("calMatrix object in CalDates ignored.")
+  x <- validate_CalDates(x)
+
+  pds <- x[[grids_or_calmatrix(x)]]
+
+  if (grids_or_calmatrix(x) == "calmatrix") {
+    rlang::abort("as_cal method for calMatrix not yet implemented!",
+                 class = "c14_unimplemented_function")
   }
 
-  caldates <- cal_recode_metadata(x$metadata, "CalDates", "cal")
-  caldates$pd <- purrr::map(x$grids, as_calp)
-  caldates$engine <- "rcarbon"
-  caldates$engine_version <- utils::packageVersion("rcarbon")
+  pds <- purrr::map(pds, `class<-`, value = "data.frame")
 
-  do.call(new_cal, caldates)
+  cal(!!!pds)
 }
+
+#' Test whether an object is a valid rcarbon::CalDates.
+#'
+#' @noRd
+#' @keywords Internal
+validate_CalDates <- function(x) {
+  message <- "`x` must be a valid `CalDates` object."
+
+  if (!"CalDates" %in% class(x)) {
+    message <- c(message, x = '`x` is not of class "CalDates"')
+  }
+
+  else if (!all.equal(names(x), c("metadata", "grids", "calmatrix"))) {
+    message <- c(message, x = "`x` does not have correct element names")
+  }
+
+  else if (is.na(grids_or_calmatrix(x))) {
+    message <- c(message, x = "`x` does not contain a probability distribution: `grids` and `calmatrix` elements are both NA")
+  }
+
+  if (length(message) > 1) {
+    rlang::abort(message, class = "c14_invalid_foreign_object")
+  }
+  else {
+    invisible(x)
+  }
+}
+
+#' Are the probabilities in a CalDates object stored as grids or a calmatrix?
+#'
+#' @noRd
+#' @keywords Internal
+grids_or_calmatrix <- function(x) {
+  if (!all(is.na(x[["grids"]]))) "grids"
+  else if (!all(is.na(x[["calmatrix"]]))) "calmatrix"
+  else NA
+}
+
+# oxcAAR (oxcAARCalibrated*) ----------------------------------------------
+
+#' @rdname as_cal
+#' @export
+as_cal.oxcAARCalibratedDatesList <- function(x) {
+  purrr::map(x, as_cal)
+}
+
+#' @rdname as_cal
+#' @export
+as_cal.oxcAARCalibratedDate <- function(x) {
+  y <- x$raw_probabilities
+
+  if (!all(is.na(x$posterior_probabilities))) {
+    y <- rbind(data.frame(y, bayesian = "prior"),
+               data.frame(x$posterior_probabilities,
+                          bayesian = "posterior"))
+  }
+
+  new_cal(y)
+}
+
+
+# Bchron (BchronCalibratedDates) ------------------------------------------
+
+#' @rdname as_cal
+#' @export
+as_cal.BchronCalibratedDates <- function(x) {
+  x %>%
+    purrr::map(~data.frame(year = .x$ageGrid, p = .x$densities)) %>%
+    purrr::map(new_cal)
+}
+
+
+# Reverse conversions -----------------------------------------------------
 
 #' Convert cal objects to an rcarbon CalDates object
 #'
@@ -72,34 +153,4 @@ as.CalDates.cal <- function(x) {
   class(CalDates) <- c("CalDates", "list")
 
   return(CalDates)
-}
-
-#' @rdname as_cal
-#' @export
-as_cal.oxcAARCalibratedDatesList <- function(x) {
-  purrr::map(x, as_cal)
-}
-
-#' @rdname as_cal
-#' @export
-as_cal.oxcAARCalibratedDate <- function(x) {
-  # TODO: Metadata?
-  y <- x$raw_probabilities
-
-  if (!all(is.na(x$posterior_probabilities))) {
-    y <- rbind(data.frame(y, bayesian = "prior"),
-               data.frame(x$posterior_probabilities,
-                          bayesian = "posterior"))
-  }
-
-  new_cal(y)
-}
-
-#' @rdname as_cal
-#' @export
-as_cal.BchronCalibratedDates <- function(x) {
-  #TODO: Metadata?
-  x %>%
-    purrr::map(~data.frame(year = .x$ageGrid, p = .x$densities)) %>%
-    purrr::map(new_cal)
 }

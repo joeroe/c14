@@ -35,7 +35,8 @@ Methods are currently implemented for:
 }
 
 These functions are intended for complex S3 objects from other packages.
-See \code{\link[=cal]{cal()}} for a more generic constructor, e.g. using a data frame.
+The generic constructor \code{\link[=cal]{cal()}} can be used for data frames and other base
+structures.
 }
 \seealso{
 Other c14 conversion functions: 
