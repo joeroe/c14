@@ -83,3 +83,22 @@ c14_sum <- function(cal, time_range = NA, ...) {
   summed <- rcarbon::spd(cal_dates, timeRange = time_range, ...)
   return(list(summed$grid))
 }
+
+#' @export
+c14_calibrate_linear <- function(age, error,
+                                 c14_curve = IntCal20, resolution = 1) {
+  uncal <- c14_age_norm(age, error, resolution)
+}
+
+#' @export
+c14_age_norm <- function(age, error, resolution = 1, sigma = 5) {
+  x <- seq(from = age - error * sigma,
+           to = age + error * sigma,
+           by = resolution)
+
+  d <- stats::dnorm(x, age, error)
+  names(d) <- x
+
+  # TODO: rescale to sum to 1? only if resolution != 1?
+  return(d)
+}
