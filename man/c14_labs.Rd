@@ -5,7 +5,7 @@
 \alias{c14_labs}
 \title{Radiocarbon laboratories}
 \format{
-A data frame with 285 rows and 4 variables:
+A data frame with 297 rows and 4 variables:
 \describe{
 \item{lab_code}{Character. Laboratory code, used to identify published
 dates as from this lab.}
@@ -15,16 +15,15 @@ dates as from this lab.}
 \item{country}{Character.}
 }
 }
-\source{
-\url{http://radiocarbon.webhost.uits.arizona.edu/node/11}
-}
 \usage{
 c14_labs
 }
 \description{
-Active and defunct radiocarbon laboratories with their standard lab codes.
-Based on the list maintained by the journal \emph{Radiocarbon} (updated 9 April
-2021), with a few additions.
+Table of active and defunct radiocarbon laboratories with their standard lab
+codes.
+
+Primarily based on the list maintained by the journal \emph{Radiocarbon}
+(updated 20 July 2021), with a few additions.
 }
 \details{
 \code{lab_code} is \emph{almost} unique, but there are exceptions, and sometimes case
@@ -37,5 +36,14 @@ is all that distinguishes two labs:
 \item \code{"Pi"} (Pisa, defunct) and \code{"PI"} (Permafrost Institute, defunct);
 \item \code{"TKA"} (Univ. of Tokyo Museum) and \code{"TKa"} (Univ. of Tokyo AMS), also \code{"TK"} (Univ. of Tokyo).
 }
+}
+\references{
+List of known radiocarbon laboratories. \emph{Radiocarbon}. Last updated 20 July
+2021. \url{http://radiocarbon.webhost.uits.arizona.edu/node/11}
+
+Wang, C., Lu, H., Zhang, J., Gu, Z. and He, K., 2014. Prehistoric demographic
+fluctuations in China inferred from radiocarbon data and their linkage with
+climate change over the past 50,000 years. \emph{Quaternary Science Reviews},
+98, pp.45-59. doi:10.1016/j.quascirev.2014.05.015
 }
 \keyword{datasets}

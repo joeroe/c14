@@ -14,21 +14,22 @@ ANU	FALSE	Australian National Univ.	Australia
 ANUA	TRUE	ANU Accelerator	Australia
 AU	FALSE	University of Alaska	USA
 AURIS	TRUE	Ahmedabad	India
+Aix	TRUE	Centre de Recherche et d'Enseignement de Geosciences de l'Environnement (CERAGE), Aix-en-Provence	France
 B	TRUE	Bern	Switzerland
-Ba	TRUE	Bratislava	Slovakia
 BC	FALSE	Brooklyn College	USA
 BE	TRUE	University of Bern	Switzerland
-Beta	TRUE	Beta Analytic	USA
 BGS	FALSE	Brock University	Canada
 BIOCAMS	FALSE	Miami	USA
-Birm	FALSE	Birmingham	UK
-Bln	FALSE	Berlin	Germany
 BM	FALSE	British Museum	England
 BONN	FALSE	Universität Bonn	Germany
 BRAMS	TRUE	University of Bristol	UK
 BS	TRUE	Birbal Sahni Institute	India
+Ba	TRUE	Bratislava	Slovakia
+Beta	TRUE	Beta Analytic	USA
+Birm	FALSE	Birmingham	UK
+Bln	FALSE	Berlin	Germany
 C	FALSE	Chicago	USA
-CAMS	TRUE	Center for AMS	USA
+CAMS	TRUE	Lawrence Livermore National Laboratory	USA
 CAR	FALSE	Univ. College, Cardiff	Wales
 CENA	TRUE	Centro Energia Nuclear na Agricultura	Brazil
 CG	TRUE	Institute of Geology	China
@@ -36,6 +37,7 @@ CH	FALSE	Chemistry Laboratory	India
 CIRAM	TRUE	CIRAM, Martillac	France
 CN-XX	TRUE	Chinese Academy of Sciences	China
 CNA	TRUE	Centro Nacional de Aceleradores	Spain
+CNL	NA	Institute of Geology and Geophysics, Chinese Academy of Sciences	China
 COL	TRUE	Köln AMS	Germany
 CRCA	FALSE	Cairo	Egypt
 CRL	TRUE	Czech 14C Lab. Czech	Republic
@@ -44,54 +46,58 @@ CSM	FALSE	Cosmochem. Lab., USSR Acad. of Sci.	USSR
 CT	FALSE	Caltech, Calif. Inst. Tech.	USA
 CU	TRUE	Charles University Czech	Republic
 D	FALSE	Dublin, Trinity College	Ireland
-Dak	FALSE	Univ. of Dakar	Sénégal
+D-AMS	TRUE	Direct AMS	USA
 DAL	FALSE	Dalhousie University	Canada
 DE	FALSE	USGS, Denver  	USA
-Deb	TRUE	Debrecen	Hungary
-DebA	TRUE	Debrecen (AMS)	Hungary
 DEM	TRUE	NCSR Demokritos	Greece
 DGC	TRUE	Dalhousie Geochronology Centre	Canada
 DIC	FALSE	Dicar Corp and Dicarb	USA
 DK	TRUE	Univ. de Dakar	Sénégal
 DRI	FALSE	Desert Research Institute	USA
 DSA	TRUE	CIRCE, Caserta	Italy
-D-AMS	TRUE	Direct AMS	USA
+Dak	FALSE	Univ. of Dakar	Sénégal
+Deb	TRUE	Debrecen	Hungary
+DebA	TRUE	Debrecen (AMS)	Hungary
 ENEA	TRUE	ENEA, Bologna	Italy
-Erl	FALSE	Erlangen AMS Facility	Germany
 ETH	TRUE	ETH/AMS Facility	Switzerland
+Erl	FALSE	Erlangen AMS Facility	Germany
 F	FALSE	Florence	Italy
-Fi	TRUE	Florence INFN	Italy
-Fr	FALSE	Freiberg	Germany
-Fra	FALSE	Frankfurt	Germany
 FSU	FALSE	FloridaState University	USA
 FTMC	TRUE	Vilnius AMS Lab	Lithuania
 FZ	TRUE	Fortaleza	Brazil
+Fi	TRUE	Florence INFN	Italy
+Fr	FALSE	Freiberg	Germany
+Fra	FALSE	Frankfurt	Germany
 G	FALSE	Göteborg	Sweden
 GAK	FALSE	Gakushuin University	Japan
-Gd	TRUE	Gliwice	Poland
+GC	NA	Guiyang Institute of Geochemistry	China
 GD	FALSE	Gdansk	Poland
-Gif	TRUE	Gif-sur-Yvette	France
-GifA	TRUE	A Gif-sur-Yvette and Orsay	France
 GIN	TRUE	Geological Institute	Russia
 GL	FALSE	Geochronological Lab.	England
-GrA	FALSE	Groningen AMS	Netherlands
-GrM	TRUE	Groningen AMS	Netherlands
-GrN	FALSE	Groningen	Netherlands
-GrO	FALSE	Groningen	Netherlands
 GSC	TRUE	Geological Survey	Canada
 GU	FALSE	Scottish Universities Research & Reactor Centre	Scotland
 GV	TRUE	AMS Golden Valley, Novosibirsk	Russia
 GX	TRUE	Geochron Laboratories	USA
 GXNUAMS	TRUE	Guangxi Normal Univ. AMS Lab	China
+GZ	NA	Key Laboratory of Isotope Geochronology and Geochemistry (Guangzhou)	China
+Gd	FALSE	Gliwice	Poland
+GdA	TRUE	Gliwice	Poland
+GdS	TRUE	Gliwice	Poland
+Gif	TRUE	Gif-sur-Yvette	France
+Gif A	TRUE	Gif-sur-Yvette and Orsay	France
+GrA	FALSE	Groningen AMS	Netherlands
+GrM	TRUE	Groningen AMS	Netherlands
+GrN	FALSE	Groningen	Netherlands
+GrO	FALSE	Groningen	Netherlands
 H	FALSE	Heidelberg	Germany
 HAM	FALSE	Hamburg	Germany
 HAR	FALSE	Harwell	England
-Hd	TRUE	Heidelberg	Germany
-Hel	TRUE	Helsinki	Finland
-Hela	TRUE	Helsinki AMS	Finland
 HIG	FALSE	Hawaii Inst. of Geophys.	USA
 HL	TRUE	Second Inst. of Oceanography	China
 HNS	FALSE	Hasleton-Nuclear, Palo Alto	USA
+Hd	TRUE	Heidelberg	Germany
+Hel	TRUE	Helsinki	Finland
+Hela	TRUE	Helsinki AMS	Finland
 Hv	FALSE	Hannover	Germany
 I	FALSE	Teledyne Isotopes	USA
 IAA	TRUE	Institute of Accelerator Analysis (beta counting)	Japan
@@ -102,7 +108,6 @@ ICA	TRUE	International Chemical Analysis	USA
 ICEN	FALSE	Instituto Tecnológico e Nuclear	Portugal
 IEMAE	TRUE	Institute of Evolutionary Morphology & Animal Ecology	Russia
 IFAO	TRUE	Institut français d’archéologie orientale	Egypt
-LAR	FALSE	Liège State University	Belgium
 IGAN	TRUE	Institute of Geography	Russia
 IGS	FALSE	Inst. of Geological Sci.	Belarus
 IGSB	TRUE	Inst. of Geological Sci.	Belarus
@@ -121,51 +126,55 @@ JAT	TRUE	Tono Geoscience Center (JAEA)	Japan
 K	FALSE	Copenhagen	Denmark
 KATRI	TRUE	Korea Apparel Testing	Korea
 KEEA	TRUE	Kyushu Environ. Eval. Assoc. Property Research Inst.	Japan
+KF	NA	State Key Laboratory of Lake Science and Environment, Chinese Academy of Sciences	China
 KGM	TRUE	Korea Institute of Geoscience & Mineral Resources (KIGAM)	Korea
 KI	FALSE	Kiel	Germany
 KIA	TRUE	Kiel AMS	Germany
-Ki(KIEV)	TRUE	(KIEV) Institute of Radio-Geochemistry of the Environment	Ukraine
 KIK	FALSE	Royal Institute for Cultural Heritage	Belgium
 KN	FALSE	Köln	Germany
 KR	TRUE	Kraków	Poland
 KRIL	FALSE	Krasnoyarsk Institute	Russia
 KSU	FALSE	Kyoto Sangyo University	Japan
+Ki(KIEV)	TRUE	(KIEV) Institute of Radio-Geochemistry of the Environment	Ukraine
 L	FALSE	Lamont-Doherty	USA
 LACUFF	TRUE	Fluminense Federal Univ.	Brazil
 LAEC	TRUE	Lebanese Atomic Energy Commission (LAEC)	Lebanon
+LAR	FALSE	Liège State University	Belgium
 LE	TRUE	St. Petersburg	Russia
 LEMA	TRUE	Lab. de Espectrometría de Masas con Aceleradores	Mexico
 LIH	TRUE	NCSR Demokritos	Greece
 LJ	FALSE	Scripps (UCSD) La Jolla	USA
 LTL	TRUE	University of Lecce	Italy
+LU	TRUE	St. Petersburg State University	Russia
+LZ	TRUE	Umweltforschungszentrum  Leipzig-Halle	Germany
+LZU	TRUE	Lanzhou University	China
 Lu	FALSE	Lund	Sweden
 LuA	FALSE	Lund	Sweden
 LuS	TRUE	Lund	Sweden
-LU	TRUE	St. Petersburg State University	Russia
 Lv	FALSE	Louvain-la-Neuve	Belgium
 Ly	TRUE	University of Lyon	France
-LZU	TRUE	Lanzhou University	China
 M	FALSE	University of Michigan	USA
-Ma	FALSE	University of Winnepeg	Canada
 MAG	TRUE	Quaternary Geology	Russia
 MAMS	TRUE	Curt-Engelhorn-Zentrum Archaeom.	Germany
 MC	FALSE	Centre Scientifique	Monaco
 METU	FALSE	Middle East Technical Univ.	Turkey
 MKL	TRUE	Lab. of Absolute Dating	Poland
 MTC	TRUE	University of Tokyo	Japan
+Ma	FALSE	University of Winnepeg	Canada
 N	FALSE	Nishina Memorial	Japan
+NB	NA	Nanjing Museum	China
 NIST	TRUE	National Institute of Standards and Technology	USA
 NPL	FALSE	National Physical Lab., Middlesex	England
 NS	FALSE	Nova Scotia Research Foundation	Canada
 NSRL	TRUE	INSTAAR – Univ. of Colorado	USA
 NSTF	FALSE	Nuclear Science & Technology Facility, State Univ. of New York	USA
 NSW	FALSE	U. of New South Wales	Australia
-NTU	TRUE	National Taiwan University Republic of	China
+NTU	TRUE	National Taiwan University	Taiwan
 NU	FALSE	Nihon University	Japan
 NUTA	TRUE	Tandetron AMS Lab	Japan
-Ny	FALSE	Nancy, Centre de Recherches  Radiogéologiques	France
 NZ	FALSE	Rafter Radiocarbon Lab New	Zealand
 NZA	TRUE	Rafter (AMS) New	Zealand
+Ny	FALSE	Nancy, Centre de Recherches  Radiogéologiques	France
 O	FALSE	Humble Oil & Refining	USA
 OBDY	FALSE	ORSTOM Bondy	France
 OR	TRUE	Research Center of Radioisotopes	Japan
@@ -173,18 +182,14 @@ ORINS	FALSE	Oak Ridge Institute of Nuclear Studies	USA
 OS	TRUE	National Ocean Sciences, AMS Facility Woods Hole Oceanographic Inst.	USA
 OWU	FALSE	Ohio Wesleyan Univ.	USA
 OX	FALSE	USDA (Oxford, Miss.)	USA
-OxA	TRUE	Oxford Radiocarbon Accelerator Unit	England
 OZ	TRUE	ANSTO-ANTARES	Australia
-LZ	TRUE	Umweltforschungszentrum  Leipzig-Halle	Germany
-P	TRUE	Max-Planck-Institut Geochron. Lab	Germany
+OxA	TRUE	Oxford Radiocarbon Accelerator Unit	England
 P	FALSE	Univ. of Pennsylvania	USA
+P	TRUE	Max-Planck-Institut Geochron. Lab	Germany
 PAL	TRUE	Palynosurvery Co.	Japan
-Pi	FALSE	Pisa	Italy
 PI	FALSE	Permafrost Institute	Russia
 PIC	FALSE	Packard	USA
 PITT	FALSE	University of Pittsburgh	USA
-Poz	TRUE	Poznan	Poland
-Pr	FALSE	Prague Czech	Republic
 PKU	TRUE	Peking University	China
 PKUAMS	TRUE	Peking Univ. AMS lab	China
 PL	TRUE	Purdue Rare Isotope Measurement Lab	USA
@@ -194,37 +199,43 @@ PRL	TRUE	Radiocarbon Dating Research Unit	India
 PRLCH	FALSE	Physical Research Lab.	India
 PSU	FALSE	Penn State Univ.	USA
 PSUAMS	TRUE	Penn State Univ.	USA
+Pi	FALSE	Pisa	Italy
+Poz	TRUE	Poznan	Poland
+Pr	FALSE	Prague Czech	Republic
 Pta	TRUE	Pretoria South	Africa
+PV	NA	Institute of Vertebrate Paleontology and Paleoanthropology	China
 Q	FALSE	Cambridge  	England
-QL	FALSE	Quaternary Isotope Lab.	USA
 QC	FALSE	Queens College	USA
+QL	FALSE	Quaternary Isotope Lab.	USA
 QU	FALSE	Centre de Recherches Canada Minérales,	Québec
 R	TRUE	Rome	Italy
 RCD	FALSE	Radiocarbon Dating	England
 RCMib	TRUE	Milano Bicocca University	Italy
-RI	FALSE	Radiochemistry, Inc.	USA
+RI	FALSE	Radiochemistry Inc.	USA
 RICH	TRUE	Royal Institute for Cultural Heritage	Belgium
 RIDDL	FALSE	Simon Fraser Univ.	Canada
-Riga	FALSE	Institute of Science	Latvia
 RL	FALSE	Radiocarbon, Ltd.	USA
-RoAMS	TRUE	National Institute for Physics and Nuclear Engineering	Romania
-Rome	TRUE	Dept. of Earth Sciences, Rome	Italy
 RT	TRUE	Rehovot	Israel
 RTK	TRUE	Rehovot	Israel
 RU	FALSE	Rice University	USA
+Riga	FALSE	Institute of Science	Latvia
+RoAMS	TRUE	National Institute for Physics and Nuclear Engineering	Romania
+Rome	TRUE	Dept. of Earth Sciences, Rome	Italy
 S	FALSE	Saskatchewan	Canada
-Sa	FALSE	Saclay, Gif-sur-Yvette	France
-Sac	TRUE	Instituto Tecnológico Portugal e	Nuclear
-SacA	TRUE	Gif sur Yvette (Saclay)	France
 SANU	TRUE	ANU Canberra	Australia
-SPb	TRUE	Herzen State University	Russia
 SFU	FALSE	Simon Fraser Univ.	Canada
-Sh	FALSE	Shell Development Co.	USA
+SH	NA	State Key Laboratory of Estuarine and Coastal Research	China
 SI	FALSE	Smithsonian Institution	USA
 SL	FALSE	Sharp Laboratories	USA
 SM	FALSE	Mobil Oil Corp., Dallas	USA
 SMU	FALSE	Southern Methodist Univ.	USA
 SNU	FALSE	Seoul National University South	Korea
+SPb	TRUE	Herzen State University	Russia
+SUERC	TRUE	Scottish Universities Environmental Research Centre	United Kingdom
+Sa	FALSE	Saclay, Gif-sur-Yvette	France
+Sac	TRUE	Instituto Tecnológico Portugal e	Nuclear
+SacA	TRUE	Gif sur Yvette (Saclay)	France
+Sh	FALSE	Shell Development Co.	USA
 T	TRUE	Trondheim	Norway
 TB	TRUE	Tblisi	Georgia
 TBNC	FALSE	Kaman Instruments	USA
@@ -232,17 +243,16 @@ TEM	FALSE	Temple University	USA
 TF	FALSE	Tata Institute of Fundamental Research	India
 TK	TRUE	University of Tokyo	Japan
 TKA	TRUE	University Museum, Univ. of Tokyo	Japan
-TKa	TRUE	Univ. of Tokyo-AMS	Japan
 TKU	TRUE	Turku	Finland
-Tln	TRUE	Tallinn	Estonia
+TKa	TRUE	Univ. of Tokyo-AMS	Japan
 TO	TRUE	IsoTrace Laboratory	Canada
-TUBITAK	TRUE	TÜBİTAK National AMS Laboratory	Turkey
 TRa	TRUE	Trondheim (AMS)	Norway
-TUa	TRUE	Trondheim (AMS)	Norway
+TUBITAK	TRUE	TÜBİTAK National AMS Laboratory	Turkey
 TUNC	FALSE	Tehran Univ. Nuclear Centre	Iran
+TUa	TRUE	Trondheim (AMS)	Norway
+Tln	TRUE	Tallinn	Estonia
 Tx	FALSE	Texas  	USA
 U	FALSE	Uppsala University	Sweden
-Ua	TRUE	Uppsala AMS	Sweden
 UB	FALSE	Belfast Northern	Ireland
 UBA	TRUE	Belfast Northern	Ireland
 UBAR	TRUE	University of Barcelona	Spain
@@ -251,8 +261,8 @@ UCI	TRUE	Univ. of California, Irvine	USA
 UCLA	FALSE	Univ. of California, Los Angeles	USA
 UCR	FALSE	Univ. of California, Riverside	USA
 UD	FALSE	Udine	Italy
-UGa	TRUE	University of Georgia	USA
 UGRA	TRUE	University of Granada	Spain
+UGa	TRUE	University of Georgia	USA
 UL	FALSE	University of Laval	Canada
 ULA	TRUE	University of Laval	Canada
 UM	FALSE	University of Miami	USA
@@ -262,25 +272,28 @@ UQ	FALSE	Univ. of Quebec at Montréal	Canada
 URCRM	FALSE	Ukrainian Research Ctr. for Radiation Medicine	Ukraine
 URU	TRUE	University of Uruguay	Uruguay
 USGS	FALSE	USGS, Menlo Park	USA
-UtC	FALSE	Utrecht van de Graaff	Netherlands
 UTCAG	TRUE	University of Tennessee	USA
 UW	FALSE	University of Washington	USA
 UZH	TRUE	University of Zurich	Switzerland
+Ua	TRUE	Uppsala AMS	Sweden
+UtC	FALSE	Utrecht van de Graaff	Netherlands
 V	FALSE	Melbourne, Victoria	Australia
-Vs	TRUE	Vilnius, Nat. Res. Ctr.	Lithuania
 VERA	TRUE	Institut für Radiumforschung und Kernphysik	Austria
 VRI	FALSE	Universität Wien	Austria
+Vs	TRUE	Vilnius, Nat. Res. Ctr.	Lithuania
 W	FALSE	USGS, National Center	USA
 WAT	FALSE	University of Waterloo	Canada
+WB	NA	Institute for Preservation Technology of Cultural Relics	China
 WIS	FALSE	Univ. of Wisconsin	USA
-Wk	TRUE	University of Waikato New	Zealand
 WRD	FALSE	USGS Washington, D.C.	USA
 WSU	FALSE	Washington State Univ.	USA
-XLLQ	TRUE	Xi’an Lab. of China Loess & Quat. Geol.	China
+Wk	TRUE	University of Waikato	New Zealand
 X	FALSE	Whitworth College	USA
+XZ	NA	Xinjiang Institute of Disaster Prevention and Relief	China
+XLLQ	TRUE	Xi’an Lab. of China Loess & Quat. Geol.	China
 Y	FALSE	Yale University	USA
-Ya	FALSE	Yale University	USA
 YU	TRUE	Yamagata University	Japan
+Ya	FALSE	Yale University	USA
 Z	TRUE	Zagreb  	Croatia
-SUERC	TRUE	Scottish Universities Environmental Research Centre	United Kingdom
-Aix	TRUE	Centre de Recherche et d'Enseignement de Geosciences de l'Environnement (CERAGE), Aix-en-Provence	France
+ZK	NA	Institute of Archaeology, Chinese Academy of Social Sciences	China
+
