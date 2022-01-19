@@ -142,3 +142,12 @@ format.c14_curve_f14c <- function(x, ...) NextMethod()
 format.c14_curve <- function(x, ...) {
   format(vec_proxy(x))
 }
+
+
+# Cast/coerce -------------------------------------------------------------
+
+#' @export
+as.data.frame.c14_curve_14c <- function(x, ...) vec_proxy(x)
+
+#' @export
+as.data.frame.c14_curve_f14c <- function(x, ...) vec_proxy(x)
