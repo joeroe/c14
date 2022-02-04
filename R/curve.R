@@ -148,7 +148,7 @@ format.c14_curve <- function(x, ...) {
 
 #' @method as.matrix c14_curve
 #' @export
-as.matrix.c14_curve <- function(x, resolution = 1) {
+as.matrix.c14_curve <- function(x, ..., resolution = 1) {
   # TODO: Interpolate to resolution?
   x <- vec_data(x)
 
