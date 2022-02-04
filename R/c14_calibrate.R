@@ -90,7 +90,21 @@ c14_calibrate_linear <- function(age, error,
   uncal <- c14_age_norm(age, error, resolution)
 }
 
+
+#' Generate the normal distribution of a radiocarbon age
+#'
+#' @param age Radiocarbon age in years.
+#' @param error Error associated with the radiocarbon age in years.
+#' @param resolution Desired resolution in years.
+#' @param sigma Desired sigma range.
+#'
+#' @return
+#' A vector of probability density with years as names.
+#'
 #' @export
+#'
+#' @examples
+#' c14_age_norm(10000, 30)
 c14_age_norm <- function(age, error, resolution = 1, sigma = 5) {
   x <- seq(from = age - error * sigma,
            to = age + error * sigma,
