@@ -161,3 +161,9 @@ as.matrix.c14_curve <- function(x, resolution = 1) {
   # TODO: rescale to sum to 1? only if resolution != 1?
   d
 }
+
+#' @export
+as.data.frame.c14_curve_14c <- function(x, ...) vec_proxy(x)
+
+#' @export
+as.data.frame.c14_curve_f14c <- function(x, ...) vec_proxy(x)
