@@ -4,26 +4,36 @@
 \alias{c14_calibrate}
 \title{Calibrate radiocarbon dates}
 \usage{
-c14_calibrate(cra, error, ..., engine = c("rcarbon", "OxCal", "Bchron"))
+c14_calibrate(
+  c14_age,
+  c14_error,
+  ...,
+  engine = c("intcal", "rcarbon", "oxcal", "bchron")
+)
 }
 \arguments{
-\item{cra}{A vector of uncalibrated radiocarbon ages.}
+\item{c14_age}{Vector of uncalibrated radiocarbon ages.}
 
-\item{error}{A vector of standard errors associated with \code{cra}}
+\item{c14_error}{Vector of standard errors associated with \code{c14_age}.}
 
-\item{...}{Optional arguments passed to calibration function.}
+\item{...}{Optional arguments passed to calibration function (see below).}
 
-\item{engine}{Package to use for calibration, i.e. \code{\link[rcarbon:calibrate]{rcarbon::calibrate()}}
-(\code{"rcarbon"}), \code{\link[oxcAAR:oxcalCalibrate]{oxcAAR::oxcalCalibrate()}} (\code{"OxCal"}), or
-\code{\link[Bchron:BchronCalibrate]{Bchron::BchronCalibrate()}} (\code{"Bchron"}). Default: \code{"rcarbon"}.}
+\item{engine}{Method to use for calibration. The default (\code{"intcal"}) is
+fast and simple. Other options require additional packages to be installed.
+Available engines:
+\itemize{
+\item \code{"intcal"}: \code{\link[IntCal:caldist]{IntCal::caldist()}} (default)
+\item \code{"rcarbon"}: \code{\link[rcarbon:calibrate]{rcarbon::calibrate()}}
+\item \code{"oxcal"}: \code{\link[oxcAAR:oxcalCalibrate]{oxcAAR::oxcalCalibrate()}}
+\item \code{"bchron"}: \code{\link[Bchron:BchronCalibrate]{Bchron::BchronCalibrate()}}
+}}
 }
 \value{
 A list of \code{cal} objects.
 }
 \description{
-A thin wrapper of \code{\link[rcarbon:calibrate]{rcarbon::calibrate()}} that returns calibrated dates as a
-single list rather than a `CalDates`` object. Useful, for example, if you want
-to add a column of calibrated dates to an existing table with \code{\link[dplyr:mutate]{dplyr::mutate()}}
+Transforms 'raw' radiocarbon ages into a calendar probability distribution
+using a calibration curve.
 }
 \seealso{
 Other tidy radiocarbon functions: 

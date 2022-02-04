@@ -14,6 +14,7 @@ Depends:
     R (>= 2.10)
 Imports: 
     Rdpack,
+    mathjaxr,
     checkmate,
     cli,
     dplyr,
@@ -28,7 +29,8 @@ Imports:
     utils,
     vctrs (>= 0.3.3),
     methods,
-    zeallot
+    zeallot,
+    IntCal
 Suggests: 
     covr,
     knitr,
@@ -36,7 +38,6 @@ Suggests:
     readxl,
     rmarkdown,
     roxygen2,
-    mathjaxr,
     testthat,
     tibble
 Enhances:

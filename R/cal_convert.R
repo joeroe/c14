@@ -32,6 +32,23 @@
 #' @export
 as_cal <- function(x) UseMethod("as_cal")
 
+
+# Base classes ------------------------------------------------------------
+
+#' @rdname as_cal
+#' @export
+as_cal.data.frame <- function(x) {
+  cal(x)
+}
+
+#' @rdname as_cal
+#' @export
+as_cal.matrix <- function(x) {
+  cal(as.data.frame(x))
+}
+
+# rcarbon (CalDates) ------------------------------------------------------
+
 #' @rdname as_cal
 #' @export
 as_cal.CalDates <- function(x) {

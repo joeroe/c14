@@ -3,47 +3,56 @@
 
 #' Calibrate radiocarbon dates
 #'
-#' A thin wrapper of [rcarbon::calibrate()] that returns calibrated dates as a
-#' single list rather than a `CalDates`` object. Useful, for example, if you want
-#' to add a column of calibrated dates to an existing table with [dplyr::mutate()]
+#' Transforms 'raw' radiocarbon ages into a calendar probability distribution
+#' using a calibration curve.
 #'
-#' @param cra     A vector of uncalibrated radiocarbon ages.
-#' @param error   A vector of standard errors associated with `cra`
-#' @param ...     Optional arguments passed to calibration function.
-#' @param engine  Package to use for calibration, i.e. [rcarbon::calibrate()]
-#'                (`"rcarbon"`), [oxcAAR::oxcalCalibrate()] (`"OxCal"`), or
-#'                [Bchron::BchronCalibrate()] (`"Bchron"`). Default: `"rcarbon"`.
+#' @param c14_age   Vector of uncalibrated radiocarbon ages.
+#' @param c14_error Vector of standard errors associated with `c14_age`.
+#' @param ...       Optional arguments passed to calibration function (see below).
+#' @param engine    Method to use for calibration. The default (`"intcal"`) is
+#'   fast and simple. Other options require additional packages to be installed.
+#'   Available engines:
+#'   * `"intcal"`: [IntCal::caldist()] (default)
+#'   * `"rcarbon"`: [rcarbon::calibrate()]
+#'   * `"oxcal"`: [oxcAAR::oxcalCalibrate()]
+#'   * `"bchron"`: [Bchron::BchronCalibrate()]
 #'
 #' @return A list of `cal` objects.
 #' @export
 #'
 #' @family tidy radiocarbon functions
-c14_calibrate <- function(cra, error, ...,
-                          engine = c("rcarbon", "OxCal", "Bchron")) {
+c14_calibrate <- function(c14_age,
+                          c14_error,
+                          ...,
+                          engine = c("intcal", "rcarbon", "oxcal", "bchron")) {
   engine <- rlang::arg_match(engine)
 
-  if (engine == "rcarbon") {
-    cals <- rcarbon::calibrate(cra, error, calMatrix = FALSE, ...)
+  if (engine == "intcal") {
+    cals <- IntCal::caldist(c14_age, c14_error)
   }
 
-  else if (engine == "OxCal") {
-    if(!requireNamespace("oxcAAR")) {
+  else if (engine == "rcarbon") {
+    if(!requireNamespace("rcarbon", quietly = TRUE)) {
+      stop('`engine` = "rcarbon" requires package rcarbon')
+    }
+    cals <- rcarbon::calibrate(c14_age, c14_error, calMatrix = FALSE,
+                               verbose = FALSE, ...)
+  }
+
+  else if (engine == "oxcal") {
+    if(!requireNamespace("oxcAAR", quietly = TRUE)) {
       stop('`engine` = "OxCal" requires package oxcAAR')
     }
     oxcAAR::quickSetupOxcal()
-    cals <- oxcAAR::oxcalCalibrate(cra, error, ...)
+    cals <- oxcAAR::oxcalCalibrate(c14_age, c14_error, ...)
   }
 
-  else if (engine == "Bchron") {
-    if(!requireNamespace("Bchron")) {
+  else if (engine == "bchron") {
+    if(!requireNamespace("Bchron", quietly = TRUE)) {
       stop('`engine` = "Bchron" requires package Bchron')
     }
 
-    cals <- Bchron::BchronCalibrate(cra, error, ...)
-  }
-
-  else {
-    stop('`engine` must be one of "rcarbon", "OxCal" or "Bchron"')
+    cals <- Bchron::BchronCalibrate(c14_age, c14_error, ...)
   }
 
   cals <- as_cal(cals)

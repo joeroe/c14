@@ -2,6 +2,8 @@
 % Please edit documentation in R/cal_convert.R
 \name{as_cal}
 \alias{as_cal}
+\alias{as_cal.data.frame}
+\alias{as_cal.matrix}
 \alias{as_cal.CalDates}
 \alias{as_cal.oxcAARCalibratedDatesList}
 \alias{as_cal.oxcAARCalibratedDate}
@@ -9,6 +11,10 @@
 \title{Convert a foreign object to a cal object}
 \usage{
 as_cal(x)
+
+\method{as_cal}{data.frame}(x)
+
+\method{as_cal}{matrix}(x)
 
 \method{as_cal}{CalDates}(x)
 
