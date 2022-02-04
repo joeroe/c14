@@ -59,40 +59,6 @@ c14_calibrate <- function(c14_age,
   return(cals)
 }
 
-#' Sum radiocarbon dates with tidy syntax
-#'
-#' A wrapper for [rcarbon::spd()] that takes a list of calibrated dates rather
-#' than a `CalDates` object. This allows you to use the output of [c14_calibrate()] and
-#' take advantage of tidy summary syntax ([dplyr::group_by()], etc.)
-#'
-#' @param cal        A list of `cal` objects.
-#' @param time_range Vector of length 2 indicating the range of calendar dates
-#'                   over which to sum. If left `NA`, the maximum range of the
-#'                   `cal` will be used. See details.
-#' @param ...        Optional arguments to be passed to [rcarbon::spd()]
-#'
-#' @return
-#' A `calGrid` object containing the summed probability distribution.
-#'
-#' @export
-#'
-#' @details
-#' Unlike [rcarbon::spd()], this function will attempt to guess an appropriate
-#' time range if it isn't explicitly specified with `time_range`. It's probably
-#' a good idea to specify it.
-#'
-#' @family tidy radiocarbon functions
-c14_sum <- function(cal, time_range = NA, ...) {
-  cal_dates <- as.CalDates.cal(cal)
-
-  if(is.na(time_range)) {
-    time_range <- c(min.cal(cal), max.cal(cal))
-  }
-
-  summed <- rcarbon::spd(cal_dates, timeRange = time_range, ...)
-  return(list(summed$grid))
-}
-
 #' Generate the normal distribution of a radiocarbon age
 #'
 #' @param age Radiocarbon age(s) in years.
