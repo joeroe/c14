@@ -11,7 +11,7 @@ BugReports: https://github.com/joeroe/c14/issues
 Encoding: UTF-8
 LazyData: true
 Depends: 
-    R (>= 2.10)
+    R (>= 4.1.0)
 Imports: 
     Rdpack,
     mathjaxr,
