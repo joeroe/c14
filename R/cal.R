@@ -110,4 +110,21 @@ obj_print_data.c14_cal <- function(x, ...) {
 # Casting/coercion --------------------------------------------------------
 
 
+# Accessors ---------------------------------------------------------------
+
+#' Extract ages from cal objects
+#'
+#' @keywords internal
+#' @noRd
+cal_age <- function(x) {
+  purrr::map(vec_data(x), "age")
+}
+
+#' Extract probabilities from cal objects
+#'
+#' @keywords internal
+#' @noRd
+cal_pdens <- function(x) {
+  purrr::map(vec_data(x), "pdens")
+}
 
