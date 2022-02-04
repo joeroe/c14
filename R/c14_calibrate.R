@@ -17,6 +17,9 @@
 #'   * `"oxcal"`: [oxcAAR::oxcalCalibrate()]
 #'   * `"bchron"`: [Bchron::BchronCalibrate()]
 #'
+#' @details
+#' `c14_age` and `c14_error` are recycled to a common length.
+#'
 #' @return A list of `cal` objects.
 #' @export
 #'
@@ -25,10 +28,12 @@ c14_calibrate <- function(c14_age,
                           c14_error,
                           ...,
                           engine = c("intcal", "rcarbon", "oxcal", "bchron")) {
+  c(c14_age, c14_error) %<-% vec_recycle_common(c14_age, c14_error)
   engine <- rlang::arg_match(engine)
 
+
   if (engine == "intcal") {
-    cals <- IntCal::caldist(c14_age, c14_error)
+    cals <- c14_calibrate_intcal(c14_age, c14_error, ...)
   }
 
   else if (engine == "rcarbon") {
@@ -37,6 +42,7 @@ c14_calibrate <- function(c14_age,
     }
     cals <- rcarbon::calibrate(c14_age, c14_error, calMatrix = FALSE,
                                verbose = FALSE, ...)
+    cals <- as_cal(cals)
   }
 
   else if (engine == "oxcal") {
@@ -45,18 +51,31 @@ c14_calibrate <- function(c14_age,
     }
     oxcAAR::quickSetupOxcal()
     cals <- oxcAAR::oxcalCalibrate(c14_age, c14_error, ...)
+    cals <- as_cal(cals)
   }
 
   else if (engine == "bchron") {
     if(!requireNamespace("Bchron", quietly = TRUE)) {
       stop('`engine` = "Bchron" requires package Bchron')
     }
-
     cals <- Bchron::BchronCalibrate(c14_age, c14_error, ...)
+    cals <- as_cal(cals)
   }
 
-  cals <- as_cal(cals)
   return(cals)
+}
+
+#' Vectorised wrapper for IntCal::caldist
+#'
+#' @return
+#' A cal vector.
+#'
+#' @noRd
+#' @keywords internal
+c14_calibrate_intcal <- function(c14_age, c14_error, ...) {
+  purrr::map2(c14_age, c14_error, IntCal::caldist, ...) |>
+    purrr::map(as.data.frame) |>
+    do.call(what = cal)
 }
 
 #' Generate the normal distribution of a radiocarbon age

@@ -35,4 +35,7 @@ A list of \code{cal} objects.
 Transforms 'raw' radiocarbon ages into a calendar probability distribution
 using a calibration curve.
 }
+\details{
+\code{c14_age} and \code{c14_error} are recycled to a common length.
+}
 \concept{tidy radiocarbon functions}
