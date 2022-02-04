@@ -146,6 +146,22 @@ format.c14_curve <- function(x, ...) {
 
 # Cast/coerce -------------------------------------------------------------
 
+#' @method as.matrix c14_curve
+#' @export
+as.matrix.c14_curve <- function(x, resolution = 1) {
+  # TODO: Interpolate to resolution?
+  x <- vec_data(x)
+
+  d <- purrr::map2(as.numeric(x$c14_age), as.numeric(x$c14_error),
+                   ~stats::dnorm(x$cal_age, .x, .y))
+  d <- do.call(cbind, d)
+  rownames(d) <- x$c14_age
+  colnames(d) <- x$cal_age
+
+  # TODO: rescale to sum to 1? only if resolution != 1?
+  d
+}
+
 #' @export
 as.data.frame.c14_curve_14c <- function(x, ...) vec_proxy(x)
 

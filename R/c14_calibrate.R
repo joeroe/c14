@@ -83,3 +83,37 @@ c14_sum <- function(cal, time_range = NA, ...) {
   summed <- rcarbon::spd(cal_dates, timeRange = time_range, ...)
   return(list(summed$grid))
 }
+
+#' Generate the normal distribution of a radiocarbon age
+#'
+#' @param age Radiocarbon age(s) in years.
+#' @param error Error(s) associated with the radiocarbon age in years.
+#' @param resolution Desired resolution in years.
+#' @param sigma Desired sigma range.
+#'
+#' @details
+#' `age` and `error` are recycled to a common length.
+#'
+#' @return
+#' A vector of probability density with years as names.
+#' If `age` or `error` has length >= 1, a list of these vectors.
+#'
+#' @export
+#'
+#' @examples
+#' c14_age_norm(10000, 30)
+c14_age_norm <- function(age, error, resolution = 1, sigma = 5) {
+  c(age, error) %<-% vec_recycle_common(age, error)
+
+  lower <- age - error * sigma
+  upper <- age + error * sigma
+  x <- purrr::map2(lower, upper, seq, by = resolution)
+
+  d <- purrr::pmap(list(x, age, error), stats::dnorm)
+  d <- purrr::map2(d, x, rlang::set_names)
+
+  if (vec_size(d) == 1) d <- d[[1]]
+
+  # TODO: rescale to sum to 1? only if resolution != 1?
+  return(d)
+}

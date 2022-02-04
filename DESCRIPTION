@@ -27,7 +27,8 @@ Imports:
     stringr,
     utils,
     vctrs (>= 0.3.3),
-    methods
+    methods,
+    zeallot
 Suggests: 
     covr,
     knitr,

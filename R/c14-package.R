@@ -13,3 +13,10 @@ NULL
 #' @keywords internal
 #' @name c14-vctrs
 NULL
+
+#' Internal zeallot methods
+#'
+#' @import zeallot
+#' @keywords internal
+#' @name c14-zeallot
+NULL
