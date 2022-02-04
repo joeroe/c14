@@ -7,9 +7,9 @@
 c14_age_norm(age, error, resolution = 1, sigma = 5)
 }
 \arguments{
-\item{age}{Radiocarbon age in years.}
+\item{age}{Radiocarbon age(s) in years.}
 
-\item{error}{Error associated with the radiocarbon age in years.}
+\item{error}{Error(s) associated with the radiocarbon age in years.}
 
 \item{resolution}{Desired resolution in years.}
 
@@ -17,9 +17,13 @@ c14_age_norm(age, error, resolution = 1, sigma = 5)
 }
 \value{
 A vector of probability density with years as names.
+If \code{age} or \code{error} has length >= 1, a list of these vectors.
 }
 \description{
 Generate the normal distribution of a radiocarbon age
+}
+\details{
+\code{age} and \code{error} are recycled to a common length.
 }
 \examples{
 c14_age_norm(10000, 30)
