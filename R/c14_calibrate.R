@@ -84,13 +84,6 @@ c14_sum <- function(cal, time_range = NA, ...) {
   return(list(summed$grid))
 }
 
-#' @export
-c14_calibrate_linear <- function(age, error,
-                                 c14_curve = IntCal20, resolution = 1) {
-  uncal <- c14_age_norm(age, error, resolution)
-}
-
-
 #' Generate the normal distribution of a radiocarbon age
 #'
 #' @param age Radiocarbon age(s) in years.
