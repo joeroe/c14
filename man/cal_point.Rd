@@ -42,7 +42,7 @@ function or an interval estimate is not appropriate, in which case
 \code{method = "mode"} (the default) is recommended.
 }
 \examples{
-cal_point(c14_calibrate(10000, 30, verbose = FALSE))
+cal_point(c14_calibrate(10000, 30))
 }
 \references{
 \insertAllCited{}

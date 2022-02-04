@@ -38,7 +38,7 @@
 #' @export
 #'
 #' @examples
-#' cal_point(c14_calibrate(10000, 30, verbose = FALSE))
+#' cal_point(c14_calibrate(10000, 30))
 cal_point <- function(x,
                       method = c("mode", "median", "mean", "local_mode", "central"),
                       interval = 0.954) {
