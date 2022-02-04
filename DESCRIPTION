@@ -30,7 +30,8 @@ Imports:
     vctrs (>= 0.3.3),
     methods,
     zeallot,
-    IntCal
+    IntCal,
+    furrr
 Suggests: 
     covr,
     knitr,

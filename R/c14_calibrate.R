@@ -20,6 +20,12 @@
 #' @details
 #' `c14_age` and `c14_error` are recycled to a common length.
 #'
+#' Parallelisation is supported for engines `"intcal"` and `"rcarbon"` and can
+#' dramatically speed up calibration of large numbers of dates. For `"intcal"`,
+#' it must first be enabled with [future::plan()]. For `"rcarbon"`, it requires
+#' the `doSNOW` package and can be controlled with the `ncores` argument of
+#' [rcarbon::calibrate()].
+#'
 #' @return A list of `cal` objects.
 #' @export
 #'
@@ -27,7 +33,8 @@
 c14_calibrate <- function(c14_age,
                           c14_error,
                           ...,
-                          engine = c("intcal", "rcarbon", "oxcal", "bchron")) {
+                          engine = c("intcal", "rcarbon", "oxcal", "bchron"),
+                          n_cores = parallel::detectCores()) {
   c(c14_age, c14_error) %<-% vec_recycle_common(c14_age, c14_error)
   engine <- rlang::arg_match(engine)
 
@@ -73,8 +80,8 @@ c14_calibrate <- function(c14_age,
 #' @noRd
 #' @keywords internal
 c14_calibrate_intcal <- function(c14_age, c14_error, ...) {
-  purrr::map2(c14_age, c14_error, IntCal::caldist, ...) |>
-    purrr::map(as.data.frame) |>
+  furrr::future_map2(c14_age, c14_error, IntCal::caldist, ...) |>
+    furrr::future_map(as.data.frame) |>
     do.call(what = cal)
 }
 

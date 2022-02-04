@@ -8,7 +8,8 @@ c14_calibrate(
   c14_age,
   c14_error,
   ...,
-  engine = c("intcal", "rcarbon", "oxcal", "bchron")
+  engine = c("intcal", "rcarbon", "oxcal", "bchron"),
+  n_cores = parallel::detectCores()
 )
 }
 \arguments{
@@ -37,5 +38,11 @@ using a calibration curve.
 }
 \details{
 \code{c14_age} and \code{c14_error} are recycled to a common length.
+
+Parallelisation is supported for engines \code{"intcal"} and \code{"rcarbon"} and can
+dramatically speed up calibration of large numbers of dates. For \code{"intcal"},
+it must first be enabled with \code{\link[future:plan]{future::plan()}}. For \code{"rcarbon"}, it requires
+the \code{doSNOW} package and can be controlled with the \code{ncores} argument of
+\code{\link[rcarbon:calibrate]{rcarbon::calibrate()}}.
 }
 \concept{tidy radiocarbon functions}
