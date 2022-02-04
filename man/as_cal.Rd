@@ -44,9 +44,5 @@ These functions are intended for complex S3 objects from other packages.
 The generic constructor \code{\link[=cal]{cal()}} can be used for data frames and other base
 structures.
 }
-\seealso{
-Other c14 conversion functions: 
-\code{\link{as.CalDates.cal}()}
-}
 \concept{c14 conversion functions}
 \concept{cal class methods}

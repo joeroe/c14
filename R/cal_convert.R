@@ -135,39 +135,3 @@ as_cal.BchronCalibratedDates <- function(x) {
     purrr::map(~data.frame(year = .x$ageGrid, p = .x$densities)) %>%
     purrr::map(new_cal)
 }
-
-
-# Reverse conversions -----------------------------------------------------
-
-#' Convert cal objects to an rcarbon CalDates object
-#'
-#' @param x  A list of `cal` objects.
-#'
-#' @return
-#' A `CalDates` object. See [rcarbon::calibrate()] for details.
-#'
-#' @family c14 conversion functions
-#'
-#' @export
-as.CalDates.cal <- function(x) {
-  x <- purrr::map(x, cal_repair_calibration_range)
-
-  metadata <- purrr::map(x, cal_metadata)
-  metadata <- purrr::map_dfr(metadata, cal_recode_metadata,
-                             from = "cal", to = "CalDates")
-  metadata <- as.data.frame(metadata)
-
-  grids <- purrr::map(x, data.frame)
-  grids <- purrr::map(grids, structure,
-                      class = c("calGrid", "data.frame"),
-                      names =  c("calBP", "PrDens"))
-
-  calMatrix <- NA
-
-  CalDates <- list(metadata = metadata,
-                   grids = grids,
-                   calMatrix = calMatrix)
-  class(CalDates) <- c("CalDates", "list")
-
-  return(CalDates)
-}
