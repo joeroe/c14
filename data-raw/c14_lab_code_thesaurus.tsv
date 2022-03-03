@@ -6,6 +6,7 @@ AA	AA
 	AAMSA
 AAR	AAr
 AAR	AAR
+AAR	Aar
 AECV	AECV
 AECV	AEVC
 	AHU
@@ -50,6 +51,7 @@ Beta	beta
 Beta	Beta
 Beta	BETA
 Beta	Betra
+Beta	Bta
 	BI
 	Bin
 Birm	Birm
@@ -526,13 +528,13 @@ Rome	Rome
 	Romito
 	RP
 	RPA
-	Rt
+RT	Rt
 RT	RT
 	RTA
 	RTD
 	RTF
 RTK	RTK
-	RTT
+RTT	RTT
 	RUL
 	RW
 S	s
@@ -672,7 +674,7 @@ WAT	WAT
 	Wis
 WIS	WIS
 Wk	Wk
-	WK
+Wk	WK
 	Wl
 WSU	WSU
 	WT

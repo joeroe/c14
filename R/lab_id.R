@@ -1,6 +1,37 @@
 # lab_id.R
 # Functions for laboratory IDs
 
+#' Control radiocarbon laboratory identifiers
+#'
+#' @description
+#' Standardises a vector of radiocarbon laboratory identifiers to a common
+#' format. Specifically, this `c14_control_lab_id()`:
+#'
+#' 1. Fixes malformed identifiers with [c14_fix_lab_id()]
+#' 2. Parses the lab code and lab number components ([c14_parse_lab_id()])
+#' 3. Standardises lab codes against a thesaurus, by default [c14_lab_code_thesaurus]
+#' 5. Reunites lab codes and numbers with a uniform seperator (default: `"-"`)
+#'
+#' @param x Vector of radiocarbon laboratory identifiers.
+#' @param thesaurus Thesaurus to use for lab codes. Defaults to the [c14_lab_code_thesaurus]
+#'  thesaraus included in the package.
+#' @param ... Other arguments passed to [controller::control()]. For example,
+#'  to suppress messages and warnings.
+#' @param sep Character to use to seperate lab codes and numbers in the result.
+#'  Default: `"-"`.
+#'
+#' @return
+#' Vector the same length as `x` with controlled laboratory identifiers.
+#'
+#' @export
+c14_control_lab_id <- function(x, thesaurus = c14_lab_code_thesaurus, ..., sep = "-") {
+  c(lab_code, lab_number) %<-% c14_parse_lab_id(x, fix = TRUE)
+  # TODO: Replace ... with explicit quiet and/or warn_unmatched arguments, and
+  # specify the rest
+  lab_code <- controller::control(lab_code, thesaurus, ...)
+  paste(lab_code, lab_number, sep = sep)
+}
+
 #' Parse radiocarbon laboratory identifiers
 #'
 #' Splits a vector of radiocarbon lab IDs (e.g. `"OxA-1234"`)

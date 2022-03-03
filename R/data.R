@@ -37,3 +37,27 @@
 #'   climate change over the past 50,000 years. *Quaternary Science Reviews*,
 #'   98, pp.45-59. doi:10.1016/j.quascirev.2014.05.015
 "c14_labs"
+
+#' Radiocarbon laboratory code thesaurus
+#'
+#' @description
+#' A thesaurus of canonical (matching those given in [c14_labs]) radiocarbon
+#' laboratory codes and variants of these codes observed in various published
+#' datasets.
+#'
+#' @format A data frame with 688 rows and 2 variables:
+#' \describe{
+#'   \item{canon}{Character. The preferred code for the laboratory.}
+#'   \item{variant}{Character. Variant codes.}
+#' }
+#'
+#' @details
+#' The thesaurus aims to be precise and conservative. That is, canonical forms
+#' are only given for variants when they can be unambiguously interpreted as
+#' that of a known laboratory listed in [c14_labs]. It is case sensitive,
+#' because there are laboratory codes that can only be distinguished by
+#' case (see [c14_labs] for examples).
+#'
+#' Variants that cannot (or have not yet) been unambiguously matched to a
+#' known, standard lab code have a `canon` value of `NA`.
+"c14_lab_code_thesaurus"
