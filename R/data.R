@@ -78,6 +78,4 @@
 #' Originally compiled by Clemens Schmid, David Matzing, Dirk Seidensticker,
 #' Joe Roe, and Thomas Huet, for the package
 #' [c14bazAAR](https://docs.ropensci.org/c14bazAAR/).
-#'
-#' @export
 "c14_material_thesaurus"

@@ -3,6 +3,5 @@
 export(c14_control_lab_id)
 export(c14_fix_lab_id)
 export(c14_is_lab_id)
-export(c14_material_thesaurus)
 export(c14_parse_lab_id)
 importFrom(zeallot,"%<-%")
