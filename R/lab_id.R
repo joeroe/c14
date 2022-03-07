@@ -24,8 +24,13 @@
 #' Vector the same length as `x` with controlled laboratory identifiers.
 #'
 #' @export
-c14_control_lab_id <- function(x, thesaurus = c14_lab_code_thesaurus, ..., sep = "-") {
-  c(lab_code, lab_number) %<-% c14_parse_lab_id(x, fix = TRUE)
+c14_control_lab_id <- function(x,
+                               thesaurus = cleanc14::c14_lab_code_thesaurus,
+                               ...,
+                               sep = "-") {
+  parsed_x <- c14_parse_lab_id(x, fix = TRUE)
+  lab_code <- parsed_x[["lab_code"]]
+  lab_number <- parsed_x[["lab_number"]]
   # TODO: Replace ... with explicit quiet and/or warn_unmatched arguments, and
   # specify the rest
   lab_code <- controller::control(lab_code, thesaurus, ...)

@@ -4,7 +4,12 @@
 \alias{c14_control_lab_id}
 \title{Control radiocarbon laboratory identifiers}
 \usage{
-c14_control_lab_id(x, thesaurus = c14_lab_code_thesaurus, ..., sep = "-")
+c14_control_lab_id(
+  x,
+  thesaurus = cleanc14::c14_lab_code_thesaurus,
+  ...,
+  sep = "-"
+)
 }
 \arguments{
 \item{x}{Vector of radiocarbon laboratory identifiers.}
