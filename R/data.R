@@ -61,3 +61,23 @@
 #' Variants that cannot (or have not yet) been unambiguously matched to a
 #' known, standard lab code have a `canon` value of `NA`.
 "c14_lab_code_thesaurus"
+
+#' Radiocarbon sample material thesaurus
+#'
+#' @description
+#' A thesaurus of standardised radiocarbon sample material descriptions and
+#' variants of these materials observed in various published datasets.
+#'
+#' @format A data frame with 8854 rows and 2 variables:
+#' \describe{
+#'   \item{canon}{Character. The preferred description of the sample material.}
+#'   \item{variant}{Character. Variant descriptions.}
+#' }
+#'
+#' @author
+#' Originally compiled by Clemens Schmid, David Matzing, Dirk Seidensticker,
+#' Joe Roe, and Thomas Huet, for the package
+#' [c14bazAAR](https://docs.ropensci.org/c14bazAAR/).
+#'
+#' @export
+"c14_material_thesaurus"
