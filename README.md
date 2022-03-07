@@ -24,3 +24,7 @@ You can install the released version of cleanc14 from [CRAN](https://CRAN.R-proj
 install.packages("cleanc14")
 ```
 -->
+
+## Citation
+
+`c14_material_thesaurus` was originally compiled by Clemens Schmid, David Matzing, Dirk Seidensticker, Joe Roe, and Thomas Huet, for the package [c14bazAAR](https://docs.ropensci.org/c14bazAAR/).
