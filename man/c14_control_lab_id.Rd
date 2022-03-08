@@ -7,8 +7,9 @@
 c14_control_lab_id(
   x,
   thesaurus = cleanc14::c14_lab_code_thesaurus,
-  ...,
-  sep = "-"
+  sep = "-",
+  quiet = FALSE,
+  warn_unmatched = TRUE
 )
 }
 \arguments{
@@ -17,11 +18,14 @@ c14_control_lab_id(
 \item{thesaurus}{Thesaurus to use for lab codes. Defaults to the \link{c14_lab_code_thesaurus}
 thesaraus included in the package.}
 
-\item{...}{Other arguments passed to \code{\link[controller:control]{controller::control()}}. For example,
-to suppress messages and warnings.}
-
 \item{sep}{Character to use to seperate lab codes and numbers in the result.
 Default: \code{"-"}.}
+
+\item{quiet}{Passed to \code{\link[controller:control]{controller::control()}}. Set to \code{TRUE} to suppress
+messages about replaced values. Default: \code{FALSE}.}
+
+\item{warn_unmatched}{Passed to \code{\link[controller:control]{controller::control()}}. Set to \code{FALSE} to
+suppress warnings about unmatched values. Default: \code{TRUE}.}
 }
 \value{
 Vector the same length as \code{x} with controlled laboratory identifiers.

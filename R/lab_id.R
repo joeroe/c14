@@ -15,10 +15,12 @@
 #' @param x Vector of radiocarbon laboratory identifiers.
 #' @param thesaurus Thesaurus to use for lab codes. Defaults to the [c14_lab_code_thesaurus]
 #'  thesaraus included in the package.
-#' @param ... Other arguments passed to [controller::control()]. For example,
-#'  to suppress messages and warnings.
 #' @param sep Character to use to seperate lab codes and numbers in the result.
 #'  Default: `"-"`.
+#' @param quiet Passed to [controller::control()]. Set to `TRUE` to suppress
+#'  messages about replaced values. Default: `FALSE`.
+#' @param warn_unmatched Passed to [controller::control()]. Set to `FALSE` to
+#'  suppress warnings about unmatched values. Default: `TRUE`.
 #'
 #' @return
 #' Vector the same length as `x` with controlled laboratory identifiers.
@@ -26,15 +28,19 @@
 #' @export
 c14_control_lab_id <- function(x,
                                thesaurus = cleanc14::c14_lab_code_thesaurus,
-                               ...,
-                               sep = "-") {
-  parsed_x <- c14_parse_lab_id(x, fix = TRUE)
-  lab_code <- parsed_x[["lab_code"]]
-  lab_number <- parsed_x[["lab_number"]]
-  # TODO: Replace ... with explicit quiet and/or warn_unmatched arguments, and
-  # specify the rest
-  lab_code <- controller::control(lab_code, thesaurus, ...)
-  paste(lab_code, lab_number, sep = sep)
+                               sep = "-",
+                               quiet = FALSE,
+                               warn_unmatched = TRUE) {
+  x <- c14_parse_lab_id(x, fix = TRUE)
+  x[["lab_code"]] <- controller::control(x[["lab_code"]],
+                                         thesaurus,
+                                         case_insensitive = FALSE,
+                                         fuzzy_boundary = FALSE,
+                                         fuzzy_encoding = FALSE,
+                                         quiet = quiet,
+                                         warn_unmatched = warn_unmatched,
+                                         coalesce = TRUE)
+  paste(x[["lab_code"]], x[["lab_number"]], sep = sep)
 }
 
 #' Parse radiocarbon laboratory identifiers
