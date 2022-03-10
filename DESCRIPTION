@@ -18,7 +18,7 @@ Imports:
     checkmate,
     cli,
     dplyr,
-    era (>= 0.3.1.9000),
+    era (>= 0.4.0),
     glue,
     magrittr,
     purrr,
