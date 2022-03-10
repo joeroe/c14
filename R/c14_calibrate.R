@@ -16,6 +16,8 @@
 #'   * `"rcarbon"`: [rcarbon::calibrate()]
 #'   * `"oxcal"`: [oxcAAR::oxcalCalibrate()]
 #'   * `"bchron"`: [Bchron::BchronCalibrate()]
+#' @param n_cores   Number of CPU cores to use for calibration with `"rcarbon`.
+#'   See details.
 #'
 #' @details
 #' `c14_age` and `c14_error` are recycled to a common length.
