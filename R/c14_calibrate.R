@@ -16,8 +16,6 @@
 #'   * `"rcarbon"`: [rcarbon::calibrate()]
 #'   * `"oxcal"`: [oxcAAR::oxcalCalibrate()]
 #'   * `"bchron"`: [Bchron::BchronCalibrate()]
-#' @param n_cores   Number of CPU cores to use for calibration with `"rcarbon`.
-#'   See details.
 #'
 #' @details
 #' `c14_age` and `c14_error` are recycled to a common length.
@@ -35,8 +33,7 @@
 c14_calibrate <- function(c14_age,
                           c14_error,
                           ...,
-                          engine = c("intcal", "rcarbon", "oxcal", "bchron"),
-                          n_cores = parallel::detectCores()) {
+                          engine = c("intcal", "rcarbon", "oxcal", "bchron")) {
   c(c14_age, c14_error) %<-% vec_recycle_common(c14_age, c14_error)
   engine <- rlang::arg_match(engine)
 

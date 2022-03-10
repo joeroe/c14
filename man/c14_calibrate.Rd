@@ -8,8 +8,7 @@ c14_calibrate(
   c14_age,
   c14_error,
   ...,
-  engine = c("intcal", "rcarbon", "oxcal", "bchron"),
-  n_cores = parallel::detectCores()
+  engine = c("intcal", "rcarbon", "oxcal", "bchron")
 )
 }
 \arguments{
@@ -28,9 +27,6 @@ Available engines:
 \item \code{"oxcal"}: \code{\link[oxcAAR:oxcalCalibrate]{oxcAAR::oxcalCalibrate()}}
 \item \code{"bchron"}: \code{\link[Bchron:BchronCalibrate]{Bchron::BchronCalibrate()}}
 }}
-
-\item{n_cores}{Number of CPU cores to use for calibration with \verb{"rcarbon}.
-See details.}
 }
 \value{
 A list of \code{cal} objects.
