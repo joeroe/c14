@@ -38,14 +38,17 @@ LazyData: true
 Depends: 
     R (>= 4.1.0)
 Imports: 
+    IntCal,
     Rdpack,
-    mathjaxr,
     checkmate,
     cli,
-    dplyr,
+    controller,
     era (>= 0.4.0),
+    furrr,
     glue,
     magrittr,
+    mathjaxr,
+    methods,
     purrr,
     rcarbon,
     rlang,
@@ -53,13 +56,10 @@ Imports:
     stringr,
     utils,
     vctrs (>= 0.3.3),
-    methods,
-    zeallot,
-    IntCal,
-    furrr,
-    controller
+    zeallot
 Suggests: 
     covr,
+    dplyr,
     knitr,
     readr,
     readxl,
@@ -67,8 +67,6 @@ Suggests:
     roxygen2,
     testthat,
     tibble,
-    dplyr,
-    stringr,
     usethis
 Enhances:
     Bchron,
