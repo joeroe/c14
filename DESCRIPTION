@@ -2,8 +2,33 @@ Package: c14
 Type: Package
 Title: Tidy Radiocarbon Data
 Version: 0.0.0.9000
-Authors@R: person("Joe", "Roe", email = "joe@joeroe.io",
-  role = c("aut", "cre"), comment = c(ORCID = "0000-0002-1011-1244"))
+Authors@R: c(
+    person(family = "Roe", 
+        given = "Joe", 
+        email = "joe@joeroe.io",
+        role = c("aut", "cre"), 
+        comment = c(ORCID = "0000-0002-1011-1244")),
+    person(family = "Huet",
+        given = "Thomas",
+        role = "ctb",
+        email = "thomashuet7@gmail.com",
+        comment = c(ORCID = "0000-0002-1112-6122")),
+    person(family = "Matzig",
+        given = "David",
+        role = "ctb",
+        email = "matzigdavid@gmail.com",
+        comment = c(ORCID = "0000-0001-7349-5401")),
+    person(family = "Schmid",
+        given = "Clemens",
+        role = "ctb",
+        email = "clemens@nevrome.de",
+        comment = c(ORCID = "0000-0003-3448-5715")),
+    person(family = "Seidensticker",
+        given = "Dirk",
+        role = "ctb",
+        email = "dirk.seidensticker@gmail.com",
+        comment = c(ORCID = "0000-0002-8155-7702"))
+    )
 Description: S3 classes and functions for tidy radiocarbon data.
 License: MIT + file LICENSE
 URL: https://c14.joeroe.io, https://github.com/joeroe/c14
@@ -31,7 +56,8 @@ Imports:
     methods,
     zeallot,
     IntCal,
-    furrr
+    furrr,
+    controller
 Suggests: 
     covr,
     knitr,
@@ -40,10 +66,13 @@ Suggests:
     rmarkdown,
     roxygen2,
     testthat,
-    tibble
+    tibble,
+    dplyr,
+    stringr,
+    usethis
 Enhances:
     Bchron,
     oxcAAR
 Roxygen: list(markdown = TRUE)
-RoxygenNote: 7.1.2
+RoxygenNote: 7.2.3
 RdMacros: Rdpack, mathjaxr
