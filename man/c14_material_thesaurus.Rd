@@ -19,7 +19,7 @@ A thesaurus of standardised radiocarbon sample material descriptions and
 variants of these materials observed in various published datasets.
 }
 \author{
-Originally compiled by Clemens Schmid, David Matzing, Dirk Seidensticker,
+Originally compiled by Clemens Schmid, David Matzig, Dirk Seidensticker,
 Joe Roe, and Thomas Huet, for the package
 \href{https://docs.ropensci.org/c14bazAAR/}{c14bazAAR}.
 }
