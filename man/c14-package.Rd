@@ -20,5 +20,13 @@ Useful links:
 \author{
 \strong{Maintainer}: Joe Roe \email{joe@joeroe.io} (\href{https://orcid.org/0000-0002-1011-1244}{ORCID})
 
+Other contributors:
+\itemize{
+  \item Thomas Huet \email{thomashuet7@gmail.com} (\href{https://orcid.org/0000-0002-1112-6122}{ORCID}) [contributor]
+  \item David Matzig \email{matzigdavid@gmail.com} (\href{https://orcid.org/0000-0001-7349-5401}{ORCID}) [contributor]
+  \item Clemens Schmid \email{clemens@nevrome.de} (\href{https://orcid.org/0000-0003-3448-5715}{ORCID}) [contributor]
+  \item Dirk Seidensticker \email{dirk.seidensticker@gmail.com} (\href{https://orcid.org/0000-0002-8155-7702}{ORCID}) [contributor]
+}
+
 }
 \keyword{internal}
