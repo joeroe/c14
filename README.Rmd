@@ -18,7 +18,7 @@ knitr::opts_chunk$set(
 <!-- badges: start -->
 [![Lifecycle: experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://www.tidyverse.org/lifecycle/#experimental)
 [![CRAN status](https://www.r-pkg.org/badges/version/c14)](https://CRAN.R-project.org/package=c14)
-[![R build status](https://github.com/joeroe/c14/workflows/R-CMD-check/badge.svg)](https://github.com/joeroe/c14/actions)
+[![R-CMD-check](https://github.com/joeroe/c14/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/joeroe/c14/actions/workflows/R-CMD-check.yaml)
 [![Codecov test coverage](https://codecov.io/gh/joeroe/c14/branch/master/graph/badge.svg)](https://codecov.io/gh/joeroe/c14?branch=master)
 <!-- badges: end -->
 
@@ -45,11 +45,11 @@ library("c14")
 library("dplyr")
 ppnd %>% 
   filter(site == "Ganj Dareh") %>% 
-  mutate(cal = c14_calibrate(cra, error, verbose = FALSE))
+  mutate(cal = c14_calibrate(cra, error))
 ```
 
 The result is a `cal` vector, which fits nicely into a data frame or tibble and comes with print methods etc.:
 
 ```{r eg-cal}
-c14_calibrate(10000, 30, verbose = FALSE)
+c14_calibrate(10000, 30)
 ```
