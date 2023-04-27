@@ -6,7 +6,7 @@
 \usage{
 c14_control_material(
   x,
-  thesaurus = cleanc14::c14_material_thesaurus,
+  thesaurus = c14_material_thesaurus,
   quiet = FALSE,
   warn_unmatched = TRUE
 )

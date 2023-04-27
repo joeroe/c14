@@ -27,7 +27,7 @@
 #'
 #' @export
 c14_control_lab_id <- function(x,
-                               thesaurus = cleanc14::c14_lab_code_thesaurus,
+                               thesaurus = c14_lab_code_thesaurus,
                                sep = "-",
                                quiet = FALSE,
                                warn_unmatched = TRUE) {

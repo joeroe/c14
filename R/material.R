@@ -19,7 +19,7 @@
 #'
 #' @export
 c14_control_material <- function(x,
-                               thesaurus = cleanc14::c14_material_thesaurus,
+                               thesaurus = c14_material_thesaurus,
                                quiet = FALSE,
                                warn_unmatched = TRUE) {
   controller::control(
