@@ -1,8 +1,11 @@
+url: https://c14.joeroe.io
+
 authors:
   Joe Roe:
     href: "https://joeroe.io"
 
 template:
+  bootstrap: 5
   opengraph:
     twitter:
       creator: "@joeroe90"
@@ -12,8 +15,7 @@ reference:
 - title: "Tidy radiocarbon"
   desc: "Core functions for working with radiocarbon data in a tidy framework."
 - contents:
-  - c14_calibrate
-  - c14_sum
+  - starts_with("c14")
 - title: "Radiocarbon measurements"
   desc: "Functions for working with uncalibrated radiocarbon measurements."
 - contents:
@@ -25,6 +27,7 @@ reference:
 - title: "cal class methods"
   desc: "Methods for the `cal` class – vectors of calibrated radiocarbon dates."
 - contents:
+  - cal
   - has_concept("cal class methods")
 - title: "Conversion"
   desc: "Convert objects from other packages from or to c14 classes."
