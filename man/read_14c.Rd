@@ -47,7 +47,9 @@ For most files, only the first argument needs to be supplied. Further
 arguments can be used if the file does not follow the conventional format.
 }
 \examples{
-read_14c("http://intcal.org/curves/intcal20.14c")
+\dontshow{if (curl::has_internet()) (if (getRversion() >= "3.4") withAutoprint else force)(\{ # examplesIf}
+read_14c("https://intcal.org/curves/intcal20.14c")
+\dontshow{\}) # examplesIf}
 }
 \seealso{
 Other calibration curve functions: 

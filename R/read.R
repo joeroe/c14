@@ -35,8 +35,8 @@
 #'
 #' @export
 #'
-#' @examples
-#' read_14c("http://intcal.org/curves/intcal20.14c")
+#' @examplesIf curl::has_internet()
+#' read_14c("https://intcal.org/curves/intcal20.14c")
 read_14c <- function(file,
                      format = c("14c", "f14c"),
                      delim = NA,
