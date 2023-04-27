@@ -26,7 +26,7 @@ ppnd
 }
 \description{
 A dataset of 1049 radiocarbon dates from Epipalaeolithic and Neolithic sites
-in Southwest Asia, collected in ex oriente's 'Platform for Neolithic
-Radiocarbon Dates' (PPND).
+in Southwest Asia, compiled by Marion Benz in the \href{https://www.exoriente.org/associated_projects/ppnd.php}{Platform for Neolithic Radiocarbon Dates}
+(PPND).
 }
 \keyword{datasets}

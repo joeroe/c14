@@ -1,8 +1,9 @@
 #' Radiocarbon dates from Neolithic Southwest Asia
 #'
 #' A dataset of 1049 radiocarbon dates from Epipalaeolithic and Neolithic sites
-#' in Southwest Asia, collected in ex oriente's 'Platform for Neolithic
-#' Radiocarbon Dates' (PPND).
+#' in Southwest Asia, compiled by Marion Benz in the [Platform for Neolithic
+#' Radiocarbon Dates](https://www.exoriente.org/associated_projects/ppnd.php)
+#' (PPND).
 #'
 #' @format A data frame with 1049 rows and 10 variables:
 #' \describe{
