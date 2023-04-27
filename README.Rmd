@@ -29,27 +29,28 @@ It was forked from [stratigraphr](https://github.com/joeroe/stratigraphr) v0.3.0
 
 ## Installation
 
-You can install the development version of c14 from GitHub:
+You can install the development version of c14 from GitHub with the [remotes](https://remotes.r-lib.org) package:
 
 ```r
-# install.packages("devtools")
-devtools::install_github("joeroe/c14")
+# install.packages("remotes")
+remotes::install_github(c("joeroe/controller", "joeroe/c14"))
 ```
+
+Note that the dependency [controller](https://github.com/joeroe/controller) is also not yet available on CRAN.
 
 ## Usage
 
-Tidy radiocarbon calibration:
+The main aim of c14 is to make it easier to work with radiocarbon data within a tidy workflow.
+For example, we can combine `dplyr::filter()` with `c14_calibrate()` to only calibrate dates from a specific site:
 
 ```{r eg-calibrate, message=FALSE}
 library("c14")
-library("dplyr")
-ppnd %>% 
-  filter(site == "Ganj Dareh") %>% 
+library("dplyr", warn.conflicts = FALSE)
+
+ppnd |>
+  filter(site == "Ganj Dareh") |>
+  select(lab_id, cra, error) |>
   mutate(cal = c14_calibrate(cra, error))
 ```
 
-The result is a `cal` vector, which fits nicely into a data frame or tibble and comes with print methods etc.:
-
-```{r eg-cal}
-c14_calibrate(10000, 30)
-```
+The resulting `cal`-class vector can be assigned to a new column, allowing us to keep working with the data in the context of the original data frame or tibble.
