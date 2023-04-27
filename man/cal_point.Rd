@@ -41,6 +41,10 @@ and should only be used as a last resort if the probability distribution
 function or an interval estimate is not appropriate, in which case
 \code{method = "mode"} (the default) is recommended.
 }
+\details{
+If \code{x} has more than one modal value, \code{cal_point(x, method = "mode")} will
+return the first.
+}
 \examples{
 cal_point(c14_calibrate(10000, 30))
 }

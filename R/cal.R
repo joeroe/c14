@@ -71,9 +71,7 @@ cal <- function(..., .era = era::era("cal BP")) {
 #' @noRd
 #' @keywords Internal
 new_cal <- function(x = list()) {
-  new_list_of(x,
-              ptype = cal_atomic_ptype(),
-              class = "c14_cal")
+  new_vctr(x, class = "c14_cal")
 }
 
 #' Shorthand prototype for individual elements of a cal vector
@@ -89,14 +87,6 @@ cal_atomic_ptype <- function() data.frame(age = era::yr(), pdens = numeric())
 # Print/format ------------------------------------------------------------
 
 #' @export
-format.c14_cal <- function(x, ...) {
-  s <- cal_point(x)
-  # Clean up after era_yr to character cast is implemented:
-  # https://github.com/joeroe/era/issues/11
-  paste(vec_data(s), era::era_label(era::yr_era(s)))
-}
-
-#' @export
 vec_ptype_full.c14_cal <- function(x, ...) "c14_cal"
 
 #' @export
@@ -105,6 +95,38 @@ vec_ptype_abbr.c14_cal <- function(x, ...) "cal"
 #' @export
 obj_print_data.c14_cal <- function(x, ...) {
   print(format(x), quote = FALSE)
+}
+
+#' @export
+format.c14_cal <- function(x, ..., formatter = circa_point_yr) {
+  # TODO: handle NA/invalid cals?
+  formatter(x)
+}
+
+#' @importFrom pillar pillar_shaft
+#' @export
+pillar_shaft.c14_cal <- function(x, ...) {
+  out <- format(x, formatter = circa_point_yr_colour)
+  pillar::new_pillar_shaft_simple(out, align = "right")
+}
+
+#' @export
+circa_point_yr <- function(x) {
+  y <- cal_point(x)
+  ret <- sprintf("c. %s", y)
+  format(ret, justify = "right")
+}
+
+#' @export
+circa_point_yr_colour <- function(x) {
+  y <- cal_point(x)
+  ret <- sprintf(
+    "%s %d %s",
+    pillar::style_subtle("c."),
+    as.numeric(y),
+    pillar::style_subtle(era::era_label(era::yr_era(y)))
+  )
+  format(ret, justify = "right")
 }
 
 # Casting/coercion --------------------------------------------------------

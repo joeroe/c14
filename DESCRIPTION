@@ -50,6 +50,7 @@ Imports:
     magrittr,
     mathjaxr,
     methods,
+    pillar,
     purrr,
     rcarbon,
     rlang,

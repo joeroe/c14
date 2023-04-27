@@ -26,6 +26,11 @@
 #' @param interval Numeric. Only used for `method = "local_mode"` and
 #'  `method = "central"`.
 #'
+#' @details
+#'
+#' If `x` has more than one modal value, `cal_point(x, method = "mode")` will
+#' return the first.
+#'
 #' @return
 #' Numeric vector the same length as `x` giving the point estimate for each
 #' calibrated date.
