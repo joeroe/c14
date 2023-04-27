@@ -110,14 +110,16 @@ pillar_shaft.c14_cal <- function(x, ...) {
   pillar::new_pillar_shaft_simple(out, align = "right")
 }
 
-#' @export
+#' @noRd
+#' @keywords internal
 circa_point_yr <- function(x) {
   y <- cal_point(x)
   ret <- sprintf("c. %s", y)
   format(ret, justify = "right")
 }
 
-#' @export
+#' @noRd
+#' @keywords internal
 circa_point_yr_colour <- function(x) {
   y <- cal_point(x)
   ret <- sprintf(
