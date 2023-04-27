@@ -100,18 +100,20 @@
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html" class="external-link">filter</a></span><span class="op">(</span><span class="va">site</span> <span class="op">==</span> <span class="st">"Ganj Dareh"</span><span class="op">)</span> <span class="op">|&gt;</span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html" class="external-link">select</a></span><span class="op">(</span><span class="va">lab_id</span>, <span class="va">cra</span>, <span class="va">error</span><span class="op">)</span> <span class="op">|&gt;</span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html" class="external-link">mutate</a></span><span class="op">(</span>cal <span class="op">=</span> <span class="fu"><a href="reference/c14_calibrate.html">c14_calibrate</a></span><span class="op">(</span><span class="va">cra</span>, <span class="va">error</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="co">#&gt; Warning: `x` has more than one modal value. Only the first will be returned.</span></span>
+<span><span class="co">#&gt; `x` has more than one modal value. Only the first will be returned.</span></span>
 <span><span class="co">#&gt; # A tibble: 9 × 4</span></span>
-<span><span class="co">#&gt;   lab_id     cra error       cal</span></span>
-<span><span class="co">#&gt;   &lt;chr&gt;    &lt;int&gt; &lt;int&gt;     &lt;cal&gt;</span></span>
-<span><span class="co">#&gt; 1 GaK 807  10400   150 [327 × 2]</span></span>
-<span><span class="co">#&gt; 2 OxA 2099  8840   110 [205 × 2]</span></span>
-<span><span class="co">#&gt; 3 OxA 2100  9010   110 [223 × 2]</span></span>
-<span><span class="co">#&gt; 4 OxA 2101  8850   100 [199 × 2]</span></span>
-<span><span class="co">#&gt; 5 OxA 2102  8690   110 [193 × 2]</span></span>
-<span><span class="co">#&gt; 6 SI 922    8570   210 [404 × 2]</span></span>
-<span><span class="co">#&gt; 7 SI 923    8625   195 [386 × 2]</span></span>
-<span><span class="co">#&gt; 8 SI 924    8640    90 [179 × 2]</span></span>
-<span><span class="co">#&gt; 9 SI 925    8385    75 [108 × 2]</span></span></code></pre></div>
+<span><span class="co">#&gt;   lab_id     cra error             cal</span></span>
+<span><span class="co">#&gt;   &lt;chr&gt;    &lt;int&gt; &lt;int&gt;           &lt;cal&gt;</span></span>
+<span><span class="co">#&gt; 1 GaK 807  10400   150 c. 12200 cal BP</span></span>
+<span><span class="co">#&gt; 2 OxA 2099  8840   110  c. 9900 cal BP</span></span>
+<span><span class="co">#&gt; 3 OxA 2100  9010   110 c. 10200 cal BP</span></span>
+<span><span class="co">#&gt; 4 OxA 2101  8850   100 c. 10100 cal BP</span></span>
+<span><span class="co">#&gt; 5 OxA 2102  8690   110  c. 9560 cal BP</span></span>
+<span><span class="co">#&gt; 6 SI 922    8570   210  c. 9540 cal BP</span></span>
+<span><span class="co">#&gt; 7 SI 923    8625   195  c. 9545 cal BP</span></span>
+<span><span class="co">#&gt; 8 SI 924    8640    90  c. 9550 cal BP</span></span>
+<span><span class="co">#&gt; 9 SI 925    8385    75  c. 9440 cal BP</span></span></code></pre></div>
 <p>The resulting <code>cal</code>-class vector can be assigned to a new column, allowing us to keep working with the data in the context of the original data frame or tibble.</p>
 </div>
 </div>
