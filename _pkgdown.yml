@@ -6,6 +6,8 @@ authors:
 
 template:
   bootstrap: 5
+  includes:
+    in_header: '<script async src="https://umami-j5y0.onrender.com/script.js" data-website-id="fd494f22-69ae-4eb3-bc38-921d11ddb379"></script>'
   opengraph:
     twitter:
       creator: "@joeroe90"
