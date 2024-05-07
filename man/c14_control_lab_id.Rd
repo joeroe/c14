@@ -40,3 +40,7 @@ format. Specifically, this \code{c14_control_lab_id()}:
 \item Reunites lab codes and numbers with a uniform seperator (default: \code{"-"})
 }
 }
+\examples{
+c14_control_lab_id(c("OxA-1234", "OxA 1234", "Oxa 1234"))
+
+}

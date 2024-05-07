@@ -25,7 +25,7 @@
 #' @return
 #' Vector the same length as `x` with controlled laboratory identifiers.
 #'
-#' @example
+#' @examples
 #' c14_control_lab_id(c("OxA-1234", "OxA 1234", "Oxa 1234"))
 #'
 #' @export
