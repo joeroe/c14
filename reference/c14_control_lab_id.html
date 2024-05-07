@@ -111,6 +111,15 @@ suppress warnings about unmatched values. Default: <code>TRUE</code>.</p></dd>
 <p>Vector the same length as <code>x</code> with controlled laboratory identifiers.</p>
     </div>
 
+    <div class="section level2">
+    <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="fu">c14_control_lab_id</span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"OxA-1234"</span>, <span class="st">"OxA 1234"</span>, <span class="st">"Oxa 1234"</span><span class="op">)</span><span class="op">)</span></span></span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> Replaced values:</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #0000BB;">ℹ</span> Oxa → OxA</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "OxA-1234" "OxA-1234" "OxA-1234"</span>
+<span class="r-in"><span></span></span>
+</code></pre></div>
+    </div>
   </main><aside class="col-md-3"><nav id="toc"><h2>On this page</h2>
     </nav></aside></div>
 
