@@ -25,6 +25,9 @@
 #' @return
 #' Vector the same length as `x` with controlled laboratory identifiers.
 #'
+#' @example
+#' c14_control_lab_id(c("OxA-1234", "OxA 1234", "Oxa 1234"))
+#'
 #' @export
 c14_control_lab_id <- function(x,
                                thesaurus = c14_lab_code_thesaurus,
@@ -79,7 +82,7 @@ c14_parse_lab_id <- function(x, fix = TRUE) {
   x <- stringr::str_match(x, c14_lab_id_std())
   x <- x[, 2:3]
 
-  nm <- c("lab_code", "lab_num")
+  nm <- c("lab_code", "lab_number")
   if (length(x) > 2) {
     x <- as.data.frame(x, stringsAsFactors = FALSE)
     colnames(x) <- nm
