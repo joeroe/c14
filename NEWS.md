@@ -23,6 +23,7 @@
   * `c14_age()` for calculating a radiocarbon age from fraction modern.
   * `c14_f14c()` for reverse-calculating fraction modern from a radiocarbon age.
   * Decay constants `c14_decay_libby` and `c14_decay_cambridge`.
+* Added example datasets `ppnd` and `shub1_c14`
 
 # c14 0.0.0
 

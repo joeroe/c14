@@ -26,7 +26,7 @@ This function can be evaluated in parallel using \code{\link[future:plan]{future
 substantially speeds up the computation for large sets of dates.
 }
 \examples{
-ppnd_cal <- c14_calibrate(ppnd$cra, ppnd$error)
-cal_sum(ppnd_cal)
+shub1_cal <- c14_calibrate(shub1_c14$c14_age, shub1_c14$c14_error)
+cal_sum(shub1_cal)
 }
 \concept{functions for aggregating calendar probability distributions}

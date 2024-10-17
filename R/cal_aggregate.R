@@ -22,8 +22,8 @@
 #' @export
 #'
 #' @examples
-#' ppnd_cal <- c14_calibrate(ppnd$cra, ppnd$error)
-#' cal_sum(ppnd_cal)
+#' shub1_cal <- c14_calibrate(shub1_c14$c14_age, shub1_c14$c14_error)
+#' cal_sum(shub1_cal)
 cal_sum <- function(x, range = cal_age_common(x), ...) {
   # TODO: ensure x and range have the same era - or is this a job for cal validation?
   x <- cal_interpolate(x, range)
