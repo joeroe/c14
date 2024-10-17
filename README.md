@@ -10,8 +10,8 @@ experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](h
 [![CRAN
 status](https://www.r-pkg.org/badges/version/c14)](https://CRAN.R-project.org/package=c14)
 [![R-CMD-check](https://github.com/joeroe/c14/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/joeroe/c14/actions/workflows/R-CMD-check.yaml)
-[![Codecov test
-coverage](https://codecov.io/gh/joeroe/c14/branch/master/graph/badge.svg)](https://codecov.io/gh/joeroe/c14?branch=master)
+[![Test
+coverage](https://codecov.io/gh/joeroe/c14/graph/badge.svg)](https://app.codecov.io/gh/joeroe/c14)
 <!-- badges: end -->
 
 **c14** provides basic classes and functions for radiocarbon data in R.
