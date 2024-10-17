@@ -24,10 +24,6 @@ The summed probability distribution as a \link{cal} vector.
 Aggregates a vector of calendar probability distributions (such as calibrated
 radiocarbon dates) by summing them over a given range of ages.
 }
-\details{
-This function can be evaluated in parallel using \code{\link[future:plan]{future::plan()}}, which
-substantially speeds up the computation for large sets of dates.
-}
 \examples{
 shub1_cal <- c14_calibrate(shub1_c14$c14_age, shub1_c14$c14_error)
 cal_sum(shub1_cal)

@@ -16,10 +16,6 @@
 #'
 #' @return The summed probability distribution as a [cal] vector.
 #'
-#' @details
-#' This function can be evaluated in parallel using [future::plan()], which
-#' substantially speeds up the computation for large sets of dates.
-#'
 #' @family functions for aggregating calendar probability distributions
 #' @export
 #'
@@ -28,10 +24,10 @@
 #' cal_sum(shub1_cal)
 cal_sum <- function(x, range = cal_age_common(x), normalise = FALSE, ...) {
   # TODO: ensure x and range have the same era - or is this a job for cal validation?
-  # TODO: normalise interpolated??
   x <- cal_interpolate(x, range)
 
-  pdens_sum <- furrr::future_pmap_dbl(cal_pdens(x), \(...) sum(..., na.rm = TRUE))
+  pdens_mat <- do.call(rbind, cal_pdens(x))
+  pdens_sum <- colSums(pdens_mat, na.rm = TRUE)
   if (isTRUE(normalise)) pdens_sum <- pdens_sum / sum(pdens_sum, na.rm = TRUE)
 
   new_cal(list(data.frame(age = cal_age(x)[[1]], pdens = pdens_sum)))
