@@ -1,6 +1,8 @@
 # cal_summary.R
 # Functions for summarising calibrated radiocarbon dates
 
+# Point estimates ---------------------------------------------------------
+
 #' Point estimates of calibrated radiocarbon dates
 #'
 #' This function implements a number of methods for deriving a single point
@@ -60,7 +62,7 @@ cal_point <- function(x,
   )
 
   # Flatten to era_yr
-  vec_c(!!!purrr::map(x, f, interval))
+  vec_c(!!!furrr::future_map(x, f, interval))
 }
 
 #' Mode of a calibrated radiocarbon date
@@ -73,7 +75,7 @@ cal_point <- function(x,
 #' @noRd
 #' @keywords internal
 cal_mode <- function(x, ...) {
-  y <- x$age[x$pdens == max(x$pdens)]
+  y <- x$age[x$pdens == max(x$pdens, na.rm = TRUE) & !is.na(x$pdens)]
   if (length(y) > 1) {
     y <- y[1]
     rlang::warn(
@@ -133,4 +135,49 @@ cal_local_mode <- function(x, interval = 0.954, ...) {
 cal_central <- function(x, interval = 1, ...) {
   rlang::abort("Sorry, `cal_central()` is not yet implemented!",
         "c14_unimplemented_function")
+}
+
+
+# Simple ranges -----------------------------------------------------------
+
+#' Range of a calendar probability distribution
+#'
+#' Functions for calculating the minimum and maximum ages of a [cal] vector.
+#' This function does not take into account the probability distribution.
+#'
+#' @param x A [cal] vector of calendar probability distributions.
+#' @param min_pdens Ignores ages with values less than the given value when
+#'   calculating the minimum or maximum. Default: 0.
+#'
+#' @return A data frame with two columns giving the minimum (`min`) and maximum
+#' (`max`) ages.
+#'
+#' @family functions for summarising calibrated radiocarbon dates
+#' @export
+#'
+#' @examples
+#' x <- c14_calibrate(c(10000, 9000, 8000), rep(10, 3))
+#'
+#' cal_age_min(x)
+#' cal_age_max(x)
+#' cal_age_range(x)
+cal_age_range <- function(x, min_pdens = 0) {
+  vec_cbind(
+    min = cal_age_min(x, min_pdens),
+    max = cal_age_max(x, min_pdens)
+  )
+}
+
+#' @rdname cal_age_range
+#' @export
+cal_age_min <- function(x, min_pdens = 0) {
+  x <- cal_crop(x, min_pdens)
+  purrr::map_vec(cal_age(x), min)
+}
+
+#' @rdname cal_age_range
+#' @export
+cal_age_max <- function(x, min_pdens = 0) {
+  x <- cal_crop(x, min_pdens)
+  purrr::map_vec(cal_age(x), max)
 }

@@ -38,6 +38,7 @@ methods::setOldClass(c("c14_cal", "vctrs_list_of"))
 cal <- function(..., .era = era::era("cal BP")) {
   # TODO: If ... is a single list, unlist it (? – maybe too clever)
   # if (rlang::is_bare_list(..., n = 1))
+  # TODO: ensure that all ages use the same era
 
   x <- rlang::list2(...)
 
@@ -83,6 +84,7 @@ cal_atomic_ptype <- function() data.frame(age = era::yr(), pdens = numeric())
 
 # Validators --------------------------------------------------------------
 
+# TODO: validate that all ages use the same era
 
 # Print/format ------------------------------------------------------------
 
@@ -136,7 +138,7 @@ circa_point_yr_colour <- function(x) {
 
 # Accessors ---------------------------------------------------------------
 
-#' Extract ages from cal objects
+#' Extract ages from cal vectors
 #'
 #' @keywords internal
 #' @noRd
@@ -144,7 +146,7 @@ cal_age <- function(x) {
   purrr::map(vec_data(x), "age")
 }
 
-#' Extract probabilities from cal objects
+#' Extract probabilities from cal vectors
 #'
 #' @keywords internal
 #' @noRd
@@ -152,3 +154,31 @@ cal_pdens <- function(x) {
   purrr::map(vec_data(x), "pdens")
 }
 
+# Misc --------------------------------------------------------------------
+
+#' Filter cal vectors to a given minimum probability density
+#'
+#' @noRd
+#' @keywords internal
+cal_crop <- function(x, min_pdens = 0) {
+  if (min_pdens <= 0) return(x)
+  new_cal(furrr::future_map(vec_data(x), \(x) x[x$pdens >= min_pdens,]))
+}
+
+#' Generate a sequence of ages that covers a cal vector at the given resolution
+#'
+#' @noRd
+#' @keywords internal
+cal_age_common <- function(x, resolution = 1) {
+  min_age <- min(cal_age_min(x))
+  max_age <- max(cal_age_max(x))
+  seq(from = min_age, to = max_age, by = resolution)
+}
+
+#' Interpolate a cal vector over the given range
+#'
+#' @noRd
+#' @keywords internal
+cal_interpolate <- function(x, range = cal_age_common(x)) {
+  new_cal(furrr::future_map(vec_data(x), \(x) approx_df(x, range, ties = "ordered")))
+}

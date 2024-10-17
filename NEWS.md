@@ -5,7 +5,10 @@
   * The `age` column of a `cal` element is now an `era::yr` vector.
   * "Metadata" has been removed from the class definition
 * Added summary functions for calibrated dates (`cal` class):
-  * `c14_point()` for point estimates
+  * `cal_point()` for point estimates
+  * `cal_age_range()`, `cal_age_min()`, and `cal_age_max()` for simple ranges
+* Added aggregation functions for for calibrated dates (`cal` class):
+  * `cal_sum()` for summed probability
 * Added classes, functions and datasets for calibration curves:
   * `c14_curve` is a vctrs record class representing a calibration curve, with
     subclasses `c14_curve_14c` and `c14_curve_f14c` for CRA-based and F14C-based
