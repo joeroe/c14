@@ -43,5 +43,6 @@ reference:
   desc: "Data included with the package."
 - contents:
   - ppnd
+  - shub1_c14
   - has_concept("calibration curves")
   - has_concept("radiocarbon-related constants")
