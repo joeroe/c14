@@ -42,7 +42,7 @@ radiocarbon dates) by summing them over a given range of ages.</p>
 
     <div class="section level2">
     <h2 id="ref-usage">Usage<a class="anchor" aria-label="anchor" href="#ref-usage"></a></h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">cal_sum</span><span class="op">(</span><span class="va">x</span>, range <span class="op">=</span> <span class="fu">cal_age_common</span><span class="op">(</span><span class="va">x</span><span class="op">)</span>, <span class="va">...</span><span class="op">)</span></span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">cal_sum</span><span class="op">(</span><span class="va">x</span>, range <span class="op">=</span> <span class="fu">cal_age_common</span><span class="op">(</span><span class="va">x</span><span class="op">)</span>, normalise <span class="op">=</span> <span class="cn">FALSE</span>, <span class="va">...</span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div class="section level2">
@@ -56,6 +56,11 @@ radiocarbon dates) by summing them over a given range of ages.</p>
 <dt id="arg-range">range<a class="anchor" aria-label="anchor" href="#arg-range"></a></dt>
 <dd><p>Range of ages over which to sum. Defaults to the maximum range
 of <code>x</code> at one year resolution.</p></dd>
+
+
+<dt id="arg-normalise">normalise<a class="anchor" aria-label="anchor" href="#arg-normalise"></a></dt>
+<dd><p>Whether to normalise the summed distribution to sum to 1.
+The default is not to normalise.</p></dd>
 
 
 <dt id="arg--">...<a class="anchor" aria-label="anchor" href="#arg--"></a></dt>
