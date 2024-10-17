@@ -16,3 +16,7 @@ test_that("cal_age_common() returns a yr vector", {
   # TODO: somehow test the expected length?
   expect_vector(cal_age_common(y), y_yr_ptype)
 })
+
+test_that("cal_interpolate() is normalised", {
+  expect_equal(sum(cal_pdens(cal_interpolate(x))[[1]]), 1)
+})

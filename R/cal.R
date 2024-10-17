@@ -177,8 +177,14 @@ cal_age_common <- function(x, resolution = 1) {
 
 #' Interpolate a cal vector over the given range
 #'
+#' Result is normalised
+#'
 #' @noRd
 #' @keywords internal
 cal_interpolate <- function(x, range = cal_age_common(x)) {
-  new_cal(furrr::future_map(vec_data(x), \(x) approx_df(x, range, ties = "ordered")))
+  new_cal(furrr::future_map(vec_data(x), function(x) {
+    x <- approx_df(x, range, ties = "ordered")
+    x$pdens <- x$pdens / sum(x$pdens, na.rm = TRUE)
+    x
+  }))
 }

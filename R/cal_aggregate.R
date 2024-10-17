@@ -32,7 +32,7 @@ cal_sum <- function(x, range = cal_age_common(x), normalise = FALSE, ...) {
   x <- cal_interpolate(x, range)
 
   pdens_sum <- furrr::future_pmap_dbl(cal_pdens(x), \(...) sum(..., na.rm = TRUE))
-  if (isTRUE(normalise)) pdens_sum <- pdens_sum / sum(pdens_sum)
+  if (isTRUE(normalise)) pdens_sum <- pdens_sum / sum(pdens_sum, na.rm = TRUE)
 
   new_cal(list(data.frame(age = cal_age(x)[[1]], pdens = pdens_sum)))
 }
