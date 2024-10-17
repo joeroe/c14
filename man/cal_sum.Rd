@@ -4,13 +4,16 @@
 \alias{cal_sum}
 \title{Sum calendar probability distributions}
 \usage{
-cal_sum(x, range = cal_age_common(x), ...)
+cal_sum(x, range = cal_age_common(x), normalise = FALSE, ...)
 }
 \arguments{
 \item{x}{A \link{cal} vector of calendar probability distributions}
 
 \item{range}{Range of ages over which to sum. Defaults to the maximum range
 of \code{x} at one year resolution.}
+
+\item{normalise}{Whether to normalise the summed distribution to sum to 1.
+The default is not to normalise.}
 
 \item{...}{Not used}
 }
