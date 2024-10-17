@@ -7,6 +7,13 @@
 ## usethis namespace: end
 NULL
 
+#' Internal Rdpack methods
+#'
+#' @keywords internal
+#' @importFrom Rdpack reprompt
+#' @name c14-Rdpack
+NULL
+
 #' Internal vctrs methods
 #'
 #' @import vctrs

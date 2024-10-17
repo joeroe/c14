@@ -8,10 +8,6 @@ template:
   bootstrap: 5
   includes:
     in_header: '<script async src="https://umami.joeroe.io/script.js" data-website-id="fd494f22-69ae-4eb3-bc38-921d11ddb379"></script>'
-  opengraph:
-    twitter:
-      creator: "@joeroe90"
-      card: summary
 
 reference:
 - title: "Tidy radiocarbon"
@@ -26,6 +22,10 @@ reference:
   desc: "Functions for summarising calibrated radiocarbon dates."
 - contents:
   - has_concept("functions for summarising calibrated radiocarbon dates")
+- title: "Aggregate calibrated dates"
+  desc: "Functions for aggregating calibrated radiocarbon dates."
+- contents:
+  - has_concept("functions for aggregating calendar probability distributions")
 - title: "cal class methods"
   desc: "Methods for the `cal` class – vectors of calibrated radiocarbon dates."
 - contents:
