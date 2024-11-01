@@ -30,3 +30,13 @@ The regular expression used to test for the conventional format is
 \code{"^([[:alpha:]\\(\\)/]{1,8})[ -\\u2010\\u2013_#\\.\\+](.*)$"}. This accepts unusual
 but parsable variants such as \code{"Ki(KIEV)-1234"} or \code{"Gif/LSN_5678"}
 }
+\examples{
+# Valid formats
+c14_is_lab_id(c("OxA-1234", "OxA 1234", "OxA", "Gif/LSN_5678"))
+
+# Invalid formats
+c14_is_lab_id(c("1234", "1234-OxA"))
+
+# Fix
+c14_fix_lab_id(c("OxA", "Gif/LSN_5678", "Ki(KIEV)-1234"))
+}

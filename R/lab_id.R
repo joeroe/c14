@@ -119,6 +119,14 @@ c14_parse_lab_id <- function(x, fix = TRUE) {
 #' @export
 #'
 #' @examples
+#' # Valid formats
+#' c14_is_lab_id(c("OxA-1234", "OxA 1234", "OxA", "Gif/LSN_5678"))
+#'
+#' # Invalid formats
+#' c14_is_lab_id(c("1234", "1234-OxA"))
+#'
+#' # Fix
+#' c14_fix_lab_id(c("OxA", "Gif/LSN_5678", "Ki(KIEV)-1234"))
 c14_fix_lab_id <- function(x) {
   y <- x
 
