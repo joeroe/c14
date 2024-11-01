@@ -2,9 +2,12 @@
 % Please edit documentation in R/cal_aggregate.R
 \name{cal_sum}
 \alias{cal_sum}
+\alias{sum.c14_cal}
 \title{Sum calendar probability distributions}
 \usage{
 cal_sum(x, range = cal_age_common(x), normalise = FALSE, ...)
+
+\method{sum}{c14_cal}(x, range = cal_age_common(x), normalise = FALSE, ...)
 }
 \arguments{
 \item{x}{A \link{cal} vector of calendar probability distributions}

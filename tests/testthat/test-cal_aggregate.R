@@ -8,6 +8,10 @@ test_that("cal_sum(normalise = TRUE) normalised pdens to 1", {
   expect_equal(sum(cal_pdens(cal_sum(x, normalise = TRUE))[[1]]), 1)
 })
 
+test_that("sum() is an alias of cal_sum() for cal objects", {
+  expect_equal(sum(x), cal_sum(x))
+})
+
 test_that("cal_density() has the expected prototype", {
   expect_vector(
     cal_density(x),

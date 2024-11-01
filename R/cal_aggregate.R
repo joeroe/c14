@@ -33,6 +33,12 @@ cal_sum <- function(x, range = cal_age_common(x), normalise = FALSE, ...) {
   new_cal(list(data.frame(age = cal_age(x)[[1]], pdens = pdens_sum)))
 }
 
+#' @rdname cal_sum
+#' @export
+sum.c14_cal <- function(x, range = cal_age_common(x), normalise = FALSE, ...) {
+  cal_sum(x, range = range, normalise = normalise, ...)
+}
+
 #' Kernel density estimation of calendar probability distributions
 #'
 #' Aggregates calibrated radiocarbon dates and other calendar probability
