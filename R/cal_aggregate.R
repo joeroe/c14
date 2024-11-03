@@ -85,10 +85,13 @@ sum.c14_cal <- function(x, range = cal_age_common(x), normalise = FALSE, ...) {
 #' data(shub1_c14)
 #' shub1_cal <- c14_calibrate(shub1_c14$c14_age, shub1_c14$c14_error)
 #' cal_density(shub1_cal)
+#'
+#' # Stratify and weight bootstrap estimation by phase
+#' cal_density(shub1_cal, strata = shub1_c14$phase)
 cal_density <- function(x, bw = 30, ..., times = 25, bootstrap = TRUE, strata = NULL) {
   # TODO: guard against character argument to bw?
-  age_grid <- cal_age_common(x)
 
+  # Bootstrapping
   if (isTRUE(bootstrap)) {
     bootstraps <- cal_bootstraps(x, times = times, strata = strata)
     age_sample <- purrr::map(bootstraps, \(x) do.call(c, cal_sample(x, 1)))
@@ -97,9 +100,20 @@ cal_density <- function(x, bw = 30, ..., times = 25, bootstrap = TRUE, strata = 
     age_sample <- cal_sample(x, times)
   }
 
-  kdes <- purrr::map(age_sample, stats::density, bw = bw, from = min(age_grid),
-              to = max(age_grid), ...)
+  # Weights
+  if (is.null(strata)) weights <- NULL
+  else {
+    weights <- purrr::list_c(purrr::map(split(x, strata), function(y, n) {
+     rep(length(y) / n, length(y))
+    }, n = length(x)))
+  }
 
+  # Density estimation
+  age_grid <- cal_age_common(x)
+  kdes <- purrr::map(age_sample, stats::density, bw = bw, weights = weights,
+                     from = min(age_grid), to = max(age_grid), ...)
+
+  # Combine results
   x <- kdes[[1]]$x # TODO: is it always safe to assume x are all equal?
   y <- do.call(rbind, purrr::map(kdes, "y")) # to matrix for faster calculations
   tibble::tibble(

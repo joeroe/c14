@@ -55,6 +55,9 @@ See \insertCite{McLaughlin2019;textual}{c14} and
 data(shub1_c14)
 shub1_cal <- c14_calibrate(shub1_c14$c14_age, shub1_c14$c14_error)
 cal_density(shub1_cal)
+
+# Stratify and weight bootstrap estimation by phase
+cal_density(shub1_cal, strata = shub1_c14$phase)
 }
 \references{
 \insertAllCited{}
