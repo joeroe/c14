@@ -42,7 +42,10 @@ radiocarbon dates) by summing them over a given range of ages.</p>
 
     <div class="section level2">
     <h2 id="ref-usage">Usage<a class="anchor" aria-label="anchor" href="#ref-usage"></a></h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">cal_sum</span><span class="op">(</span><span class="va">x</span>, range <span class="op">=</span> <span class="fu">cal_age_common</span><span class="op">(</span><span class="va">x</span><span class="op">)</span>, normalise <span class="op">=</span> <span class="cn">FALSE</span>, <span class="va">...</span><span class="op">)</span></span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">cal_sum</span><span class="op">(</span><span class="va">x</span>, range <span class="op">=</span> <span class="fu">cal_age_common</span><span class="op">(</span><span class="va">x</span><span class="op">)</span>, normalise <span class="op">=</span> <span class="cn">FALSE</span>, <span class="va">...</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># S3 method for class 'c14_cal'</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/sum.html" class="external-link">sum</a></span><span class="op">(</span><span class="va">x</span>, range <span class="op">=</span> <span class="fu">cal_age_common</span><span class="op">(</span><span class="va">x</span><span class="op">)</span>, normalise <span class="op">=</span> <span class="cn">FALSE</span>, <span class="va">...</span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div class="section level2">
@@ -70,6 +73,11 @@ The default is not to normalise.</p></dd>
     <div class="section level2">
     <h2 id="value">Value<a class="anchor" aria-label="anchor" href="#value"></a></h2>
     <p>The summed probability distribution as a <a href="cal.html">cal</a> vector.</p>
+    </div>
+    <div class="section level2">
+    <h2 id="see-also">See also<a class="anchor" aria-label="anchor" href="#see-also"></a></h2>
+    <div class="dont-index"><p>Other functions for aggregating calendar probability distributions:
+<code><a href="cal_density.html">cal_density</a>()</code></p></div>
     </div>
 
     <div class="section level2">
