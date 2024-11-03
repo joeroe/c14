@@ -78,6 +78,7 @@ sum.c14_cal <- function(x, range = cal_age_common(x), normalise = FALSE, ...) {
 #'
 #' @references \insertAllCited{}
 #'
+#' @family functions for aggregating calendar probability distributions
 #' @export
 #'
 #' @examples

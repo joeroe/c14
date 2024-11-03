@@ -59,3 +59,8 @@ cal_density(shub1_cal)
 \references{
 \insertAllCited{}
 }
+\seealso{
+Other functions for aggregating calendar probability distributions: 
+\code{\link{cal_sum}()}
+}
+\concept{functions for aggregating calendar probability distributions}
