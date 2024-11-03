@@ -42,11 +42,15 @@ sum.c14_cal <- function(x, range = cal_age_common(x), normalise = FALSE, ...) {
 #' Kernel density estimation of calendar probability distributions
 #'
 #' Aggregates calibrated radiocarbon dates and other calendar probability
-#' distributions using the bootstrapped composite kernel density estimate (cKDE)
-#' method \insertCite{Brown2017,McLaughlin2019}{c14}. This involves repeatedly
-#' computing the kernel density estimate of a random sample of ages drawn from
-#' the calendar probability distributions provided and deriving a mean estimate
-#' and confidence interval from the resulting bootstrapped set.
+#' distributions using the composite kernel density estimate (cKDE) method
+#' method \insertCite{Brown2017}{c14}. This involves estimating the density of
+#' a set of dates by repeatedly computing the kernel density estimate of a
+#' random sample of ages drawn from their probability distributions.
+#'
+#' `cal_density(..., bootstrap = TRUE)` performs composite kernel density
+#' estimation with bootstrapping \insertCite{McLaughlin2019}{c14}, where
+#' sampling error. `x` is estimated by randomly resampling `x` before each KDE
+#' calculation.
 #'
 #' @param x A [cal] vector of calendar probability distributions
 #' @param bw Kernel bandwidth size passed to [stats::density()]. Can be either
@@ -56,6 +60,12 @@ sum.c14_cal <- function(x, range = cal_age_common(x), normalise = FALSE, ...) {
 #' @param ... Further arguments passed to [stats::density()]
 #' @param times Number of bootstrap samples to generate. The default of `25` is
 #'   suitable for testing but should be set much higher in practice.
+#' @param bootstrap If `TRUE` (the default), randomly resamples with replacement
+#' from `x` before each KDE calculation.
+#' @param strata If not `NULL`, KDEs will be weighted to ensure equal
+#' representation of classes specified by a factor or character vector. If
+#' `bootstrap = TRUE`, bootstrap samples are generated using stratified
+#' resampling of the same classes.
 #'
 #' @details
 #' See \insertCite{McLaughlin2019;textual}{c14} and
@@ -74,18 +84,23 @@ sum.c14_cal <- function(x, range = cal_age_common(x), normalise = FALSE, ...) {
 #' data(shub1_c14)
 #' shub1_cal <- c14_calibrate(shub1_c14$c14_age, shub1_c14$c14_error)
 #' cal_density(shub1_cal)
-cal_density <- function(x, bw = 30, ..., times = 25) {
+cal_density <- function(x, bw = 30, ..., times = 25, bootstrap = TRUE, strata = NULL) {
   # TODO: guard against character argument to bw?
-
   age_grid <- cal_age_common(x)
 
-  bootstrap <- do.call(rbind, cal_sample(x, times))
-  kdes <- apply(bootstrap, 2, stats::density, bw = bw,
-                from = min(age_grid), to = max(age_grid), ...,
-                simplify = FALSE)
+  if (isTRUE(bootstrap)) {
+    bootstraps <- cal_bootstraps(x, times = times, strata = strata)
+    age_sample <- purrr::map(bootstraps, \(x) do.call(c, cal_sample(x, 1)))
+  }
+  else {
+    age_sample <- cal_sample(x, times)
+  }
 
-  x <- kdes[[1]]$x
-  y <- do.call(rbind, purrr::map(kdes, "y"))
+  kdes <- purrr::map(age_sample, stats::density, bw = bw, from = min(age_grid),
+              to = max(age_grid), ...)
+
+  x <- kdes[[1]]$x # TODO: is it always safe to assume x are all equal?
+  y <- do.call(rbind, purrr::map(kdes, "y")) # to matrix for faster calculations
   tibble::tibble(
     age = age_grid,
     .estimate = stats::approx(x, colMeans(y, na.rm = TRUE), xout = age_grid)$y,
@@ -96,8 +111,8 @@ cal_density <- function(x, bw = 30, ..., times = 25) {
 
 #' @rdname cal_density
 #' @export
-density.c14_cal <- function(x, bw = 30, ..., times = 25) {
-  cal_density(x, bw = bw, ..., times = times)
+density.c14_cal <- function(x, ...) {
+  cal_density(x, ...)
 }
 
 #' Randomly sample from calendar probability distributions
@@ -106,7 +121,31 @@ density.c14_cal <- function(x, bw = 30, ..., times = 25) {
 #' @keywords internal
 # TODO: worth exporting?
 cal_sample <- function(x, times) {
-  purrr::map2(cal_age(x), cal_pdens(x), function(x, y, s) {
+  samples <- purrr::map2(cal_age(x), cal_pdens(x), function(x, y, s) {
     sample(x, s, replace = TRUE, prob = y)
   }, s = times)
+  purrr::pmap(samples, c)
+}
+
+#' Bootstrap sampling of calendar probability distributions
+#'
+#' @param x A [cal] vector of calendar probability distributions.
+#' @param times Number of resamples to generate. Default: `25`.
+#' @param strata Factor or character vector of classes for stratified
+#' resampling. When not `NULL`, the generated bootstrap sample will have the
+#' same number of elements in each class as the original sample.
+#'
+#' @return A resampled [cal] vector of the same length as `x`.
+#'
+#' @noRd
+#' @keywords internal
+# TODO: Worth exporting?
+cal_bootstraps <- function(x, times = 25, strata = NULL) {
+  if (is.null(strata)) x <- list(x)
+  else x <- unname(split(x, strata))
+  replicate(
+    times,
+    do.call(c, lapply(x, sample, replace = TRUE)),
+    simplify = FALSE
+  )
 }

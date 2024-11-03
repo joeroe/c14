@@ -31,5 +31,18 @@ test_that("density() is an alias for cal_density() for cal objects", {
 
 test_that("cal_sample() has the expected dimensions", {
   times <- 5
-  expect_equal(sapply(cal_sample(x, times), length), rep(times, length(x)))
+  expect_equal(sapply(cal_sample(x, times), length), rep(length(x), times))
+})
+
+test_that("cal_bootstraps() has the expected dimensions", {
+  times <- 5
+  strata <- c("a", "b", "b")
+  expect_equal(
+    sapply(cal_bootstraps(x, times), length),
+    rep(length(x), times)
+  )
+  expect_equal(
+    sapply(cal_bootstraps(x, times, strata), length),
+    rep(length(x), times)
+  )
 })

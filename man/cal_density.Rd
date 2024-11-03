@@ -5,9 +5,9 @@
 \alias{density.c14_cal}
 \title{Kernel density estimation of calendar probability distributions}
 \usage{
-cal_density(x, bw = 30, ..., times = 25)
+cal_density(x, bw = 30, ..., times = 25, bootstrap = TRUE, strata = NULL)
 
-\method{density}{c14_cal}(x, bw = 30, ..., times = 25)
+\method{density}{c14_cal}(x, ...)
 }
 \arguments{
 \item{x}{A \link{cal} vector of calendar probability distributions}
@@ -21,6 +21,14 @@ and therefore should be avoided. Default: \code{30} (years).}
 
 \item{times}{Number of bootstrap samples to generate. The default of \code{25} is
 suitable for testing but should be set much higher in practice.}
+
+\item{bootstrap}{If \code{TRUE} (the default), randomly resamples with replacement
+from \code{x} before each KDE calculation.}
+
+\item{strata}{If not \code{NULL}, KDEs will be weighted to ensure equal
+representation of classes specified by a factor or character vector. If
+\code{bootstrap = TRUE}, bootstrap samples are generated using stratified
+resampling of the same classes.}
 }
 \value{
 The result as a data frame or \link[tibble:tibble]{tibble::tibble} with three columns: \code{age}
@@ -29,13 +37,17 @@ KDEs), and \code{.error} (standard error of the bootstrapped KDEs).
 }
 \description{
 Aggregates calibrated radiocarbon dates and other calendar probability
-distributions using the bootstrapped composite kernel density estimate (cKDE)
-method \insertCite{Brown2017,McLaughlin2019}{c14}. This involves repeatedly
-computing the kernel density estimate of a random sample of ages drawn from
-the calendar probability distributions provided and deriving a mean estimate
-and confidence interval from the resulting bootstrapped set.
+distributions using the composite kernel density estimate (cKDE) method
+method \insertCite{Brown2017}{c14}. This involves estimating the density of
+a set of dates by repeatedly computing the kernel density estimate of a
+random sample of ages drawn from their probability distributions.
 }
 \details{
+\code{cal_density(..., bootstrap = TRUE)} performs composite kernel density
+estimation with bootstrapping \insertCite{McLaughlin2019}{c14}, where
+sampling error. \code{x} is estimated by randomly resampling \code{x} before each KDE
+calculation.
+
 See \insertCite{McLaughlin2019;textual}{c14} and
 \insertCite{Crema2022;textual}{c14} for discussions of bandwith selection.
 }
