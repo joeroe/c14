@@ -8,7 +8,8 @@ c14_calibrate(
   c14_age,
   c14_error,
   ...,
-  engine = c("intcal", "rcarbon", "oxcal", "bchron")
+  engine = c("intcal", "rcarbon", "oxcal", "bchron"),
+  min_pdens = 1e-05
 )
 }
 \arguments{
@@ -27,6 +28,9 @@ Available engines:
 \item \code{"oxcal"}: \code{\link[oxcAAR:oxcalCalibrate]{oxcAAR::oxcalCalibrate()}}
 \item \code{"bchron"}: \code{\link[Bchron:BchronCalibrate]{Bchron::BchronCalibrate()}}
 }}
+
+\item{pdens}{Minimum probability density threshold below which ages are
+excluded from the result. Set to \code{NULL} to use the full calibration curve.}
 }
 \value{
 A list of \code{cal} objects.

@@ -16,6 +16,8 @@
 #'   * `"rcarbon"`: [rcarbon::calibrate()]
 #'   * `"oxcal"`: [oxcAAR::oxcalCalibrate()]
 #'   * `"bchron"`: [Bchron::BchronCalibrate()]
+#' @param pdens     Minimum probability density threshold below which ages are
+#'   excluded from the result. Set to `NULL` to use the full calibration curve.
 #'
 #' @details
 #' `c14_age` and `c14_error` are recycled to a common length.
@@ -33,27 +35,31 @@
 c14_calibrate <- function(c14_age,
                           c14_error,
                           ...,
-                          engine = c("intcal", "rcarbon", "oxcal", "bchron")) {
+                          engine = c("intcal", "rcarbon", "oxcal", "bchron"),
+                          min_pdens = 1e-05) {
   c(c14_age, c14_error) %<-% vec_recycle_common(c14_age, c14_error)
   engine <- rlang::arg_match(engine)
 
-
   if (engine == "intcal") {
-    cals <- c14_calibrate_intcal(c14_age, c14_error, ...)
+    cals <- c14_calibrate_intcal(c14_age, c14_error, min_pdens, ...)
   }
 
   else if (engine == "rcarbon") {
     if(!requireNamespace("rcarbon", quietly = TRUE)) {
       stop('`engine` = "rcarbon" requires package rcarbon')
     }
-    cals <- rcarbon::calibrate(c14_age, c14_error, calMatrix = FALSE,
-                               verbose = FALSE, ...)
+    cals <- rcarbon::calibrate(c14_age, c14_error, eps = min_pdens,
+                               calMatrix = FALSE, verbose = FALSE, ...)
     cals <- as_cal(cals)
   }
 
   else if (engine == "oxcal") {
     if(!requireNamespace("oxcAAR", quietly = TRUE)) {
       stop('`engine` = "OxCal" requires package oxcAAR')
+    }
+    if (min_pdens != 1e-05) {
+      rlang::warn('`min_pdens` is not supported for `engine = "oxcal"`',
+                  class = "c14_invalid_arguments")
     }
     oxcAAR::quickSetupOxcal()
     cals <- oxcAAR::oxcalCalibrate(c14_age, c14_error, ...)
@@ -64,7 +70,7 @@ c14_calibrate <- function(c14_age,
     if(!requireNamespace("Bchron", quietly = TRUE)) {
       stop('`engine` = "Bchron" requires package Bchron')
     }
-    cals <- Bchron::BchronCalibrate(c14_age, c14_error, ...)
+    cals <- Bchron::BchronCalibrate(c14_age, c14_error, eps = min_pdens, ...)
     cals <- as_cal(cals)
   }
 
@@ -78,9 +84,10 @@ c14_calibrate <- function(c14_age,
 #'
 #' @noRd
 #' @keywords internal
-c14_calibrate_intcal <- function(c14_age, c14_error, ...) {
+c14_calibrate_intcal <- function(c14_age, c14_error, min_pdens = 1e-05, ...) {
   furrr::future_map2(c14_age, c14_error, IntCal::caldist, ...) |>
     furrr::future_map(as.data.frame) |>
+    furrr::future_map(\(x, m) dplyr::filter(x, .data$prob >= m), m = min_pdens) |>
     do.call(what = cal)
 }
 

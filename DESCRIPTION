@@ -63,6 +63,7 @@ Suggests:
     covr,
     dplyr,
     knitr,
+    mockery,
     readr,
     readxl,
     rmarkdown,
