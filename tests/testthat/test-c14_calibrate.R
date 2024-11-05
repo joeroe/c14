@@ -13,6 +13,7 @@ test_that("ages with pdens < min_pdens are filtered from c14_calibrate()", {
 })
 
 test_that('c14_calibrate() warns that min_pdens is not supported with `engine = "oxcal"`', {
+  mockery::stub(c14_calibrate, "requireNamespace", TRUE)
   mockery::stub(c14_calibrate, "oxcAAR::quickSetupOxcal", NULL)
   mockery::stub(c14_calibrate, "oxcAAR::oxcalCalibrate",
                 data.frame(x = numeric(), y = numeric()))
