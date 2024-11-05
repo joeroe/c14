@@ -46,7 +46,8 @@ using a calibration curve.</p>
 <span>  <span class="va">c14_age</span>,</span>
 <span>  <span class="va">c14_error</span>,</span>
 <span>  <span class="va">...</span>,</span>
-<span>  engine <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"intcal"</span>, <span class="st">"rcarbon"</span>, <span class="st">"oxcal"</span>, <span class="st">"bchron"</span><span class="op">)</span></span>
+<span>  engine <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"intcal"</span>, <span class="st">"rcarbon"</span>, <span class="st">"oxcal"</span>, <span class="st">"bchron"</span><span class="op">)</span>,</span>
+<span>  min_pdens <span class="op">=</span> <span class="fl">1e-05</span></span>
 <span><span class="op">)</span></span></code></pre></div>
     </div>
 
@@ -74,6 +75,11 @@ Available engines:</p><ul><li><p><code>"intcal"</code>: <code><a href="https://r
 <li><p><code>"oxcal"</code>: <code><a href="https://rdrr.io/pkg/oxcAAR/man/oxcalCalibrate.html" class="external-link">oxcAAR::oxcalCalibrate()</a></code></p></li>
 <li><p><code>"bchron"</code>: <code><a href="https://andrewcparnell.github.io/Bchron/reference/BchronCalibrate.html" class="external-link">Bchron::BchronCalibrate()</a></code></p></li>
 </ul></dd>
+
+
+<dt id="arg-pdens">pdens<a class="anchor" aria-label="anchor" href="#arg-pdens"></a></dt>
+<dd><p>Minimum probability density threshold below which ages are
+excluded from the result. Set to <code>NULL</code> to use the full calibration curve.</p></dd>
 
 </dl></div>
     <div class="section level2">
