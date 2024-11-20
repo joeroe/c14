@@ -57,7 +57,8 @@ function or an interval estimate is not appropriate, in which case
     <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">cal_point</span><span class="op">(</span></span>
 <span>  <span class="va">x</span>,</span>
 <span>  method <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"mode"</span>, <span class="st">"median"</span>, <span class="st">"mean"</span>, <span class="st">"local_mode"</span>, <span class="st">"central"</span><span class="op">)</span>,</span>
-<span>  interval <span class="op">=</span> <span class="fl">0.954</span></span>
+<span>  interval <span class="op">=</span> <span class="fl">0.954</span>,</span>
+<span>  quiet <span class="op">=</span> <span class="cn">FALSE</span></span>
 <span><span class="op">)</span></span></code></pre></div>
     </div>
 
@@ -66,7 +67,7 @@ function or an interval estimate is not appropriate, in which case
 
 
 <dl><dt id="arg-x">x<a class="anchor" aria-label="anchor" href="#arg-x"></a></dt>
-<dd><p><code>cal</code> object. A vector of calibrated radiocarbon dates.</p></dd>
+<dd><p><code>cal</code> object. A vector of calibrated radiocarbon dates</p></dd>
 
 
 <dt id="arg-method">method<a class="anchor" aria-label="anchor" href="#arg-method"></a></dt>
@@ -96,6 +97,10 @@ implemented</strong>)</p></dd>
 <dt id="arg-interval">interval<a class="anchor" aria-label="anchor" href="#arg-interval"></a></dt>
 <dd><p>Numeric. Only used for <code>method = "local_mode"</code> and
 <code>method = "central"</code>.</p></dd>
+
+
+<dt id="arg-quiet">quiet<a class="anchor" aria-label="anchor" href="#arg-quiet"></a></dt>
+<dd><p>Set <code>quiet = TRUE</code> to suppress warnings and messages</p></dd>
 
 </dl></div>
     <div class="section level2">
