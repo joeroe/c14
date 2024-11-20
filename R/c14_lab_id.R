@@ -1,5 +1,8 @@
-# lab_id.R
-# Functions for laboratory IDs
+# c14_control.R
+# Functions for cleaning radiocarbon data with controlled vocabularies
+
+
+# Lab IDs -----------------------------------------------------------------
 
 #' Control radiocarbon laboratory identifiers
 #'
@@ -166,3 +169,39 @@ c14_lab_id_std <- function() paste0(c14_lab_code_std(),
 c14_lab_code_std <- function() "^([[:alpha:]\\(\\)/]{1,8})"
 
 c14_lab_delim_std <- function() "[ -\u2010\u2013_#\\.\\+]"
+
+
+# Sample material ---------------------------------------------------------
+
+#' Control radiocarbon sample materials
+#'
+#' @description
+#' Standardises a vector of radiocarbon sample materials use a thesaurus.
+#'
+#' @param x Vector of radiocarbon sample materials.
+#' @param thesaurus Thesaurus to use for sample materials. Defaults to the
+#'  [c14_material_thesaurus] thesaraus included in the package.
+#' @param quiet Passed to [controller::control()]. Set to `TRUE` to suppress
+#'  messages about replaced values. Default: `FALSE`.
+#' @param warn_unmatched Passed to [controller::control()]. Set to `FALSE` to
+#'  suppress warnings about unmatched values. Default: `TRUE`.
+#'
+#' @return
+#' Vector the same length as `x` with controlled sample materials.
+#'
+#' @export
+c14_control_material <- function(x,
+                               thesaurus = c14_material_thesaurus,
+                               quiet = FALSE,
+                               warn_unmatched = TRUE) {
+  controller::control(
+    x,
+    thesaurus,
+    case_insensitive = FALSE,
+    fuzzy_boundary = FALSE,
+    fuzzy_encoding = FALSE,
+    quiet = quiet,
+    warn_unmatched = warn_unmatched,
+    coalesce = TRUE
+  )
+}
