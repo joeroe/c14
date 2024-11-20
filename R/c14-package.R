@@ -27,3 +27,12 @@ NULL
 #' @keywords internal
 #' @name c14-zeallot
 NULL
+
+#' Ignore unused imports
+#' @noRd
+#' @keywords internal
+ignore_unused_imports <- function() {
+  methods::setOldClass # used in cal.R
+  curl::has_internet # used in read_14c() documentation
+  mathjaxr::preview_rd # used in RdMacros
+}
