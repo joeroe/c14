@@ -16,7 +16,7 @@
 #'   * `"rcarbon"`: [rcarbon::calibrate()]
 #'   * `"oxcal"`: [oxcAAR::oxcalCalibrate()]
 #'   * `"bchron"`: [Bchron::BchronCalibrate()]
-#' @param pdens     Minimum probability density threshold below which ages are
+#' @param min_pdens Minimum probability density threshold below which ages are
 #'   excluded from the result. Set to `NULL` to use the full calibration curve.
 #'
 #' @details

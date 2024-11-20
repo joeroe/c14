@@ -29,7 +29,7 @@ Available engines:
 \item \code{"bchron"}: \code{\link[Bchron:BchronCalibrate]{Bchron::BchronCalibrate()}}
 }}
 
-\item{pdens}{Minimum probability density threshold below which ages are
+\item{min_pdens}{Minimum probability density threshold below which ages are
 excluded from the result. Set to \code{NULL} to use the full calibration curve.}
 }
 \value{
