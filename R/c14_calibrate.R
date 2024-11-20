@@ -87,7 +87,7 @@ c14_calibrate <- function(c14_age,
 c14_calibrate_intcal <- function(c14_age, c14_error, min_pdens = 1e-05, ...) {
   furrr::future_map2(c14_age, c14_error, IntCal::caldist, ...) |>
     furrr::future_map(as.data.frame) |>
-    furrr::future_map(\(x, m) dplyr::filter(x, .data$prob >= m), m = min_pdens) |>
+    furrr::future_map(\(x, m) x[x$prob >= m,], m = min_pdens) |>
     do.call(what = cal)
 }
 
