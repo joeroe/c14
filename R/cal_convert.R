@@ -131,7 +131,6 @@ as_cal.oxcAARCalibratedDate <- function(x) {
 #' @rdname as_cal
 #' @export
 as_cal.BchronCalibratedDates <- function(x) {
-  x %>%
-    purrr::map(~data.frame(year = .x$ageGrid, p = .x$densities)) %>%
+  purrr::map(x, ~data.frame(year = .x$ageGrid, p = .x$densities)) |>
     purrr::map(new_cal)
 }
