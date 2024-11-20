@@ -48,4 +48,7 @@ it must first be enabled with \code{\link[future:plan]{future::plan()}}. For \co
 the \code{doSNOW} package and can be controlled with the \code{ncores} argument of
 \code{\link[rcarbon:calibrate]{rcarbon::calibrate()}}.
 }
+\examples{
+c14_calibrate(1000, 30)
+}
 \concept{tidy radiocarbon functions}

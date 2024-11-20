@@ -32,6 +32,9 @@
 #' @export
 #'
 #' @family tidy radiocarbon functions
+#'
+#' @examples
+#' c14_calibrate(1000, 30)
 c14_calibrate <- function(c14_age,
                           c14_error,
                           ...,
