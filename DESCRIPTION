@@ -49,7 +49,6 @@ Imports:
     methods,
     pillar,
     purrr,
-    rcarbon,
     rlang,
     stats,
     stringr,
@@ -70,7 +69,8 @@ Suggests:
     usethis
 Enhances:
     Bchron,
-    oxcAAR
+    oxcAAR,
+    rcarbon
 Remotes:
     joeroe/controller
 Roxygen: list(markdown = TRUE)
