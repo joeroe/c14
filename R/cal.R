@@ -115,7 +115,7 @@ pillar_shaft.c14_cal <- function(x, ...) {
 #' @noRd
 #' @keywords internal
 circa_point_yr <- function(x) {
-  y <- cal_point(x)
+  y <- cal_point(x, quiet = TRUE)
   ret <- sprintf("c. %s", y)
   format(ret, justify = "right")
 }
@@ -123,7 +123,7 @@ circa_point_yr <- function(x) {
 #' @noRd
 #' @keywords internal
 circa_point_yr_colour <- function(x) {
-  y <- cal_point(x)
+  y <- cal_point(x, quiet = TRUE)
   ret <- sprintf(
     "%s %d %s",
     pillar::style_subtle("c."),

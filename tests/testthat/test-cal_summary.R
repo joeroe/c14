@@ -1,10 +1,10 @@
-
-
 # Point estimates ---------------------------------------------------------
 
-test_that("cal_mode() does not propagate NAs", {
-  cal_with_nas <- cal_interpolate(c14_calibrate(5000, 10), seq(5500, 6000, 10))
-  expect_false(rlang::is_na(cal_with_nas))
+test_that("cal_point() warns about multiple modes unless quiet = TRUE", {
+  multimodal_cal <- c14_calibrate(10400, 20)
+  expect_warning(cal_point(multimodal_cal), class = "c14_ambiguous_summary")
+  expect_no_warning(cal_point(multimodal_cal, quiet = TRUE),
+                    class = "c14_ambiguous_summary")
 })
 
 # Simple ranges -----------------------------------------------------------

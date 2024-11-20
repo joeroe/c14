@@ -12,7 +12,7 @@
 #' function or an interval estimate is not appropriate, in which case
 #' `method = "mode"` (the default) is recommended.
 #'
-#' @param x `cal` object. A vector of calibrated radiocarbon dates.
+#' @param x `cal` object. A vector of calibrated radiocarbon dates
 #' @param method Character. Method of estimation:
 #'   \describe{
 #'     \item{`"mode"` (default)}{age corresponding to the maximum peak of the probability distribution}
@@ -27,6 +27,7 @@
 #'   }
 #' @param interval Numeric. Only used for `method = "local_mode"` and
 #'  `method = "central"`.
+#' @param quiet Set `quiet = TRUE` to suppress warnings and messages
 #'
 #' @details
 #'
@@ -48,7 +49,8 @@
 #' cal_point(c14_calibrate(10000, 30))
 cal_point <- function(x,
                       method = c("mode", "median", "mean", "local_mode", "central"),
-                      interval = 0.954) {
+                      interval = 0.954,
+                      quiet = FALSE) {
   # TODO: Check/cast x
   method <- rlang::arg_match(method)
 
@@ -62,7 +64,7 @@ cal_point <- function(x,
   )
 
   # Flatten to era_yr
-  vec_c(!!!furrr::future_map(x, f, interval))
+  vec_c(!!!furrr::future_map(x, f, interval = interval, quiet = quiet))
 }
 
 #' Mode of a calibrated radiocarbon date
@@ -74,11 +76,11 @@ cal_point <- function(x,
 #'
 #' @noRd
 #' @keywords internal
-cal_mode <- function(x, ...) {
+cal_mode <- function(x, quiet = FALSE, ...) {
   y <- x$age[x$pdens == max(x$pdens, na.rm = TRUE) & !is.na(x$pdens)]
   if (length(y) > 1) {
     y <- y[1]
-    rlang::warn(
+    if (!isTRUE(quiet)) rlang::warn(
       "`x` has more than one modal value. Only the first will be returned.",
          "c14_ambiguous_summary"
     )

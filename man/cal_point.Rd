@@ -7,11 +7,12 @@
 cal_point(
   x,
   method = c("mode", "median", "mean", "local_mode", "central"),
-  interval = 0.954
+  interval = 0.954,
+  quiet = FALSE
 )
 }
 \arguments{
-\item{x}{\code{cal} object. A vector of calibrated radiocarbon dates.}
+\item{x}{\code{cal} object. A vector of calibrated radiocarbon dates}
 
 \item{method}{Character. Method of estimation:
 \describe{
@@ -28,6 +29,8 @@ implemented})}
 
 \item{interval}{Numeric. Only used for \code{method = "local_mode"} and
 \code{method = "central"}.}
+
+\item{quiet}{Set \code{quiet = TRUE} to suppress warnings and messages}
 }
 \value{
 Numeric vector the same length as \code{x} giving the point estimate for each

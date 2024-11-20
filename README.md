@@ -51,8 +51,6 @@ ppnd |>
   filter(site == "Ganj Dareh") |>
   select(lab_id, cra, error) |>
   mutate(cal = c14_calibrate(cra, error))
-#> Warning: `x` has more than one modal value. Only the first will be returned.
-#> `x` has more than one modal value. Only the first will be returned.
 #> # A tibble: 9 × 4
 #>   lab_id     cra error             cal
 #>   <chr>    <int> <int>           <cal>
