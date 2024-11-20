@@ -41,7 +41,6 @@ Imports:
     IntCal,
     Rdpack,
     checkmate,
-    cli,
     controller,
     curl,
     era (>= 0.4.0),
