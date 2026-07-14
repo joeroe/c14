@@ -61,9 +61,15 @@ c14_curve <- function(cal_age = era::yr(),
     d14c_error <- rep(NA_real_, length(cal_age))
   }
 
-  new_c14_curve(cal_age, c14_age = c14_age, c14_error = c14_error,
-                d14c = d14c, d14c_error = d14c_error,
-                subclass = "c14_curve_14c")
+  df <- data.frame(
+    cal_age = cal_age,
+    c14_age = c14_age,
+    c14_error = c14_error,
+    d14c = d14c,
+    d14c_error = d14c_error
+  )
+  class(df) <- c("c14_curve_14c", "c14_curve", "data.frame")
+  df
 }
 
 #' @rdname c14_curve
@@ -78,45 +84,15 @@ c14_fcurve <- function(cal_age = era::yr(),
   f14c <- vec_cast(f14c, numeric())
   f14c_error <- vec_cast(f14c_error, numeric())
 
-  new_c14_curve(cal_age, f14c = f14c, f14c_error = f14c_error,
-                subclass = "c14_curve_f14c")
+  df <- data.frame(
+    cal_age = cal_age,
+    f14c = f14c,
+    f14c_error = f14c_error
+  )
+  class(df) <- c("c14_curve_f14c", "c14_curve", "data.frame")
+  df
 }
 
-#' Construct a `c14_curve` object
-#'
-#' `c14_curve` is an S3 record class representing a calibration curve. It has
-#' two subclasses: `c14_curve_14c` for standard curves with 14C ages and
-#' optionally also d14C values; and `c14_curve_f14c` for curves with only
-#' F14C values (typically for post-bomb calibration).
-#'
-#' `cal_age` should be an [era_yr] vector.
-#'
-#' This function should only be used internally. The user-friendly constructors
-#' are [c14_curve()] and [c14_fcurve()].
-#'
-#' @family calibration curve functions
-#'
-#' @noRd
-#' @keywords internal
-new_c14_curve <- function(cal_age = numeric(),
-                          c14_age = numeric(),
-                          c14_error = numeric(),
-                          d14c = numeric(),
-                          d14c_error = numeric(),
-                          f14c = numeric(),
-                          f14c_error = numeric(),
-                          subclass = c("c14_curve_14c", "c14_curve_f14c")) {
-  subclass <- rlang::arg_match(subclass)
-  if (subclass == "c14_curve_14c") {
-    new_rcrd(list(cal_age = cal_age, c14_age = c14_age, c14_error = c14_error,
-                  d14c = d14c, d14c_error = d14c_error),
-             class = c("c14_curve_14c", "c14_curve"))
-  }
-  else if (subclass == "c14_curve_f14c") {
-    new_rcrd(list(cal_age = cal_age, f14c = f14c, f14c_error = f14c_error),
-             class = c("c14_curve_f14c", "c14_curve"))
-  }
-}
 
 # Validators --------------------------------------------------------------
 
@@ -141,7 +117,7 @@ c14_curve_type <- function(x) {
 #' @noRd
 #' @keywords internal
 c14_curve_range <- function(x) {
-  cal_age <- field(x, "cal_age")
+  cal_age <- x$cal_age
   r <- range(cal_age)
   era <- era::era_label(era::yr_era(cal_age))
   paste0(as.numeric(r[1]), "\u2013", as.numeric(r[2]), " ", era)
@@ -150,23 +126,48 @@ c14_curve_range <- function(x) {
 # Print/format ------------------------------------------------------------
 
 #' @export
-vec_ptype_abbr.c14_curve_14c <- function(x, ...) "c14_curve"
-
-#' @export
-vec_ptype_abbr.c14_curve_f14c <- function(x, ...) "c14_curve"
-
-#' @export
-format.c14_curve_14c <- function(x, ...) NextMethod()
-
-#' @export
-format.c14_curve_f14c <- function(x, ...) NextMethod()
-
-#' @export
 format.c14_curve <- function(x, ...) {
   name <- c14_curve_name(x)
-  type <- c14_curve_type(x)
-  range <- c14_curve_range(x)
-  sprintf("%s (%s, %s)", name, type, range)
+  subclass <- class(x)[1]
+
+  type_desc <- if (inherits(x, "c14_curve_14c")) {
+    "Conventional radiocarbon age calibration curve"
+  } else if (inherits(x, "c14_curve_f14c")) {
+    "Fraction modern radiocarbon calibration curve"
+  } else {
+    "Radiocarbon calibration curve"
+  }
+
+  range_str <- if (nrow(x) > 0) {
+    r <- range(x$cal_age, na.rm = TRUE)
+    era <- era::era_label(era::yr_era(x$cal_age))
+    paste0("Range: ", as.numeric(r[1]), "\u2013", as.numeric(r[2]), " ", era)
+  } else {
+    "Range: (empty)"
+  }
+
+  header <- paste0(name, " <", subclass, ">")
+
+  if (nrow(x) > 0) {
+    n_show <- min(5, nrow(x))
+    data_preview <- utils::capture.output(print(utils::head(x, n_show)))
+    data_preview <- paste(data_preview, collapse = "\n")
+  } else {
+    data_preview <- "(no data)"
+  }
+
+  paste0(
+    header, "\n",
+    type_desc, "\n",
+    range_str, "\n",
+    data_preview
+  )
+}
+
+#' @export
+print.c14_curve <- function(x, ...) {
+  cat(format(x, ...), "\n")
+  invisible(x)
 }
 
 
@@ -175,21 +176,17 @@ format.c14_curve <- function(x, ...) {
 #' @method as.matrix c14_curve
 #' @export
 as.matrix.c14_curve <- function(x, ..., resolution = 1) {
-  # TODO: Interpolate to resolution?
-  x <- vec_data(x)
-
   d <- purrr::map2(as.numeric(x$c14_age), as.numeric(x$c14_error),
                    ~stats::dnorm(x$cal_age, .x, .y))
   d <- do.call(cbind, d)
   rownames(d) <- x$c14_age
   colnames(d) <- x$cal_age
 
-  # TODO: rescale to sum to 1? only if resolution != 1?
   d
 }
 
 #' @export
-as.data.frame.c14_curve_14c <- function(x, ...) vec_proxy(x)
+as.data.frame.c14_curve_14c <- function(x, ...) x
 
 #' @export
-as.data.frame.c14_curve_f14c <- function(x, ...) vec_proxy(x)
+as.data.frame.c14_curve_f14c <- function(x, ...) x

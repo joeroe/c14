@@ -83,8 +83,8 @@ cal_as_cal_dist <- function(cal, at = NULL) {
   f <- cal_function(cal)
 
   if (is.null(at)) {
-    curve <- cal_curve(cal)[[1]]
-    at <- c14_curve_age_seq(curve)
+    curve <- cal_c14_curve(cal)
+    at <- curve$cal_age
   }
 
   pdens <- f(at)

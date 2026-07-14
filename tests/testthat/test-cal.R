@@ -13,23 +13,12 @@ test_that("cal() stores correct fields", {
   x <- cal(1000, 30, IntCal20)
   expect_equal(field(x, "c14_age"), 1000)
   expect_equal(field(x, "c14_error"), 30)
-  expect_s3_class(cal_curve(x)[[1]], "c14_curve")
+  expect_s3_class(cal_c14_curve(x), "c14_curve")
 })
 
-test_that("cal() accepts custom c14_curve", {
-  x <- cal(1000, 30, c14_curve = SHCal20)
-  expect_s3_class(cal_curve(x)[[1]], "c14_curve")
-})
-
-test_that("cal() errors when c14_curve is a string", {
-  expect_error(cal(1000, 30, "IntCal20"), "c14_curve")
-})
-
-test_that("cal() accepts multiple curves", {
-  x <- cal(c(1000, 2000), c(10, 20), list(IntCal20, SHCal20))
-  expect_equal(vec_size(x), 2)
-  expect_s3_class(cal_curve(x)[[1]], "c14_curve")
-  expect_s3_class(cal_curve(x)[[2]], "c14_curve")
+test_that("cal() accepts custom curve", {
+  x <- cal(1000, 30, curve = SHCal20)
+  expect_s3_class(cal_c14_curve(x), "c14_curve")
 })
 
 test_that("cal() recycles inputs to common length", {
@@ -64,9 +53,8 @@ test_that("vec_data() returns a data frame", {
   x <- cal(c(1000, 2000), c(30, 40), IntCal20)
   d <- vec_data(x)
   expect_s3_class(d, "data.frame")
-  expect_equal(names(d), c("c14_age", "c14_error", "c14_curve"))
+  expect_equal(names(d), c("c14_age", "c14_error"))
   expect_equal(d$c14_age, c(1000, 2000))
-  expect_type(d$c14_curve, "character")
 })
 
 # --- Format ---
@@ -79,7 +67,7 @@ test_that("format() returns character vector", {
 })
 
 test_that("format() includes age, error, and curve", {
-  x <- cal(1000, 30, c14_curve = IntCal20)
+  x <- cal(1000, 30, curve = IntCal20)
   f <- format(x)
   expect_match(f, "1000")
   expect_match(f, "30")
@@ -99,10 +87,16 @@ test_that("cal works in tibble columns", {
 
 # --- Empty cal ---
 
-test_that("cal() with no args produces zero-length cal", {
+test_that("cal() with no args produces zero-length cal with empty curve", {
   x <- cal()
   expect_s3_class(x, "c14_cal")
   expect_equal(vec_size(x), 0)
+  expect_s3_class(cal_c14_curve(x), "c14_curve")
+  expect_equal(nrow(cal_c14_curve(x)), 0)
+})
+
+test_that("cal() errors with class c14_invalid_curve for non-curve input", {
+  expect_error(cal(1000, 30, "IntCal20"), class = "c14_invalid_curve")
 })
 
 # --- cal_function ---

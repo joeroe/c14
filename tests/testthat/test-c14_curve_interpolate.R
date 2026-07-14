@@ -63,7 +63,7 @@ test_that("c14_curve_interpolation_function() returns a function", {
 test_that("c14_curve_interpolation_function() interpolates correctly", {
   curve <- test_curve()
   interp <- c14_curve_interpolation_function(curve, era::yr(c(500, 1500), "cal BP"))
-  result <- interp(field(curve, "c14_age"))
+  result <- interp(curve$c14_age)
   expect_true(is.numeric(result))
   expect_length(result, 2)
   expect_true(result[1] >= 350 && result[1] <= 1000)
@@ -81,10 +81,10 @@ test_that("c14_curve_interpolate() returns a c14_curve", {
 test_that("c14_curve_interpolate() interpolates all fields", {
   curve <- test_curve()
   result <- c14_curve_interpolate(curve, era::yr(c(500, 1500, 2500), "cal BP"))
-  expect_true(is.numeric(field(result, "c14_age")))
-  expect_true(is.numeric(field(result, "c14_error")))
-  expect_true(length(field(result, "c14_age")) == 3)
-  expect_true(length(field(result, "c14_error")) == 3)
+  expect_true(is.numeric(result$c14_age))
+  expect_true(is.numeric(result$c14_error))
+  expect_true(length(result$c14_age) == 3)
+  expect_true(length(result$c14_error) == 3)
 })
 
 test_that("c14_curve_interpolate() works for c14_curve_f14c", {
@@ -95,37 +95,23 @@ test_that("c14_curve_interpolate() works for c14_curve_f14c", {
   )
   result <- c14_curve_interpolate(curve, era::yr(c(500, 1500, 2500), "cal BP"))
   expect_s3_class(result, "c14_curve_f14c")
-  expect_true(is.numeric(field(result, "f14c")))
-  expect_true(length(field(result, "f14c")) == 3)
+  expect_true(is.numeric(result$f14c))
+  expect_true(length(result$f14c) == 3)
 })
 
 test_that("c14_curve_interpolate() returns NA for d14c when not present", {
   curve <- test_curve()
   result <- c14_curve_interpolate(curve, era::yr(c(500, 1500, 2500), "cal BP"))
-  expect_true(all(is.na(field(result, "d14c"))))
-  expect_true(all(is.na(field(result, "d14c_error"))))
-  expect_length(field(result, "d14c"), 3)
+  expect_true(all(is.na(result$d14c)))
+  expect_true(all(is.na(result$d14c_error)))
+  expect_length(result$d14c, 3)
 })
 
 test_that("c14_curve_interpolate() interpolates d14c when present", {
   curve <- test_curve_with_d14c()
   result <- c14_curve_interpolate(curve, era::yr(c(500, 1500, 2500), "cal BP"))
-  expect_true(is.numeric(field(result, "d14c")))
-  expect_true(is.numeric(field(result, "d14c_error")))
-  expect_true(!all(is.na(field(result, "d14c"))))
-  expect_length(field(result, "d14c"), 3)
-})
-
-# --- c14_curve_age_seq ---
-
-test_that("c14_curve_age_seq() returns era::yr vector", {
-  curve <- test_curve()
-  result <- c14_curve_age_seq(curve)
-  expect_s3_class(result, "era_yr")
-})
-
-test_that("c14_curve_age_seq() matches curve's cal_age field", {
-  curve <- test_curve()
-  result <- c14_curve_age_seq(curve)
-  expect_equal(result, field(curve, "cal_age"))
+  expect_true(is.numeric(result$d14c))
+  expect_true(is.numeric(result$d14c_error))
+  expect_true(!all(is.na(result$d14c)))
+  expect_length(result$d14c, 3)
 })

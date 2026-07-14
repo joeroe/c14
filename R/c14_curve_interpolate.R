@@ -25,14 +25,13 @@ c14_curve_interpolate <- function(curve, at) {
 c14_curve_interpolate.c14_curve_14c <- function(curve, at) {
   c14_curve_warn_if_out_of_range(curve, at)
   interp <- c14_curve_interpolation_function(curve, at)
-  d <- vec_data(curve)
 
   c14_curve(
     cal_age = at,
-    c14_age = interp(d$c14_age),
-    c14_error = interp(d$c14_error),
-    d14c = interp(d$d14c),
-    d14c_error = interp(d$d14c_error)
+    c14_age = interp(curve$c14_age),
+    c14_error = interp(curve$c14_error),
+    d14c = interp(curve$d14c),
+    d14c_error = interp(curve$d14c_error)
   )
 }
 
@@ -42,12 +41,11 @@ c14_curve_interpolate.c14_curve_14c <- function(curve, at) {
 c14_curve_interpolate.c14_curve_f14c <- function(curve, at) {
   c14_curve_warn_if_out_of_range(curve, at)
   interp <- c14_curve_interpolation_function(curve, at)
-  d <- vec_data(curve)
 
   c14_fcurve(
     cal_age = at,
-    f14c = interp(d$f14c),
-    f14c_error = interp(d$f14c_error)
+    f14c = interp(curve$f14c),
+    f14c_error = interp(curve$f14c_error)
   )
 }
 
@@ -65,7 +63,7 @@ c14_curve_interpolate.c14_curve_f14c <- function(curve, at) {
 #' @noRd
 #' @keywords internal
 c14_curve_out_of_range <- function(curve, at) {
-  cal_age <- vec_data(curve)$cal_age
+  cal_age <- curve$cal_age
   any(at < min(cal_age) | at > max(cal_age), na.rm = TRUE)
 }
 
@@ -81,7 +79,7 @@ c14_curve_out_of_range <- function(curve, at) {
 #' @noRd
 #' @keywords internal
 c14_curve_warn_if_out_of_range <- function(curve, at) {
-  out_of_range = c14_curve_out_of_range(curve, at)
+  out_of_range <- c14_curve_out_of_range(curve, at)
   if (isTRUE(out_of_range)) {
     rlang::warn(
       "Some ages are outside the calibration curve range",
@@ -107,7 +105,7 @@ c14_curve_warn_if_out_of_range <- function(curve, at) {
 #' @noRd
 #' @keywords internal
 c14_curve_interpolation_function <- function(curve, at) {
-  cal_age <- vec_data(curve)$cal_age
+  cal_age <- curve$cal_age
 
   function(x) {
     if (all(is.na(x))) {
@@ -118,18 +116,3 @@ c14_curve_interpolation_function <- function(curve, at) {
   }
 }
 
-
-# c14_curve_age_seq -----------------------------------------------------------
-
-#' Return the calendar ages of a calibration curve at its native resolution
-#'
-#' @param curve A `c14_curve` object.
-#'
-#' @return
-#' An `era::yr` vector of calendar ages.
-#'
-#' @noRd
-#' @keywords internal
-c14_curve_age_seq <- function(curve) {
-  vec_data(curve)$cal_age
-}

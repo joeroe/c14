@@ -23,12 +23,12 @@ cal_function <- function(cal) {
 
   c14_age <- field(cal, "c14_age")
   c14_error <- field(cal, "c14_error")
-  curve <- cal_curve(cal)[[1]]
+  curve <- cal_c14_curve(cal)
 
   function(age, offset = NA) {
     curve_at <- c14_curve_interpolate(curve, age)
-    sd <- sqrt(c14_error^2 + field(curve_at, "c14_error")^2)
-    stats::dnorm(c14_age, mean = field(curve_at, "c14_age"), sd = sd)
+    sd <- sqrt(c14_error^2 + curve_at$c14_error^2)
+    stats::dnorm(c14_age, mean = curve_at$c14_age, sd = sd)
   }
 }
 
@@ -49,8 +49,8 @@ cal_sample <- function(cal) {
   }
 
   f <- cal_function(cal)
-  curve <- cal_curve(cal)[[1]]
-  ages <- c14_curve_age_seq(curve)
+  curve <- cal_c14_curve(cal)
+  ages <- curve$cal_age
   pdens <- f(ages)
 
   function(n) {
