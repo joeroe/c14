@@ -1,6 +1,35 @@
 # cal_summary.R
 # Functions for summarising calibrated radiocarbon dates
 
+# Helper functions ---------------------------------------------------------
+
+#' Find relevant curve indices for a cal object
+#'
+#' Finds indices of calibration curve points where the density is likely to be
+#' non-negligible. Uses a heuristic based on the combined error of the date and
+#' curve.
+#'
+#' @param cal A `cal` object of length 1.
+#' @param k Number of standard deviations to include. Default: 6 (covers 99.9999998%).
+#'
+#' @return Integer vector of indices into the calibration curve.
+#'
+#' @noRd
+#' @keywords internal
+cal_relevant_indices <- function(cal, k = 6) {
+  if (length(cal) != 1) {
+    rlang::abort("`cal_relevant_indices()` expects a `cal` of length 1.",
+                 class = "c14_invalid_argument")
+  }
+
+  c14_age <- field(cal, "c14_age")
+  c14_error <- field(cal, "c14_error")
+  curve <- cal_c14_curve(cal)
+
+  combined_error <- sqrt(c14_error^2 + curve$c14_error^2)
+  which(abs(curve$c14_age - c14_age) < k * combined_error)
+}
+
 # Point estimates ---------------------------------------------------------
 
 #' Point estimates of calibrated radiocarbon dates
@@ -77,11 +106,14 @@ cal_point <- function(x,
 #' @noRd
 #' @keywords internal
 cal_mode <- function(x, quiet = FALSE, ...) {
-  dist <- cal_as_cal_dist(x)
-  age <- cal_dist_age(dist)[[1]]
-  pdens <- cal_dist_pdens(dist)[[1]]
+  indices <- cal_relevant_indices(x)
+  curve <- cal_c14_curve(x)
+  ages <- curve$cal_age[indices]
   
-  y <- age[pdens == max(pdens, na.rm = TRUE) & !is.na(pdens)]
+  f <- cal_function_sparse(x)
+  pdens <- f(ages)
+  
+  y <- ages[pdens == max(pdens, na.rm = TRUE) & !is.na(pdens)]
   if (length(y) > 1) {
     y <- y[1]
     if (!isTRUE(quiet)) rlang::warn(
@@ -101,12 +133,15 @@ cal_mode <- function(x, quiet = FALSE, ...) {
 #' @noRd
 #' @keywords internal
 cal_median <- function(x, ...) {
-  dist <- cal_as_cal_dist(x)
-  age <- cal_dist_age(dist)[[1]]
-  pdens <- cal_dist_pdens(dist)[[1]]
+  indices <- cal_relevant_indices(x)
+  curve <- cal_c14_curve(x)
+  ages <- curve$cal_age[indices]
+  
+  f <- cal_function_sparse(x)
+  pdens <- f(ages)
   
   cum_pdens <- cumsum(pdens) / sum(pdens)
-  age[which(cum_pdens >= 0.5)[1]]
+  ages[which(cum_pdens >= 0.5)[1]]
 }
 
 #' Mean of a calibrated radiocarbon date
@@ -118,12 +153,15 @@ cal_median <- function(x, ...) {
 #' @noRd
 #' @keywords internal
 cal_mean <- function(x, ...) {
-  dist <- cal_as_cal_dist(x)
-  age <- cal_dist_age(dist)[[1]]
-  pdens <- cal_dist_pdens(dist)[[1]]
+  indices <- cal_relevant_indices(x)
+  curve <- cal_c14_curve(x)
+  ages <- curve$cal_age[indices]
   
-  result <- stats::weighted.mean(as.numeric(age), pdens)
-  era::yr(result, era::yr_era(age))
+  f <- cal_function_sparse(x)
+  pdens <- f(ages)
+  
+  result <- stats::weighted.mean(as.numeric(ages), pdens)
+  era::yr(result, era::yr_era(ages))
 }
 
 #' Local mode of a calibrated radiocarbon date
@@ -187,15 +225,45 @@ cal_age_range <- function(x, min_pdens = 0) {
 #' @rdname cal_age_range
 #' @export
 cal_age_min <- function(x, min_pdens = 0) {
-  dist <- vec_c(!!!purrr::map(x, cal_as_cal_dist))
-  dist <- cal_dist_crop(dist, min_pdens)
-  cal_dist_age_min(dist)
+  vec_c(!!!purrr::map(x, function(cal) {
+    indices <- cal_relevant_indices(cal)
+    curve <- cal_c14_curve(cal)
+    ages <- curve$cal_age[indices]
+    
+    f <- cal_function_sparse(cal)
+    pdens <- f(ages)
+    
+    if (min_pdens > 0) {
+      valid <- !is.na(pdens) & pdens >= min_pdens
+      if (!any(valid)) {
+        return(min(ages, na.rm = TRUE))
+      }
+      ages <- ages[valid]
+    }
+    
+    min(ages, na.rm = TRUE)
+  }))
 }
 
 #' @rdname cal_age_range
 #' @export
 cal_age_max <- function(x, min_pdens = 0) {
-  dist <- vec_c(!!!purrr::map(x, cal_as_cal_dist))
-  dist <- cal_dist_crop(dist, min_pdens)
-  cal_dist_age_max(dist)
+  vec_c(!!!purrr::map(x, function(cal) {
+    indices <- cal_relevant_indices(cal)
+    curve <- cal_c14_curve(cal)
+    ages <- curve$cal_age[indices]
+    
+    f <- cal_function_sparse(cal)
+    pdens <- f(ages)
+    
+    if (min_pdens > 0) {
+      valid <- !is.na(pdens) & pdens >= min_pdens
+      if (!any(valid)) {
+        return(max(ages, na.rm = TRUE))
+      }
+      ages <- ages[valid]
+    }
+    
+    max(ages, na.rm = TRUE)
+  }))
 }
