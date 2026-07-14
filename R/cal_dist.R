@@ -136,7 +136,7 @@ pillar_shaft.c14_cal_dist <- function(x, ...) {
 #' @noRd
 #' @keywords internal
 cal_dist_format_point <- function(x) {
-  y <- cal_point(x, quiet = TRUE)
+  y <- cal_dist_point(x)
   ret <- sprintf("c. %s", y)
   format(ret, justify = "right")
 }
@@ -144,7 +144,7 @@ cal_dist_format_point <- function(x) {
 #' @noRd
 #' @keywords internal
 cal_dist_format_point_colour <- function(x) {
-  y <- cal_point(x, quiet = TRUE)
+  y <- cal_dist_point(x)
   ret <- sprintf(
     "%s %d %s",
     pillar::style_subtle("c."),
@@ -152,6 +152,17 @@ cal_dist_format_point_colour <- function(x) {
     pillar::style_subtle(era::era_label(era::yr_era(y)))
   )
   format(ret, justify = "right")
+}
+
+#' @noRd
+#' @keywords internal
+cal_dist_point <- function(x) {
+  ages <- cal_dist_age(x)
+  pdens <- cal_dist_pdens(x)
+  
+  purrr::map2_vec(ages, pdens, function(age, pdens) {
+    age[pdens == max(pdens, na.rm = TRUE) & !is.na(pdens)][1]
+  })
 }
 
 # Accessors ---------------------------------------------------------------

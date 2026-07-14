@@ -77,7 +77,11 @@ cal_point <- function(x,
 #' @noRd
 #' @keywords internal
 cal_mode <- function(x, quiet = FALSE, ...) {
-  y <- x$age[x$pdens == max(x$pdens, na.rm = TRUE) & !is.na(x$pdens)]
+  dist <- cal_as_cal_dist(x)
+  age <- cal_dist_age(dist)[[1]]
+  pdens <- cal_dist_pdens(dist)[[1]]
+  
+  y <- age[pdens == max(pdens, na.rm = TRUE) & !is.na(pdens)]
   if (length(y) > 1) {
     y <- y[1]
     if (!isTRUE(quiet)) rlang::warn(
@@ -97,7 +101,12 @@ cal_mode <- function(x, quiet = FALSE, ...) {
 #' @noRd
 #' @keywords internal
 cal_median <- function(x, ...) {
-  x$age[x$pdens == stats::quantile(x$pdens, 0.5)]
+  dist <- cal_as_cal_dist(x)
+  age <- cal_dist_age(dist)[[1]]
+  pdens <- cal_dist_pdens(dist)[[1]]
+  
+  cum_pdens <- cumsum(pdens) / sum(pdens)
+  age[which(cum_pdens >= 0.5)[1]]
 }
 
 #' Mean of a calibrated radiocarbon date
@@ -109,7 +118,12 @@ cal_median <- function(x, ...) {
 #' @noRd
 #' @keywords internal
 cal_mean <- function(x, ...) {
-  stats::weighted.mean(x$age, x$pdens)
+  dist <- cal_as_cal_dist(x)
+  age <- cal_dist_age(dist)[[1]]
+  pdens <- cal_dist_pdens(dist)[[1]]
+  
+  result <- stats::weighted.mean(as.numeric(age), pdens)
+  era::yr(result, era::yr_era(age))
 }
 
 #' Local mode of a calibrated radiocarbon date
@@ -173,13 +187,15 @@ cal_age_range <- function(x, min_pdens = 0) {
 #' @rdname cal_age_range
 #' @export
 cal_age_min <- function(x, min_pdens = 0) {
-  x <- cal_crop(x, min_pdens)
-  purrr::map_vec(cal_age(x), min)
+  dist <- vec_c(!!!purrr::map(x, cal_as_cal_dist))
+  dist <- cal_dist_crop(dist, min_pdens)
+  cal_dist_age_min(dist)
 }
 
 #' @rdname cal_age_range
 #' @export
 cal_age_max <- function(x, min_pdens = 0) {
-  x <- cal_crop(x, min_pdens)
-  purrr::map_vec(cal_age(x), max)
+  dist <- vec_c(!!!purrr::map(x, cal_as_cal_dist))
+  dist <- cal_dist_crop(dist, min_pdens)
+  cal_dist_age_max(dist)
 }

@@ -53,10 +53,9 @@ test_that("vec_data() returns a list of data frames", {
   expect_equal(length(data), 1)
 })
 
-# --- Format (expected to fail until Phase 3) ---
+# --- Format ---
 
 test_that("format() returns character vector", {
-  skip("Requires cal_point() from Phase 3")
   d <- cal_dist(data.frame(age = era::yr(1:10, "cal BP"), pdens = rep(0.1, 10)))
   f <- format(d)
   expect_type(f, "character")
@@ -64,7 +63,6 @@ test_that("format() returns character vector", {
 })
 
 test_that("cal_dist works in tibble columns", {
-  skip("Requires cal_point() from Phase 3 for pillar display")
   d <- cal_dist(data.frame(age = era::yr(1:10, "cal BP"), pdens = rep(0.1, 10)))
   df <- tibble::tibble(id = 1, d = d)
   expect_equal(vec_size(df), 1)
