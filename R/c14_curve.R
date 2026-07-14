@@ -54,11 +54,11 @@ c14_curve <- function(cal_age = era::yr(),
 
   d14c <- vec_cast(d14c, numeric())
   d14c_error <- vec_cast(d14c_error, numeric())
-  if (all(is.na(d14c))) {
-    d14c <- vec_recycle(d14c, length(cal_age))
+  if (length(d14c) == 0) {
+    d14c <- rep(NA_real_, length(cal_age))
   }
-  if (all(is.na(d14c_error))) {
-    d14c_error <- vec_recycle(d14c_error, length(cal_age))
+  if (length(d14c_error) == 0) {
+    d14c_error <- rep(NA_real_, length(cal_age))
   }
 
   new_c14_curve(cal_age, c14_age = c14_age, c14_error = c14_error,

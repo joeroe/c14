@@ -69,3 +69,44 @@ test_that("cal_dist works in tibble columns", {
   df <- tibble::tibble(id = 1, d = d)
   expect_equal(vec_size(df), 1)
 })
+
+# --- cal_as_cal_dist ---
+
+test_that("cal_as_cal_dist() returns a cal_dist of length 1", {
+  x <- cal(1000, 30, "IntCal20")
+  d <- cal_as_cal_dist(x)
+  expect_s3_class(d, "c14_cal_dist")
+  expect_equal(vec_size(d), 1)
+})
+
+test_that("cal_as_cal_dist() errors when length(cal) != 1", {
+  x <- cal(c(1000, 2000), c(30, 40), "IntCal20")
+  expect_error(cal_as_cal_dist(x), "expects a `cal` of length 1")
+})
+
+test_that("cal_as_cal_dist() uses curve's native resolution when at = NULL", {
+  x <- cal(1000, 30, "IntCal20")
+  d <- cal_as_cal_dist(x)
+  el <- d[[1]]
+  expect_true(nrow(el) > 0)
+})
+
+test_that("cal_as_cal_dist() respects custom at parameter", {
+  x <- cal(1000, 30, "IntCal20")
+  at <- era::yr(seq(0, 40000, by = 1000), "cal BP")
+  d <- cal_as_cal_dist(x, at = at)
+  el <- d[[1]]
+  expect_true(nrow(el) == length(at))
+})
+
+# --- cal_dist_age_min / cal_dist_age_max ---
+
+test_that("cal_dist_age_min() returns correct minimum age", {
+  d <- cal_dist(data.frame(age = era::yr(1:10, "cal BP"), pdens = rep(0.1, 10)))
+  expect_equal(cal_dist_age_min(d), era::yr(1, "cal BP"))
+})
+
+test_that("cal_dist_age_max() returns correct maximum age", {
+  d <- cal_dist(data.frame(age = era::yr(1:10, "cal BP"), pdens = rep(0.1, 10)))
+  expect_equal(cal_dist_age_max(d), era::yr(10, "cal BP"))
+})

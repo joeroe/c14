@@ -23,8 +23,7 @@ has two columns: \code{age} and \code{pdens}.
 }
 \description{
 The \code{cal_dist} class represents a vector of calendar probability
-distributions; typically the evaluated output of \code{\link[=cal_function]{cal_function()}} or
-\code{\link[=cal_dist]{cal_dist()}}.
+distributions; typically the evaluated output of \code{\link[=cal_as_cal_dist]{cal_as_cal_dist()}}.
 
 \code{cal_dist()} constructs a new \code{cal_dist} vector from a set of data frames
 containing probability distributions.

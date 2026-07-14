@@ -3,8 +3,7 @@
 # distributions
 #
 # A cal_dist represents the evaluated probability distribution for a calibrated
-# radiocarbon date. It is derived from a cal object via cal_dist() or
-# cal_function().
+# radiocarbon date. It is derived from a cal object via cal_as_cal_dist().
 
 # Register formal class for S4 compatibility
 methods::setOldClass(c("c14_cal_dist", "vctrs_list_of"))
@@ -15,8 +14,7 @@ methods::setOldClass(c("c14_cal_dist", "vctrs_list_of"))
 #'
 #' @description
 #' The `cal_dist` class represents a vector of calendar probability
-#' distributions; typically the evaluated output of [cal_function()] or
-#' [cal_dist()].
+#' distributions; typically the evaluated output of [cal_as_cal_dist()].
 #'
 #' `cal_dist()` constructs a new `cal_dist` vector from a set of data frames
 #' containing probability distributions.
@@ -61,6 +59,37 @@ cal_dist <- function(..., .era = era::era("cal BP")) {
 #' @keywords internal
 new_cal_dist <- function(x = list()) {
   new_vctr(x, class = "c14_cal_dist")
+}
+
+# Derivation -------------------------------------------------------------
+
+#' Derive a cal_dist from a cal
+#'
+#' @param cal A `cal` object of length 1.
+#' @param at Calendar ages at which to evaluate the distribution. If `NULL`,
+#'   uses the calibration curve's native resolution.
+#'
+#' @return
+#' A `cal_dist` object of length 1.
+#'
+#' @noRd
+#' @keywords internal
+cal_as_cal_dist <- function(cal, at = NULL) {
+  if (length(cal) != 1) {
+    rlang::abort("`cal_as_cal_dist()` expects a `cal` of length 1.",
+                 class = "c14_invalid_argument")
+  }
+
+  f <- cal_function(cal)
+
+  if (is.null(at)) {
+    curve_name <- field(cal, "c14_curve")
+    curve <- get(curve_name, envir = asNamespace("c14"))
+    at <- c14_curve_age_seq(curve)
+  }
+
+  pdens <- f(at)
+  cal_dist(data.frame(age = at, pdens = pdens))
 }
 
 #' Prototype for individual elements of a cal_dist vector
@@ -141,6 +170,18 @@ cal_dist_age <- function(x) {
 #' @noRd
 cal_dist_pdens <- function(x) {
   purrr::map(vec_data(x), "pdens")
+}
+
+#' @noRd
+#' @keywords internal
+cal_dist_age_min <- function(x) {
+  purrr::map_vec(cal_dist_age(x), min, na.rm = TRUE)
+}
+
+#' @noRd
+#' @keywords internal
+cal_dist_age_max <- function(x) {
+  purrr::map_vec(cal_dist_age(x), max, na.rm = TRUE)
 }
 
 # Misc --------------------------------------------------------------------

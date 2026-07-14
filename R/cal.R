@@ -1,10 +1,5 @@
 # cal.R
 # vctrs record class c14_cal (cal): lazy calibrated radiocarbon dates
-#
-# A cal stores the parameters that describe a calibration function, without
-# actually performing the calibration until needed. Use cal_function() to
-# derive the probability density function, or cal_dist() to evaluate it at
-# specific ages.
 
 # Register formal class for S4 compatibility
 methods::setOldClass(c("c14_cal", "vctrs_rcrd"))

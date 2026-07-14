@@ -4,15 +4,14 @@
 \alias{cal}
 \title{Calibrated radiocarbon dates}
 \usage{
-cal(c14_age, c14_error, c14_curve = "IntCal20")
+cal(c14_age = double(), c14_error = double(), c14_curve = character())
 }
 \arguments{
 \item{c14_age}{Vector of uncalibrated radiocarbon ages.}
 
 \item{c14_error}{Vector of standard errors associated with \code{c14_age}.}
 
-\item{c14_curve}{Character vector of calibration curve names. Default:
-\code{"IntCal20"}.}
+\item{c14_curve}{Character vector of calibration curve names.}
 }
 \value{
 A vector of class \code{cal} (\code{c14_cal}). Each element is a record with three
@@ -28,6 +27,6 @@ Use \code{\link[=cal_function]{cal_function()}} to derive the probability densit
 \code{\link[=cal_dist]{cal_dist()}} to evaluate it at specific ages.
 }
 \examples{
-cal(1000, 30)
-cal(c(1000, 2000), c(30, 40))
+cal(1000, 30, c14_curve = "IntCal20")
+cal(c(1000, 2000), c(30, 40), c14_curve = "IntCal20")
 }

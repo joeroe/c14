@@ -93,3 +93,58 @@ test_that("cal() with no args produces zero-length cal", {
   expect_equal(vec_size(x), 0)
 })
 
+# --- cal_function ---
+
+test_that("cal_function() returns a function", {
+  x <- cal(1000, 30, "IntCal20")
+  fn <- cal_function(x)
+  expect_type(fn, "closure")
+})
+
+test_that("cal_function() has correct signature", {
+  x <- cal(1000, 30, "IntCal20")
+  fn <- cal_function(x)
+  expect_named(formals(fn), c("age", "offset"))
+})
+
+test_that("cal_function() errors when length(cal) != 1", {
+  x <- cal(c(1000, 2000), c(30, 40), "IntCal20")
+  expect_error(cal_function(x), "expects a `cal` of length 1")
+})
+
+test_that("cal_function() returns numeric vector", {
+  x <- cal(1000, 30, "IntCal20")
+  fn <- cal_function(x)
+  result <- fn(era::yr(c(500, 1000, 1500), "cal BP"))
+  expect_true(is.numeric(result))
+  expect_length(result, 3)
+})
+
+test_that("cal_function() returns non-negative densities", {
+  x <- cal(1000, 30, "IntCal20")
+  fn <- cal_function(x)
+  result <- fn(era::yr(c(500, 1000, 1500), "cal BP"))
+  expect_true(all(result >= 0))
+})
+
+# --- cal_sample ---
+
+test_that("cal_sample() returns a function", {
+  x <- cal(1000, 30, "IntCal20")
+  sampler <- cal_sample(x)
+  expect_type(sampler, "closure")
+})
+
+test_that("cal_sample() errors when length(cal) != 1", {
+  x <- cal(c(1000, 2000), c(30, 40), "IntCal20")
+  expect_error(cal_sample(x), "expects a `cal` of length 1")
+})
+
+test_that("cal_sample() samples correct number of values", {
+  x <- cal(1000, 30, "IntCal20")
+  sampler <- cal_sample(x)
+  result <- sampler(100)
+  expect_length(result, 100)
+  expect_true(is.numeric(result))
+})
+

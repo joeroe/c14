@@ -94,10 +94,10 @@ cal_density <- function(x, bw = 30, ..., times = 25, bootstrap = TRUE, strata = 
   # Bootstrapping
   if (isTRUE(bootstrap)) {
     bootstraps <- cal_bootstraps(x, times = times, strata = strata)
-    age_sample <- purrr::map(bootstraps, \(x) do.call(c, cal_sample(x, 1)))
+    age_sample <- purrr::map(bootstraps, \(x) do.call(c, cal_sample_for_density(x, 1)))
   }
   else {
-    age_sample <- cal_sample(x, times)
+    age_sample <- cal_sample_for_density(x, times)
   }
 
   # Weights
@@ -135,7 +135,7 @@ density.c14_cal <- function(x, ...) {
 #' @noRd
 #' @keywords internal
 # TODO: worth exporting?
-cal_sample <- function(x, times) {
+cal_sample_for_density <- function(x, times) {
   samples <- purrr::map2(cal_age(x), cal_pdens(x), function(x, y, s) {
     sample(x, s, replace = TRUE, prob = y)
   }, s = times)
