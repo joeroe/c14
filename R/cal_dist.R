@@ -80,11 +80,12 @@ cal_as_cal_dist <- function(cal, at = NULL) {
                  class = "c14_invalid_argument")
   }
 
-  f <- cal_function(cal)
-
   if (is.null(at)) {
+    f <- cal_function_sparse(cal)
     curve <- cal_c14_curve(cal)
     at <- curve$cal_age
+  } else {
+    f <- cal_function(cal)
   }
 
   pdens <- f(at)
