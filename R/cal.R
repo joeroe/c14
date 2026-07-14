@@ -99,17 +99,16 @@ vec_ptype_abbr.c14_cal <- function(x, ...) "cal"
 
 #' @export
 format.c14_cal <- function(x, ...) {
-  c14_age <- field(x, "c14_age")
-  c14_error <- field(x, "c14_error")
-  curve <- cal_c14_curve(x)
-  curve_name <- c14_curve_name(curve)
-
-  out <- sprintf(
-    "%d ± %d (%s)",
-    as.integer(c14_age),
-    as.integer(c14_error),
-    curve_name
-  )
+  hdi <- cal_hdi(x)
+  
+  out <- purrr::map_chr(hdi, function(interval) {
+    era_label <- era::era_label(era::yr_era(interval[1]))
+    sprintf("%d–%d %s", 
+            as.integer(interval[1]), 
+            as.integer(interval[2]), 
+            era_label)
+  })
+  
   format(out, justify = "right")
 }
 

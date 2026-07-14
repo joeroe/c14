@@ -66,12 +66,11 @@ test_that("format() returns character vector", {
   expect_length(f, 2)
 })
 
-test_that("format() includes age, error, and curve", {
+test_that("format() includes HDI range and era", {
   x <- cal(1000, 30, curve = IntCal20)
   f <- format(x)
-  expect_match(f, "1000")
-  expect_match(f, "30")
-  expect_match(f, "IntCal20")
+  expect_match(f, "–")
+  expect_match(f, "cal BP")
 })
 
 # --- Tibble integration ---
