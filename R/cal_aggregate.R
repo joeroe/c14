@@ -14,7 +14,7 @@
 #' @noRd
 #' @keywords internal
 cal_age_common <- function(x, resolution = 1) {
-  dists <- vec_c(!!!purrr::map(x, cal_as_cal_dist))
+  dists <- cal_dist(x)
   cal_dist_age_common(dists, resolution = resolution)
 }
 
@@ -39,7 +39,7 @@ cal_age_common <- function(x, resolution = 1) {
 #' shub1_cal <- c14_calibrate(shub1_c14$c14_age, shub1_c14$c14_error)
 #' cal_sum(shub1_cal)
 cal_sum <- function(x, range = NULL, normalise = FALSE, ...) {
-  dists <- vec_c(!!!purrr::map(x, cal_as_cal_dist))
+  dists <- cal_dist(x)
   if (!is.null(range)) {
     dists <- cal_dist_interpolate(dists, range)
   } else {

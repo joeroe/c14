@@ -2,20 +2,28 @@
 % Please edit documentation in R/cal_dist.R
 \name{cal_dist}
 \alias{cal_dist}
+\alias{cal_dist.c14_cal}
+\alias{cal_dist.data.frame}
+\alias{cal_dist.default}
 \title{Calendar probability distribution}
 \usage{
-cal_dist(..., .era = era::era("cal BP"))
+cal_dist(x, ...)
+
+\method{cal_dist}{c14_cal}(cal, at = NULL, ...)
+
+\method{cal_dist}{data.frame}(x, ..., .era = era::era("cal BP"))
+
+\method{cal_dist}{default}(x, ...)
 }
 \arguments{
-\item{...}{<\link[rlang:dyn-dots]{dynamic-dots}> A set of data frames. Each
-should have two columns, the first a vector of calendar ages, and the second
-a vector of associated probability densities. If the first column is not an
-\code{\link[era:yr]{era::yr()}} vector, it is coerced to one using the time scale specified by
-\code{.era}.}
+\item{x}{An object to convert to a \code{cal_dist}. Currently supports \code{cal} and
+\code{data.frame} objects.}
+
+\item{...}{Additional arguments passed to methods.}
 
 \item{.era}{\code{\link[era:era]{era::era()}} object describing the time scale used for ages.
-Defaults to calendar years Before Present (\code{era("cal BP")}). Not used if
-the ages specified in \code{...} are already \code{era::yr()} vectors.}
+Defaults to calendar years Before Present (\code{era("cal BP")}). Only used by
+the \code{data.frame} method when ages are not already \code{era::yr()} vectors.}
 }
 \value{
 A list of data frames with class \code{cal_dist} (\code{c14_cal_dist}). Each element
@@ -23,12 +31,19 @@ has two columns: \code{age} and \code{pdens}.
 }
 \description{
 The \code{cal_dist} class represents a vector of calendar probability
-distributions; typically the evaluated output of \code{\link[=cal_as_cal_dist]{cal_as_cal_dist()}}.
+distributions.
 
-\code{cal_dist()} constructs a new \code{cal_dist} vector from a set of data frames
-containing probability distributions.
+\code{cal_dist()} is an S3 generic that constructs a new \code{cal_dist} vector:
+\itemize{
+\item From a \code{cal} object: evaluates the calibrated probability distribution
+\item From a \code{data.frame}: constructs from raw age and probability density data
+}
 }
 \examples{
-# Uniform distribution between 1 and 10 BP:
+# From data frames:
 cal_dist(data.frame(age = era::yr(1:10, "cal BP"), pdens = rep(0.1, 10)))
+
+# From cal objects:
+cal <- c14::cal(5000, 10, c14::IntCal20)
+cal_dist(cal)
 }

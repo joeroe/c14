@@ -3,7 +3,7 @@
 # distributions
 #
 # A cal_dist represents the evaluated probability distribution for a calibrated
-# radiocarbon date. It is derived from a cal object via cal_as_cal_dist().
+# radiocarbon date. It is derived from a cal object via cal_dist().
 
 # Register formal class for S4 compatibility
 methods::setOldClass(c("c14_cal_dist", "vctrs_list_of"))
@@ -14,19 +14,18 @@ methods::setOldClass(c("c14_cal_dist", "vctrs_list_of"))
 #'
 #' @description
 #' The `cal_dist` class represents a vector of calendar probability
-#' distributions; typically the evaluated output of [cal_as_cal_dist()].
+#' distributions.
 #'
-#' `cal_dist()` constructs a new `cal_dist` vector from a set of data frames
-#' containing probability distributions.
+#' `cal_dist()` is an S3 generic that constructs a new `cal_dist` vector:
+#' - From a `cal` object: evaluates the calibrated probability distribution
+#' - From a `data.frame`: constructs from raw age and probability density data
 #'
-#' @param ... <[dynamic-dots][rlang::dyn-dots]> A set of data frames. Each
-#'  should have two columns, the first a vector of calendar ages, and the second
-#'  a vector of associated probability densities. If the first column is not an
-#'  [era::yr()] vector, it is coerced to one using the time scale specified by
-#'  `.era`.
+#' @param x An object to convert to a `cal_dist`. Currently supports `cal` and
+#'   `data.frame` objects.
+#' @param ... Additional arguments passed to methods.
 #' @param .era [era::era()] object describing the time scale used for ages.
-#'  Defaults to calendar years Before Present (`era("cal BP")`). Not used if
-#'  the ages specified in `...` are already `era::yr()` vectors.
+#'   Defaults to calendar years Before Present (`era("cal BP")`). Only used by
+#'   the `data.frame` method when ages are not already `era::yr()` vectors.
 #'
 #' @return
 #' A list of data frames with class `cal_dist` (`c14_cal_dist`). Each element
@@ -35,16 +34,77 @@ methods::setOldClass(c("c14_cal_dist", "vctrs_list_of"))
 #' @export
 #'
 #' @examples
-#' # Uniform distribution between 1 and 10 BP:
+#' # From data frames:
 #' cal_dist(data.frame(age = era::yr(1:10, "cal BP"), pdens = rep(0.1, 10)))
-cal_dist <- function(..., .era = era::era("cal BP")) {
-  x <- rlang::list2(...)
+#'
+#' # From cal objects:
+#' cal <- c14::cal(5000, 10, c14::IntCal20)
+#' cal_dist(cal)
+cal_dist <- function(x, ...) {
+  UseMethod("cal_dist")
+}
 
-  x <- purrr::map(x, purrr::set_names, nm = c("age", "pdens"))
-  x <- purrr::map_if(x, ~!era::is_yr(.[["age"]]),
-                     ~data.frame(age = era::yr_set_era(.[["age"]], .era),
-                                 pdens = .[["pdens"]]))
+#' @rdname cal_dist
+#' @export
+cal_dist.c14_cal <- function(cal, at = NULL, ...) {
+  ages_list <- cal_dist_ages(cal, at)
+  f_list <- cal_dist_function(cal, at)
+  
+  purrr::map2(ages_list, f_list, \(x, f) data.frame(age = x, pdens = f(x))) |> 
+    new_cal_dist()
+}
 
+#' Determine ages at which to evaluate density for each cal object
+#' @noRd
+#' @keywords internal
+cal_dist_ages <- function(cal, at = NULL) {
+  if (is.null(at)) {
+    purrr::map(cal, cal_dist_ages_sparse)
+  } else {
+    rep(list(at), length(cal))
+  }
+}
+
+#' Get sparse grid ages for a single cal object
+#' @noRd
+#' @keywords internal
+cal_dist_ages_sparse <- function(cal_single) {
+  indices <- cal_relevant_indices(cal_single)
+  curve <- cal_c14_curve(cal_single)
+  curve$cal_age[indices]
+}
+
+#' Create appropriate density function(s) for cal object(s)
+#' @noRd
+#' @keywords internal
+cal_dist_function <- function(cal, at = NULL) {
+  if (is.null(at)) {
+    purrr::map(cal, cal_function_sparse)
+  } else {
+    purrr::map(cal, cal_function)
+  }
+}
+
+#' @rdname cal_dist
+#' @export
+cal_dist.data.frame <- function(x, ..., .era = era::era("cal BP")) {
+  dfs <- list(x, ...)
+
+  if (!all(purrr::map_lgl(dfs, is.data.frame))) {
+    rlang::abort("All arguments to `cal_dist.data.frame()` must be data frames.",
+                 class = "c14_invalid_argument")
+  }
+
+  dfs <- purrr::map(dfs, purrr::set_names, nm = c("age", "pdens"))
+  dfs <- purrr::map_if(dfs, ~!era::is_yr(.[["age"]]),
+                       ~data.frame(age = era::yr_set_era(.[["age"]], .era),
+                                   pdens = .[["pdens"]]))
+  new_cal_dist(dfs)
+}
+
+#' @rdname cal_dist
+#' @export
+cal_dist.default <- function(x, ...) {
   new_cal_dist(x)
 }
 
@@ -59,37 +119,6 @@ cal_dist <- function(..., .era = era::era("cal BP")) {
 #' @keywords internal
 new_cal_dist <- function(x = list()) {
   new_vctr(x, class = "c14_cal_dist")
-}
-
-# Derivation -------------------------------------------------------------
-
-#' Derive a cal_dist from a cal
-#'
-#' @param cal A `cal` object of length 1.
-#' @param at Calendar ages at which to evaluate the distribution. If `NULL`,
-#'   uses the calibration curve's native resolution.
-#'
-#' @return
-#' A `cal_dist` object of length 1.
-#'
-#' @noRd
-#' @keywords internal
-cal_as_cal_dist <- function(cal, at = NULL) {
-  if (length(cal) != 1) {
-    rlang::abort("`cal_as_cal_dist()` expects a `cal` of length 1.",
-                 class = "c14_invalid_argument")
-  }
-
-  if (is.null(at)) {
-    f <- cal_function_sparse(cal)
-    curve <- cal_c14_curve(cal)
-    at <- curve$cal_age
-  } else {
-    f <- cal_function(cal)
-  }
-
-  pdens <- f(at)
-  cal_dist(data.frame(age = at, pdens = pdens))
 }
 
 #' Prototype for individual elements of a cal_dist vector
@@ -196,6 +225,21 @@ cal_dist_age_max <- function(x) {
 }
 
 # Misc --------------------------------------------------------------------
+
+#' Normalise a cal_dist to sum to 1
+#'
+#' @param x A `cal_dist` object.
+#'
+#' @return A `cal_dist` object with normalised probabilities.
+#'
+#' @noRd
+#' @keywords internal
+cal_dist_normalise <- function(x) {
+  new_cal_dist(purrr::map(vec_data(x), function(df) {
+    df$pdens <- df$pdens / sum(df$pdens, na.rm = TRUE)
+    df
+  }))
+}
 
 #' Filter cal_dist vectors to a given minimum probability density
 #'

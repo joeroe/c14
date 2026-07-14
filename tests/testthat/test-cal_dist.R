@@ -68,31 +68,33 @@ test_that("cal_dist works in tibble columns", {
   expect_equal(vec_size(df), 1)
 })
 
-# --- cal_as_cal_dist ---
+# --- cal_dist.cal ---
 
-test_that("cal_as_cal_dist() returns a cal_dist of length 1", {
+test_that("cal_dist() returns a cal_dist of length 1 from a cal of length 1", {
   x <- cal(1000, 30, IntCal20)
-  d <- cal_as_cal_dist(x)
+  d <- cal_dist(x)
   expect_s3_class(d, "c14_cal_dist")
   expect_equal(vec_size(d), 1)
 })
 
-test_that("cal_as_cal_dist() errors when length(cal) != 1", {
+test_that("cal_dist() returns a cal_dist of the same length as cal", {
   x <- cal(c(1000, 2000), c(30, 40), IntCal20)
-  expect_error(cal_as_cal_dist(x), "expects a `cal` of length 1")
+  d <- cal_dist(x)
+  expect_s3_class(d, "c14_cal_dist")
+  expect_equal(vec_size(d), 2)
 })
 
-test_that("cal_as_cal_dist() uses curve's native resolution when at = NULL", {
+test_that("cal_dist() uses curve's native resolution when at = NULL", {
   x <- cal(1000, 30, IntCal20)
-  d <- cal_as_cal_dist(x)
+  d <- cal_dist(x)
   el <- d[[1]]
   expect_true(nrow(el) > 0)
 })
 
-test_that("cal_as_cal_dist() respects custom at parameter", {
+test_that("cal_dist() respects custom at parameter", {
   x <- cal(1000, 30, IntCal20)
   at <- era::yr(seq(0, 40000, by = 1000), "cal BP")
-  d <- cal_as_cal_dist(x, at = at)
+  d <- cal_dist(x, at = at)
   el <- d[[1]]
   expect_true(nrow(el) == length(at))
 })

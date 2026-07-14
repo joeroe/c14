@@ -1,7 +1,7 @@
 x <- cal(c(1500, 1600, 1700), rep(20, 3), IntCal20)
 
 test_that("cal_sum() returns a cal_dist vector of length 1", {
-  expect_vector(cal_sum(x), cal_dist(), 1)
+  expect_vector(cal_sum(x), cal_dist(data.frame(age = era::yr(), pdens = numeric())), 1)
 })
 
 test_that("cal_sum(normalise = TRUE) normalised pdens to 1", {
