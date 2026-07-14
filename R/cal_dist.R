@@ -114,7 +114,7 @@ is_cal_dist <- function(x) {
 vec_ptype_full.c14_cal_dist <- function(x, ...) "c14_cal_dist"
 
 #' @export
-vec_ptype_abbr.c14_cal_dist <- function(x, ...) "cl_dst"
+vec_ptype_abbr.c14_cal_dist <- function(x, ...) "cal_dist"
 
 #' @export
 obj_print_data.c14_cal_dist <- function(x, ...) {
@@ -225,7 +225,7 @@ cal_dist_age_common <- function(x, resolution = 1) {
 #' @keywords internal
 cal_dist_interpolate <- function(x, range = cal_dist_age_common(x)) {
   new_cal_dist(furrr::future_map(vec_data(x), function(x) {
-    x <- approx_df(x, range, ties = "ordered")
+    x <- approx_df(x, range)
     x$pdens <- x$pdens / sum(x$pdens, na.rm = TRUE)
     x
   }))
