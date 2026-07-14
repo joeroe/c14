@@ -72,3 +72,129 @@ test_that("cal_age_min() and cal_age_max() respect min_pdens parameter", {
   expect_gte(as.numeric(min_high), as.numeric(min_0))
   expect_lte(as.numeric(max_high), as.numeric(max_0))
 })
+
+# Highest Density Regions -------------------------------------------------
+
+test_that("cal_hdr() returns a list of the same length as x", {
+  x <- cal(5000, 10, IntCal20)
+  y <- cal(c(6000, 5000, 4000), rep(10, 3), IntCal20)
+  
+  result_x <- cal_hdr(x)
+  result_y <- cal_hdr(y)
+  
+  expect_length(result_x, length(x))
+  expect_length(result_y, length(y))
+})
+
+test_that("cal_hdr() returns intervals with correct structure", {
+  x <- cal(5000, 10, IntCal20)
+  result <- cal_hdr(x)
+  
+  expect_type(result, "list")
+  expect_type(result[[1]], "list")
+  
+  for (interval in result[[1]]) {
+    expect_type(interval, "double")
+    expect_length(interval, 2)
+    expect_lte(interval[1], interval[2])
+  }
+})
+
+test_that("cal_hdr() respects the interval parameter", {
+  x <- cal(5000, 10, IntCal20)
+  
+  hdr_68 <- cal_hdr(x, interval = 0.683)
+  hdr_95 <- cal_hdr(x, interval = 0.954)
+  
+  total_width_68 <- sum(sapply(hdr_68[[1]], function(iv) iv[2] - iv[1]))
+  total_width_95 <- sum(sapply(hdr_95[[1]], function(iv) iv[2] - iv[1]))
+  
+  expect_lt(total_width_68, total_width_95)
+})
+
+test_that("cal_hdr() handles multimodal distributions", {
+  multimodal_cal <- cal(10400, 20, IntCal20)
+  result <- cal_hdr(multimodal_cal)
+  
+  expect_type(result, "list")
+  expect_gte(length(result[[1]]), 1)
+})
+
+test_that("cal_hdr() intervals are contained within age range", {
+  x <- cal(5000, 10, IntCal20)
+  result <- cal_hdr(x)
+  
+  age_min <- cal_age_min(x)
+  age_max <- cal_age_max(x)
+  
+  for (interval in result[[1]]) {
+    expect_gte(as.numeric(interval[1]), as.numeric(age_min))
+    expect_lte(as.numeric(interval[2]), as.numeric(age_max))
+  }
+})
+
+# Highest Density Intervals -----------------------------------------------
+
+test_that("cal_hdi() returns a list of the same length as x", {
+  x <- cal(5000, 10, IntCal20)
+  y <- cal(c(6000, 5000, 4000), rep(10, 3), IntCal20)
+  
+  result_x <- cal_hdi(x)
+  result_y <- cal_hdi(y)
+  
+  expect_length(result_x, length(x))
+  expect_length(result_y, length(y))
+})
+
+test_that("cal_hdi() returns a single interval with correct structure", {
+  x <- cal(5000, 10, IntCal20)
+  result <- cal_hdi(x)
+  
+  expect_type(result, "list")
+  expect_length(result[[1]], 2)
+  expect_lte(as.numeric(result[[1]][1]), as.numeric(result[[1]][2]))
+})
+
+test_that("cal_hdi() respects the interval parameter", {
+  x <- cal(5000, 10, IntCal20)
+  
+  hdi_68 <- cal_hdi(x, interval = 0.683)
+  hdi_95 <- cal_hdi(x, interval = 0.954)
+  
+  width_68 <- as.numeric(hdi_68[[1]][2]) - as.numeric(hdi_68[[1]][1])
+  width_95 <- as.numeric(hdi_95[[1]][2]) - as.numeric(hdi_95[[1]][1])
+  
+  expect_lt(width_68, width_95)
+})
+
+test_that("cal_hdi() returns a single interval even for multimodal distributions", {
+  multimodal_cal <- cal(10400, 20, IntCal20)
+  result <- cal_hdi(multimodal_cal)
+  
+  expect_type(result, "list")
+  expect_length(result[[1]], 2)
+})
+
+test_that("cal_hdi() interval is contained within age range", {
+  x <- cal(5000, 10, IntCal20)
+  result <- cal_hdi(x)
+  
+  age_min <- cal_age_min(x)
+  age_max <- cal_age_max(x)
+  
+  expect_gte(as.numeric(result[[1]][1]), as.numeric(age_min))
+  expect_lte(as.numeric(result[[1]][2]), as.numeric(age_max))
+})
+
+test_that("cal_hdi() is contained within cal_hdr()", {
+  x <- cal(5000, 10, IntCal20)
+  
+  hdi_result <- cal_hdi(x, interval = 0.954)[[1]]
+  hdr_intervals <- cal_hdr(x, interval = 0.954)[[1]]
+  
+  hdr_min <- min(sapply(hdr_intervals, function(iv) iv[1]))
+  hdr_max <- max(sapply(hdr_intervals, function(iv) iv[2]))
+  
+  expect_gte(as.numeric(hdi_result[1]), as.numeric(hdr_min))
+  expect_lte(as.numeric(hdi_result[2]), as.numeric(hdr_max))
+})

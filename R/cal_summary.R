@@ -267,3 +267,129 @@ cal_age_max <- function(x, min_pdens = 0) {
     max(ages, na.rm = TRUE)
   }))
 }
+
+# Highest Density Regions -------------------------------------------------
+
+#' Highest Density Region and Highest Density Interval
+#'
+#' @description
+#' `cal_hdr()` calculates the Highest Density Region (HDR) for calibrated
+#' radiocarbon dates. The HDR is the shortest interval (or set of intervals)
+#' that contains the specified proportion of the probability mass.
+#'
+#' `cal_hdi()` calculates the Highest Density Interval (HDI), which is the
+#' single shortest contiguous interval containing the specified proportion of
+#' the probability mass. Unlike `cal_hdr()`, which can return multiple intervals
+#' for multimodal distributions, `cal_hdi()` always returns exactly one interval.
+#'
+#' @param x A [cal] vector of calibrated radiocarbon dates.
+#' @param interval Numeric. The probability content of the HDR/HDI. Default:
+#'   0.954 (approximately 2 standard deviations).
+#'
+#' @return
+#' For `cal_hdr()`: A list of the same length as `x`. Each element is a list of
+#' numeric vectors, where each vector has two elements: the start and end ages
+#' of an HDR interval. For multimodal distributions, multiple intervals may be
+#' returned.
+#'
+#' For `cal_hdi()`: A list of the same length as `x`. Each element is a numeric
+#' vector with two elements: the start and end ages of the HDI interval.
+#'
+#' @family functions for summarising calibrated radiocarbon dates
+#' @export
+#'
+#' @examples
+#' x <- c14_calibrate(5000, 10)
+#' cal_hdr(x)
+#' cal_hdi(x)
+#' cal_hdr(x, interval = 0.683)
+#' cal_hdi(x, interval = 0.683)
+cal_hdr <- function(x, interval = 0.954) {
+  purrr::map(x, cal_hdr_single, interval = interval)
+}
+
+#' @rdname cal_hdr
+#' @export
+cal_hdi <- function(x, interval = 0.954) {
+  purrr::map(x, cal_hdi_single, interval = interval)
+}
+
+#' @noRd
+#' @keywords internal
+cal_density_grid <- function(cal) {
+  if (length(cal) != 1) {
+    rlang::abort("`cal_density_grid()` expects a `cal` of length 1.",
+                 class = "c14_invalid_argument")
+  }
+
+  indices <- cal_relevant_indices(cal)
+  curve <- cal_c14_curve(cal)
+  ages <- curve$cal_age[indices]
+  
+  f <- cal_function_sparse(cal)
+  pdens <- f(ages)
+  
+  pdens_norm <- pdens / sum(pdens, na.rm = TRUE)
+  
+  list(ages = ages, pdens_norm = pdens_norm)
+}
+
+#' @noRd
+#' @keywords internal
+cal_density_threshold <- function(pdens_norm, interval = 0.954) {
+  sorted_idx <- order(pdens_norm, decreasing = TRUE)
+  cum_prob <- cumsum(pdens_norm[sorted_idx])
+  
+  threshold_idx <- which(cum_prob >= interval)[1]
+  if (is.na(threshold_idx)) {
+    threshold_idx <- length(sorted_idx)
+  }
+  
+  pdens_norm[sorted_idx[threshold_idx]]
+}
+
+#' @noRd
+#' @keywords internal
+cal_threshold_ages <- function(ages, pdens_norm, threshold) {
+  ages[pdens_norm >= threshold]
+}
+
+#' @noRd
+#' @keywords internal
+cal_hdr_single <- function(cal, interval = 0.954) {
+  grid <- cal_density_grid(cal)
+  ages <- grid$ages
+  pdens_norm <- grid$pdens_norm
+  
+  threshold <- cal_density_threshold(pdens_norm, interval)
+  threshold_ages <- cal_threshold_ages(ages, pdens_norm, threshold)
+  
+  in_hdr <- ages %in% threshold_ages
+  runs <- rle(in_hdr)
+  endpoints <- c(0, cumsum(runs$lengths))
+  
+  intervals <- list()
+  for (i in seq_along(runs$lengths)) {
+    if (runs$values[i]) {
+      start_idx <- endpoints[i] + 1
+      end_idx <- endpoints[i + 1]
+      interval_ages <- ages[start_idx:end_idx]
+      intervals[[length(intervals) + 1]] <- c(min(interval_ages), max(interval_ages))
+    }
+  }
+  
+  intervals
+}
+
+#' @noRd
+#' @keywords internal
+cal_hdi_single <- function(cal, interval = 0.954) {
+  grid <- cal_density_grid(cal)
+  ages <- grid$ages
+  pdens_norm <- grid$pdens_norm
+  
+  threshold <- cal_density_threshold(pdens_norm, interval)
+  threshold_ages <- cal_threshold_ages(ages, pdens_norm, threshold)
+  
+  c(min(threshold_ages), max(threshold_ages))
+}
