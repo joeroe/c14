@@ -24,8 +24,7 @@ methods::setOldClass(c("c14_cal", "vctrs_rcrd"))
 #'
 #' @param c14_age Vector of uncalibrated radiocarbon ages.
 #' @param c14_error Vector of standard errors associated with `c14_age`.
-#' @param c14_curve Character vector of calibration curve names. Default:
-#'   `"IntCal20"`.
+#' @param c14_curve Character vector of calibration curve names.
 #'
 #' @return
 #' A vector of class `cal` (`c14_cal`). Each element is a record with three
@@ -34,14 +33,17 @@ methods::setOldClass(c("c14_cal", "vctrs_rcrd"))
 #' @export
 #'
 #' @examples
-#' cal(1000, 30)
-#' cal(c(1000, 2000), c(30, 40))
-cal <- function(c14_age, c14_error, c14_curve = "IntCal20") {
+#' cal(1000, 30, c14_curve = "IntCal20")
+#' cal(c(1000, 2000), c(30, 40), c14_curve = "IntCal20")
+cal <- function(c14_age = double(), c14_error = double(),
+                c14_curve = character()) {
   c14_age <- vec_cast(c14_age, numeric())
   c14_error <- vec_cast(c14_error, numeric())
   c14_curve <- vec_cast(c14_curve, character())
 
-  c(c14_age, c14_error, c14_curve) %<-% vec_recycle_common(c14_age, c14_error, c14_curve)
+  c(c14_age, c14_error, c14_curve) %<-% vec_recycle_common(
+    c14_age, c14_error, c14_curve
+  )
 
   new_cal(c14_age, c14_error, c14_curve)
 }
