@@ -23,8 +23,7 @@ cal_function <- function(cal) {
 
   c14_age <- field(cal, "c14_age")
   c14_error <- field(cal, "c14_error")
-  curve_name <- field(cal, "c14_curve")
-  curve <- get(curve_name, envir = asNamespace("c14"))
+  curve <- cal_curve(cal)[[1]]
 
   function(age, offset = NA) {
     curve_at <- c14_curve_interpolate(curve, age)
@@ -50,8 +49,7 @@ cal_sample <- function(cal) {
   }
 
   f <- cal_function(cal)
-  curve_name <- field(cal, "c14_curve")
-  curve <- get(curve_name, envir = asNamespace("c14"))
+  curve <- cal_curve(cal)[[1]]
   ages <- c14_curve_age_seq(curve)
   pdens <- f(ages)
 

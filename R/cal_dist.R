@@ -83,8 +83,7 @@ cal_as_cal_dist <- function(cal, at = NULL) {
   f <- cal_function(cal)
 
   if (is.null(at)) {
-    curve_name <- field(cal, "c14_curve")
-    curve <- get(curve_name, envir = asNamespace("c14"))
+    curve <- cal_curve(cal)[[1]]
     at <- c14_curve_age_seq(curve)
   }
 

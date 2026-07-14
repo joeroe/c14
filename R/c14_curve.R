@@ -124,6 +124,29 @@ is_c14_curve <- function(x) {
   inherits(x, "c14_curve")
 }
 
+#' @noRd
+#' @keywords internal
+c14_curve_name <- function(x) {
+  name <- attr(x, "name", exact = TRUE)
+  if (is.null(name)) "custom curve" else name
+}
+
+#' @noRd
+#' @keywords internal
+c14_curve_type <- function(x) {
+  if (inherits(x, "c14_curve_14c")) "14C"
+  else if (inherits(x, "c14_curve_f14c")) "F14C"
+}
+
+#' @noRd
+#' @keywords internal
+c14_curve_range <- function(x) {
+  cal_age <- field(x, "cal_age")
+  r <- range(cal_age)
+  era <- era::era_label(era::yr_era(cal_age))
+  paste0(as.numeric(r[1]), "\u2013", as.numeric(r[2]), " ", era)
+}
+
 # Print/format ------------------------------------------------------------
 
 #' @export
@@ -140,7 +163,10 @@ format.c14_curve_f14c <- function(x, ...) NextMethod()
 
 #' @export
 format.c14_curve <- function(x, ...) {
-  format(vec_proxy(x))
+  name <- c14_curve_name(x)
+  type <- c14_curve_type(x)
+  range <- c14_curve_range(x)
+  sprintf("%s (%s, %s)", name, type, range)
 }
 
 
