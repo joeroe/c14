@@ -32,7 +32,7 @@ shub1_cal <- c14_calibrate(shub1_c14$c14_age, shub1_c14$c14_error)
 cal_sum(shub1_cal)
 }
 \seealso{
-Other functions for aggregating calendar probability distributions: 
-\code{\link{cal_density}()}
+Other functions for aggregating calendar probability distributions:
+\code{\link[=cal_density]{cal_density()}}
 }
 \concept{functions for aggregating calendar probability distributions}

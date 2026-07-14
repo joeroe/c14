@@ -34,7 +34,7 @@ cal_age_max(x)
 cal_age_range(x)
 }
 \seealso{
-Other functions for summarising calibrated radiocarbon dates: 
-\code{\link{cal_point}()}
+Other functions for summarising calibrated radiocarbon dates:
+\code{\link[=cal_point]{cal_point()}}
 }
 \concept{functions for summarising calibrated radiocarbon dates}

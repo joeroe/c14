@@ -63,7 +63,7 @@ cal_density(shub1_cal, strata = shub1_c14$phase)
 \insertAllCited{}
 }
 \seealso{
-Other functions for aggregating calendar probability distributions: 
-\code{\link{cal_sum}()}
+Other functions for aggregating calendar probability distributions:
+\code{\link[=cal_sum]{cal_sum()}}
 }
 \concept{functions for aggregating calendar probability distributions}

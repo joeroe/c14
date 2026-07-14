@@ -47,12 +47,12 @@ For most files, only the first argument needs to be supplied. Further
 arguments can be used if the file does not follow the conventional format.
 }
 \examples{
-\dontshow{if (curl::has_internet()) (if (getRversion() >= "3.4") withAutoprint else force)(\{ # examplesIf}
+\dontshow{if (curl::has_internet()) withAutoprint(\{ # examplesIf}
 read_14c("https://intcal.org/curves/intcal20.14c")
 \dontshow{\}) # examplesIf}
 }
 \seealso{
-Other calibration curve functions: 
-\code{\link{c14_curve}()}
+Other calibration curve functions:
+\code{\link[=c14_curve]{c14_curve()}}
 }
 \concept{calibration curve functions}

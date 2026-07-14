@@ -4,31 +4,30 @@
 \alias{cal}
 \title{Calibrated radiocarbon dates}
 \usage{
-cal(..., .era = era::era("cal BP"))
+cal(c14_age, c14_error, c14_curve = "IntCal20")
 }
 \arguments{
-\item{...}{<\link[rlang:dyn-dots]{dynamic-dots}> A set of data frames. Each
-should have two columns, the first a vector of calendar ages, and the second
-a vector of associated probability densities. If the first column is not an
-\code{\link[era:yr]{era::yr()}} vector, it is coerced to one using the time scale specified by
-\code{.era}.}
+\item{c14_age}{Vector of uncalibrated radiocarbon ages.}
 
-\item{.era}{\code{\link[era:era]{era::era()}} object describing the time scale used for ages.
-Defaults to calendar years Before Present (\code{era("cal BP")}). Not used if
-the ages specified in \code{...} are already \code{era::yr()} vectors.}
+\item{c14_error}{Vector of standard errors associated with \code{c14_age}.}
+
+\item{c14_curve}{Character vector of calibration curve names. Default:
+\code{"IntCal20"}.}
 }
 \value{
-A list of data frames with class \code{cal} (\code{c14_cal}). Each element has two
-columns: \code{age} and \code{pdens}.
+A vector of class \code{cal} (\code{c14_cal}). Each element is a record with three
+fields: \code{c14_age}, \code{c14_error}, and \code{c14_curve}.
 }
 \description{
-The \code{cal} class represents a vector of calendar probability distribution;
-typically calibrated radiocarbon dates.
+The \code{cal} class represents a vector of calibrated radiocarbon dates as a
+lazy record. Each element stores the parameters needed to derive a calendar
+probability distribution (\code{c14_age}, \code{c14_error}, and \code{c14_curve}), but does
+not compute the distribution until requested.
 
-\code{cal()} constructs a new \code{cal} vector from a set of data frames containing
-the raw probability distributions.
+Use \code{\link[=cal_function]{cal_function()}} to derive the probability density function, or
+\code{\link[=cal_dist]{cal_dist()}} to evaluate it at specific ages.
 }
 \examples{
-# Uniform distribution between 1 and 10 BP:
-cal(data.frame(age = era::yr(1:10, "cal BP"), pdens = rep(0.1, 10)))
+cal(1000, 30)
+cal(c(1000, 2000), c(30, 40))
 }

@@ -20,6 +20,11 @@ Useful links:
 \author{
 \strong{Maintainer}: Joe Roe \email{joe@joeroe.io} (\href{https://orcid.org/0000-0002-1011-1244}{ORCID})
 
+Authors:
+\itemize{
+  \item Joe Roe \email{joe@joeroe.io} (\href{https://orcid.org/0000-0002-1011-1244}{ORCID})
+}
+
 Other contributors:
 \itemize{
   \item Thomas Huet \email{thomashuet7@gmail.com} (\href{https://orcid.org/0000-0002-1112-6122}{ORCID}) [contributor]
