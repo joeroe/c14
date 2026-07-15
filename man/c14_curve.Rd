@@ -53,7 +53,7 @@ typically used for "post-bomb" calibration.
 \insertRef{Stenstrom2011}{c14}
 }
 \seealso{
-Other calibration curve functions: 
-\code{\link{read_14c}()}
+Other calibration curve functions:
+\code{\link[=read_14c]{read_14c()}}
 }
 \concept{calibration curve functions}

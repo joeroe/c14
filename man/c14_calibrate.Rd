@@ -4,51 +4,26 @@
 \alias{c14_calibrate}
 \title{Calibrate radiocarbon dates}
 \usage{
-c14_calibrate(
-  c14_age,
-  c14_error,
-  ...,
-  engine = c("intcal", "rcarbon", "oxcal", "bchron"),
-  min_pdens = 1e-05
-)
+c14_calibrate(c14_age, c14_error, c14_curve = IntCal20)
 }
 \arguments{
 \item{c14_age}{Vector of uncalibrated radiocarbon ages.}
 
 \item{c14_error}{Vector of standard errors associated with \code{c14_age}.}
 
-\item{...}{Optional arguments passed to calibration function (see below).}
-
-\item{engine}{Method to use for calibration. The default (\code{"intcal"}) is
-fast and simple. Other options require additional packages to be installed.
-Available engines:
-\itemize{
-\item \code{"intcal"}: \code{\link[IntCal:caldist]{IntCal::caldist()}} (default)
-\item \code{"rcarbon"}: \code{\link[rcarbon:calibrate]{rcarbon::calibrate()}}
-\item \code{"oxcal"}: \code{\link[oxcAAR:oxcalCalibrate]{oxcAAR::oxcalCalibrate()}}
-\item \code{"bchron"}: \code{\link[Bchron:BchronCalibrate]{Bchron::BchronCalibrate()}}
-}}
-
-\item{min_pdens}{Minimum probability density threshold below which ages are
-excluded from the result. Set to \code{NULL} to use the full calibration curve.}
+\item{c14_curve}{A \link{c14_curve} object or list of \code{c14_curve} objects. See
+\link{c14_curves} for a list of the standard curves provided with the packages.
+Default: \code{IntCal20}.}
 }
 \value{
-A list of \code{cal} objects.
+A \code{cal} vector.
 }
 \description{
 Transforms 'raw' radiocarbon ages into a calendar probability distribution
 using a calibration curve.
 }
-\details{
-\code{c14_age} and \code{c14_error} are recycled to a common length.
-
-Parallelisation is supported for engines \code{"intcal"} and \code{"rcarbon"} and can
-dramatically speed up calibration of large numbers of dates. For \code{"intcal"},
-it must first be enabled with \code{\link[future:plan]{future::plan()}}. For \code{"rcarbon"}, it requires
-the \code{doSNOW} package and can be controlled with the \code{ncores} argument of
-\code{\link[rcarbon:calibrate]{rcarbon::calibrate()}}.
-}
 \examples{
 c14_calibrate(1000, 30)
+c14_calibrate(1000, 30, IntCal20)
 }
 \concept{tidy radiocarbon functions}

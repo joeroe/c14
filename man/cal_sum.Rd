@@ -5,15 +5,15 @@
 \alias{sum.c14_cal}
 \title{Sum calendar probability distributions}
 \usage{
-cal_sum(x, range = cal_age_common(x), normalise = FALSE, ...)
+cal_sum(x, range = NULL, normalise = FALSE, ...)
 
-\method{sum}{c14_cal}(x, range = cal_age_common(x), normalise = FALSE, ...)
+\method{sum}{c14_cal}(x, ..., normalise = FALSE)
 }
 \arguments{
-\item{x}{A \link{cal} vector of calendar probability distributions}
+\item{x}{A \link{cal} vector of calendar probability distributions.}
 
 \item{range}{Range of ages over which to sum. Defaults to the maximum range
-of \code{x} at one year resolution.}
+of \code{x} at native resolution.}
 
 \item{normalise}{Whether to normalise the summed distribution to sum to 1.
 The default is not to normalise.}
@@ -21,7 +21,7 @@ The default is not to normalise.}
 \item{...}{Not used}
 }
 \value{
-The summed probability distribution as a \link{cal} vector.
+The summed probability distribution as a \link{cal_dist} vector of length 1.
 }
 \description{
 Aggregates a vector of calendar probability distributions (such as calibrated
@@ -32,7 +32,7 @@ shub1_cal <- c14_calibrate(shub1_c14$c14_age, shub1_c14$c14_error)
 cal_sum(shub1_cal)
 }
 \seealso{
-Other functions for aggregating calendar probability distributions: 
-\code{\link{cal_density}()}
+Other functions for aggregating calendar probability distributions:
+\code{\link[=cal_density]{cal_density()}}
 }
 \concept{functions for aggregating calendar probability distributions}

@@ -1,11 +1,12 @@
-x <- c14_calibrate(c(1500, 1600, 1700), rep(20, 3))
+x <- cal(c(1500, 1600, 1700), rep(20, 3), IntCal20)
 
-test_that("cal_sum() returns a cal vector of length 1", {
-  expect_vector(cal_sum(x), cal(), 1)
+test_that("cal_sum() returns a cal_dist vector of length 1", {
+  expect_vector(cal_sum(x), cal_dist(data.frame(age = era::yr(), pdens = numeric())), 1)
 })
 
 test_that("cal_sum(normalise = TRUE) normalised pdens to 1", {
-  expect_equal(sum(cal_pdens(cal_sum(x, normalise = TRUE))[[1]]), 1)
+  dist <- cal_sum(x, normalise = TRUE)
+  expect_equal(sum(cal_dist_pdens(dist)[[1]]), 1)
 })
 
 test_that("sum() is an alias of cal_sum() for cal objects", {
@@ -30,8 +31,11 @@ test_that("density() is an alias for cal_density() for cal objects", {
 })
 
 test_that("cal_sample() has the expected dimensions", {
-  times <- 5
-  expect_equal(sapply(cal_sample(x, times), length), rep(length(x), times))
+  sampler <- purrr::map(x, cal_sample)
+  expect_equal(
+    purrr::map_dbl(sampler, \(f) length(f(5))),
+    rep(5, length(x))
+  )
 })
 
 test_that("cal_bootstraps() has the expected dimensions", {

@@ -2,19 +2,35 @@
 # Functions for aggregating calibrated radiocarbon dates and other calendar
 # probability distributions
 
+#' Common age range for a cal vector
+#'
+#' Derives the age range that covers all elements of a [cal] vector.
+#'
+#' @param x A [cal] vector.
+#' @param resolution Numeric. Resolution of the age sequence in years. Default: 1.
+#'
+#' @return A numeric vector of ages spanning the common range of `x`.
+#'
+#' @noRd
+#' @keywords internal
+cal_age_common <- function(x, resolution = 1) {
+  dists <- cal_dist(x)
+  cal_dist_age_common(dists, resolution = resolution)
+}
+
 #' Sum calendar probability distributions
 #'
 #' Aggregates a vector of calendar probability distributions (such as calibrated
 #' radiocarbon dates) by summing them over a given range of ages.
 #'
-#' @param x A [cal] vector of calendar probability distributions
+#' @param x A [cal] vector of calendar probability distributions.
 #' @param range Range of ages over which to sum. Defaults to the maximum range
-#'   of `x` at one year resolution.
+#'   of `x` at native resolution.
 #' @param normalise Whether to normalise the summed distribution to sum to 1.
 #'   The default is not to normalise.
 #' @param ... Not used
 #'
-#' @return The summed probability distribution as a [cal] vector.
+#' @return The summed probability distribution as a [cal_dist] vector of length 1.
 #'
 #' @family functions for aggregating calendar probability distributions
 #' @export
@@ -22,21 +38,26 @@
 #' @examples
 #' shub1_cal <- c14_calibrate(shub1_c14$c14_age, shub1_c14$c14_error)
 #' cal_sum(shub1_cal)
-cal_sum <- function(x, range = cal_age_common(x), normalise = FALSE, ...) {
-  # TODO: ensure x and range have the same era - or is this a job for cal validation?
-  x <- cal_interpolate(x, range)
+cal_sum <- function(x, range = NULL, normalise = FALSE, ...) {
+  dists <- cal_dist(x)
+  if (!is.null(range)) {
+    dists <- cal_dist_interpolate(dists, range)
+  } else {
+    dists <- cal_dist_interpolate(dists)
+  }
 
-  pdens_mat <- do.call(rbind, cal_pdens(x))
+  pdens_mat <- do.call(rbind, cal_dist_pdens(dists))
   pdens_sum <- colSums(pdens_mat, na.rm = TRUE)
   if (isTRUE(normalise)) pdens_sum <- pdens_sum / sum(pdens_sum, na.rm = TRUE)
 
-  new_cal(list(data.frame(age = cal_age(x)[[1]], pdens = pdens_sum)))
+  age <- cal_dist_age(dists)[[1]]
+  cal_dist(data.frame(age = age, pdens = pdens_sum))
 }
 
 #' @rdname cal_sum
 #' @export
-sum.c14_cal <- function(x, range = cal_age_common(x), normalise = FALSE, ...) {
-  cal_sum(x, range = range, normalise = normalise, ...)
+sum.c14_cal <- function(x, ..., normalise = FALSE) {
+  cal_sum(x, normalise = normalise, ...)
 }
 
 #' Kernel density estimation of calendar probability distributions
@@ -52,12 +73,12 @@ sum.c14_cal <- function(x, range = cal_age_common(x), normalise = FALSE, ...) {
 #' sampling error. `x` is estimated by randomly resampling `x` before each KDE
 #' calculation.
 #'
-#' @param x A [cal] vector of calendar probability distributions
+#' @param x A [cal] vector of calendar probability distributions.
 #' @param bw Kernel bandwidth size passed to [stats::density()]. Can be either
 #'   an integer value or a character selection rule, but the latter will likely
 #'   result in a different bandwidth being applied to each bootstrapped sample
 #'   and therefore should be avoided. Default: `30` (years).
-#' @param ... Further arguments passed to [stats::density()]
+#' @param ... Further arguments passed to [stats::density()].
 #' @param times Number of bootstrap samples to generate. The default of `25` is
 #'   suitable for testing but should be set much higher in practice.
 #' @param bootstrap If `TRUE` (the default), randomly resamples with replacement
@@ -91,13 +112,13 @@ sum.c14_cal <- function(x, range = cal_age_common(x), normalise = FALSE, ...) {
 cal_density <- function(x, bw = 30, ..., times = 25, bootstrap = TRUE, strata = NULL) {
   # TODO: guard against character argument to bw?
 
-  # Bootstrapping
+  # Sampling
   if (isTRUE(bootstrap)) {
     bootstraps <- cal_bootstraps(x, times = times, strata = strata)
-    age_sample <- purrr::map(bootstraps, \(x) do.call(c, cal_sample(x, 1)))
+    age_sample <- purrr::map(bootstraps, \(x) do.call(c, cal_sample_vec(x, 1)))
   }
   else {
-    age_sample <- cal_sample(x, times)
+    age_sample <- cal_sample_vec(x, times)
   }
 
   # Weights
@@ -130,16 +151,18 @@ density.c14_cal <- function(x, ...) {
   cal_density(x, ...)
 }
 
-#' Randomly sample from calendar probability distributions
+#' Vectorised sampling from calendar probability distributions
+#'
+#' @param x A [cal] vector of calendar probability distributions.
+#' @param times Number of samples to draw from each distribution.
+#'
+#' @return A list of numeric vectors, one per element of `x`.
 #'
 #' @noRd
 #' @keywords internal
-# TODO: worth exporting?
-cal_sample <- function(x, times) {
-  samples <- purrr::map2(cal_age(x), cal_pdens(x), function(x, y, s) {
-    sample(x, s, replace = TRUE, prob = y)
-  }, s = times)
-  purrr::pmap(samples, c)
+cal_sample_vec <- function(x, times) {
+  samplers <- purrr::map(x, cal_sample)
+  purrr::map(samplers, \(f) f(times))
 }
 
 #' Bootstrap sampling of calendar probability distributions

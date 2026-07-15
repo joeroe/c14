@@ -10,14 +10,14 @@ cal_density(x, bw = 30, ..., times = 25, bootstrap = TRUE, strata = NULL)
 \method{density}{c14_cal}(x, ...)
 }
 \arguments{
-\item{x}{A \link{cal} vector of calendar probability distributions}
+\item{x}{A \link{cal} vector of calendar probability distributions.}
 
 \item{bw}{Kernel bandwidth size passed to \code{\link[stats:density]{stats::density()}}. Can be either
 an integer value or a character selection rule, but the latter will likely
 result in a different bandwidth being applied to each bootstrapped sample
 and therefore should be avoided. Default: \code{30} (years).}
 
-\item{...}{Further arguments passed to \code{\link[stats:density]{stats::density()}}}
+\item{...}{Further arguments passed to \code{\link[stats:density]{stats::density()}}.}
 
 \item{times}{Number of bootstrap samples to generate. The default of \code{25} is
 suitable for testing but should be set much higher in practice.}
@@ -63,7 +63,7 @@ cal_density(shub1_cal, strata = shub1_c14$phase)
 \insertAllCited{}
 }
 \seealso{
-Other functions for aggregating calendar probability distributions: 
-\code{\link{cal_sum}()}
+Other functions for aggregating calendar probability distributions:
+\code{\link[=cal_sum]{cal_sum()}}
 }
 \concept{functions for aggregating calendar probability distributions}

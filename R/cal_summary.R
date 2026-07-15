@@ -64,7 +64,7 @@ cal_point <- function(x,
   )
 
   # Flatten to era_yr
-  vec_c(!!!furrr::future_map(x, f, interval = interval, quiet = quiet))
+  furrr::future_map_vec(x, f, interval = interval, quiet = quiet)
 }
 
 #' Mode of a calibrated radiocarbon date
@@ -77,7 +77,11 @@ cal_point <- function(x,
 #' @noRd
 #' @keywords internal
 cal_mode <- function(x, quiet = FALSE, ...) {
-  y <- x$age[x$pdens == max(x$pdens, na.rm = TRUE) & !is.na(x$pdens)]
+  dist <- cal_dist(x)
+  ages <- dist[[1]]$age
+  pdens <- dist[[1]]$pdens
+  
+  y <- ages[pdens == max(pdens, na.rm = TRUE) & !is.na(pdens)]
   if (length(y) > 1) {
     y <- y[1]
     if (!isTRUE(quiet)) rlang::warn(
@@ -97,7 +101,12 @@ cal_mode <- function(x, quiet = FALSE, ...) {
 #' @noRd
 #' @keywords internal
 cal_median <- function(x, ...) {
-  x$age[x$pdens == stats::quantile(x$pdens, 0.5)]
+  dist <- cal_dist_normalise(cal_dist(x))
+  ages <- dist[[1]]$age
+  pdens <- dist[[1]]$pdens
+
+  cum_pdens <- cumsum(pdens)
+  ages[which(cum_pdens >= 0.5)[1]]
 }
 
 #' Mean of a calibrated radiocarbon date
@@ -109,7 +118,12 @@ cal_median <- function(x, ...) {
 #' @noRd
 #' @keywords internal
 cal_mean <- function(x, ...) {
-  stats::weighted.mean(x$age, x$pdens)
+  dist <- cal_dist(x)
+  ages <- dist[[1]]$age
+  pdens <- dist[[1]]$pdens
+  
+  result <- stats::weighted.mean(as.numeric(ages), pdens)
+  era::yr(result, era::yr_era(ages))
 }
 
 #' Local mode of a calibrated radiocarbon date
@@ -142,14 +156,18 @@ cal_central <- function(x, interval = 1, ...) {
 
 # Simple ranges -----------------------------------------------------------
 
-#' Range of a calendar probability distribution
+#' Range of calibrated radiocarbon dates
 #'
 #' Functions for calculating the minimum and maximum ages of a [cal] vector.
-#' This function does not take into account the probability distribution.
+#' The range is determined by the probability distribution, with the extent
+#' controlled by the `min_pdens` parameter.
 #'
 #' @param x A [cal] vector of calendar probability distributions.
-#' @param min_pdens Ignores ages with values less than the given value when
-#'   calculating the minimum or maximum. Default: 0.
+#' @param min_pdens Controls the minimum probability density threshold used to
+#'   determine boundaries. The default is `pdens > 0` within a plausible range
+#'   around the calibrated date. Set `min_pdens` to a value between 0 and 1 to
+#'   futher constrain the range or set `min_pdens = 0` to find the absolute
+#'   boundaries on the full range of the calibration curve.
 #'
 #' @return A data frame with two columns giving the minimum (`min`) and maximum
 #' (`max`) ages.
@@ -163,7 +181,7 @@ cal_central <- function(x, interval = 1, ...) {
 #' cal_age_min(x)
 #' cal_age_max(x)
 #' cal_age_range(x)
-cal_age_range <- function(x, min_pdens = 0) {
+cal_age_range <- function(x, min_pdens = NULL) {
   vec_cbind(
     min = cal_age_min(x, min_pdens),
     max = cal_age_max(x, min_pdens)
@@ -172,14 +190,152 @@ cal_age_range <- function(x, min_pdens = 0) {
 
 #' @rdname cal_age_range
 #' @export
-cal_age_min <- function(x, min_pdens = 0) {
-  x <- cal_crop(x, min_pdens)
-  purrr::map_vec(cal_age(x), min)
+cal_age_min <- function(x, min_pdens = NULL) {
+  cal_age_bound(x, min_pdens, min)
 }
 
 #' @rdname cal_age_range
 #' @export
-cal_age_max <- function(x, min_pdens = 0) {
-  x <- cal_crop(x, min_pdens)
-  purrr::map_vec(cal_age(x), max)
+cal_age_max <- function(x, min_pdens = NULL) {
+  cal_age_bound(x, min_pdens, max)
+}
+
+#' @noRd
+#' @keywords internal
+cal_age_bound <- function(x, min_pdens = NULL, fn) {
+  # Only use full curve when min_pdens is explicitly set to 0
+  if (!is.null(min_pdens) && min_pdens == 0) {
+    curve <- cal_c14_curve(x)
+    dists <- cal_dist(x, at = curve$cal_age)
+  } else {
+    # Use sparse grid (default for NULL and > 0)
+    dists <- cal_dist(x)
+  }
+  
+  ages <- cal_dist_age(dists)
+  pdens <- cal_dist_pdens(dists)
+  
+  purrr::map2_vec(ages, pdens, function(age, pdens) {
+    # Treat NULL as 0 (no filtering)
+    threshold <- if (is.null(min_pdens)) 0 else min_pdens
+    if (threshold > 0) {
+      valid <- !is.na(pdens) & pdens >= threshold
+      if (!any(valid)) {
+        return(fn(age, na.rm = TRUE))
+      }
+      age <- age[valid]
+    }
+    fn(age, na.rm = TRUE)
+  })
+}
+
+# Highest Density Regions -------------------------------------------------
+
+#' Highest Density Region and Highest Density Interval
+#'
+#' @description
+#' `cal_hdr()` calculates the Highest Density Region (HDR) for calibrated
+#' radiocarbon dates. The HDR is the shortest interval (or set of intervals)
+#' that contains the specified proportion of the probability mass.
+#'
+#' `cal_hdi()` calculates the Highest Density Interval (HDI), which is the
+#' single shortest contiguous interval containing the specified proportion of
+#' the probability mass. Unlike `cal_hdr()`, which can return multiple intervals
+#' for multimodal distributions, `cal_hdi()` always returns exactly one interval.
+#'
+#' @param x A [cal] vector of calibrated radiocarbon dates.
+#' @param interval Numeric. The probability content of the HDR/HDI. Default:
+#'   0.954 (approximately 2 standard deviations).
+#'
+#' @return
+#' For `cal_hdr()`: A list of the same length as `x`. Each element is a list of
+#' numeric vectors, where each vector has two elements: the start and end ages
+#' of an HDR interval. For multimodal distributions, multiple intervals may be
+#' returned.
+#'
+#' For `cal_hdi()`: A list of the same length as `x`. Each element is a numeric
+#' vector with two elements: the start and end ages of the HDI interval.
+#'
+#' @family functions for summarising calibrated radiocarbon dates
+#' @export
+#'
+#' @examples
+#' x <- c14_calibrate(5000, 10)
+#' cal_hdr(x)
+#' cal_hdi(x)
+#' cal_hdr(x, interval = 0.683)
+#' cal_hdi(x, interval = 0.683)
+cal_hdr <- function(x, interval = 0.954) {
+  dists <- cal_dist(x)
+  purrr::map(dists, cal_hdr_single, interval = interval)
+}
+
+#' @rdname cal_hdr
+#' @export
+cal_hdi <- function(x, interval = 0.954) {
+  dists <- cal_dist(x)
+  purrr::map(dists, cal_hdi_single, interval = interval)
+}
+
+#' @noRd
+#' @keywords internal
+cal_density_threshold <- function(pdens_norm, interval = 0.954) {
+  sorted_idx <- order(pdens_norm, decreasing = TRUE)
+  cum_prob <- cumsum(pdens_norm[sorted_idx])
+  
+  threshold_idx <- which(cum_prob >= interval)[1]
+  if (is.na(threshold_idx)) {
+    threshold_idx <- length(sorted_idx)
+  }
+  
+  pdens_norm[sorted_idx[threshold_idx]]
+}
+
+#' @noRd
+#' @keywords internal
+cal_threshold_ages <- function(ages, pdens_norm, threshold) {
+  ages[pdens_norm >= threshold]
+}
+
+#' @noRd
+#' @keywords internal
+cal_hdr_single <- function(dist, interval = 0.954) {
+  dist <- cal_dist_normalise(list(dist))
+  ages <- dist[[1]]$age
+  pdens_norm <- dist[[1]]$pdens
+  
+  threshold <- cal_density_threshold(pdens_norm, interval)
+  threshold_ages <- cal_threshold_ages(ages, pdens_norm, threshold)
+  
+  in_hdr <- ages %in% threshold_ages
+  runs <- rle(in_hdr)
+  endpoints <- c(0, cumsum(runs$lengths))
+  
+  # Get indices of TRUE runs
+  true_runs <- which(runs$values)
+  
+  # Calculate start and end indices for each TRUE run
+  start_indices <- endpoints[true_runs] + 1
+  end_indices <- endpoints[true_runs + 1]
+  
+  # Extract ages for each interval and compute min/max
+  intervals <- purrr::map2(start_indices, end_indices, function(start, end) {
+    interval_ages <- ages[start:end]
+    c(min(interval_ages), max(interval_ages))
+  })
+  
+  intervals
+}
+
+#' @noRd
+#' @keywords internal
+cal_hdi_single <- function(dist, interval = 0.954) {
+  dist <- cal_dist_normalise(list(dist))
+  ages <- dist[[1]]$age
+  pdens_norm <- dist[[1]]$pdens
+  
+  threshold <- cal_density_threshold(pdens_norm, interval)
+  threshold_ages <- cal_threshold_ages(ages, pdens_norm, threshold)
+  
+  c(min(threshold_ages), max(threshold_ages))
 }

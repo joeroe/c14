@@ -1,90 +1,93 @@
 # cal.R
-# vector list_of class c14_cal (cal): calibrated radiocarbon dates and other
-# calendar probability distributions
+# vctrs record class c14_cal (cal): lazy calibrated radiocarbon dates
 
 # Register formal class for S4 compatibility
-# https://vctrs.r-lib.org/articles/s3-vector.html#implementing-a-vctrs-s3-class-in-a-package-1
-methods::setOldClass(c("c14_cal", "vctrs_list_of"))
+methods::setOldClass(c("c14_cal", "vctrs_rcrd"))
 
 # Constructors ------------------------------------------------------------
 
 #' Calibrated radiocarbon dates
 #'
 #' @description
-#' The `cal` class represents a vector of calendar probability distribution;
-#' typically calibrated radiocarbon dates.
+#' The `cal` class represents a vector of calibrated radiocarbon dates as a
+#' lazy record. Each element stores the parameters needed to derive a calendar
+#' probability distribution (`c14_age`, `c14_error`, and `c14_curve`), but does
+#' not compute the distribution until requested.
 #'
-#' `cal()` constructs a new `cal` vector from a set of data frames containing
-#' the raw probability distributions.
+#' Use [cal_function()] to derive the probability density function, or
+#' [cal_dist()] to evaluate it at specific ages.
 #'
-#' @param ... <[dynamic-dots][rlang::dyn-dots]> A set of data frames. Each
-#'  should have two columns, the first a vector of calendar ages, and the second
-#'  a vector of associated probability densities. If the first column is not an
-#'  [era::yr()] vector, it is coerced to one using the time scale specified by
-#'  `.era`.
-#' @param .era [era::era()] object describing the time scale used for ages.
-#'  Defaults to calendar years Before Present (`era("cal BP")`). Not used if
-#'  the ages specified in `...` are already `era::yr()` vectors.
+#' @param c14_age Vector of uncalibrated radiocarbon ages.
+#' @param c14_error Vector of standard errors associated with `c14_age`.
+#' @param curve A `c14_curve` object or list of `c14_curve` objects.
+#'   Default: `IntCal20`.
 #'
 #' @return
-#' A list of data frames with class `cal` (`c14_cal`). Each element has two
-#' columns: `age` and `pdens`.
+#' A vector of class `cal` (`c14_cal`).
 #'
 #' @export
 #'
 #' @examples
-#' # Uniform distribution between 1 and 10 BP:
-#' cal(data.frame(age = era::yr(1:10, "cal BP"), pdens = rep(0.1, 10)))
-cal <- function(..., .era = era::era("cal BP")) {
-  # TODO: If ... is a single list, unlist it (? – maybe too clever)
-  # if (rlang::is_bare_list(..., n = 1))
-  # TODO: ensure that all ages use the same era
+#' cal(1000, 30, curve = IntCal20)
+#' cal(c(1000, 2000), c(30, 40), curve = IntCal20)
+cal <- function(c14_age = double(), c14_error = double(),
+                curve = c14_curve()) {
+  if (!is_c14_curve(curve)) {
+    rlang::abort(
+      "`curve` must be a `c14_curve` object. See ?c14_curves for available calibration curves.",
+      class = "c14_invalid_curve"
+    )
+  }
 
-  x <- rlang::list2(...)
+  c14_age <- vec_cast(c14_age, numeric())
+  c14_error <- vec_cast(c14_error, numeric())
 
-  # x <- purrr::map(x, vctrs::vec_assert, ptype = cal_atomic_ptype())
-  x <- purrr::map(x, purrr::set_names, nm = c("age", "pdens"))
-  # TODO: Message if coerced?
-  x <- purrr::map_if(x, ~!era::is_yr(.[["age"]]),
-                     ~data.frame(age = era::yr_set_era(.[["age"]], .era),
-                                 pdens = .[["pdens"]]))
+  c(c14_age, c14_error) %<-% vec_recycle_common(c14_age, c14_error)
 
-  new_cal(x)
+  new_cal(c14_age, c14_error, curve)
 }
-
-
 
 #' Construct a `c14_cal` object
 #'
-#' @description
-#' `c14_cal` (abbreviated `cal`) is a list of data frames representing
-#' calibrated radiocarbon or other calendar-based probability distributions.
-#' Inputs are recycled using vctrs::vec_recycle_common().
+#' Low-level constructor for `cal` record objects.
 #'
-#' This function should only be used internally. The user-friendly constructor
-#' is [cal()].
-#'
-#' @param x List of data frames.
+#' @param c14_age Numeric vector of uncalibrated radiocarbon ages.
+#' @param c14_error Numeric vector of standard errors.
+#' @param curve A `c14_curve` object (stored as attribute).
 #'
 #' @return
-#' [vctrs::new_list_of] subclass `c14_cal`.
+#' A [vctrs::new_rcrd] subclass `c14_cal`.
 #'
 #' @noRd
-#' @keywords Internal
-new_cal <- function(x = list()) {
-  new_vctr(x, class = "c14_cal")
+#' @keywords internal
+new_cal <- function(c14_age = double(), c14_error = double(),
+                    curve = c14_curve()) {
+  new_rcrd(
+    list(c14_age = c14_age, c14_error = c14_error),
+    class = "c14_cal",
+    curve = curve
+  )
 }
-
-#' Shorthand prototype for individual elements of a cal vector
-#'
-#' @noRd
-#' @keywords Internal
-cal_atomic_ptype <- function() data.frame(age = era::yr(), pdens = numeric())
-
 
 # Validators --------------------------------------------------------------
 
-# TODO: validate that all ages use the same era
+#' Test if an object is a cal
+#'
+#' @keywords internal
+#' @noRd
+is_cal <- function(x) {
+  inherits(x, "c14_cal")
+}
+
+#' Extract c14_curve from cal
+#'
+#' @param x A `cal` object.
+#' @return The `c14_curve` object associated with `x`.
+#' @noRd
+#' @keywords internal
+cal_c14_curve <- function(x) {
+  attr(x, "curve", exact = TRUE)
+}
 
 # Print/format ------------------------------------------------------------
 
@@ -95,96 +98,28 @@ vec_ptype_full.c14_cal <- function(x, ...) "c14_cal"
 vec_ptype_abbr.c14_cal <- function(x, ...) "cal"
 
 #' @export
-obj_print_data.c14_cal <- function(x, ...) {
-  print(format(x), quote = FALSE)
+format.c14_cal <- function(x, ...) {
+  hdi <- cal_hdi(x)
+  
+  out <- purrr::map_chr(hdi, function(interval) {
+    era_label <- era::era_label(era::yr_era(interval[1]))
+    sprintf("%d–%d %s", 
+            as.integer(interval[1]), 
+            as.integer(interval[2]), 
+            era_label)
+  })
+  
+  format(out, justify = "right")
+}
+
+# Casting/coerce ----------------------------------------------------------
+
+#' @export
+vec_ptype2.c14_cal.c14_cal <- function(x, y, ...) {
+  new_cal()
 }
 
 #' @export
-format.c14_cal <- function(x, ..., formatter = circa_point_yr) {
-  # TODO: handle NA/invalid cals?
-  formatter(x)
-}
-
-#' @importFrom pillar pillar_shaft
-#' @export
-pillar_shaft.c14_cal <- function(x, ...) {
-  out <- format(x, formatter = circa_point_yr_colour)
-  pillar::new_pillar_shaft_simple(out, align = "right")
-}
-
-#' @noRd
-#' @keywords internal
-circa_point_yr <- function(x) {
-  y <- cal_point(x, quiet = TRUE)
-  ret <- sprintf("c. %s", y)
-  format(ret, justify = "right")
-}
-
-#' @noRd
-#' @keywords internal
-circa_point_yr_colour <- function(x) {
-  y <- cal_point(x, quiet = TRUE)
-  ret <- sprintf(
-    "%s %d %s",
-    pillar::style_subtle("c."),
-    as.numeric(y),
-    pillar::style_subtle(era::era_label(era::yr_era(y)))
-  )
-  format(ret, justify = "right")
-}
-
-# Casting/coercion --------------------------------------------------------
-
-
-# Accessors ---------------------------------------------------------------
-
-#' Extract ages from cal vectors
-#'
-#' @keywords internal
-#' @noRd
-cal_age <- function(x) {
-  purrr::map(vec_data(x), "age")
-}
-
-#' Extract probabilities from cal vectors
-#'
-#' @keywords internal
-#' @noRd
-cal_pdens <- function(x) {
-  purrr::map(vec_data(x), "pdens")
-}
-
-# Misc --------------------------------------------------------------------
-
-#' Filter cal vectors to a given minimum probability density
-#'
-#' @noRd
-#' @keywords internal
-cal_crop <- function(x, min_pdens = 0) {
-  if (min_pdens <= 0) return(x)
-  new_cal(furrr::future_map(vec_data(x), \(x) x[x$pdens >= min_pdens,]))
-}
-
-#' Generate a sequence of ages that covers a cal vector at the given resolution
-#'
-#' @noRd
-#' @keywords internal
-cal_age_common <- function(x, resolution = 1) {
-  min_age <- min(cal_age_min(x))
-  max_age <- max(cal_age_max(x))
-  seq(from = min_age, to = max_age, by = resolution)
-}
-
-#' Interpolate a cal vector over the given range
-#'
-#' Result is normalised
-#'
-#' @noRd
-#' @keywords internal
-cal_interpolate <- function(x, range = cal_age_common(x)) {
-  new_cal(furrr::future_map(vec_data(x), function(x) {
-    x <- approx_df(x, range, ties = "ordered")
-    x$pdens <- x$pdens / sum(x$pdens, na.rm = TRUE)
-    x
-  }))
+vec_cast.c14_cal.c14_cal <- function(x, to, ...) {
+  x
 }

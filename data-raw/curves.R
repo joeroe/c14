@@ -3,24 +3,37 @@
 
 # IntCal <http://intcal.org/curves/>
 IntCal20 <- read_14c("./data-raw/curves/intcal20.14c")
+attr(IntCal20, "name") <- "IntCal20"
 IntCal13 <- read_14c("./data-raw/curves/intcal13.14c")
+attr(IntCal13, "name") <- "IntCal13"
 IntCal09 <- read_14c("./data-raw/curves/intcal09.14c")
+attr(IntCal09, "name") <- "IntCal09"
 IntCal04 <- read_14c("./data-raw/curves/intcal04.14c")
+attr(IntCal04, "name") <- "IntCal04"
 IntCal98 <- read_14c("./data-raw/curves/intcal98.14c", delim = "", cal_era = "CE",
                      col_names = c("cal_age", "d14c", "d14c_error", "c14_age", "c14_error"))
+attr(IntCal98, "name") <- "IntCal98"
 
 # Marine <http://intcal.org/curves/>
 Marine20 <- read_14c("./data-raw/curves/marine20.14c")
+attr(Marine20, "name") <- "Marine20"
 Marine13 <- read_14c("./data-raw/curves/marine13.14c")
+attr(Marine13, "name") <- "Marine13"
 Marine09 <- read_14c("./data-raw/curves/marine09.14c")
+attr(Marine09, "name") <- "Marine09"
 Marine04 <- read_14c("./data-raw/curves/marine04.14c")
+attr(Marine04, "name") <- "Marine04"
 Marine98 <- read_14c("./data-raw/curves/marine98.14c", delim = "", cal_era = "CE",
                      col_names = c("cal_age", "d14c", "d14c_error", "c14_age", "c14_error"))
+attr(Marine98, "name") <- "Marine98"
 
 # SHCal <http://intcal.org/curves/>
 SHCal20 <- read_14c("./data-raw/curves/shcal20.14c")
+attr(SHCal20, "name") <- "SHCal20"
 SHCal13 <- read_14c("./data-raw/curves/shcal13.14c")
+attr(SHCal13, "name") <- "SHCal13"
 SHCal04 <- read_14c("./data-raw/curves/shcal04.14c")
+attr(SHCal04, "name") <- "SHCal04"
 
 # TODO: Look for more authorative source of these
 # Northern Hemisphere Zone X (post-bomb) <http://calib.org/CALIBomb/>

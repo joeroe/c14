@@ -8,90 +8,30 @@
 #'
 #' @param c14_age   Vector of uncalibrated radiocarbon ages.
 #' @param c14_error Vector of standard errors associated with `c14_age`.
-#' @param ...       Optional arguments passed to calibration function (see below).
-#' @param engine    Method to use for calibration. The default (`"intcal"`) is
-#'   fast and simple. Other options require additional packages to be installed.
-#'   Available engines:
-#'   * `"intcal"`: [IntCal::caldist()] (default)
-#'   * `"rcarbon"`: [rcarbon::calibrate()]
-#'   * `"oxcal"`: [oxcAAR::oxcalCalibrate()]
-#'   * `"bchron"`: [Bchron::BchronCalibrate()]
-#' @param min_pdens Minimum probability density threshold below which ages are
-#'   excluded from the result. Set to `NULL` to use the full calibration curve.
+#' @param c14_curve A [c14_curve] object or list of `c14_curve` objects. See
+#'   [c14_curves] for a list of the standard curves provided with the packages. 
+#'   Default: `IntCal20`.
 #'
-#' @details
-#' `c14_age` and `c14_error` are recycled to a common length.
-#'
-#' Parallelisation is supported for engines `"intcal"` and `"rcarbon"` and can
-#' dramatically speed up calibration of large numbers of dates. For `"intcal"`,
-#' it must first be enabled with [future::plan()]. For `"rcarbon"`, it requires
-#' the `doSNOW` package and can be controlled with the `ncores` argument of
-#' [rcarbon::calibrate()].
-#'
-#' @return A list of `cal` objects.
+#' @return A `cal` vector.
 #' @export
 #'
 #' @family tidy radiocarbon functions
 #'
 #' @examples
 #' c14_calibrate(1000, 30)
-c14_calibrate <- function(c14_age,
-                          c14_error,
-                          ...,
-                          engine = c("intcal", "rcarbon", "oxcal", "bchron"),
-                          min_pdens = 1e-05) {
-  c(c14_age, c14_error) %<-% vec_recycle_common(c14_age, c14_error)
-  engine <- rlang::arg_match(engine)
-
-  if (engine == "intcal") {
-    cals <- c14_calibrate_intcal(c14_age, c14_error, min_pdens, ...)
+#' c14_calibrate(1000, 30, IntCal20)
+c14_calibrate <- function(c14_age, c14_error, c14_curve = IntCal20) {
+  if (!is.numeric(c14_age)) {
+    rlang::abort("`c14_age` must be numeric.", class = "c14_invalid_argument")
+  }
+  if (!is.numeric(c14_error)) {
+    rlang::abort("`c14_error` must be numeric.", class = "c14_invalid_argument")
+  }
+  if (any(c14_error <= 0, na.rm = TRUE)) {
+    rlang::abort("`c14_error` must be positive.", class = "c14_invalid_argument")
   }
 
-  else if (engine == "rcarbon") {
-    if(!requireNamespace("rcarbon", quietly = TRUE)) {
-      stop('`engine` = "rcarbon" requires package rcarbon')
-    }
-    cals <- rcarbon::calibrate(c14_age, c14_error, eps = min_pdens,
-                               calMatrix = FALSE, verbose = FALSE, ...)
-    cals <- as_cal(cals)
-  }
-
-  else if (engine == "oxcal") {
-    if(!requireNamespace("oxcAAR", quietly = TRUE)) {
-      stop('`engine` = "OxCal" requires package oxcAAR')
-    }
-    if (min_pdens != 1e-05) {
-      rlang::warn('`min_pdens` is not supported for `engine = "oxcal"`',
-                  class = "c14_invalid_arguments")
-    }
-    oxcAAR::quickSetupOxcal()
-    cals <- oxcAAR::oxcalCalibrate(c14_age, c14_error, ...)
-    cals <- as_cal(cals)
-  }
-
-  else if (engine == "bchron") {
-    if(!requireNamespace("Bchron", quietly = TRUE)) {
-      stop('`engine` = "Bchron" requires package Bchron')
-    }
-    cals <- Bchron::BchronCalibrate(c14_age, c14_error, eps = min_pdens, ...)
-    cals <- as_cal(cals)
-  }
-
-  return(cals)
-}
-
-#' Vectorised wrapper for IntCal::caldist
-#'
-#' @return
-#' A cal vector.
-#'
-#' @noRd
-#' @keywords internal
-c14_calibrate_intcal <- function(c14_age, c14_error, min_pdens = 1e-05, ...) {
-  furrr::future_map2(c14_age, c14_error, IntCal::caldist, ...) |>
-    furrr::future_map(as.data.frame) |>
-    furrr::future_map(\(x, m) x[x$prob >= m,], m = min_pdens) |>
-    do.call(what = cal)
+  cal(c14_age, c14_error, c14_curve)
 }
 
 #' Generate the normal distribution of a radiocarbon age

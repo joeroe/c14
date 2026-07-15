@@ -36,31 +36,31 @@ For post-bomb curves:
 \item{f14c_error}{Errors (sigma values) associated with \code{f14c}.}
 }
 
-An object of class \code{c14_curve_14c} (inherits from \code{c14_curve}, \code{vctrs_rcrd}, \code{vctrs_vctr}) of length 9501.
+An object of class \code{c14_curve_14c} (inherits from \code{c14_curve}, \code{data.frame}) with 9501 rows and 5 columns.
 
-An object of class \code{c14_curve_14c} (inherits from \code{c14_curve}, \code{vctrs_rcrd}, \code{vctrs_vctr}) of length 9501.
+An object of class \code{c14_curve_14c} (inherits from \code{c14_curve}, \code{data.frame}) with 9501 rows and 5 columns.
 
-An object of class \code{c14_curve_14c} (inherits from \code{c14_curve}, \code{vctrs_rcrd}, \code{vctrs_vctr}) of length 5501.
+An object of class \code{c14_curve_14c} (inherits from \code{c14_curve}, \code{data.frame}) with 5501 rows and 5 columns.
 
-An object of class \code{c14_curve_14c} (inherits from \code{c14_curve}, \code{vctrs_rcrd}, \code{vctrs_vctr}) of length 5141.
+An object of class \code{c14_curve_14c} (inherits from \code{c14_curve}, \code{data.frame}) with 5141 rows and 5 columns.
 
-An object of class \code{c14_curve_14c} (inherits from \code{c14_curve}, \code{vctrs_rcrd}, \code{vctrs_vctr}) of length 5141.
+An object of class \code{c14_curve_14c} (inherits from \code{c14_curve}, \code{data.frame}) with 5141 rows and 5 columns.
 
-An object of class \code{c14_curve_14c} (inherits from \code{c14_curve}, \code{vctrs_rcrd}, \code{vctrs_vctr}) of length 4801.
+An object of class \code{c14_curve_14c} (inherits from \code{c14_curve}, \code{data.frame}) with 4801 rows and 5 columns.
 
-An object of class \code{c14_curve_14c} (inherits from \code{c14_curve}, \code{vctrs_rcrd}, \code{vctrs_vctr}) of length 3522.
+An object of class \code{c14_curve_14c} (inherits from \code{c14_curve}, \code{data.frame}) with 3522 rows and 5 columns.
 
-An object of class \code{c14_curve_14c} (inherits from \code{c14_curve}, \code{vctrs_rcrd}, \code{vctrs_vctr}) of length 3651.
+An object of class \code{c14_curve_14c} (inherits from \code{c14_curve}, \code{data.frame}) with 3651 rows and 5 columns.
 
-An object of class \code{c14_curve_14c} (inherits from \code{c14_curve}, \code{vctrs_rcrd}, \code{vctrs_vctr}) of length 3302.
+An object of class \code{c14_curve_14c} (inherits from \code{c14_curve}, \code{data.frame}) with 3302 rows and 5 columns.
 
-An object of class \code{c14_curve_14c} (inherits from \code{c14_curve}, \code{vctrs_rcrd}, \code{vctrs_vctr}) of length 2482.
+An object of class \code{c14_curve_14c} (inherits from \code{c14_curve}, \code{data.frame}) with 2482 rows and 5 columns.
 
-An object of class \code{c14_curve_14c} (inherits from \code{c14_curve}, \code{vctrs_rcrd}, \code{vctrs_vctr}) of length 3301.
+An object of class \code{c14_curve_14c} (inherits from \code{c14_curve}, \code{data.frame}) with 3301 rows and 5 columns.
 
-An object of class \code{c14_curve_14c} (inherits from \code{c14_curve}, \code{vctrs_rcrd}, \code{vctrs_vctr}) of length 1538.
+An object of class \code{c14_curve_14c} (inherits from \code{c14_curve}, \code{data.frame}) with 1538 rows and 5 columns.
 
-An object of class \code{c14_curve_14c} (inherits from \code{c14_curve}, \code{vctrs_rcrd}, \code{vctrs_vctr}) of length 1569.
+An object of class \code{c14_curve_14c} (inherits from \code{c14_curve}, \code{data.frame}) with 1569 rows and 5 columns.
 }
 \source{
 \url{http://intcal.org/curves/} and \url{http://calib.org/CALIBomb/}

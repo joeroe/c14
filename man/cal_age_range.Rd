@@ -4,19 +4,22 @@
 \alias{cal_age_range}
 \alias{cal_age_min}
 \alias{cal_age_max}
-\title{Range of a calendar probability distribution}
+\title{Range of calibrated radiocarbon dates}
 \usage{
-cal_age_range(x, min_pdens = 0)
+cal_age_range(x, min_pdens = NULL)
 
-cal_age_min(x, min_pdens = 0)
+cal_age_min(x, min_pdens = NULL)
 
-cal_age_max(x, min_pdens = 0)
+cal_age_max(x, min_pdens = NULL)
 }
 \arguments{
 \item{x}{A \link{cal} vector of calendar probability distributions.}
 
-\item{min_pdens}{Ignores ages with values less than the given value when
-calculating the minimum or maximum. Default: 0.}
+\item{min_pdens}{Controls the minimum probability density threshold used to
+determine boundaries. The default is \code{pdens > 0} within a plausible range
+around the calibrated date. Set \code{min_pdens} to a value between 0 and 1 to
+futher constrain the range or set \code{min_pdens = 0} to find the absolute
+boundaries on the full range of the calibration curve.}
 }
 \value{
 A data frame with two columns giving the minimum (\code{min}) and maximum
@@ -24,7 +27,8 @@ A data frame with two columns giving the minimum (\code{min}) and maximum
 }
 \description{
 Functions for calculating the minimum and maximum ages of a \link{cal} vector.
-This function does not take into account the probability distribution.
+The range is determined by the probability distribution, with the extent
+controlled by the \code{min_pdens} parameter.
 }
 \examples{
 x <- c14_calibrate(c(10000, 9000, 8000), rep(10, 3))
@@ -34,7 +38,8 @@ cal_age_max(x)
 cal_age_range(x)
 }
 \seealso{
-Other functions for summarising calibrated radiocarbon dates: 
-\code{\link{cal_point}()}
+Other functions for summarising calibrated radiocarbon dates:
+\code{\link[=cal_hdr]{cal_hdr()}},
+\code{\link[=cal_point]{cal_point()}}
 }
 \concept{functions for summarising calibrated radiocarbon dates}

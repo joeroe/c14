@@ -55,7 +55,8 @@ cal_point(c14_calibrate(10000, 30))
 \insertAllCited{}
 }
 \seealso{
-Other functions for summarising calibrated radiocarbon dates: 
-\code{\link{cal_age_range}()}
+Other functions for summarising calibrated radiocarbon dates:
+\code{\link[=cal_age_range]{cal_age_range()}},
+\code{\link[=cal_hdr]{cal_hdr()}}
 }
 \concept{functions for summarising calibrated radiocarbon dates}
