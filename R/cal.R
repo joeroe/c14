@@ -113,7 +113,7 @@ format.c14_cal <- function(x, ...) {
 
 #' @export
 vec_ptype2.c14_cal.c14_cal <- function(x, y, ...) {
-  new_cal()
+  new_cal(curve = cal_c14_curve(x))
 }
 
 #' @export
