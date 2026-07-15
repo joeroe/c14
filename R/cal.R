@@ -100,7 +100,7 @@ format.c14_cal <- function(x, ...) {
   
   out <- purrr::map_chr(hdi, function(interval) {
     era_label <- era::era_label(era::yr_era(interval[1]))
-    sprintf("%d–%d %s", 
+    sprintf("%d\u2013%d %s", 
             as.integer(interval[1]), 
             as.integer(interval[2]), 
             era_label)
