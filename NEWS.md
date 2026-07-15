@@ -4,7 +4,7 @@
 * New individual functions for point summaries of calibrated radiocarbon dates,
   replacing `cal_point()` (documented under `?cal_point`): `cal_mode()`,
   `cal_median()`, `cal_mean()`, `cal_local_mode()`, and `cal_central()`.
-* Package no longer depends on checkmate (depends), mockery, readr, readxl, 
+* Package no longer depends on checkmate, curl (depends), mockery, readr, readxl, 
   usethis (suggests), or dplyr (suggests, but still required to build website)
 * New `cal_probability()` summary of the probability that a calibrated date
   lies in a specified range (#38)

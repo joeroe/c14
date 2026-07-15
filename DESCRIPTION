@@ -40,7 +40,6 @@ Depends:
 Imports:
     Rdpack,
     controller,
-    curl,
     era (>= 0.4.0),
     furrr,
     mathjaxr,
