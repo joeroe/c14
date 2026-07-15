@@ -1,5 +1,6 @@
 # c14 v0.1.0.9000 (development version)
 
+* New introductory vignette for package (`vignette("c14")`)
 * New individual functions for point summaries of calibrated radiocarbon dates,
   replacing `cal_point()` (documented under `?cal_point`): `cal_mode()`,
   `cal_median()`, `cal_mean()`, `cal_local_mode()`, and `cal_central()`.
