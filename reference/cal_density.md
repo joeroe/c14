@@ -20,7 +20,7 @@ density(x, ...)
 - x:
 
   A [cal](https://c14.joeroe.io/reference/cal.md) vector of calendar
-  probability distributions
+  probability distributions.
 
 - bw:
 
@@ -34,7 +34,7 @@ density(x, ...)
 - ...:
 
   Further arguments passed to
-  [`stats::density()`](https://rdrr.io/r/stats/density.html)
+  [`stats::density()`](https://rdrr.io/r/stats/density.html).
 
 - times:
 
@@ -103,20 +103,20 @@ Other functions for aggregating calendar probability distributions:
 data(shub1_c14)
 shub1_cal <- c14_calibrate(shub1_c14$c14_age, shub1_c14$c14_error)
 cal_density(shub1_cal)
-#> # A tibble: 14,331 × 3
-#>           age  .estimate    .error
-#>          <yr>      <dbl>     <dbl>
-#>  1 930 cal BP 0.00000583 0.0000291
-#>  2 931 cal BP 0.00000613 0.0000306
-#>  3 932 cal BP 0.00000644 0.0000321
-#>  4 933 cal BP 0.00000674 0.0000336
-#>  5 934 cal BP 0.00000705 0.0000351
-#>  6 935 cal BP 0.00000735 0.0000366
-#>  7 936 cal BP 0.00000766 0.0000381
-#>  8 937 cal BP 0.00000796 0.0000396
-#>  9 938 cal BP 0.00000827 0.0000411
-#> 10 939 cal BP 0.00000857 0.0000426
-#> # ℹ 14,321 more rows
+#> # A tibble: 14,792 × 3
+#>           age .estimate   .error
+#>          <yr>     <dbl>    <dbl>
+#>  1 789 cal BP  2.83e-14 1.41e-13
+#>  2 790 cal BP  1.90e-13 9.50e-13
+#>  3 791 cal BP  3.52e-13 1.76e-12
+#>  4 792 cal BP  5.14e-13 2.57e-12
+#>  5 793 cal BP  6.75e-13 3.38e-12
+#>  6 794 cal BP  8.37e-13 4.18e-12
+#>  7 795 cal BP  9.99e-13 4.99e-12
+#>  8 796 cal BP  1.16e-12 5.80e-12
+#>  9 797 cal BP  1.32e-12 6.61e-12
+#> 10 798 cal BP  1.48e-12 7.42e-12
+#> # ℹ 14,782 more rows
 
 # Stratify and weight bootstrap estimation by phase
 cal_density(shub1_cal, strata = shub1_c14$phase)
@@ -145,18 +145,18 @@ cal_density(shub1_cal, strata = shub1_c14$phase)
 #> Warning: sum(weights) != 1  -- will not get true density
 #> Warning: sum(weights) != 1  -- will not get true density
 #> Warning: sum(weights) != 1  -- will not get true density
-#> # A tibble: 14,331 × 3
-#>           age .estimate    .error
-#>          <yr>     <dbl>     <dbl>
-#>  1 930 cal BP 0.0000184 0.0000727
-#>  2 931 cal BP 0.0000202 0.0000790
-#>  3 932 cal BP 0.0000220 0.0000852
-#>  4 933 cal BP 0.0000238 0.0000914
-#>  5 934 cal BP 0.0000256 0.0000977
-#>  6 935 cal BP 0.0000274 0.000104 
-#>  7 936 cal BP 0.0000292 0.000110 
-#>  8 937 cal BP 0.0000310 0.000116 
-#>  9 938 cal BP 0.0000328 0.000123 
-#> 10 939 cal BP 0.0000346 0.000129 
-#> # ℹ 14,321 more rows
+#> # A tibble: 14,792 × 3
+#>           age .estimate   .error
+#>          <yr>     <dbl>    <dbl>
+#>  1 789 cal BP  8.33e-14 4.16e-13
+#>  2 790 cal BP  5.61e-13 2.81e-12
+#>  3 791 cal BP  1.04e-12 5.20e-12
+#>  4 792 cal BP  1.52e-12 7.59e-12
+#>  5 793 cal BP  2.00e-12 9.98e-12
+#>  6 794 cal BP  2.47e-12 1.24e-11
+#>  7 795 cal BP  2.95e-12 1.48e-11
+#>  8 796 cal BP  3.43e-12 1.71e-11
+#>  9 797 cal BP  3.91e-12 1.95e-11
+#> 10 798 cal BP  4.39e-12 2.19e-11
+#> # ℹ 14,782 more rows
 ```

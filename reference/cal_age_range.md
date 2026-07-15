@@ -1,17 +1,18 @@
-# Range of a calendar probability distribution
+# Range of calibrated radiocarbon dates
 
 Functions for calculating the minimum and maximum ages of a
-[cal](https://c14.joeroe.io/reference/cal.md) vector. This function does
-not take into account the probability distribution.
+[cal](https://c14.joeroe.io/reference/cal.md) vector. The range is
+determined by the probability distribution, with the extent controlled
+by the `min_pdens` parameter.
 
 ## Usage
 
 ``` r
-cal_age_range(x, min_pdens = 0)
+cal_age_range(x, min_pdens = NULL)
 
-cal_age_min(x, min_pdens = 0)
+cal_age_min(x, min_pdens = NULL)
 
-cal_age_max(x, min_pdens = 0)
+cal_age_max(x, min_pdens = NULL)
 ```
 
 ## Arguments
@@ -23,8 +24,11 @@ cal_age_max(x, min_pdens = 0)
 
 - min_pdens:
 
-  Ignores ages with values less than the given value when calculating
-  the minimum or maximum. Default: 0.
+  Controls the minimum probability density threshold used to determine
+  boundaries. The default is `pdens > 0` within a plausible range around
+  the calibrated date. Set `min_pdens` to a value between 0 and 1 to
+  futher constrain the range or set `min_pdens = 0` to find the absolute
+  boundaries on the full range of the calibration curve.
 
 ## Value
 
@@ -34,6 +38,7 @@ A data frame with two columns giving the minimum (`min`) and maximum
 ## See also
 
 Other functions for summarising calibrated radiocarbon dates:
+[`cal_hdr()`](https://c14.joeroe.io/reference/cal_hdr.md),
 [`cal_point()`](https://c14.joeroe.io/reference/cal_point.md)
 
 ## Examples
@@ -43,15 +48,15 @@ x <- c14_calibrate(c(10000, 9000, 8000), rep(10, 3))
 
 cal_age_min(x)
 #> # cal BP years <yr[3]>:
-#> [1] 11275  9970  8650
+#> [1] 11245  9910  8605
 #> # Era: Before Present (cal BP): Gregorian years (365.2425 days), counted backwards from 1950
 cal_age_max(x)
 #> # cal BP years <yr[3]>:
-#> [1] 11730 10235  9005
+#> [1] 11805 10245  9080
 #> # Era: Before Present (cal BP): Gregorian years (365.2425 days), counted backwards from 1950
 cal_age_range(x)
 #>     min   max
-#> 1 11275 11730
-#> 2  9970 10235
-#> 3  8650  9005
+#> 1 11245 11805
+#> 2  9910 10245
+#> 3  8605  9080
 ```

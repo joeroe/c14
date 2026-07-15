@@ -6,13 +6,7 @@ distribution using a calibration curve.
 ## Usage
 
 ``` r
-c14_calibrate(
-  c14_age,
-  c14_error,
-  ...,
-  engine = c("intcal", "rcarbon", "oxcal", "bchron"),
-  min_pdens = 1e-05
-)
+c14_calibrate(c14_age, c14_error, c14_curve = IntCal20)
 ```
 
 ## Arguments
@@ -25,54 +19,25 @@ c14_calibrate(
 
   Vector of standard errors associated with `c14_age`.
 
-- ...:
+- c14_curve:
 
-  Optional arguments passed to calibration function (see below).
-
-- engine:
-
-  Method to use for calibration. The default (`"intcal"`) is fast and
-  simple. Other options require additional packages to be installed.
-  Available engines:
-
-  - `"intcal"`:
-    [`IntCal::caldist()`](https://rdrr.io/pkg/IntCal/man/caldist.html)
-    (default)
-
-  - `"rcarbon"`:
-    [`rcarbon::calibrate()`](https://rdrr.io/pkg/rcarbon/man/calibrate.html)
-
-  - `"oxcal"`:
-    [`oxcAAR::oxcalCalibrate()`](https://rdrr.io/pkg/oxcAAR/man/oxcalCalibrate.html)
-
-  - `"bchron"`:
-    [`Bchron::BchronCalibrate()`](https://andrewcparnell.github.io/Bchron/reference/BchronCalibrate.html)
-
-- min_pdens:
-
-  Minimum probability density threshold below which ages are excluded
-  from the result. Set to `NULL` to use the full calibration curve.
+  A [c14_curve](https://c14.joeroe.io/reference/c14_curve.md) object or
+  list of `c14_curve` objects. See
+  [c14_curves](https://c14.joeroe.io/reference/c14_curves.md) for a list
+  of the standard curves provided with the packages. Default:
+  `IntCal20`.
 
 ## Value
 
-A list of `cal` objects.
-
-## Details
-
-`c14_age` and `c14_error` are recycled to a common length.
-
-Parallelisation is supported for engines `"intcal"` and `"rcarbon"` and
-can dramatically speed up calibration of large numbers of dates. For
-`"intcal"`, it must first be enabled with
-[`future::plan()`](https://future.futureverse.org/reference/plan.html).
-For `"rcarbon"`, it requires the `doSNOW` package and can be controlled
-with the `ncores` argument of
-[`rcarbon::calibrate()`](https://rdrr.io/pkg/rcarbon/man/calibrate.html).
+A `cal` vector.
 
 ## Examples
 
 ``` r
 c14_calibrate(1000, 30)
 #> <c14_cal[1]>
-#> [1] c. 922 cal BP
+#> [1] 797–956 cal BP
+c14_calibrate(1000, 30, IntCal20)
+#> <c14_cal[1]>
+#> [1] 797–956 cal BP
 ```

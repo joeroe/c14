@@ -20,15 +20,15 @@
 ## Citation
 
 Source:
-[`DESCRIPTION`](https://github.com/joeroe/c14/blob/v0.1.0/DESCRIPTION)
+[`DESCRIPTION`](https://github.com/joeroe/c14/blob/master/DESCRIPTION)
 
 Roe J (2026). *c14: Tidy Radiocarbon Data*. R package version
-0.0.0.9000, <https://c14.joeroe.io>.
+0.1.0.9000, <https://c14.joeroe.io>.
 
     @Manual{,
       title = {c14: Tidy Radiocarbon Data},
       author = {Joe Roe},
       year = {2026},
-      note = {R package version 0.0.0.9000},
+      note = {R package version 0.1.0.9000},
       url = {https://c14.joeroe.io},
     }

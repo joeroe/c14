@@ -17,7 +17,7 @@ random sample of ages drawn from their probability distributions."><script async
 
     <a class="navbar-brand me-2" href="../index.html">c14</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.0.0.9000</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.1.0.9000</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -39,7 +39,7 @@ random sample of ages drawn from their probability distributions."><script async
   <main id="main" class="col-md-9"><div class="page-header">
 
       <h1>Kernel density estimation of calendar probability distributions</h1>
-      <small class="dont-index">Source: <a href="https://github.com/joeroe/c14/blob/v0.1.0/R/cal_aggregate.R" class="external-link"><code>R/cal_aggregate.R</code></a></small>
+      <small class="dont-index">Source: <a href="https://github.com/joeroe/c14/blob/master/R/cal_aggregate.R" class="external-link"><code>R/cal_aggregate.R</code></a></small>
       <div class="d-none name"><code>cal_density.Rd</code></div>
     </div>
 
@@ -65,7 +65,7 @@ random sample of ages drawn from their probability distributions.</p>
 
 
 <dl><dt id="arg-x">x<a class="anchor" aria-label="anchor" href="#arg-x"></a></dt>
-<dd><p>A <a href="cal.html">cal</a> vector of calendar probability distributions</p></dd>
+<dd><p>A <a href="cal.html">cal</a> vector of calendar probability distributions.</p></dd>
 
 
 <dt id="arg-bw">bw<a class="anchor" aria-label="anchor" href="#arg-bw"></a></dt>
@@ -76,7 +76,7 @@ and therefore should be avoided. Default: <code>30</code> (years).</p></dd>
 
 
 <dt id="arg--">...<a class="anchor" aria-label="anchor" href="#arg--"></a></dt>
-<dd><p>Further arguments passed to <code><a href="https://rdrr.io/r/stats/density.html" class="external-link">stats::density()</a></code></p></dd>
+<dd><p>Further arguments passed to <code><a href="https://rdrr.io/r/stats/density.html" class="external-link">stats::density()</a></code>.</p></dd>
 
 
 <dt id="arg-times">times<a class="anchor" aria-label="anchor" href="#arg-times"></a></dt>
@@ -144,20 +144,20 @@ ISSN 1573-7764.
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/utils/data.html" class="external-link">data</a></span><span class="op">(</span><span class="va">shub1_c14</span><span class="op">)</span></span></span>
 <span class="r-in"><span><span class="va">shub1_cal</span> <span class="op">&lt;-</span> <span class="fu"><a href="c14_calibrate.html">c14_calibrate</a></span><span class="op">(</span><span class="va">shub1_c14</span><span class="op">$</span><span class="va">c14_age</span>, <span class="va">shub1_c14</span><span class="op">$</span><span class="va">c14_error</span><span class="op">)</span></span></span>
 <span class="r-in"><span><span class="fu">cal_density</span><span class="op">(</span><span class="va">shub1_cal</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 14,331 × 3</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>           age  .estimate    .error</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>          <span style="color: #949494; font-style: italic;">&lt;yr&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 1</span> 930 <span style="color: #949494;">cal BP</span> 0.000<span style="text-decoration: underline;">005</span>83 0.000<span style="text-decoration: underline;">029</span>1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 2</span> 931 <span style="color: #949494;">cal BP</span> 0.000<span style="text-decoration: underline;">006</span>13 0.000<span style="text-decoration: underline;">030</span>6</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 3</span> 932 <span style="color: #949494;">cal BP</span> 0.000<span style="text-decoration: underline;">006</span>44 0.000<span style="text-decoration: underline;">032</span>1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 4</span> 933 <span style="color: #949494;">cal BP</span> 0.000<span style="text-decoration: underline;">006</span>74 0.000<span style="text-decoration: underline;">033</span>6</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 5</span> 934 <span style="color: #949494;">cal BP</span> 0.000<span style="text-decoration: underline;">007</span>05 0.000<span style="text-decoration: underline;">035</span>1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 6</span> 935 <span style="color: #949494;">cal BP</span> 0.000<span style="text-decoration: underline;">007</span>35 0.000<span style="text-decoration: underline;">036</span>6</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 7</span> 936 <span style="color: #949494;">cal BP</span> 0.000<span style="text-decoration: underline;">007</span>66 0.000<span style="text-decoration: underline;">038</span>1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 8</span> 937 <span style="color: #949494;">cal BP</span> 0.000<span style="text-decoration: underline;">007</span>96 0.000<span style="text-decoration: underline;">039</span>6</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span> 938 <span style="color: #949494;">cal BP</span> 0.000<span style="text-decoration: underline;">008</span>27 0.000<span style="text-decoration: underline;">041</span>1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span> 939 <span style="color: #949494;">cal BP</span> 0.000<span style="text-decoration: underline;">008</span>57 0.000<span style="text-decoration: underline;">042</span>6</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 14,321 more rows</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 14,792 × 3</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>           age .estimate   .error</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>          <span style="color: #949494; font-style: italic;">&lt;yr&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 1</span> 789 <span style="color: #949494;">cal BP</span>  2.83<span style="color: #949494;">e</span><span style="color: #BB0000;">-14</span> 1.41<span style="color: #949494;">e</span><span style="color: #BB0000;">-13</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 2</span> 790 <span style="color: #949494;">cal BP</span>  1.90<span style="color: #949494;">e</span><span style="color: #BB0000;">-13</span> 9.50<span style="color: #949494;">e</span><span style="color: #BB0000;">-13</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 3</span> 791 <span style="color: #949494;">cal BP</span>  3.52<span style="color: #949494;">e</span><span style="color: #BB0000;">-13</span> 1.76<span style="color: #949494;">e</span><span style="color: #BB0000;">-12</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 4</span> 792 <span style="color: #949494;">cal BP</span>  5.14<span style="color: #949494;">e</span><span style="color: #BB0000;">-13</span> 2.57<span style="color: #949494;">e</span><span style="color: #BB0000;">-12</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 5</span> 793 <span style="color: #949494;">cal BP</span>  6.75<span style="color: #949494;">e</span><span style="color: #BB0000;">-13</span> 3.38<span style="color: #949494;">e</span><span style="color: #BB0000;">-12</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 6</span> 794 <span style="color: #949494;">cal BP</span>  8.37<span style="color: #949494;">e</span><span style="color: #BB0000;">-13</span> 4.18<span style="color: #949494;">e</span><span style="color: #BB0000;">-12</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 7</span> 795 <span style="color: #949494;">cal BP</span>  9.99<span style="color: #949494;">e</span><span style="color: #BB0000;">-13</span> 4.99<span style="color: #949494;">e</span><span style="color: #BB0000;">-12</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 8</span> 796 <span style="color: #949494;">cal BP</span>  1.16<span style="color: #949494;">e</span><span style="color: #BB0000;">-12</span> 5.80<span style="color: #949494;">e</span><span style="color: #BB0000;">-12</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span> 797 <span style="color: #949494;">cal BP</span>  1.32<span style="color: #949494;">e</span><span style="color: #BB0000;">-12</span> 6.61<span style="color: #949494;">e</span><span style="color: #BB0000;">-12</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span> 798 <span style="color: #949494;">cal BP</span>  1.48<span style="color: #949494;">e</span><span style="color: #BB0000;">-12</span> 7.42<span style="color: #949494;">e</span><span style="color: #BB0000;">-12</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 14,782 more rows</span></span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="co"># Stratify and weight bootstrap estimation by phase</span></span></span>
 <span class="r-in"><span><span class="fu">cal_density</span><span class="op">(</span><span class="va">shub1_cal</span>, strata <span class="op">=</span> <span class="va">shub1_c14</span><span class="op">$</span><span class="va">phase</span><span class="op">)</span></span></span>
@@ -186,20 +186,20 @@ ISSN 1573-7764.
 <span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>sum(weights) != 1  -- will not get true density</span>
 <span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>sum(weights) != 1  -- will not get true density</span>
 <span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>sum(weights) != 1  -- will not get true density</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 14,331 × 3</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>           age .estimate    .error</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>          <span style="color: #949494; font-style: italic;">&lt;yr&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 1</span> 930 <span style="color: #949494;">cal BP</span> 0.000<span style="text-decoration: underline;">018</span>4 0.000<span style="text-decoration: underline;">072</span>7</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 2</span> 931 <span style="color: #949494;">cal BP</span> 0.000<span style="text-decoration: underline;">020</span>2 0.000<span style="text-decoration: underline;">079</span>0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 3</span> 932 <span style="color: #949494;">cal BP</span> 0.000<span style="text-decoration: underline;">022</span>0 0.000<span style="text-decoration: underline;">085</span>2</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 4</span> 933 <span style="color: #949494;">cal BP</span> 0.000<span style="text-decoration: underline;">023</span>8 0.000<span style="text-decoration: underline;">091</span>4</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 5</span> 934 <span style="color: #949494;">cal BP</span> 0.000<span style="text-decoration: underline;">025</span>6 0.000<span style="text-decoration: underline;">097</span>7</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 6</span> 935 <span style="color: #949494;">cal BP</span> 0.000<span style="text-decoration: underline;">027</span>4 0.000<span style="text-decoration: underline;">104</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 7</span> 936 <span style="color: #949494;">cal BP</span> 0.000<span style="text-decoration: underline;">029</span>2 0.000<span style="text-decoration: underline;">110</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 8</span> 937 <span style="color: #949494;">cal BP</span> 0.000<span style="text-decoration: underline;">031</span>0 0.000<span style="text-decoration: underline;">116</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span> 938 <span style="color: #949494;">cal BP</span> 0.000<span style="text-decoration: underline;">032</span>8 0.000<span style="text-decoration: underline;">123</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span> 939 <span style="color: #949494;">cal BP</span> 0.000<span style="text-decoration: underline;">034</span>6 0.000<span style="text-decoration: underline;">129</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 14,321 more rows</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 14,792 × 3</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>           age .estimate   .error</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>          <span style="color: #949494; font-style: italic;">&lt;yr&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 1</span> 789 <span style="color: #949494;">cal BP</span>  8.33<span style="color: #949494;">e</span><span style="color: #BB0000;">-14</span> 4.16<span style="color: #949494;">e</span><span style="color: #BB0000;">-13</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 2</span> 790 <span style="color: #949494;">cal BP</span>  5.61<span style="color: #949494;">e</span><span style="color: #BB0000;">-13</span> 2.81<span style="color: #949494;">e</span><span style="color: #BB0000;">-12</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 3</span> 791 <span style="color: #949494;">cal BP</span>  1.04<span style="color: #949494;">e</span><span style="color: #BB0000;">-12</span> 5.20<span style="color: #949494;">e</span><span style="color: #BB0000;">-12</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 4</span> 792 <span style="color: #949494;">cal BP</span>  1.52<span style="color: #949494;">e</span><span style="color: #BB0000;">-12</span> 7.59<span style="color: #949494;">e</span><span style="color: #BB0000;">-12</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 5</span> 793 <span style="color: #949494;">cal BP</span>  2.00<span style="color: #949494;">e</span><span style="color: #BB0000;">-12</span> 9.98<span style="color: #949494;">e</span><span style="color: #BB0000;">-12</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 6</span> 794 <span style="color: #949494;">cal BP</span>  2.47<span style="color: #949494;">e</span><span style="color: #BB0000;">-12</span> 1.24<span style="color: #949494;">e</span><span style="color: #BB0000;">-11</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 7</span> 795 <span style="color: #949494;">cal BP</span>  2.95<span style="color: #949494;">e</span><span style="color: #BB0000;">-12</span> 1.48<span style="color: #949494;">e</span><span style="color: #BB0000;">-11</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 8</span> 796 <span style="color: #949494;">cal BP</span>  3.43<span style="color: #949494;">e</span><span style="color: #BB0000;">-12</span> 1.71<span style="color: #949494;">e</span><span style="color: #BB0000;">-11</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span> 797 <span style="color: #949494;">cal BP</span>  3.91<span style="color: #949494;">e</span><span style="color: #BB0000;">-12</span> 1.95<span style="color: #949494;">e</span><span style="color: #BB0000;">-11</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span> 798 <span style="color: #949494;">cal BP</span>  4.39<span style="color: #949494;">e</span><span style="color: #BB0000;">-12</span> 2.19<span style="color: #949494;">e</span><span style="color: #BB0000;">-11</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 14,782 more rows</span></span>
 </code></pre></div>
     </div>
   </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>

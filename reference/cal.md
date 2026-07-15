@@ -1,46 +1,42 @@
 # Calibrated radiocarbon dates
 
-The `cal` class represents a vector of calendar probability
-distribution; typically calibrated radiocarbon dates.
-
-`cal()` constructs a new `cal` vector from a set of data frames
-containing the raw probability distributions.
+The `cal` class represents a vector of calibrated radiocarbon dates as a
+lazy record. Each element stores the parameters needed to derive a
+calendar probability distribution (`c14_age`, `c14_error`, and
+`c14_curve`), but does not compute the distribution until requested.
 
 ## Usage
 
 ``` r
-cal(..., .era = era::era("cal BP"))
+cal(c14_age = double(), c14_error = double(), curve = c14_curve())
 ```
 
 ## Arguments
 
-- ...:
+- c14_age:
 
-  \<[dynamic-dots](https://rlang.r-lib.org/reference/dyn-dots.html)\> A
-  set of data frames. Each should have two columns, the first a vector
-  of calendar ages, and the second a vector of associated probability
-  densities. If the first column is not an
-  [`era::yr()`](https://era.joeroe.io/reference/yr.html) vector, it is
-  coerced to one using the time scale specified by `.era`.
+  Vector of uncalibrated radiocarbon ages.
 
-- .era:
+- c14_error:
 
-  [`era::era()`](https://era.joeroe.io/reference/era.html) object
-  describing the time scale used for ages. Defaults to calendar years
-  Before Present (`era("cal BP")`). Not used if the ages specified in
-  `...` are already
-  [`era::yr()`](https://era.joeroe.io/reference/yr.html) vectors.
+  Vector of standard errors associated with `c14_age`.
+
+- curve:
+
+  A `c14_curve` object or list of `c14_curve` objects. Default:
+  `IntCal20`.
 
 ## Value
 
-A list of data frames with class `cal` (`c14_cal`). Each element has two
-columns: `age` and `pdens`.
+A vector of class `cal` (`c14_cal`).
 
 ## Examples
 
 ``` r
-# Uniform distribution between 1 and 10 BP:
-cal(data.frame(age = era::yr(1:10, "cal BP"), pdens = rep(0.1, 10)))
+cal(1000, 30, curve = IntCal20)
 #> <c14_cal[1]>
-#> [1] c. 1 cal BP
+#> [1] 797–956 cal BP
+cal(c(1000, 2000), c(30, 40), curve = IntCal20)
+#> <c14_cal[2]>
+#> [1]   797–956 cal BP 1827–2044 cal BP
 ```

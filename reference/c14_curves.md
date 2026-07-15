@@ -112,43 +112,43 @@ For post-bomb curves:
   Errors (sigma values) associated with `f14c`.
 
 An object of class `c14_curve_14c` (inherits from `c14_curve`,
-`vctrs_rcrd`, `vctrs_vctr`) of length 9501.
+`data.frame`) with 9501 rows and 5 columns.
 
 An object of class `c14_curve_14c` (inherits from `c14_curve`,
-`vctrs_rcrd`, `vctrs_vctr`) of length 9501.
+`data.frame`) with 9501 rows and 5 columns.
 
 An object of class `c14_curve_14c` (inherits from `c14_curve`,
-`vctrs_rcrd`, `vctrs_vctr`) of length 5501.
+`data.frame`) with 5501 rows and 5 columns.
 
 An object of class `c14_curve_14c` (inherits from `c14_curve`,
-`vctrs_rcrd`, `vctrs_vctr`) of length 5141.
+`data.frame`) with 5141 rows and 5 columns.
 
 An object of class `c14_curve_14c` (inherits from `c14_curve`,
-`vctrs_rcrd`, `vctrs_vctr`) of length 5141.
+`data.frame`) with 5141 rows and 5 columns.
 
 An object of class `c14_curve_14c` (inherits from `c14_curve`,
-`vctrs_rcrd`, `vctrs_vctr`) of length 4801.
+`data.frame`) with 4801 rows and 5 columns.
 
 An object of class `c14_curve_14c` (inherits from `c14_curve`,
-`vctrs_rcrd`, `vctrs_vctr`) of length 3522.
+`data.frame`) with 3522 rows and 5 columns.
 
 An object of class `c14_curve_14c` (inherits from `c14_curve`,
-`vctrs_rcrd`, `vctrs_vctr`) of length 3651.
+`data.frame`) with 3651 rows and 5 columns.
 
 An object of class `c14_curve_14c` (inherits from `c14_curve`,
-`vctrs_rcrd`, `vctrs_vctr`) of length 3302.
+`data.frame`) with 3302 rows and 5 columns.
 
 An object of class `c14_curve_14c` (inherits from `c14_curve`,
-`vctrs_rcrd`, `vctrs_vctr`) of length 2482.
+`data.frame`) with 2482 rows and 5 columns.
 
 An object of class `c14_curve_14c` (inherits from `c14_curve`,
-`vctrs_rcrd`, `vctrs_vctr`) of length 3301.
+`data.frame`) with 3301 rows and 5 columns.
 
 An object of class `c14_curve_14c` (inherits from `c14_curve`,
-`vctrs_rcrd`, `vctrs_vctr`) of length 1538.
+`data.frame`) with 1538 rows and 5 columns.
 
 An object of class `c14_curve_14c` (inherits from `c14_curve`,
-`vctrs_rcrd`, `vctrs_vctr`) of length 1569.
+`data.frame`) with 1569 rows and 5 columns.
 
 ## Source
 

@@ -7,10 +7,10 @@ ages.
 ## Usage
 
 ``` r
-cal_sum(x, range = cal_age_common(x), normalise = FALSE, ...)
+cal_sum(x, range = NULL, normalise = FALSE, ...)
 
 # S3 method for class 'c14_cal'
-sum(x, range = cal_age_common(x), normalise = FALSE, ...)
+sum(x, ..., normalise = FALSE)
 ```
 
 ## Arguments
@@ -18,12 +18,12 @@ sum(x, range = cal_age_common(x), normalise = FALSE, ...)
 - x:
 
   A [cal](https://c14.joeroe.io/reference/cal.md) vector of calendar
-  probability distributions
+  probability distributions.
 
 - range:
 
   Range of ages over which to sum. Defaults to the maximum range of `x`
-  at one year resolution.
+  at native resolution.
 
 - normalise:
 
@@ -36,8 +36,7 @@ sum(x, range = cal_age_common(x), normalise = FALSE, ...)
 
 ## Value
 
-The summed probability distribution as a
-[cal](https://c14.joeroe.io/reference/cal.md) vector.
+The summed probability distribution as a `cal_dist` vector of length 1.
 
 ## See also
 
@@ -49,6 +48,6 @@ Other functions for aggregating calendar probability distributions:
 ``` r
 shub1_cal <- c14_calibrate(shub1_c14$c14_age, shub1_c14$c14_error)
 cal_sum(shub1_cal)
-#> <c14_cal[1]>
+#> <c14_cal_dist[1]>
 #> [1] c. 14250 cal BP
 ```

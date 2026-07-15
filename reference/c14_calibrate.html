@@ -9,7 +9,7 @@ using a calibration curve."><script async src="https://umami.joeroe.io/script.js
 
     <a class="navbar-brand me-2" href="../index.html">c14</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.0.0.9000</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.1.0.9000</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -31,7 +31,7 @@ using a calibration curve."><script async src="https://umami.joeroe.io/script.js
   <main id="main" class="col-md-9"><div class="page-header">
 
       <h1>Calibrate radiocarbon dates</h1>
-      <small class="dont-index">Source: <a href="https://github.com/joeroe/c14/blob/v0.1.0/R/c14_calibrate.R" class="external-link"><code>R/c14_calibrate.R</code></a></small>
+      <small class="dont-index">Source: <a href="https://github.com/joeroe/c14/blob/master/R/c14_calibrate.R" class="external-link"><code>R/c14_calibrate.R</code></a></small>
       <div class="d-none name"><code>c14_calibrate.Rd</code></div>
     </div>
 
@@ -42,13 +42,7 @@ using a calibration curve.</p>
 
     <div class="section level2">
     <h2 id="ref-usage">Usage<a class="anchor" aria-label="anchor" href="#ref-usage"></a></h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">c14_calibrate</span><span class="op">(</span></span>
-<span>  <span class="va">c14_age</span>,</span>
-<span>  <span class="va">c14_error</span>,</span>
-<span>  <span class="va">...</span>,</span>
-<span>  engine <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"intcal"</span>, <span class="st">"rcarbon"</span>, <span class="st">"oxcal"</span>, <span class="st">"bchron"</span><span class="op">)</span>,</span>
-<span>  min_pdens <span class="op">=</span> <span class="fl">1e-05</span></span>
-<span><span class="op">)</span></span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">c14_calibrate</span><span class="op">(</span><span class="va">c14_age</span>, <span class="va">c14_error</span>, c14_curve <span class="op">=</span> <span class="va">IntCal20</span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div class="section level2">
@@ -63,44 +57,25 @@ using a calibration curve.</p>
 <dd><p>Vector of standard errors associated with <code>c14_age</code>.</p></dd>
 
 
-<dt id="arg--">...<a class="anchor" aria-label="anchor" href="#arg--"></a></dt>
-<dd><p>Optional arguments passed to calibration function (see below).</p></dd>
-
-
-<dt id="arg-engine">engine<a class="anchor" aria-label="anchor" href="#arg-engine"></a></dt>
-<dd><p>Method to use for calibration. The default (<code>"intcal"</code>) is
-fast and simple. Other options require additional packages to be installed.
-Available engines:</p><ul><li><p><code>"intcal"</code>: <code><a href="https://rdrr.io/pkg/IntCal/man/caldist.html" class="external-link">IntCal::caldist()</a></code> (default)</p></li>
-<li><p><code>"rcarbon"</code>: <code><a href="https://rdrr.io/pkg/rcarbon/man/calibrate.html" class="external-link">rcarbon::calibrate()</a></code></p></li>
-<li><p><code>"oxcal"</code>: <code><a href="https://rdrr.io/pkg/oxcAAR/man/oxcalCalibrate.html" class="external-link">oxcAAR::oxcalCalibrate()</a></code></p></li>
-<li><p><code>"bchron"</code>: <code><a href="https://andrewcparnell.github.io/Bchron/reference/BchronCalibrate.html" class="external-link">Bchron::BchronCalibrate()</a></code></p></li>
-</ul></dd>
-
-
-<dt id="arg-min-pdens">min_pdens<a class="anchor" aria-label="anchor" href="#arg-min-pdens"></a></dt>
-<dd><p>Minimum probability density threshold below which ages are
-excluded from the result. Set to <code>NULL</code> to use the full calibration curve.</p></dd>
+<dt id="arg-c-curve">c14_curve<a class="anchor" aria-label="anchor" href="#arg-c-curve"></a></dt>
+<dd><p>A <a href="c14_curve.html">c14_curve</a> object or list of <code>c14_curve</code> objects. See
+<a href="c14_curves.html">c14_curves</a> for a list of the standard curves provided with the packages.
+Default: <code>IntCal20</code>.</p></dd>
 
 </dl></div>
     <div class="section level2">
     <h2 id="value">Value<a class="anchor" aria-label="anchor" href="#value"></a></h2>
-    <p>A list of <code>cal</code> objects.</p>
-    </div>
-    <div class="section level2">
-    <h2 id="details">Details<a class="anchor" aria-label="anchor" href="#details"></a></h2>
-    <p><code>c14_age</code> and <code>c14_error</code> are recycled to a common length.</p>
-<p>Parallelisation is supported for engines <code>"intcal"</code> and <code>"rcarbon"</code> and can
-dramatically speed up calibration of large numbers of dates. For <code>"intcal"</code>,
-it must first be enabled with <code><a href="https://future.futureverse.org/reference/plan.html" class="external-link">future::plan()</a></code>. For <code>"rcarbon"</code>, it requires
-the <code>doSNOW</code> package and can be controlled with the <code>ncores</code> argument of
-<code><a href="https://rdrr.io/pkg/rcarbon/man/calibrate.html" class="external-link">rcarbon::calibrate()</a></code>.</p>
+    <p>A <code>cal</code> vector.</p>
     </div>
 
     <div class="section level2">
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="fu">c14_calibrate</span><span class="op">(</span><span class="fl">1000</span>, <span class="fl">30</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> &lt;c14_cal[1]&gt;</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] c. 922 cal BP</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] 797–956 cal BP</span>
+<span class="r-in"><span><span class="fu">c14_calibrate</span><span class="op">(</span><span class="fl">1000</span>, <span class="fl">30</span>, <span class="va">IntCal20</span><span class="op">)</span></span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> &lt;c14_cal[1]&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] 797–956 cal BP</span>
 </code></pre></div>
     </div>
   </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>

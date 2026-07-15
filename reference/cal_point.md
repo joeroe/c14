@@ -84,7 +84,8 @@ Calibrated Radiocarbon Date?” *Radiocarbon*, **49**(2), 393–401. ISSN
 ## See also
 
 Other functions for summarising calibrated radiocarbon dates:
-[`cal_age_range()`](https://c14.joeroe.io/reference/cal_age_range.md)
+[`cal_age_range()`](https://c14.joeroe.io/reference/cal_age_range.md),
+[`cal_hdr()`](https://c14.joeroe.io/reference/cal_hdr.md)
 
 ## Examples
 

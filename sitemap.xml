@@ -1,5 +1,6 @@
 <urlset xmlns = 'http://www.sitemaps.org/schemas/sitemap/0.9'>
 <url><loc>https://c14.joeroe.io/404.html</loc></url>
+<url><loc>https://c14.joeroe.io/AGENTS.html</loc></url>
 <url><loc>https://c14.joeroe.io/LICENSE-text.html</loc></url>
 <url><loc>https://c14.joeroe.io/LICENSE.html</loc></url>
 <url><loc>https://c14.joeroe.io/authors.html</loc></url>
@@ -26,6 +27,7 @@
 <url><loc>https://c14.joeroe.io/reference/cal.html</loc></url>
 <url><loc>https://c14.joeroe.io/reference/cal_age_range.html</loc></url>
 <url><loc>https://c14.joeroe.io/reference/cal_density.html</loc></url>
+<url><loc>https://c14.joeroe.io/reference/cal_hdr.html</loc></url>
 <url><loc>https://c14.joeroe.io/reference/cal_point.html</loc></url>
 <url><loc>https://c14.joeroe.io/reference/cal_sum.html</loc></url>
 <url><loc>https://c14.joeroe.io/reference/index.html</loc></url>

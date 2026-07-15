@@ -62,7 +62,10 @@ Functions for summarising calibrated radiocarbon dates.
 - [`cal_age_range()`](https://c14.joeroe.io/reference/cal_age_range.md)
   [`cal_age_min()`](https://c14.joeroe.io/reference/cal_age_range.md)
   [`cal_age_max()`](https://c14.joeroe.io/reference/cal_age_range.md) :
-  Range of a calendar probability distribution
+  Range of calibrated radiocarbon dates
+- [`cal_hdr()`](https://c14.joeroe.io/reference/cal_hdr.md)
+  [`cal_hdi()`](https://c14.joeroe.io/reference/cal_hdr.md) : Highest
+  Density Region and Highest Density Interval
 - [`cal_point()`](https://c14.joeroe.io/reference/cal_point.md) : Point
   estimates of calibrated radiocarbon dates
 

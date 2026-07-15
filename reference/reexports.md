@@ -5,4 +5,4 @@ to see their documentation.
 
 - stats:
 
-  [`density`](https://rdrr.io/r/stats/density.html)
+  [`density()`](https://rdrr.io/r/stats/density.html)
