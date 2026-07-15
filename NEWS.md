@@ -1,4 +1,17 @@
-# c14 development version
+# v0.1.0.9000 (development version)
+
+* New `cal_hdi()` and `cal_hdr()` summaries of the highest density interval and
+  region(s) of a calibrated radiocarbon dates
+  * Default printing of `cal` vectors is now the highest density interval
+* `c14_calibrate` and all summary and aggregation functions now use an efficient
+  internal calibration algorithm, instead of an external dependency
+  * `c14_calibrate()` no longer has `engine` or `min_pdens` arguments (#24, #26)
+  * `c14_calibrate()` now accepts a `curve` argument (#9)
+
+# v0.1.0
+
+Development version as of December 2024. Major changes since fork from 
+stratigraphr:
 
 * Revised the definition of the `cal` class, representing calibrated radiocarbon dates:
   * `cal` is now a `vctrs::list_of` subclass; a list of two-column data frames representing the probability distribution
@@ -26,6 +39,6 @@
   * Decay constants `c14_decay_libby` and `c14_decay_cambridge`.
 * Added example datasets `ppnd` and `shub1_c14`
 
-# c14 0.0.0
+# v0.0.0
 
-Initial version forked from stratigraphr v0.3.0.
+The initial version of this package was forked from stratigraphr v0.3.0
