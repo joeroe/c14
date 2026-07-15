@@ -40,7 +40,7 @@ cal_age_range(x)
 \seealso{
 Other functions for summarising calibrated radiocarbon dates:
 \code{\link[=cal_hdr]{cal_hdr()}},
-\code{\link[=cal_point]{cal_point()}},
+\code{\link[=cal_mode]{cal_mode()}},
 \code{\link[=cal_probability]{cal_probability()}}
 }
 \concept{functions for summarising calibrated radiocarbon dates}

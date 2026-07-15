@@ -28,6 +28,8 @@
 #' @return
 #' Vector the same length as `x` with controlled laboratory identifiers.
 #'
+#' @family functions for tidying radiocarbon metadata
+#'
 #' @examples
 #' c14_control_lab_id(c("OxA-1234", "OxA 1234", "Oxa 1234"))
 #'
@@ -64,6 +66,8 @@ c14_control_lab_id <- function(x,
 #' @return
 #' A data frame with two character columns: `lab_code` and `lab_number`. If `x`
 #' is of length one, this is simplified to a named character vector of length 2.
+#'
+#' @family functions for tidying radiocarbon metadata
 #'
 #' @export
 #'
@@ -118,6 +122,8 @@ c14_parse_lab_id <- function(x, fix = TRUE) {
 #'
 #' `c14_fix_lab_id()` returns `x` with values replaced to match the conventional
 #' format where possible.
+#'
+#' @family functions for tidying radiocarbon metadata
 #'
 #' @export
 #'
@@ -188,6 +194,8 @@ c14_lab_delim_std <- function() "[ -\u2010\u2013_#\\.\\+]"
 #'
 #' @return
 #' Vector the same length as `x` with controlled sample materials.
+#'
+#' @family functions for tidying radiocarbon metadata
 #'
 #' @export
 c14_control_material <- function(x,

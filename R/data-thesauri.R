@@ -36,6 +36,8 @@
 #'   fluctuations in China inferred from radiocarbon data and their linkage with
 #'   climate change over the past 50,000 years. *Quaternary Science Reviews*,
 #'   98, pp.45-59. doi:10.1016/j.quascirev.2014.05.015
+#'
+#' @family dictionaries and thesauri for radiocarbon metadata
 "c14_labs"
 
 #' Radiocarbon laboratory code thesaurus
@@ -60,6 +62,8 @@
 #'
 #' Variants that cannot (or have not yet) been unambiguously matched to a
 #' known, standard lab code have a `canon` value of `NA`.
+#'
+#' @family dictionaries and thesauri for radiocarbon metadata
 "c14_lab_code_thesaurus"
 
 #' Radiocarbon sample material thesaurus
@@ -78,4 +82,6 @@
 #' Originally compiled by Clemens Schmid, David Matzig, Dirk Seidensticker,
 #' Joe Roe, and Thomas Huet, for the package
 #' [c14bazAAR](https://docs.ropensci.org/c14bazAAR/).
+#'
+#' @family dictionaries and thesauri for radiocarbon metadata
 "c14_material_thesaurus"

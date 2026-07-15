@@ -43,6 +43,6 @@ intervals for a given probability mass.
 Other functions for summarising calibrated radiocarbon dates:
 \code{\link[=cal_age_range]{cal_age_range()}},
 \code{\link[=cal_hdr]{cal_hdr()}},
-\code{\link[=cal_point]{cal_point()}}
+\code{\link[=cal_mode]{cal_mode()}}
 }
 \concept{functions for summarising calibrated radiocarbon dates}

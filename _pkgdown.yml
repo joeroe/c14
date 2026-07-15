@@ -10,43 +10,42 @@ template:
     in_header: '<script async src="https://umami.joeroe.io/script.js" data-website-id="fd494f22-69ae-4eb3-bc38-921d11ddb379"></script>'
 
 reference:
-- title: "Tidy radiocarbon"
-  desc: "Core functions for working with radiocarbon data in a tidy framework."
-- contents:
-  - starts_with("c14")
 - title: "Radiocarbon measurements"
-  desc: "Functions for working with uncalibrated radiocarbon measurements."
+  desc: "Functions for working with uncalibrated radiocarbon measurements"
 - contents:
+  - c14_age_norm
   - has_concept("functions for working with radiocarbon measurements")
+  - has_concept("radiocarbon-related constants")
+- title: "Radiocarbon calibration"
+  desc: "Functions for calibrating radiocarbon determinations to a calendar timescale"
+- contents:
+  - c14_calibrate
+  - cal
+  - has_concept("cal class methods")
+- title: "Calibration curves"
+  desc: "Data, classes and functions for radiocarbon calibration curves"
+- contents:
+  - has_concept("calibration curves")
+  - has_concept("calibration curve functions")
 - title: "Summarise calibrated dates"
-  desc: "Functions for summarising calibrated radiocarbon dates."
+  desc: "Functions for summarising calibrated radiocarbon determinations"
 - contents:
   - has_concept("functions for summarising calibrated radiocarbon dates")
 - title: "Aggregate calibrated dates"
-  desc: "Functions for aggregating calibrated radiocarbon dates."
+  desc: "Functions for aggregating calibrated radiocarbon determinations"
 - contents:
   - has_concept("functions for aggregating calendar probability distributions")
+- title: "Tidy radiocarbon metadata"
+  desc: "Functions for tidying metadata associated with radiocarbon determinations"
+- contents:
+  - has_concept("functions for tidying radiocarbon metadata")
+  - has_concept("dictionaries and thesauri for radiocarbon metadata")
 - title: "Plotting"
-  desc: "Plot calibrated radiocarbon dates."
+  desc: "Plotting radiocarbon data"
 - contents:
   - plot.c14_cal
-- title: "cal class methods"
-  desc: "Methods for the `cal` class – vectors of calibrated radiocarbon dates."
-- contents:
-  - cal
-  - has_concept("cal class methods")
-- title: "Conversion"
-  desc: "Convert objects from other packages from or to c14 classes."
-- contents:
-  - has_concept("c14 conversion functions")
-- title: "Calibration curves"
-  desc: "Data, classes and functions for radiocarbon calibration curves."
-- contents:
-  - has_concept("calibration curve functions")
-- title: "Datasets"
-  desc: "Data included with the package."
+- title: "Example data"
+  desc: "Example datasets included with the package"
 - contents:
   - ppnd
   - shub1_c14
-  - has_concept("calibration curves")
-  - has_concept("radiocarbon-related constants")
