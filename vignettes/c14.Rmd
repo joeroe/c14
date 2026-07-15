@@ -1,0 +1,262 @@
+---
+title: "Tidy radiocarbon data"
+output: rmarkdown::html_vignette
+bibliography: '`r system.file("REFERENCES.bib", package="c14")`'
+vignette: >
+  %\VignetteIndexEntry{Tidy radiocarbon data}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.width = 7,
+  fig.height = 5
+)
+```
+
+**c14** makes it easy and intuitive to incorporate radiocarbon dating into tidy data analysis workflows in R. 
+It provides classes and functions for radiocarbon data that fit nicely in tables and work well with pipes and [dplyr](https://dplyr.tidyverse.org/) verbs.
+
+This vignette introduces functions for the most common tasks when working with radiocarbon data, including those for calibrating, summarising, aggregating and plotting radiocarbon dates.
+
+```{r setup, message = FALSE}
+library("c14")
+library("dplyr", warn.conflicts = FALSE)
+library("ggplot2")
+```
+
+## Calibrating radiocarbon dates
+
+`c14_calibrate()` calibrates conventional radiocarbon ages and their errors to a calendar timescale:
+
+```{r calibrate-single}
+c14_calibrate(5000, 30)
+```
+
+By default, `c14_calibrate()` uses the IntCal20 calibration curve [@Reimer2020], which is recommended for terrestrial dates from the northern hemisphere.
+You can change this with the `c14_curve` argument (see `?IntCal20` for the available curves).
+
+`c14_calibrate()` returns a *year with an era* (a `era::yr` vector), indicating the age is expressed as calibrated years Before Present ('cal BP').
+Most functions in the package return yrs and work with them internally to ensure that calendric calculations are consistent.
+
+Calibration is vectorised, so you can calibrate many dates at once:
+
+```{r calibrate-vector}
+ages <- c(5000, 6000, 7000)
+errors <- c(30, 40, 50)
+
+c14_calibrate(ages, errors)
+```
+
+This unlocks the real utility of the c14 package, which is embedding calibration in a tidy workflow.
+For example, the `shub1_c14` dataset (provided with the package) contains 27 radiocarbon dates from the Epipalaeolithic site of Shubayqa 1 in eastern Jordan.
+We can calibrate these dates within the data frame using dplyr's `mutate()` verb:
+
+```{r calibrate-pipe}
+shub1_c14 |>
+  mutate(cal = c14_calibrate(c14_age, c14_error))
+```
+
+The `cal` column preserves the original data alongside the calibrated dates, so you can continue working with the full dataset.
+
+## Summarising calibrated dates
+
+The table in the last example showed the highest density interval of the calibrated radiocarbon date (at 95.4% probability -- sometimes called the '2-sigma' range) of the calibrated radiocarbon date, rather than its full probability distribution.
+^[In fact the object returned by `c14_calibrate()` does not store the probability distribution at all, only generates it when needed.]
+We can calculate this explicitly with `cal_hdi()`, which also allows us to choose another probability value:
+
+```{r cal_hdi}
+shub1_c14 |>
+  mutate(
+    cal = c14_calibrate(c14_age, c14_error),
+    cal_hdi_1sigma = cal_hdi(cal, interval = 0.683)
+  ) |>
+  select(lab_id, c14_age, c14_error, cal, cal_hdi_1sigma)
+```
+
+`cal_hdr()` always returns a single region of the probability distribution – the shortest interval containing the specified probability mass.
+Calibrated radiocarbon dates are often multimodal, so it can be more accurate to consider one or more highest density *regions*, which we can calculate with `cal_hdr()`:
+
+```{r cal_hdr}
+c14_calibrate(8800, 30) |>
+  cal_hdr()
+```
+
+The inverse of these two functions is `cal_probability()`, which calculates the probability that a calibrated date falls within a specified time interval:
+
+```{r cal_probability}
+x <- c14_calibrate(1116, 30)
+cal_probability(x, 970, 1060) # cal BP
+```
+
+Other functions for summarising calibrated radiocarbon dates include various methods for calculating a point estimate (see `?cal_point`).
+Generally speaking, there is no 'good' point estimate of a calibrated radiocarbon distribution [@Michczynski2007], but these can nevertheless be useful when working with a range or the full probability distribution is not an option.
+In this case, the mode is a reasonable choice:
+
+```{r cal_mode}
+shub1_c14 |>
+  mutate(
+    cal = c14_calibrate(c14_age, c14_error),
+    cal_mode = cal_mode(cal)
+  ) |>
+  select(lab_id, c14_age, c14_error, cal, cal_mode)
+```
+
+Note that here we mean `summarise` in the sense of deriving summary statistics from the calendar probability distribution.
+They return a vector of the same length as the input and therefore in dplyr terms they are *mutating* functions, not *summarising* functions;
+operations that can be used with `dplyr::summarise()` are covered in the section below on [aggregating calibrated dates](#aggregating-calibrated-dates).
+
+## Plotting calibrated dates
+
+### Base R plots
+
+The package provides a default `plot()` method for calibrated dates which shows their probability distributions and the calibration curve.
+
+```{r plot}
+shub1_cal <- c14_calibrate(shub1_c14$c14_age, shub1_c14$c14_error)
+plot(shub1_cal[1])
+```
+
+This default method plots all the calibrated dates passed to it.
+^[By default `plot(cal)` only draws up to 20 plots at a time; this can be controlled with `max.plot`.]
+You can arrange multiple plots with, for example, `par(mfrow)`:
+
+```{r plot-multi, fig.height = 10}
+par(mfrow = c(2, 1))
+plot(shub1_cal[1:2])
+par(mfrow = c(1, 1))
+```
+
+### ggplot2
+
+Because c14 works with standard R data structures, it is straightforward to build custom ggplots.
+The key is to extract the probability distribution data and tidy it into a data frame.
+
+The `cal_dist()` function returns a list of data frames, each with `age` and `pdens` columns.
+We can combine these into a single tidy data frame for plotting:
+
+```{r ggplot-setup}
+tidy_cal <- function(cal_vec) {
+  dists <- c14:::cal_dist(cal_vec)
+  purrr::imap_dfr(dists, function(df, i) {
+    df$label <- paste0("Date ", i)
+    df
+  })
+}
+```
+
+```{r ggplot-single, fig.width = 6, fig.height = 4}
+dist_df <- tidy_cal(shub1_cal[1])
+dist_df$label <- shub1_c14$lab_id[1]
+
+ggplot(dist_df, aes(x = age, y = pdens)) +
+  geom_ribbon(aes(ymin = 0, ymax = pdens), fill = "steelblue", alpha = 0.3) +
+  geom_line(colour = "steelblue") +
+  labs(x = "Calendar age (cal BP)", y = "Probability density") +
+  scale_x_reverse() +
+  theme_minimal()
+```
+
+You can plot multiple dates by faceting.
+Here we add the lab ID as a grouping column before combining the data frames:
+
+```{r ggplot-facet, fig.width = 7, fig.height = 8}
+dist_df <- tidy_cal(shub1_cal[1:6])
+n_per_date <- sapply(c14:::cal_dist(shub1_cal[1:6]), nrow)
+dist_df$lab_id <- rep(shub1_c14$lab_id[1:6], times = n_per_date)
+
+ggplot(dist_df, aes(x = age, y = pdens)) +
+  geom_ribbon(aes(ymin = 0, ymax = pdens), fill = "steelblue", alpha = 0.3) +
+  geom_line(colour = "steelblue") +
+  facet_wrap(~lab_id, ncol = 2, scales = "free_y") +
+  labs(x = "Calendar age (cal BP)", y = "Probability density") +
+  scale_x_reverse() +
+  theme_minimal()
+```
+
+This makes it easy to compare dates across sites, phases, or any other grouping in your data.
+
+## Aggregating calibrated dates
+
+c14 provides two methods for combining multiple calibrated dates into a single summary distribution.
+
+### Summed probability distributions
+
+`cal_sum()` adds up the probability distributions of all dates in a vector.
+This is the simplest aggregation method.
+
+```{r cal-sum}
+shub1_cal <- c14_calibrate(shub1_c14$c14_age, shub1_c14$c14_error)
+
+summed <- cal_sum(shub1_cal)
+```
+
+```{r cal-sum-plot, fig.width = 7, fig.height = 4}
+sum_df <- vctrs::vec_data(summed)[[1]]
+
+ggplot(sum_df, aes(x = age, y = pdens)) +
+  geom_ribbon(aes(ymin = 0, ymax = pdens), fill = "darkred", alpha = 0.3) +
+  geom_line(colour = "darkred") +
+  labs(x = "Calendar age (cal BP)", y = "Summed probability") +
+  scale_x_reverse() +
+  theme_minimal()
+```
+
+You can also use the `sum()` method:
+
+```{r cal-sum-method}
+sum(shub1_cal)
+```
+
+### Composite kernel density estimation
+
+`cal_density()` uses composite kernel density estimation (cKDE) to produce a smoother summary distribution.
+It resamples from each date's probability distribution and fits a kernel density estimate, with optional bootstrapping to estimate uncertainty.
+
+```{r cal-density}
+density_est <- cal_density(shub1_cal, bw = 30, times = 10)
+density_est
+```
+
+```{r cal-density-plot, fig.width = 7, fig.height = 4}
+ggplot(density_est, aes(x = age, y = .estimate)) +
+  geom_ribbon(aes(ymin = .estimate - .error, ymax = .estimate + .error),
+              fill = "darkred", alpha = 0.3) +
+  geom_line(colour = "darkred") +
+  labs(x = "Calendar age (cal BP)", y = "Density") +
+  scale_x_reverse() +
+  theme_minimal()
+```
+
+The bootstrapped standard error (`.error`) gives a measure of uncertainty in the density estimate.
+
+### Stratified aggregation
+
+Both methods can be stratified by a grouping variable.
+This is useful for comparing periods or phases.
+
+To compare groups, run the aggregation separately for each stratum:
+
+```{r cal-density-strata, fig.width = 7, fig.height = 5}
+phases <- unique(shub1_c14$phase)
+
+phase_densities <- purrr::map(phases, function(p) {
+  idx <- shub1_c14$phase == p
+  cal_density(shub1_cal[idx], bw = 30, times = 10) |>
+    mutate(phase = p)
+}) |> bind_rows()
+
+ggplot(phase_densities, aes(x = age, y = .estimate)) +
+  geom_ribbon(aes(ymin = .estimate - .error, ymax = .estimate + .error),
+              fill = "steelblue", alpha = 0.3) +
+  geom_line(colour = "steelblue") +
+  facet_wrap(~phase, ncol = 1) +
+  labs(x = "Calendar age (cal BP)", y = "Density") +
+  scale_x_reverse() +
+  theme_minimal()
+```
+
+## References
