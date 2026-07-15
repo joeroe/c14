@@ -1,4 +1,4 @@
-# v0.1.0.9000 (development version)
+# c14 v0.1.0.9000 (development version)
 
 * New individual functions for point summaries of calibrated radiocarbon dates,
   replacing `cal_point()` (documented under `?cal_point`): `cal_mode()`,
@@ -17,7 +17,7 @@
   * `c14_calibrate()` no longer has `engine` or `min_pdens` arguments (#24, #26)
   * `c14_calibrate()` now accepts a `curve` argument (#9)
 
-# v0.1.0
+# c14 v0.1.0
 
 Development version as of December 2024. Major changes since fork from 
 stratigraphr:
@@ -48,6 +48,6 @@ stratigraphr:
   * Decay constants `c14_decay_libby` and `c14_decay_cambridge`.
 * Added example datasets `ppnd` and `shub1_c14`
 
-# v0.0.0
+# c14 v0.0.0
 
 The initial version of this package was forked from stratigraphr v0.3.0
