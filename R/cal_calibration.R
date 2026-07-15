@@ -104,9 +104,12 @@ cal_sample <- function(cal) {
                  class = "c14_invalid_argument")
   }
 
-  f <- cal_function_sparse(cal)
+  indices <- cal_relevant_indices(cal)
   curve <- cal_c14_curve(cal)
-  ages <- curve$cal_age
+  ages_range <- range(curve$cal_age[indices])
+  ages <- seq(from = ages_range[1], to = ages_range[2], by = 1)
+  
+  f <- cal_function(cal)
   pdens <- f(ages)
 
   function(n) {

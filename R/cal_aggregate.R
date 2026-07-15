@@ -39,19 +39,14 @@ cal_age_common <- function(x, resolution = 1) {
 #' shub1_cal <- c14_calibrate(shub1_c14$c14_age, shub1_c14$c14_error)
 #' cal_sum(shub1_cal)
 cal_sum <- function(x, range = NULL, normalise = FALSE, ...) {
-  dists <- cal_dist(x)
-  if (!is.null(range)) {
-    dists <- cal_dist_interpolate(dists, range)
-  } else {
-    dists <- cal_dist_interpolate(dists)
-  }
+  if (is.null(range)) range <- cal_age_common(x)
+  dists <- cal_dist(x, at = range)
 
   pdens_mat <- do.call(rbind, cal_dist_pdens(dists))
   pdens_sum <- colSums(pdens_mat, na.rm = TRUE)
   if (isTRUE(normalise)) pdens_sum <- pdens_sum / sum(pdens_sum, na.rm = TRUE)
 
-  age <- cal_dist_age(dists)[[1]]
-  cal_dist(data.frame(age = age, pdens = pdens_sum))
+  cal_dist(data.frame(age = range, pdens = pdens_sum))
 }
 
 #' @rdname cal_sum
