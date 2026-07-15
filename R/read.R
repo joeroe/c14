@@ -50,7 +50,7 @@ read_14c <- function(file,
   if (missing(format)) {
     format <- tools::file_ext(file)
   }
-  checkmate::assert_choice(format, c("14c", "f14c"))
+  format <- match.arg(format)
 
   if (is.na(delim)) {
     delim <- c("14c" = ",", "f14c" = "")[format]

@@ -37,9 +37,8 @@ Encoding: UTF-8
 LazyData: true
 Depends: 
     R (>= 4.1.0)
-Imports: 
+Imports:
     Rdpack,
-    checkmate,
     controller,
     curl,
     era (>= 0.4.0),
@@ -54,24 +53,20 @@ Imports:
     utils,
     vctrs (>= 0.3.3),
     zeallot
-Suggests: 
+Suggests:
     covr,
-    dplyr,
     knitr,
-    mockery,
-    readr,
-    readxl,
     rmarkdown,
     roxygen2,
     testthat,
-    tibble,
-    usethis
+    tibble
 Enhances:
     Bchron,
     oxcAAR,
     rcarbon
 Remotes:
     joeroe/controller
+Config/Needs/website: dplyr
 Roxygen: list(markdown = TRUE)
 RdMacros: Rdpack, mathjaxr
 Config/roxygen2/version: 8.0.0

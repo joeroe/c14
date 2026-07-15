@@ -81,15 +81,15 @@ plot.c14_cal <- function(x, ..., max.plot = 20, resolution = NULL, fixed_xlim = 
   age_grids <- purrr::map2(age_ranges, resolutions, function(range, res) {
     seq(range$min, range$max, by = res)
   })
-  
+
+  age_grids <- rep(age_grids, length.out = length(x))
+
   # Compute distributions
-  dists <- purrr::map2(x, age_grids, function(cal_single, at) {
-    cal_dist(cal_single, at = at)
-  })
-  
+  dists <- cal_dist(x, at = age_grids)
+
   # Plot each distribution
-  purrr::walk2(dists, x, function(dist, cal_single) {
-    plot_cal_single(dist[[1]], cal_single, show_curve = show_curve, ...)
+  purrr::walk2(vec_data(dists), x, function(dist_df, cal_single) {
+    plot_cal_single(dist_df, cal_single, show_curve = show_curve, ...)
   })
 
   invisible(NULL)

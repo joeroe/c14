@@ -1,5 +1,7 @@
 # v0.1.0.9000 (development version)
 
+* Package no longer depends on checkmate (depends), mockery, readr, readxl, 
+  usethis (suggests), or dplyr (suggests, but still required to build website)
 * New `cal_probability()` summary of the probability that a calibrated date
   lies in a specified range #38
 * New default `plot()` method for `cal` vectors (#32)
