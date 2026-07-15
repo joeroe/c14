@@ -45,7 +45,6 @@ This function is the inverse of
 intervals for a given probability mass.
 
 Other functions for summarising calibrated radiocarbon dates:
-[`cal_age_range()`](https://c14.joeroe.io/reference/cal_age_range.md),
 [`cal_hdr()`](https://c14.joeroe.io/reference/cal_hdr.md),
 [`cal_mode()`](https://c14.joeroe.io/reference/cal_mode.md)
 

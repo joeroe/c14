@@ -52,3 +52,8 @@ as_cal(x)
 
 Vector of class `c14_cal`
 ([cal](https://c14.joeroe.io/reference/cal.md)).
+
+## See also
+
+Other cal class methods:
+[`cal_dist()`](https://c14.joeroe.io/reference/cal_dist.md)

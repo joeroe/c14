@@ -3,6 +3,8 @@
 <url><loc>https://c14.joeroe.io/AGENTS.html</loc></url>
 <url><loc>https://c14.joeroe.io/LICENSE-text.html</loc></url>
 <url><loc>https://c14.joeroe.io/LICENSE.html</loc></url>
+<url><loc>https://c14.joeroe.io/articles/c14.html</loc></url>
+<url><loc>https://c14.joeroe.io/articles/index.html</loc></url>
 <url><loc>https://c14.joeroe.io/authors.html</loc></url>
 <url><loc>https://c14.joeroe.io/index.html</loc></url>
 <url><loc>https://c14.joeroe.io/news/index.html</loc></url>
@@ -25,8 +27,8 @@
 <url><loc>https://c14.joeroe.io/reference/c14_parse_lab_id.html</loc></url>
 <url><loc>https://c14.joeroe.io/reference/c14_units.html</loc></url>
 <url><loc>https://c14.joeroe.io/reference/cal.html</loc></url>
-<url><loc>https://c14.joeroe.io/reference/cal_age_range.html</loc></url>
 <url><loc>https://c14.joeroe.io/reference/cal_density.html</loc></url>
+<url><loc>https://c14.joeroe.io/reference/cal_dist.html</loc></url>
 <url><loc>https://c14.joeroe.io/reference/cal_hdr.html</loc></url>
 <url><loc>https://c14.joeroe.io/reference/cal_mode.html</loc></url>
 <url><loc>https://c14.joeroe.io/reference/cal_probability.html</loc></url>

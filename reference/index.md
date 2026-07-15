@@ -24,6 +24,8 @@ timescale
   radiocarbon dates
 - [`as_cal()`](https://c14.joeroe.io/reference/as_cal.md) : Convert a
   foreign object to a cal object
+- [`cal_dist()`](https://c14.joeroe.io/reference/cal_dist.md) : Calendar
+  probability distribution
 
 ## Calibration curves
 
@@ -53,10 +55,6 @@ Data, classes and functions for radiocarbon calibration curves
 
 Functions for summarising calibrated radiocarbon determinations
 
-- [`cal_age_range()`](https://c14.joeroe.io/reference/cal_age_range.md)
-  [`cal_age_min()`](https://c14.joeroe.io/reference/cal_age_range.md)
-  [`cal_age_max()`](https://c14.joeroe.io/reference/cal_age_range.md) :
-  Range of calibrated radiocarbon dates
 - [`cal_hdr()`](https://c14.joeroe.io/reference/cal_hdr.md)
   [`cal_hdi()`](https://c14.joeroe.io/reference/cal_hdr.md) : Highest
   Density Region and Highest Density Interval

@@ -45,7 +45,6 @@ interval.
 ## See also
 
 Other functions for summarising calibrated radiocarbon dates:
-[`cal_age_range()`](https://c14.joeroe.io/reference/cal_age_range.md),
 [`cal_mode()`](https://c14.joeroe.io/reference/cal_mode.md),
 [`cal_probability()`](https://c14.joeroe.io/reference/cal_probability.md)
 
