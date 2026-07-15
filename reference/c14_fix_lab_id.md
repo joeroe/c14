@@ -34,6 +34,13 @@ The regular expression used to test for the conventional format is
 unusual but parsable variants such as `"Ki(KIEV)-1234"` or
 `"Gif/LSN_5678"`
 
+## See also
+
+Other functions for tidying radiocarbon metadata:
+[`c14_control_lab_id()`](https://c14.joeroe.io/reference/c14_control_lab_id.md),
+[`c14_control_material()`](https://c14.joeroe.io/reference/c14_control_material.md),
+[`c14_parse_lab_id()`](https://c14.joeroe.io/reference/c14_parse_lab_id.md)
+
 ## Examples
 
 ``` r

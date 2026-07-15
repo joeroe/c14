@@ -32,9 +32,9 @@
     </div>
 
     <div class="section level2">
-      <h2 id="tidy-radiocarbon">Tidy radiocarbon<a class="anchor" aria-label="anchor" href="#tidy-radiocarbon"></a></h2>
+      <h2 id="radiocarbon-measurements">Radiocarbon measurements<a class="anchor" aria-label="anchor" href="#radiocarbon-measurements"></a></h2>
 
-      <div class="section-desc"><p>Core functions for working with radiocarbon data in a tidy framework.</p></div>
+      <div class="section-desc"><p>Functions for working with uncalibrated radiocarbon measurements</p></div>
 
       <dl></dl></div><div class="section level2">
 
@@ -50,6 +50,29 @@
 
         <dt>
 
+          <code><a href="c14_units.html">c14_age()</a></code> <code><a href="c14_units.html">c14_f14c()</a></code>
+
+        </dt>
+        <dd>Radiocarbon unit calculations</dd>
+
+        <dt>
+
+          <code><a href="c14_decay.html">c14_decay_libby</a></code> <code><a href="c14_decay.html">c14_decay_cambridge</a></code>
+
+        </dt>
+        <dd>Radiocarbon decay constants</dd>
+      </dl></div><div class="section level2">
+      <h2 id="radiocarbon-calibration">Radiocarbon calibration<a class="anchor" aria-label="anchor" href="#radiocarbon-calibration"></a></h2>
+
+      <div class="section-desc"><p>Functions for calibrating radiocarbon determinations to a calendar timescale</p></div>
+
+      <dl></dl></div><div class="section level2">
+
+
+
+
+      <dl><dt>
+
           <code><a href="c14_calibrate.html">c14_calibrate()</a></code>
 
         </dt>
@@ -57,17 +80,33 @@
 
         <dt>
 
-          <code><a href="c14_control_lab_id.html">c14_control_lab_id()</a></code>
+          <code><a href="cal.html">cal()</a></code>
 
         </dt>
-        <dd>Control radiocarbon laboratory identifiers</dd>
+        <dd>Calibrated radiocarbon dates</dd>
 
         <dt>
 
-          <code><a href="c14_control_material.html">c14_control_material()</a></code>
+          <code><a href="as_cal.html">as_cal()</a></code>
 
         </dt>
-        <dd>Control radiocarbon sample materials</dd>
+        <dd>Convert a foreign object to a cal object</dd>
+      </dl></div><div class="section level2">
+      <h2 id="calibration-curves">Calibration curves<a class="anchor" aria-label="anchor" href="#calibration-curves"></a></h2>
+
+      <div class="section-desc"><p>Data, classes and functions for radiocarbon calibration curves</p></div>
+
+      <dl></dl></div><div class="section level2">
+
+
+
+
+      <dl><dt>
+
+          <code><a href="c14_curves.html">IntCal20</a></code> <code><a href="c14_curves.html">SHCal20</a></code> <code><a href="c14_curves.html">Marine20</a></code> <code><a href="c14_curves.html">IntCal13</a></code> <code><a href="c14_curves.html">SHCal13</a></code> <code><a href="c14_curves.html">Marine13</a></code> <code><a href="c14_curves.html">IntCal09</a></code> <code><a href="c14_curves.html">Marine09</a></code> <code><a href="c14_curves.html">IntCal04</a></code> <code><a href="c14_curves.html">SHCal04</a></code> <code><a href="c14_curves.html">Marine04</a></code> <code><a href="c14_curves.html">IntCal98</a></code> <code><a href="c14_curves.html">Marine98</a></code>
+
+        </dt>
+        <dd>Radiocarbon calibration curves</dd>
 
         <dt>
 
@@ -78,79 +117,14 @@
 
         <dt>
 
-          <code><a href="c14_curves.html">IntCal20</a></code> <code><a href="c14_curves.html">SHCal20</a></code> <code><a href="c14_curves.html">Marine20</a></code> <code><a href="c14_curves.html">IntCal13</a></code> <code><a href="c14_curves.html">SHCal13</a></code> <code><a href="c14_curves.html">Marine13</a></code> <code><a href="c14_curves.html">IntCal09</a></code> <code><a href="c14_curves.html">Marine09</a></code> <code><a href="c14_curves.html">IntCal04</a></code> <code><a href="c14_curves.html">SHCal04</a></code> <code><a href="c14_curves.html">Marine04</a></code> <code><a href="c14_curves.html">IntCal98</a></code> <code><a href="c14_curves.html">Marine98</a></code>
+          <code><a href="read_14c.html">read_14c()</a></code>
 
         </dt>
-        <dd>Radiocarbon calibration curves</dd>
-
-        <dt>
-
-          <code><a href="c14_decay.html">c14_decay_libby</a></code> <code><a href="c14_decay.html">c14_decay_cambridge</a></code>
-
-        </dt>
-        <dd>Radiocarbon decay constants</dd>
-
-        <dt>
-
-          <code><a href="c14_fix_lab_id.html">c14_fix_lab_id()</a></code> <code><a href="c14_fix_lab_id.html">c14_is_lab_id()</a></code>
-
-        </dt>
-        <dd>Detect and fix malformed radiocarbon laboratory identifiers</dd>
-
-        <dt>
-
-          <code><a href="c14_lab_code_thesaurus.html">c14_lab_code_thesaurus</a></code>
-
-        </dt>
-        <dd>Radiocarbon laboratory code thesaurus</dd>
-
-        <dt>
-
-          <code><a href="c14_labs.html">c14_labs</a></code>
-
-        </dt>
-        <dd>Radiocarbon laboratories</dd>
-
-        <dt>
-
-          <code><a href="c14_material_thesaurus.html">c14_material_thesaurus</a></code>
-
-        </dt>
-        <dd>Radiocarbon sample material thesaurus</dd>
-
-        <dt>
-
-          <code><a href="c14_parse_lab_id.html">c14_parse_lab_id()</a></code>
-
-        </dt>
-        <dd>Parse radiocarbon laboratory identifiers</dd>
-
-        <dt>
-
-          <code><a href="c14_units.html">c14_age()</a></code> <code><a href="c14_units.html">c14_f14c()</a></code>
-
-        </dt>
-        <dd>Radiocarbon unit calculations</dd>
-      </dl></div><div class="section level2">
-      <h2 id="radiocarbon-measurements">Radiocarbon measurements<a class="anchor" aria-label="anchor" href="#radiocarbon-measurements"></a></h2>
-
-      <div class="section-desc"><p>Functions for working with uncalibrated radiocarbon measurements.</p></div>
-
-      <dl></dl></div><div class="section level2">
-
-
-
-
-      <dl><dt>
-
-          <code><a href="c14_units.html">c14_age()</a></code> <code><a href="c14_units.html">c14_f14c()</a></code>
-
-        </dt>
-        <dd>Radiocarbon unit calculations</dd>
+        <dd>Read calibration curve files</dd>
       </dl></div><div class="section level2">
       <h2 id="summarise-calibrated-dates">Summarise calibrated dates<a class="anchor" aria-label="anchor" href="#summarise-calibrated-dates"></a></h2>
 
-      <div class="section-desc"><p>Functions for summarising calibrated radiocarbon dates.</p></div>
+      <div class="section-desc"><p>Functions for summarising calibrated radiocarbon determinations</p></div>
 
       <dl></dl></div><div class="section level2">
 
@@ -173,7 +147,7 @@
 
         <dt>
 
-          <code><a href="cal_point.html">cal_point()</a></code>
+          <code><a href="cal_mode.html">cal_mode()</a></code> <code><a href="cal_mode.html">cal_median()</a></code> <code><a href="cal_mode.html">cal_mean()</a></code> <code><a href="cal_mode.html">cal_local_mode()</a></code> <code><a href="cal_mode.html">cal_central()</a></code>
 
         </dt>
         <dd>Point estimates of calibrated radiocarbon dates</dd>
@@ -187,7 +161,7 @@
       </dl></div><div class="section level2">
       <h2 id="aggregate-calibrated-dates">Aggregate calibrated dates<a class="anchor" aria-label="anchor" href="#aggregate-calibrated-dates"></a></h2>
 
-      <div class="section-desc"><p>Functions for aggregating calibrated radiocarbon dates.</p></div>
+      <div class="section-desc"><p>Functions for aggregating calibrated radiocarbon determinations</p></div>
 
       <dl></dl></div><div class="section level2">
 
@@ -208,9 +182,67 @@
         </dt>
         <dd>Sum calendar probability distributions</dd>
       </dl></div><div class="section level2">
+      <h2 id="tidy-radiocarbon-metadata">Tidy radiocarbon metadata<a class="anchor" aria-label="anchor" href="#tidy-radiocarbon-metadata"></a></h2>
+
+      <div class="section-desc"><p>Functions for tidying metadata associated with radiocarbon determinations</p></div>
+
+      <dl></dl></div><div class="section level2">
+
+
+
+
+      <dl><dt>
+
+          <code><a href="c14_control_lab_id.html">c14_control_lab_id()</a></code>
+
+        </dt>
+        <dd>Control radiocarbon laboratory identifiers</dd>
+
+        <dt>
+
+          <code><a href="c14_control_material.html">c14_control_material()</a></code>
+
+        </dt>
+        <dd>Control radiocarbon sample materials</dd>
+
+        <dt>
+
+          <code><a href="c14_fix_lab_id.html">c14_fix_lab_id()</a></code> <code><a href="c14_fix_lab_id.html">c14_is_lab_id()</a></code>
+
+        </dt>
+        <dd>Detect and fix malformed radiocarbon laboratory identifiers</dd>
+
+        <dt>
+
+          <code><a href="c14_parse_lab_id.html">c14_parse_lab_id()</a></code>
+
+        </dt>
+        <dd>Parse radiocarbon laboratory identifiers</dd>
+
+        <dt>
+
+          <code><a href="c14_lab_code_thesaurus.html">c14_lab_code_thesaurus</a></code>
+
+        </dt>
+        <dd>Radiocarbon laboratory code thesaurus</dd>
+
+        <dt>
+
+          <code><a href="c14_labs.html">c14_labs</a></code>
+
+        </dt>
+        <dd>Radiocarbon laboratories</dd>
+
+        <dt>
+
+          <code><a href="c14_material_thesaurus.html">c14_material_thesaurus</a></code>
+
+        </dt>
+        <dd>Radiocarbon sample material thesaurus</dd>
+      </dl></div><div class="section level2">
       <h2 id="plotting">Plotting<a class="anchor" aria-label="anchor" href="#plotting"></a></h2>
 
-      <div class="section-desc"><p>Plot calibrated radiocarbon dates.</p></div>
+      <div class="section-desc"><p>Plotting radiocarbon data</p></div>
 
       <dl></dl></div><div class="section level2">
 
@@ -224,71 +256,9 @@
         </dt>
         <dd>Plot calibrated radiocarbon dates</dd>
       </dl></div><div class="section level2">
-      <h2 id="cal-class-methods">cal class methods<a class="anchor" aria-label="anchor" href="#cal-class-methods"></a></h2>
+      <h2 id="example-data">Example data<a class="anchor" aria-label="anchor" href="#example-data"></a></h2>
 
-      <div class="section-desc"><p>Methods for the <code>cal</code> class – vectors of calibrated radiocarbon dates.</p></div>
-
-      <dl></dl></div><div class="section level2">
-
-
-
-
-      <dl><dt>
-
-          <code><a href="cal.html">cal()</a></code>
-
-        </dt>
-        <dd>Calibrated radiocarbon dates</dd>
-
-        <dt>
-
-          <code><a href="as_cal.html">as_cal()</a></code>
-
-        </dt>
-        <dd>Convert a foreign object to a cal object</dd>
-      </dl></div><div class="section level2">
-      <h2 id="conversion">Conversion<a class="anchor" aria-label="anchor" href="#conversion"></a></h2>
-
-      <div class="section-desc"><p>Convert objects from other packages from or to c14 classes.</p></div>
-
-      <dl></dl></div><div class="section level2">
-
-
-
-
-      <dl><dt>
-
-          <code><a href="as_cal.html">as_cal()</a></code>
-
-        </dt>
-        <dd>Convert a foreign object to a cal object</dd>
-      </dl></div><div class="section level2">
-      <h2 id="calibration-curves">Calibration curves<a class="anchor" aria-label="anchor" href="#calibration-curves"></a></h2>
-
-      <div class="section-desc"><p>Data, classes and functions for radiocarbon calibration curves.</p></div>
-
-      <dl></dl></div><div class="section level2">
-
-
-
-
-      <dl><dt>
-
-          <code><a href="c14_curve.html">c14_curve()</a></code> <code><a href="c14_curve.html">c14_fcurve()</a></code>
-
-        </dt>
-        <dd>Radiocarbon calibration curve class</dd>
-
-        <dt>
-
-          <code><a href="read_14c.html">read_14c()</a></code>
-
-        </dt>
-        <dd>Read calibration curve files</dd>
-      </dl></div><div class="section level2">
-      <h2 id="datasets">Datasets<a class="anchor" aria-label="anchor" href="#datasets"></a></h2>
-
-      <div class="section-desc"><p>Data included with the package.</p></div>
+      <div class="section-desc"><p>Example datasets included with the package</p></div>
 
       <dl></dl></div><div class="section level2">
 
@@ -308,20 +278,6 @@
 
         </dt>
         <dd>Radiocarbon dates from Shubayqa 1</dd>
-
-        <dt>
-
-          <code><a href="c14_curves.html">IntCal20</a></code> <code><a href="c14_curves.html">SHCal20</a></code> <code><a href="c14_curves.html">Marine20</a></code> <code><a href="c14_curves.html">IntCal13</a></code> <code><a href="c14_curves.html">SHCal13</a></code> <code><a href="c14_curves.html">Marine13</a></code> <code><a href="c14_curves.html">IntCal09</a></code> <code><a href="c14_curves.html">Marine09</a></code> <code><a href="c14_curves.html">IntCal04</a></code> <code><a href="c14_curves.html">SHCal04</a></code> <code><a href="c14_curves.html">Marine04</a></code> <code><a href="c14_curves.html">IntCal98</a></code> <code><a href="c14_curves.html">Marine98</a></code>
-
-        </dt>
-        <dd>Radiocarbon calibration curves</dd>
-
-        <dt>
-
-          <code><a href="c14_decay.html">c14_decay_libby</a></code> <code><a href="c14_decay.html">c14_decay_cambridge</a></code>
-
-        </dt>
-        <dd>Radiocarbon decay constants</dd>
       </dl></div>
   </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>
     </nav></aside></div>

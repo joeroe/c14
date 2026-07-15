@@ -31,6 +31,13 @@ A data frame with two character columns: `lab_code` and `lab_number`. If
 `x` is of length one, this is simplified to a named character vector of
 length 2.
 
+## See also
+
+Other functions for tidying radiocarbon metadata:
+[`c14_control_lab_id()`](https://c14.joeroe.io/reference/c14_control_lab_id.md),
+[`c14_control_material()`](https://c14.joeroe.io/reference/c14_control_material.md),
+[`c14_fix_lab_id()`](https://c14.joeroe.io/reference/c14_fix_lab_id.md)
+
 ## Examples
 
 ``` r

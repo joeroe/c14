@@ -63,3 +63,9 @@ demographic fluctuations in China inferred from radiocarbon data and
 their linkage with climate change over the past 50,000 years.
 *Quaternary Science Reviews*, 98, pp.45-59.
 doi:10.1016/j.quascirev.2014.05.015
+
+## See also
+
+Other dictionaries and thesauri for radiocarbon metadata:
+[`c14_lab_code_thesaurus`](https://c14.joeroe.io/reference/c14_lab_code_thesaurus.md),
+[`c14_material_thesaurus`](https://c14.joeroe.io/reference/c14_material_thesaurus.md)

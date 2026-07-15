@@ -35,3 +35,9 @@ distinguished by case (see
 
 Variants that cannot (or have not yet) been unambiguously matched to a
 known, standard lab code have a `canon` value of `NA`.
+
+## See also
+
+Other dictionaries and thesauri for radiocarbon metadata:
+[`c14_labs`](https://c14.joeroe.io/reference/c14_labs.md),
+[`c14_material_thesaurus`](https://c14.joeroe.io/reference/c14_material_thesaurus.md)

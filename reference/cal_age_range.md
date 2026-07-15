@@ -39,7 +39,7 @@ A data frame with two columns giving the minimum (`min`) and maximum
 
 Other functions for summarising calibrated radiocarbon dates:
 [`cal_hdr()`](https://c14.joeroe.io/reference/cal_hdr.md),
-[`cal_point()`](https://c14.joeroe.io/reference/cal_point.md),
+[`cal_mode()`](https://c14.joeroe.io/reference/cal_mode.md),
 [`cal_probability()`](https://c14.joeroe.io/reference/cal_probability.md)
 
 ## Examples

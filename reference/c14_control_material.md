@@ -42,3 +42,10 @@ c14_control_material(
 ## Value
 
 Vector the same length as `x` with controlled sample materials.
+
+## See also
+
+Other functions for tidying radiocarbon metadata:
+[`c14_control_lab_id()`](https://c14.joeroe.io/reference/c14_control_lab_id.md),
+[`c14_fix_lab_id()`](https://c14.joeroe.io/reference/c14_fix_lab_id.md),
+[`c14_parse_lab_id()`](https://c14.joeroe.io/reference/c14_parse_lab_id.md)

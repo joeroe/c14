@@ -62,6 +62,13 @@ c14_control_lab_id(
 
 Vector the same length as `x` with controlled laboratory identifiers.
 
+## See also
+
+Other functions for tidying radiocarbon metadata:
+[`c14_control_material()`](https://c14.joeroe.io/reference/c14_control_material.md),
+[`c14_fix_lab_id()`](https://c14.joeroe.io/reference/c14_fix_lab_id.md),
+[`c14_parse_lab_id()`](https://c14.joeroe.io/reference/c14_parse_lab_id.md)
+
 ## Examples
 
 ``` r
