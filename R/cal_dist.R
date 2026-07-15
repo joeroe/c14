@@ -28,6 +28,8 @@ methods::setOldClass(c("c14_cal_dist", "vctrs_list_of"))
 #' A list of data frames with class `cal_dist` (`c14_cal_dist`). Each element
 #' has two columns: `age` and `pdens`.
 #'
+#' @family cal class methods
+#'
 #' @export
 #'
 #' @examples

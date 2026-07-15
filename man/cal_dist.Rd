@@ -58,3 +58,8 @@ cal_dist(data.frame(age = era::yr(1:10, "cal BP"), pdens = rep(0.1, 10)))
 cal <- c14::cal(5000, 10, c14::IntCal20)
 cal_dist(cal)
 }
+\seealso{
+Other cal class methods:
+\code{\link[=as_cal]{as_cal()}}
+}
+\concept{cal class methods}
