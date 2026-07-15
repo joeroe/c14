@@ -274,9 +274,9 @@ cal_dist_age_common <- function(x, resolution = 1) {
 #' @noRd
 #' @keywords internal
 cal_dist_interpolate <- function(x, range = cal_dist_age_common(x)) {
-  new_cal_dist(furrr::future_map(vec_data(x), function(x) {
-    x <- approx_df(x, range)
-    x$pdens <- x$pdens / sum(x$pdens, na.rm = TRUE)
-    x
+  new_cal_dist(purrr::map(vec_data(x), function(d) {
+    d <- approx_df(d, range)
+    d$pdens <- d$pdens / sum(d$pdens, na.rm = TRUE)
+    d
   }))
 }

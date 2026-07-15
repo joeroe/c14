@@ -266,14 +266,14 @@ cal_age_bound <- function(x, min_pdens = NULL, fn) {
 #' cal_hdr(x, interval = 0.683)
 #' cal_hdi(x, interval = 0.683)
 cal_hdr <- function(x, interval = 0.954) {
-  dists <- cal_dist(x)
+  dists <- cal_dist_interpolate(cal_dist(x))
   purrr::map(dists, cal_hdr_single, interval = interval)
 }
 
 #' @rdname cal_hdr
 #' @export
 cal_hdi <- function(x, interval = 0.954) {
-  dists <- cal_dist(x)
+  dists <- cal_dist_interpolate(cal_dist(x))
   purrr::map(dists, cal_hdi_single, interval = interval)
 }
 
@@ -369,13 +369,13 @@ cal_hdi_single <- function(dist, interval = 0.954) {
 #' @export
 #'
 #' @examples
-#' x <- c14_calibrate(5000, 10)
+#' x <- c14_calibrate(1116, 30)
+#'
+#' # Probability within an age range
+#' cal_probability(x, 970, 1060)
 #'
 #' # Probability at a single year
 #' cal_probability(x, 5000)
-#'
-#' # Probability within an age range
-#' cal_probability(x, 4900, 5100)
 cal_probability <- function(x, from, to = NULL) {
   if (is.null(to)) to <- from
   ages_list <- purrr::map(cal_dist(x), function(d) {
