@@ -1,5 +1,6 @@
 # v0.1.0.9000 (development version)
 
+* New default `plot()` method for `cal` vectors (#32)
 * New `cal_hdi()` and `cal_hdr()` summaries of the highest density interval and
   region(s) of a calibrated radiocarbon dates
   * Default printing of `cal` vectors is now the highest density interval

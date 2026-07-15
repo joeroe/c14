@@ -26,6 +26,10 @@ reference:
   desc: "Functions for aggregating calibrated radiocarbon dates."
 - contents:
   - has_concept("functions for aggregating calendar probability distributions")
+- title: "Plotting"
+  desc: "Plot calibrated radiocarbon dates."
+- contents:
+  - plot.c14_cal
 - title: "cal class methods"
   desc: "Methods for the `cal` class – vectors of calibrated radiocarbon dates."
 - contents:
