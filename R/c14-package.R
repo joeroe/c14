@@ -7,6 +7,10 @@
 ## usethis namespace: end
 NULL
 
+# Suppress R CMD check NOTEs for lazy-loaded datasets used as default arguments
+# (IntCal20 in c14_calibrate, thesauri in c14_control_lab_id / c14_control_material)
+utils::globalVariables(c("IntCal20", "c14_lab_code_thesaurus", "c14_material_thesaurus"))
+
 #' Internal Rdpack methods
 #'
 #' @keywords internal
