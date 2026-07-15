@@ -52,17 +52,17 @@ ppnd |>
   select(lab_id, cra, error) |>
   mutate(cal = c14_calibrate(cra, error))
 #> # A tibble: 9 × 4
-#>   lab_id     cra error             cal
-#>   <chr>    <int> <int>           <cal>
-#> 1 GaK 807  10400   150 c. 12200 cal BP
-#> 2 OxA 2099  8840   110  c. 9900 cal BP
-#> 3 OxA 2100  9010   110 c. 10200 cal BP
-#> 4 OxA 2101  8850   100 c. 10100 cal BP
-#> 5 OxA 2102  8690   110  c. 9560 cal BP
-#> 6 SI 922    8570   210  c. 9540 cal BP
-#> 7 SI 923    8625   195  c. 9545 cal BP
-#> 8 SI 924    8640    90  c. 9550 cal BP
-#> 9 SI 925    8385    75  c. 9440 cal BP
+#>   lab_id     cra error                cal
+#>   <chr>    <int> <int>              <cal>
+#> 1 GaK 807  10400   150 11755–12710 cal BP
+#> 2 OxA 2099  8840   110  9560–10190 cal BP
+#> 3 OxA 2100  9010   110  9750–10485 cal BP
+#> 4 OxA 2101  8850   100  9560–10195 cal BP
+#> 5 OxA 2102  8690   110  9490–10145 cal BP
+#> 6 SI 922    8570   210  9035–10180 cal BP
+#> 7 SI 923    8625   195  9145–10200 cal BP
+#> 8 SI 924    8640    90  9475–10105 cal BP
+#> 9 SI 925    8385    75   9145–9530 cal BP
 ```
 
 The resulting `cal`-class vector can be assigned to a new column,
