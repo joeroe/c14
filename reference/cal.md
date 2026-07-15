@@ -38,5 +38,5 @@ cal(1000, 30, curve = IntCal20)
 #> [1] 797–956 cal BP
 cal(c(1000, 2000), c(30, 40), curve = IntCal20)
 #> <c14_cal[2]>
-#> [1]   797–956 cal BP 1827–2044 cal BP
+#> [1] NA–NA cal BP NA–NA cal BP
 ```

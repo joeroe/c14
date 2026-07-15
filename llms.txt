@@ -129,6 +129,8 @@ Functions for summarising calibrated radiocarbon dates.
   Density Region and Highest Density Interval
 - [`cal_point()`](https://c14.joeroe.io/reference/cal_point.md) : Point
   estimates of calibrated radiocarbon dates
+- [`cal_probability()`](https://c14.joeroe.io/reference/cal_probability.md)
+  : Probability that a calibrated date falls within an age range
 
 ## Aggregate calibrated dates
 

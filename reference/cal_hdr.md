@@ -46,7 +46,8 @@ interval.
 
 Other functions for summarising calibrated radiocarbon dates:
 [`cal_age_range()`](https://c14.joeroe.io/reference/cal_age_range.md),
-[`cal_point()`](https://c14.joeroe.io/reference/cal_point.md)
+[`cal_point()`](https://c14.joeroe.io/reference/cal_point.md),
+[`cal_probability()`](https://c14.joeroe.io/reference/cal_probability.md)
 
 ## Examples
 
@@ -56,38 +57,38 @@ cal_hdr(x)
 #> [[1]]
 #> [[1]][[1]]
 #> # cal BP years <yr[2]>:
-#> [1] 5830 5850
+#> [1] 5657 5749
 #> # Era: Before Present (cal BP): Gregorian years (365.2425 days), counted backwards from 1950
 #> 
 #> [[1]][[2]]
 #> # cal BP years <yr[2]>:
-#> [1] 5660 5745
+#> [1] 5828 5849
 #> # Era: Before Present (cal BP): Gregorian years (365.2425 days), counted backwards from 1950
 #> 
 #> 
 cal_hdi(x)
 #> [[1]]
 #> # cal BP years <yr[2]>:
-#> [1] 5660 5850
+#> [1] 5657 5849
 #> # Era: Before Present (cal BP): Gregorian years (365.2425 days), counted backwards from 1950
 #> 
 cal_hdr(x, interval = 0.683)
 #> [[1]]
 #> [[1]][[1]]
 #> # cal BP years <yr[2]>:
-#> [1] 5715 5740
+#> [1] 5663 5686
 #> # Era: Before Present (cal BP): Gregorian years (365.2425 days), counted backwards from 1950
 #> 
 #> [[1]][[2]]
 #> # cal BP years <yr[2]>:
-#> [1] 5665 5685
+#> [1] 5712 5744
 #> # Era: Before Present (cal BP): Gregorian years (365.2425 days), counted backwards from 1950
 #> 
 #> 
 cal_hdi(x, interval = 0.683)
 #> [[1]]
 #> # cal BP years <yr[2]>:
-#> [1] 5665 5740
+#> [1] 5663 5744
 #> # Era: Before Present (cal BP): Gregorian years (365.2425 days), counted backwards from 1950
 #> 
 ```
