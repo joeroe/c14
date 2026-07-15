@@ -80,7 +80,7 @@ Stuiver M, Polach HA (1977). “Reporting of 14C Data.” *Radiocarbon*,
 
 ``` r
 c14_age(0.9239)
-#> [1] 0.999885
+#> [1] 635.8235
 c14_f14c(636)
-#> [1] -51854.61
+#> [1] 0.9238797
 ```
