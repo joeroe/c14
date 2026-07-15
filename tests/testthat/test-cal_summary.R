@@ -1,38 +1,46 @@
 # Point estimates ---------------------------------------------------------
 
-test_that("cal_point() warns about multiple modes unless quiet = TRUE", {
+test_that("cal_mode() warns about multiple modes unless quiet = TRUE", {
   multimodal_cal <- cal(10400, 20, IntCal20)
-  expect_warning(cal_point(multimodal_cal), class = "c14_ambiguous_summary")
-  expect_no_warning(cal_point(multimodal_cal, quiet = TRUE),
+  expect_warning(cal_mode(multimodal_cal), class = "c14_ambiguous_summary")
+  expect_no_warning(cal_mode(multimodal_cal, quiet = TRUE),
                     class = "c14_ambiguous_summary")
 })
 
-test_that("cal_point() returns era::yr vectors for different methods", {
+test_that("cal_mode() returns era::yr vectors", {
   x <- cal(5000, 10, IntCal20)
-  
-  mode_result <- cal_point(x, method = "mode")
-  median_result <- cal_point(x, method = "median")
-  mean_result <- cal_point(x, method = "mean")
-  
-  expect_s3_class(mode_result, "era_yr")
-  expect_s3_class(median_result, "era_yr")
-  expect_s3_class(mean_result, "era_yr")
+  expect_s3_class(cal_mode(x), "era_yr")
 })
 
-test_that("cal_point() works with vectors of cal", {
+test_that("cal_median() returns era::yr vectors", {
+  x <- cal(5000, 10, IntCal20)
+  expect_s3_class(cal_median(x), "era_yr")
+})
+
+test_that("cal_mean() returns era::yr vectors", {
+  x <- cal(5000, 10, IntCal20)
+  expect_s3_class(cal_mean(x), "era_yr")
+})
+
+test_that("cal_mode() works with vectors of cal", {
   y <- cal(c(6000, 5000, 4000), rep(10, 3), IntCal20)
-  
-  mode_results <- cal_point(y, method = "mode", quiet = TRUE)
-  median_results <- cal_point(y, method = "median")
-  mean_results <- cal_point(y, method = "mean")
-  
-  expect_length(mode_results, 3)
-  expect_length(median_results, 3)
-  expect_length(mean_results, 3)
-  
-  expect_s3_class(mode_results, "era_yr")
-  expect_s3_class(median_results, "era_yr")
-  expect_s3_class(mean_results, "era_yr")
+  result <- cal_mode(y, quiet = TRUE)
+  expect_length(result, 3)
+  expect_s3_class(result, "era_yr")
+})
+
+test_that("cal_median() works with vectors of cal", {
+  y <- cal(c(6000, 5000, 4000), rep(10, 3), IntCal20)
+  result <- cal_median(y)
+  expect_length(result, 3)
+  expect_s3_class(result, "era_yr")
+})
+
+test_that("cal_mean() works with vectors of cal", {
+  y <- cal(c(6000, 5000, 4000), rep(10, 3), IntCal20)
+  result <- cal_mean(y)
+  expect_length(result, 3)
+  expect_s3_class(result, "era_yr")
 })
 
 # Simple ranges -----------------------------------------------------------

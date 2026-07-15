@@ -5,34 +5,33 @@
 
 #' Point estimates of calibrated radiocarbon dates
 #'
-#' This function implements a number of methods for deriving a single point
-#' estimate of calendar age from calibrated radiocarbon dates. Note that none of
-#' these methods produce a *good* estimate \insertCite{Michczynski2007}{c14},
-#' and should only be used as a last resort if the probability distribution
-#' function or an interval estimate is not appropriate, in which case
-#' `method = "mode"` (the default) is recommended.
+#' Functions for deriving a single point estimate of calendar age from calibrated
+#' radiocarbon dates. Note that none of these methods produce a *good* estimate
+#' \insertCite{Michczynski2007}{c14}, and should only be used as a last resort
+#' if the probability distribution function or an interval estimate is not
+#' appropriate, in which case [cal_mode()] (the default) is recommended.
 #'
-#' @param x `cal` object. A vector of calibrated radiocarbon dates
-#' @param method Character. Method of estimation:
-#'   \describe{
-#'     \item{`"mode"` (default)}{age corresponding to the maximum peak of the probability distribution}
-#'     \item{`"median"`}{age corresponding to the median quantile of the probability distribution}
-#'     \item{`"mean"`}{mean age weighted by probability density}
-#'     \item{`"local_mode"`}{age corresponding to the maximum peak of the probability
-#'      distribution within the confidence range specified by `interval` (**not yet
-#'      implemented**)}
-#'     \item{`"central"`}{age corresponding to the central point of the probability
-#'      density within the confidence range specified by `interval` (**not yet
-#'      implemented**)}
-#'   }
-#' @param interval Numeric. Only used for `method = "local_mode"` and
-#'  `method = "central"`.
-#' @param quiet Set `quiet = TRUE` to suppress warnings and messages
+#' @param x `cal` object. A vector of calibrated radiocarbon dates.
+#' @param quiet Set `quiet = TRUE` to suppress warnings (only used by
+#'   [cal_mode()]).
+#' @param interval Numeric. The confidence interval for [cal_local_mode()] and
+#'   [cal_central()]. Default: 0.954.
 #'
 #' @details
 #'
-#' If `x` has more than one modal value, `cal_point(x, method = "mode")` will
-#' return the first.
+#' \describe{
+#'   \item{`cal_mode()`}{Age corresponding to the maximum peak of the probability
+#'     distribution. If `x` has more than one modal value, the first is returned.}
+#'   \item{`cal_median()`}{Age corresponding to the median quantile of the
+#'     probability distribution.}
+#'   \item{`cal_mean()`}{Mean age weighted by probability density.}
+#'   \item{`cal_local_mode()`}{Age corresponding to the maximum peak of the
+#'     probability distribution within the confidence range specified by
+#'     `interval` (**not yet implemented**).}
+#'   \item{`cal_central()`}{Age corresponding to the central point of the
+#'     probability density within the confidence range specified by `interval`
+#'     (**not yet implemented**).}
+#' }
 #'
 #' @return
 #' Numeric vector the same length as `x` giving the point estimate for each
@@ -44,113 +43,77 @@
 #' @family functions for summarising calibrated radiocarbon dates
 #'
 #' @export
+#' @aliases cal_point
 #'
 #' @examples
-#' cal_point(c14_calibrate(10000, 30))
-cal_point <- function(x,
-                      method = c("mode", "median", "mean", "local_mode", "central"),
-                      interval = 0.954,
-                      quiet = FALSE) {
-  # TODO: Check/cast x
-  method <- rlang::arg_match(method)
-
-  f <- switch(
-    method,
-    mode = cal_mode,
-    median = cal_median,
-    mean = cal_mean,
-    local_mode = cal_local_mode,
-    central = cal_central
-  )
-
-  # Flatten to era_yr
-  furrr::future_map_vec(x, f, interval = interval, quiet = quiet)
-}
-
-#' Mode of a calibrated radiocarbon date
+#' x <- c14_calibrate(10000, 30)
 #'
-#' Calculates the age "corresponding to the maximum of the density function"
-#'  (Michczynski 2007).
-#' Issues a warning if more than one modal value is returned (unlikely).
-#' Not vectorised.
-#'
-#' @noRd
-#' @keywords internal
-cal_mode <- function(x, quiet = FALSE, ...) {
-  dist <- cal_dist(x)
-  ages <- dist[[1]]$age
-  pdens <- dist[[1]]$pdens
-  
-  y <- ages[pdens == max(pdens, na.rm = TRUE) & !is.na(pdens)]
-  if (length(y) > 1) {
-    y <- y[1]
-    if (!isTRUE(quiet)) rlang::warn(
-      "`x` has more than one modal value. Only the first will be returned.",
-         "c14_ambiguous_summary"
-    )
+#' cal_mode(x)
+#' cal_median(x)
+#' cal_mean(x)
+cal_mode <- function(x, quiet = FALSE) {
+  cal_mode_single <- function(x, quiet) {
+    dist <- cal_dist(x)
+    ages <- dist[[1]]$age
+    pdens <- dist[[1]]$pdens
+
+    y <- ages[pdens == max(pdens, na.rm = TRUE) & !is.na(pdens)]
+    if (length(y) > 1) {
+      y <- y[1]
+      if (!isTRUE(quiet)) rlang::warn(
+        "`x` has more than one modal value. Only the first will be returned.",
+        "c14_ambiguous_summary"
+      )
+    }
+    y
   }
-  y
+  furrr::future_map_vec(x, cal_mode_single, quiet = quiet)
 }
 
-#' Median of a calibrated radiocarbon date
-#'
-#' Calculates the age corresponding to the median quantile of the probability
-#' distribution (Michczynski 2007).
-#' Not vectorised.
-#'
-#' @noRd
-#' @keywords internal
-cal_median <- function(x, ...) {
-  dist <- cal_dist_normalise(cal_dist(x))
-  ages <- dist[[1]]$age
-  pdens <- dist[[1]]$pdens
+#' @rdname cal_mode
+#' @export
+cal_median <- function(x) {
+  cal_median_single <- function(x) {
+    dist <- cal_dist_normalise(cal_dist(x))
+    ages <- dist[[1]]$age
+    pdens <- dist[[1]]$pdens
 
-  cum_pdens <- cumsum(pdens)
-  ages[which(cum_pdens >= 0.5)[1]]
+    cum_pdens <- cumsum(pdens)
+    ages[which(cum_pdens >= 0.5)[1]]
+  }
+  furrr::future_map_vec(x, cal_median_single)
 }
 
-#' Mean of a calibrated radiocarbon date
-#'
-#' Calculates the mean age weighted by the probability distribution function
-#'  (Michczynski 2007).
-#' Not vectorised.
-#'
-#' @noRd
-#' @keywords internal
-cal_mean <- function(x, ...) {
-  dist <- cal_dist(x)
-  ages <- dist[[1]]$age
-  pdens <- dist[[1]]$pdens
-  
-  result <- stats::weighted.mean(as.numeric(ages), pdens)
-  era::yr(result, era::yr_era(ages))
+#' @rdname cal_mode
+#' @export
+cal_mean <- function(x) {
+  cal_mean_single <- function(x) {
+    dist <- cal_dist(x)
+    ages <- dist[[1]]$age
+    pdens <- dist[[1]]$pdens
+
+    result <- stats::weighted.mean(as.numeric(ages), pdens)
+    era::yr(result, era::yr_era(ages))
+  }
+  furrr::future_map_vec(x, cal_mean_single)
 }
 
-#' Local mode of a calibrated radiocarbon date
-#'
-#' Calculates the age corresponding to the mode (cal_mode()) of the probability
-#' distribution within a given confidence interval (Michczynski 2007).
-#' Not vectorised.
-#'
-#' @noRd
-#' @keywords internal
-cal_local_mode <- function(x, interval = 0.954, ...) {
-  rlang::abort("Sorry, `cal_local_mode()` is not yet implemented!",
-        "c14_unimplemented_function")
+#' @rdname cal_mode
+#' @export
+cal_local_mode <- function(x, interval = 0.954) {
+  rlang::abort(
+    "Sorry, `cal_local_mode()` is not yet implemented!",
+    "c14_unimplemented_function"
+  )
 }
 
-#' Central point of a calibrated radiocarbon date
-#'
-#' Calculates the age corresponding to the central point of the probability
-#' distribution (Michczynski 2007), within a confidence interval if
-#' `interval < 1`.
-#' Not vectorised.
-#'
-#' @noRd
-#' @keywords internal
-cal_central <- function(x, interval = 1, ...) {
-  rlang::abort("Sorry, `cal_central()` is not yet implemented!",
-        "c14_unimplemented_function")
+#' @rdname cal_mode
+#' @export
+cal_central <- function(x, interval = 0.954) {
+  rlang::abort(
+    "Sorry, `cal_central()` is not yet implemented!",
+    "c14_unimplemented_function"
+  )
 }
 
 
