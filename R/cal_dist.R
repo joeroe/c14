@@ -48,9 +48,9 @@ cal_dist <- function(x, ...) {
 #' @exportS3Method
 #' @noRd
 #' @keywords internal
-cal_dist.c14_cal <- function(cal, at = NULL, ...) {
-  ages_list <- cal_dist_ages(cal, at)
-  f_list <- cal_dist_function(cal, at)
+cal_dist.c14_cal <- function(x, at = NULL, ...) {
+  ages_list <- cal_dist_ages(x, at)
+  f_list <- cal_dist_function(x, at)
   
   purrr::map2(ages_list, f_list, \(x, f) data.frame(age = x, pdens = f(x))) |> 
     new_cal_dist()
