@@ -28,13 +28,13 @@ Calculates the probability that a calibrated radiocarbon date falls within a
 given calendar age range or a single year.
 }
 \examples{
-x <- c14_calibrate(5000, 10)
+x <- c14_calibrate(1116, 30)
+
+# Probability within an age range
+cal_probability(x, 970, 1060)
 
 # Probability at a single year
 cal_probability(x, 5000)
-
-# Probability within an age range
-cal_probability(x, 4900, 5100)
 }
 \seealso{
 This function is the inverse of \code{\link[=cal_hdi]{cal_hdi()}} and \code{\link[=cal_hdr]{cal_hdr()}}, which find
