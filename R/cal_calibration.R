@@ -104,7 +104,7 @@ cal_sample <- function(cal) {
                  class = "c14_invalid_argument")
   }
 
-  indices <- cal_relevant_indices(cal)
+  indices <- cal_relevant_indices(cal)[[1]]
   curve <- cal_c14_curve(cal)
   ages_range <- range(curve$cal_age[indices])
   ages <- seq(from = ages_range[1], to = ages_range[2], by = 1)
@@ -124,24 +124,23 @@ cal_sample <- function(cal) {
 #' non-negligible. Uses a heuristic based on the combined error of the date and
 #' curve.
 #'
-#' @param cal A `cal` object of length 1.
+#' @param cal A `cal` object (any length).
 #' @param k Number of standard deviations to include. Default: 6 (covers 99.9999998%).
 #'
-#' @return Integer vector of indices into the calibration curve.
+#' @return A list of integer vectors of indices into the calibration curve,
+#'   one per element of `cal`.
 #'
 #' @noRd
 #' @keywords internal
 cal_relevant_indices <- function(cal, k = 6) {
-  if (length(cal) != 1) {
-    rlang::abort("`cal_relevant_indices()` expects a `cal` of length 1.",
-                 class = "c14_invalid_argument")
-  }
-
-  c14_age <- field(cal, "c14_age")
+  c14_age   <- field(cal, "c14_age")
   c14_error <- field(cal, "c14_error")
-  curve <- cal_c14_curve(cal)
+  curve     <- cal_c14_curve(cal)
 
-  combined_error <- sqrt(c14_error^2 + curve$c14_error^2)
-  which(abs(curve$c14_age - c14_age) < k * combined_error)
+  age_diff  <- abs(outer(c14_age, curve$c14_age, "-"))
+  combined_error <- sqrt(outer(c14_error^2, curve$c14_error^2, "+"))
+  within    <- age_diff < k * combined_error
+
+  apply(within, 1, which, simplify = FALSE)
 }
 

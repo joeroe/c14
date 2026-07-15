@@ -61,19 +61,12 @@ cal_dist.c14_cal <- function(x, at = NULL, ...) {
 #' @keywords internal
 cal_dist_ages <- function(cal, at = NULL) {
   if (is.null(at)) {
-    purrr::map(cal, cal_dist_ages_sparse)
+    indices <- cal_relevant_indices(cal)
+    curve   <- cal_c14_curve(cal)
+    purrr::map(indices, \(i) curve$cal_age[i])
   } else {
     rep(list(at), length(cal))
   }
-}
-
-#' Get sparse grid ages for a single cal object
-#' @noRd
-#' @keywords internal
-cal_dist_ages_sparse <- function(cal_single) {
-  indices <- cal_relevant_indices(cal_single)
-  curve <- cal_c14_curve(cal_single)
-  curve$cal_age[indices]
 }
 
 #' Create appropriate density function(s) for cal object(s)
