@@ -150,17 +150,22 @@ format.c14_curve <- function(x, ...) {
 
   if (nrow(x) > 0) {
     n_show <- min(5, nrow(x))
-    data_preview <- utils::capture.output(print(utils::head(x, n_show)))
+    data_preview <- utils::capture.output(print.data.frame(utils::head(x, n_show)))
     data_preview <- paste(data_preview, collapse = "\n")
   } else {
     data_preview <- "(no data)"
   }
 
+  footer <- if (nrow(x) > 5) {
+    paste0("# ", nrow(x) - 5, " more rows")
+  }
+
   paste0(
-    header, "\n",
-    type_desc, "\n",
-    range_str, "\n",
-    data_preview
+    "# ", header, "\n",
+    "# ", type_desc, "\n",
+    "# ", range_str, "\n",
+    data_preview,
+    if (!is.null(footer)) paste0("\n", footer)
   )
 }
 
