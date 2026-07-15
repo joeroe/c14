@@ -11,9 +11,7 @@ vignette: >
 ```{r, include = FALSE}
 knitr::opts_chunk$set(
   collapse = TRUE,
-  comment = "#>",
-  fig.width = 7,
-  fig.height = 5
+  comment = "#>"
 )
 ```
 
@@ -25,6 +23,7 @@ This vignette introduces functions for the most common tasks when working with r
 ```{r setup, message = FALSE}
 library("c14")
 library("dplyr", warn.conflicts = FALSE)
+library("tidyr")
 library("ggplot2")
 ```
 
@@ -132,49 +131,38 @@ par(mfrow = c(1, 1))
 
 ### ggplot2
 
-Because c14 works with standard R data structures, it is straightforward to build custom ggplots.
-The key is to extract the probability distribution data and tidy it into a data frame.
+Because c14 works with standard R data structures, it is straightforward to build custom ggplots with ggplot2.
+The key is to use `cal_dist()` to extract the probability distributions, then `tidyr::unnest()` to tidy them into a data frame.
 
-The `cal_dist()` function returns a list of data frames, each with `age` and `pdens` columns.
-We can combine these into a single tidy data frame for plotting:
+`cal_dist()` returns a list of data frames, each with `age` and `pdens` columns.
+When stored in a tibble as a list-column, `unnest()` expands each element into its own rows:
 
-```{r ggplot-setup}
-tidy_cal <- function(cal_vec) {
-  dists <- c14:::cal_dist(cal_vec)
-  purrr::imap_dfr(dists, function(df, i) {
-    df$label <- paste0("Date ", i)
-    df
-  })
-}
-```
-
-```{r ggplot-single, fig.width = 6, fig.height = 4}
-dist_df <- tidy_cal(shub1_cal[1])
-dist_df$label <- shub1_c14$lab_id[1]
-
-ggplot(dist_df, aes(x = age, y = pdens)) +
-  geom_ribbon(aes(ymin = 0, ymax = pdens), fill = "steelblue", alpha = 0.3) +
-  geom_line(colour = "steelblue") +
+```{r ggplot-single}
+shub1_c14 |>
+  slice(1) |>
+  mutate(cal = c14_calibrate(c14_age, c14_error)) |>
+  mutate(dist = cal_dist(cal)) |>
+  unnest(dist) |>
+  ggplot(aes(x = age, y = pdens)) +
+  geom_ribbon(aes(ymin = 0, ymax = pdens)) +
   labs(x = "Calendar age (cal BP)", y = "Probability density") +
-  scale_x_reverse() +
-  theme_minimal()
+  scale_x_reverse()
 ```
 
 You can plot multiple dates by faceting.
-Here we add the lab ID as a grouping column before combining the data frames:
+The original data columns (like `lab_id`) are preserved and can be used directly:
 
-```{r ggplot-facet, fig.width = 7, fig.height = 8}
-dist_df <- tidy_cal(shub1_cal[1:6])
-n_per_date <- sapply(c14:::cal_dist(shub1_cal[1:6]), nrow)
-dist_df$lab_id <- rep(shub1_c14$lab_id[1:6], times = n_per_date)
-
-ggplot(dist_df, aes(x = age, y = pdens)) +
-  geom_ribbon(aes(ymin = 0, ymax = pdens), fill = "steelblue", alpha = 0.3) +
-  geom_line(colour = "steelblue") +
-  facet_wrap(~lab_id, ncol = 2, scales = "free_y") +
+```{r ggplot-facet, fig.height = 8}
+shub1_c14 |>
+  slice(1:6) |>
+  mutate(cal = c14_calibrate(c14_age, c14_error)) |>
+  mutate(dist = cal_dist(cal)) |>
+  unnest(dist) |>
+  ggplot(aes(x = age, y = pdens)) +
+  geom_ribbon(aes(ymin = 0, ymax = pdens)) +
+  facet_wrap(vars(lab_id), ncol = 1, scales = "free_y") +
   labs(x = "Calendar age (cal BP)", y = "Probability density") +
-  scale_x_reverse() +
-  theme_minimal()
+  scale_x_reverse()
 ```
 
 This makes it easy to compare dates across sites, phases, or any other grouping in your data.

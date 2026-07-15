@@ -23,16 +23,12 @@ methods::setOldClass(c("c14_cal_dist", "vctrs_list_of"))
 #' @param x An object to convert to a `cal_dist`. Currently supports `cal` and
 #'   `data.frame` objects.
 #' @param ... Additional arguments passed to methods.
-#' @param .era [era::era()] object describing the time scale used for ages.
-#'   Defaults to calendar years Before Present (`era("cal BP")`). Only used by
-#'   the `data.frame` method when ages are not already `era::yr()` vectors.
 #'
 #' @return
 #' A list of data frames with class `cal_dist` (`c14_cal_dist`). Each element
 #' has two columns: `age` and `pdens`.
 #'
-#' @noRd
-#' @keywords internal
+#' @export
 #'
 #' @examples
 #' # From data frames:
@@ -45,9 +41,19 @@ cal_dist <- function(x, ...) {
   UseMethod("cal_dist")
 }
 
+#' @param at List of numeric vectors giving the ages over which the distribution 
+#'   should be calculated. Recycled to `length(cal)`. If `NULL` (the default) 
+#'   then a plausible range is estimated for each calibrated date at the native 
+#'   resolution of the calibration curve (see details). 
+#'
+#' @details
+#' The 'plausible range' of a calibrated radiocarbon distribution is estimated 
+#' as the portions of the calibration curve that are no more than six times the
+#' combined error of the determination and the curve away from the conventional
+#' radiocarbon age.
+#'
 #' @exportS3Method
-#' @noRd
-#' @keywords internal
+#' @rdname cal_dist
 cal_dist.c14_cal <- function(x, at = NULL, ...) {
   ages_list <- cal_dist_ages(x, at)
   f_list <- cal_dist_function(x, at)
@@ -79,6 +85,7 @@ cal_dist_ages <- function(cal, at = NULL) {
 }
 
 #' Create appropriate density function(s) for cal object(s)
+#' 
 #' @noRd
 #' @keywords internal
 cal_dist_function <- function(cal, at = NULL) {
@@ -89,9 +96,12 @@ cal_dist_function <- function(cal, at = NULL) {
   }
 }
 
+#' @param .era [era::era()] object describing the time scale used for ages.
+#'   Defaults to calendar years Before Present (`era("cal BP")`). Only used by
+#'   the `data.frame` method when ages are not already `era::yr()` vectors.
+#'
 #' @exportS3Method
-#' @noRd
-#' @keywords internal
+#' @rdname cal_dist
 cal_dist.data.frame <- function(x, ..., .era = era::era("cal BP")) {
   dfs <- list(x, ...)
 
@@ -108,8 +118,7 @@ cal_dist.data.frame <- function(x, ..., .era = era::era("cal BP")) {
 }
 
 #' @exportS3Method
-#' @noRd
-#' @keywords internal
+#' @rdname cal_dist
 cal_dist.default <- function(x, ...) {
   new_cal_dist(x)
 }

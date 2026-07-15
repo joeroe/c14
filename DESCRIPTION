@@ -55,11 +55,15 @@ Imports:
     zeallot
 Suggests:
     covr,
+    dplyr,
+    ggplot2,
     knitr,
+    purrr,
     rmarkdown,
     roxygen2,
     testthat,
-    tibble
+    tibble,
+    tidyr
 Enhances:
     Bchron,
     oxcAAR,
