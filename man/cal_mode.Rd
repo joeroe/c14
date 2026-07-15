@@ -66,7 +66,6 @@ cal_mean(x)
 }
 \seealso{
 Other functions for summarising calibrated radiocarbon dates:
-\code{\link[=cal_age_range]{cal_age_range()}},
 \code{\link[=cal_hdr]{cal_hdr()}},
 \code{\link[=cal_probability]{cal_probability()}}
 }

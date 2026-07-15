@@ -41,7 +41,6 @@ This function is the inverse of \code{\link[=cal_hdi]{cal_hdi()}} and \code{\lin
 intervals for a given probability mass.
 
 Other functions for summarising calibrated radiocarbon dates:
-\code{\link[=cal_age_range]{cal_age_range()}},
 \code{\link[=cal_hdr]{cal_hdr()}},
 \code{\link[=cal_mode]{cal_mode()}}
 }

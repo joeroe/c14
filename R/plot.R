@@ -60,8 +60,9 @@ plot.c14_cal <- function(x, ..., max.plot = 20, resolution = NULL, fixed_xlim = 
   }
 
   # Calculate age ranges and resolution(s) (just one if fixed_xlim = TRUE)
-  min_age <- as.numeric(cal_age_min(x, min_pdens = 0.00001))
-  max_age <- as.numeric(cal_age_max(x, min_pdens = 0.00001))
+  hdi <- cal_hdi(x, interval = 0.99999)
+  min_age <- as.numeric(purrr::map_dbl(hdi, 1))
+  max_age <- as.numeric(purrr::map_dbl(hdi, 2))
   age_ranges <- if (isTRUE(fixed_xlim)) {
     list(data.frame(min = min(min_age), max = max(max_age)))
   }

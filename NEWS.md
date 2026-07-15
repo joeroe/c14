@@ -6,11 +6,12 @@
 * Package no longer depends on checkmate (depends), mockery, readr, readxl, 
   usethis (suggests), or dplyr (suggests, but still required to build website)
 * New `cal_probability()` summary of the probability that a calibrated date
-  lies in a specified range #38
+  lies in a specified range (#38)
 * New default `plot()` method for `cal` vectors (#32)
 * New `cal_hdi()` and `cal_hdr()` summaries of the highest density interval and
   region(s) of a calibrated radiocarbon dates
   * Default printing of `cal` vectors is now the highest density interval
+  * Replaces `cal_age_range()`, `cal_age_min()`, and `cal_age_max()`
 * `c14_calibrate` and all summary and aggregation functions now use an efficient
   internal calibration algorithm, instead of an external dependency
   * `c14_calibrate()` no longer has `engine` or `min_pdens` arguments (#24, #26)

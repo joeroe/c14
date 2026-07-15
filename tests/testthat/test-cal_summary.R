@@ -43,56 +43,6 @@ test_that("cal_mean() works with vectors of cal", {
   expect_s3_class(result, "era_yr")
 })
 
-# Simple ranges -----------------------------------------------------------
-
-x <- cal(5000, 10, IntCal20)
-y <- cal(c(6000, 5000, 4000), rep(10, 3), IntCal20)
-
-y_era <- era::yr_era(cal_dist_age(cal_dist(y[[1]]))[[1]])
-y_yr_ptype <- era::yr(era = y_era)
-
-test_that("cal_age_min() and cal_age_max() return a yr vector of the same length as x", {
-  expect_vector(cal_age_min(y), y_yr_ptype, length(y))
-  expect_vector(cal_age_max(y), y_yr_ptype, length(y))
-})
-
-test_that("cal_age_min() is less than or equal to cal_age_max()", {
-  expect_lte(cal_age_min(x), cal_age_max(x))
-})
-
-test_that("cal_age_range() returns a two-column data frame of the same length as x", {
-  expect_vector(
-    cal_age_range(y),
-    data_frame(min = y_yr_ptype, max = y_yr_ptype),
-    size = length(y)
-  )
-})
-
-test_that("cal_age_min() and cal_age_max() respect min_pdens parameter", {
-  x <- cal(5000, 10, IntCal20)
-  
-  # NULL (default) uses sparse grid with no filtering
-  min_default <- cal_age_min(x)
-  
-  # 0 (explicit) uses full curve range
-  min_full <- cal_age_min(x, min_pdens = 0)
-  
-  # > 0 uses sparse grid with filtering
-  min_filtered <- cal_age_min(x, min_pdens = 0.01)
-  
-  max_default <- cal_age_max(x)
-  max_full <- cal_age_max(x, min_pdens = 0)
-  max_filtered <- cal_age_max(x, min_pdens = 0.01)
-  
-  # Full curve should give wider or equal range compared to sparse grid
-  expect_lte(as.numeric(min_full), as.numeric(min_default))
-  expect_gte(as.numeric(max_full), as.numeric(max_default))
-  
-  # Filtered should give narrower or equal range compared to default
-  expect_gte(as.numeric(min_filtered), as.numeric(min_default))
-  expect_lte(as.numeric(max_filtered), as.numeric(max_default))
-})
-
 # Highest Density Regions -------------------------------------------------
 
 test_that("cal_hdr() returns a list of the same length as x", {
@@ -144,12 +94,11 @@ test_that("cal_hdr() intervals are contained within age range", {
   x <- cal(5000, 10, IntCal20)
   result <- cal_hdr(x)
   
-  age_min <- cal_age_min(x)
-  age_max <- cal_age_max(x)
+  range_hdi <- cal_hdi(x, interval = 0.99999)[[1]]
   
   for (interval in result[[1]]) {
-    expect_gte(as.numeric(interval[1]), as.numeric(age_min))
-    expect_lte(as.numeric(interval[2]), as.numeric(age_max))
+    expect_gte(as.numeric(interval[1]), as.numeric(range_hdi[1]))
+    expect_lte(as.numeric(interval[2]), as.numeric(range_hdi[2]))
   }
 })
 
@@ -199,11 +148,10 @@ test_that("cal_hdi() interval is contained within age range", {
   x <- cal(5000, 10, IntCal20)
   result <- cal_hdi(x)
   
-  age_min <- cal_age_min(x)
-  age_max <- cal_age_max(x)
+  range_hdi <- cal_hdi(x, interval = 0.99999)[[1]]
   
-  expect_gte(as.numeric(result[[1]][1]), as.numeric(age_min))
-  expect_lte(as.numeric(result[[1]][2]), as.numeric(age_max))
+  expect_gte(as.numeric(result[[1]][1]), as.numeric(range_hdi[1]))
+  expect_lte(as.numeric(result[[1]][2]), as.numeric(range_hdi[2]))
 })
 
 test_that("cal_hdi() is contained within cal_hdr()", {
