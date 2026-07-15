@@ -47,7 +47,7 @@ For most files, only the first argument needs to be supplied. Further
 arguments can be used if the file does not follow the conventional format.
 }
 \examples{
-read_14c(system.file("extdata", "intcal98.14c", package = "c14"))
+read_14c(system.file("extdata", "intcal04.14c", package = "c14"))
 }
 \seealso{
 Other calibration curve functions:

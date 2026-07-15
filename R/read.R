@@ -36,7 +36,7 @@
 #' @export
 #'
 #' @examples
-#' read_14c(system.file("extdata", "intcal98.14c", package = "c14"))
+#' read_14c(system.file("extdata", "intcal04.14c", package = "c14"))
 read_14c <- function(file,
                      format = c("14c", "f14c"),
                      delim = NA,
