@@ -357,14 +357,14 @@ cal_hdi_single <- function(dist, interval = 0.954) {
 #' @return
 #' Numeric vector of probabilities between 0 and 1, the same length as `x`.
 #'
+#' @source
+#' Rundkvist, Martin. 20 November 2024. Radiocarbon in the AD 900s on 
+#' Riddarholmen. *Aardvarchaeology*. <https://aardvarchaeology.wordpress.com/2024/11/20/radiocarbon-in-the-ad-900s-on-riddarholmen/>
+#'
 #' @family functions for summarising calibrated radiocarbon dates
 #' @seealso 
 #' This function is the inverse of [cal_hdi()] and [cal_hdr()], which find 
 #' intervals for a given probability mass.
-#'
-#' @source
-#' Rundkvist, Martin. 20 November 2024. Radiocarbon in the AD 900s on 
-#' Riddarholmen. *Aardvarchaeology*. <https://aardvarchaeology.wordpress.com/2024/11/20/radiocarbon-in-the-ad-900s-on-riddarholmen/>
 #'
 #' @export
 #'
