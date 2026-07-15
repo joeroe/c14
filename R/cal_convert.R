@@ -1,16 +1,15 @@
 # cal_convert.R
-# Functions for converting foreign objects to or from the c14 cal class
+# Functions for converting foreign objects to or from the c14 cal_dist class
 
 
-# rcarbon (CalDates) ------------------------------------------------------
+# Base classes ------------------------------------------------------------
 
 
-
-#' Convert a foreign object to a cal object
+#' Convert a foreign object to a cal_dist object
 #'
 #' @description
-#' `as_cal()` converts objects from other packages that represent calibrated
-#' radiocarbon dates to the c14 `cal` class.
+#' `as_cal_dist()` converts objects from other packages that represent calibrated
+#' radiocarbon distributions to the c14 `cal_dist` class.
 #' Methods are currently implemented for:
 #'
 #' * `CalDates`: from [rcarbon::calibrate()]
@@ -18,52 +17,51 @@
 #' * `BchronCalibratedDates`: from [Bchron::BchronCalibrate()]
 #'
 #' These functions are intended for complex S3 objects from other packages.
-#' The generic constructor [cal()] can be used for data frames and other base
+#' The generic constructor [cal_dist()] can be used for data frames and other base
 #' structures.
 #'
-#' @param x  Object from another package to be converted to a `cal` object.
+#' @param x  Object from another package to be converted to a `cal_dist` object.
+#' @param ... Unused
 #'
 #' @returns
-#' Vector of class `c14_cal` ([cal]).
+#' Vector of class `c14_cal_dist` ([cal_dist]).
 #'
 #' @family cal class methods
 #' @family c14 conversion functions
 #'
 #' @export
-as_cal <- function(x) UseMethod("as_cal")
+as_cal_dist <- function(x, ...) UseMethod("as_cal_dist")
 
 
-# Base classes ------------------------------------------------------------
-
-#' @rdname as_cal
+#' @rdname as_cal_dist
 #' @export
-as_cal.data.frame <- function(x) {
-  cal(x)
+as_cal_dist.data.frame <- function(x, ...) {
+  cal_dist(x)
 }
 
-#' @rdname as_cal
+#' @rdname as_cal_dist
 #' @export
-as_cal.matrix <- function(x) {
-  cal(as.data.frame(x))
+as_cal_dist.matrix <- function(x, ...) {
+  cal_dist(as.data.frame(x))
 }
 
 # rcarbon (CalDates) ------------------------------------------------------
 
-#' @rdname as_cal
+#' @rdname as_cal_dist
 #' @export
-as_cal.CalDates <- function(x) {
+as_cal_dist.CalDates <- function(x, ...) {
   x <- validate_CalDates(x)
 
   pds <- x[[grids_or_calmatrix(x)]]
 
   if (grids_or_calmatrix(x) == "calmatrix") {
-    rlang::abort("as_cal method for calMatrix not yet implemented!",
+    rlang::abort("as_cal_dist method for calMatrix not yet implemented!",
                  class = "c14_unimplemented_function")
   }
 
   pds <- purrr::map(pds, `class<-`, value = "data.frame")
 
-  cal(!!!pds)
+  do.call(cal_dist, unname(pds))
 }
 
 #' Test whether an object is a valid rcarbon::CalDates.
@@ -97,7 +95,7 @@ validate_CalDates <- function(x) {
 #'
 #' @noRd
 #' @keywords Internal
-grids_or_calmatrix <- function(x) {
+grids_or_calmatrix <- function(x, ...) {
   if (!all(is.na(x[["grids"]]))) "grids"
   else if (!all(is.na(x[["calmatrix"]]))) "calmatrix"
   else NA
@@ -105,32 +103,48 @@ grids_or_calmatrix <- function(x) {
 
 # oxcAAR (oxcAARCalibrated*) ----------------------------------------------
 
-#' @rdname as_cal
+#' @rdname as_cal_dist
 #' @export
-as_cal.oxcAARCalibratedDatesList <- function(x) {
-  purrr::map(x, as_cal)
+as_cal_dist.oxcAARCalibratedDatesList <- function(x, ...) {
+  purrr::map(x, as_cal_dist, ...)
 }
 
-#' @rdname as_cal
+#' @param which Which probability distribution to extract from an `oxcAARCalibratedDate`:
+#'   `"prior"` (default) uses raw calibrated probabilities.
+#'   `"posterior"` uses Bayesian posterior probabilities (error if not available).
+#'
+#' @rdname as_cal_dist
 #' @export
-as_cal.oxcAARCalibratedDate <- function(x) {
-  y <- x$raw_probabilities
+as_cal_dist.oxcAARCalibratedDate <- function(x, ..., which = c("prior", "posterior")) {
+  which <- match.arg(which)
 
-  if (!all(is.na(x$posterior_probabilities))) {
-    y <- rbind(data.frame(y, bayesian = "prior"),
-               data.frame(x$posterior_probabilities,
-                          bayesian = "posterior"))
+  if (which == "prior") {
+    return(oxcAAR_to_cal_dist(x$raw_probabilities))
   }
 
-  new_cal(y)
+  if (all(is.na(x$posterior_probabilities))) {
+    rlang::abort(
+      "No posterior probabilities available in this oxcAAR object.",
+      class = "c14_invalid_foreign_object"
+    )
+  }
+
+  oxcAAR_to_cal_dist(x$posterior_probabilities)
 }
 
+#' Convert oxcAAR probability data frame to cal_dist
+#'
+#' @noRd
+#' @keywords Internal
+oxcAAR_to_cal_dist <- function(x, ...) {
+  cal_dist(data.frame(age = 1950 - x$dates, pdens = x$probabilities))
+}
 
 # Bchron (BchronCalibratedDates) ------------------------------------------
 
-#' @rdname as_cal
+#' @rdname as_cal_dist
 #' @export
-as_cal.BchronCalibratedDates <- function(x) {
-  purrr::map(x, ~data.frame(year = .x$ageGrid, p = .x$densities)) |>
-    purrr::map(new_cal)
+as_cal_dist.BchronCalibratedDates <- function(x, ...) {
+  dfs <- purrr::map(x, ~data.frame(age = .x$ageGrid, pdens = .x$densities))
+  do.call(cal_dist, unname(dfs))
 }

@@ -53,19 +53,18 @@ Imports:
     vctrs (>= 0.3.3),
     zeallot
 Suggests:
+    Bchron,
     covr,
     dplyr,
     ggplot2,
     knitr,
+    oxcAAR,
+    rcarbon,
     rmarkdown,
     roxygen2,
     testthat,
     tibble,
     tidyr
-Enhances:
-    Bchron,
-    oxcAAR,
-    rcarbon
 Remotes:
     joeroe/controller
 Config/Needs/website: dplyr

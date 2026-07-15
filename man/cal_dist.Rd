@@ -60,6 +60,6 @@ cal_dist(cal)
 }
 \seealso{
 Other cal class methods:
-\code{\link[=as_cal]{as_cal()}}
+\code{\link[=as_cal_dist]{as_cal_dist()}}
 }
 \concept{cal class methods}
