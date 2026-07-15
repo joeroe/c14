@@ -21,7 +21,7 @@ The default is not to normalise.}
 \item{...}{Not used}
 }
 \value{
-The summed probability distribution as a \link{cal_dist} vector of length 1.
+The summed probability distribution as a \code{cal_dist} vector of length 1.
 }
 \description{
 Aggregates a vector of calendar probability distributions (such as calibrated

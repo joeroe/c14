@@ -31,7 +31,8 @@ methods::setOldClass(c("c14_cal_dist", "vctrs_list_of"))
 #' A list of data frames with class `cal_dist` (`c14_cal_dist`). Each element
 #' has two columns: `age` and `pdens`.
 #'
-#' @export
+#' @noRd
+#' @keywords internal
 #'
 #' @examples
 #' # From data frames:
@@ -44,8 +45,9 @@ cal_dist <- function(x, ...) {
   UseMethod("cal_dist")
 }
 
-#' @rdname cal_dist
-#' @export
+#' @exportS3Method
+#' @noRd
+#' @keywords internal
 cal_dist.c14_cal <- function(cal, at = NULL, ...) {
   ages_list <- cal_dist_ages(cal, at)
   f_list <- cal_dist_function(cal, at)
@@ -85,8 +87,9 @@ cal_dist_function <- function(cal, at = NULL) {
   }
 }
 
-#' @rdname cal_dist
-#' @export
+#' @exportS3Method
+#' @noRd
+#' @keywords internal
 cal_dist.data.frame <- function(x, ..., .era = era::era("cal BP")) {
   dfs <- list(x, ...)
 
@@ -102,8 +105,9 @@ cal_dist.data.frame <- function(x, ..., .era = era::era("cal BP")) {
   new_cal_dist(dfs)
 }
 
-#' @rdname cal_dist
-#' @export
+#' @exportS3Method
+#' @noRd
+#' @keywords internal
 cal_dist.default <- function(x, ...) {
   new_cal_dist(x)
 }

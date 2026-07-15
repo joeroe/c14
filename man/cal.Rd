@@ -22,9 +22,6 @@ The \code{cal} class represents a vector of calibrated radiocarbon dates as a
 lazy record. Each element stores the parameters needed to derive a calendar
 probability distribution (\code{c14_age}, \code{c14_error}, and \code{c14_curve}), but does
 not compute the distribution until requested.
-
-Use \code{\link[=cal_function]{cal_function()}} to derive the probability density function, or
-\code{\link[=cal_dist]{cal_dist()}} to evaluate it at specific ages.
 }
 \examples{
 cal(1000, 30, curve = IntCal20)

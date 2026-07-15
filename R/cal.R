@@ -14,9 +14,6 @@ methods::setOldClass(c("c14_cal", "vctrs_rcrd"))
 #' probability distribution (`c14_age`, `c14_error`, and `c14_curve`), but does
 #' not compute the distribution until requested.
 #'
-#' Use [cal_function()] to derive the probability density function, or
-#' [cal_dist()] to evaluate it at specific ages.
-#'
 #' @param c14_age Vector of uncalibrated radiocarbon ages.
 #' @param c14_error Vector of standard errors associated with `c14_age`.
 #' @param curve A `c14_curve` object or list of `c14_curve` objects.

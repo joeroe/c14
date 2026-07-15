@@ -30,7 +30,7 @@ cal_age_common <- function(x, resolution = 1) {
 #'   The default is not to normalise.
 #' @param ... Not used
 #'
-#' @return The summed probability distribution as a [cal_dist] vector of length 1.
+#' @return The summed probability distribution as a `cal_dist` vector of length 1.
 #'
 #' @family functions for aggregating calendar probability distributions
 #' @export
