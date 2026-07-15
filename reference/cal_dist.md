@@ -66,7 +66,7 @@ from the conventional radiocarbon age.
 ## See also
 
 Other cal class methods:
-[`as_cal()`](https://c14.joeroe.io/reference/as_cal.md)
+[`as_cal_dist()`](https://c14.joeroe.io/reference/as_cal_dist.md)
 
 ## Examples
 

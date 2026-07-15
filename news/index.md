@@ -2,6 +2,11 @@
 
 ## c14 v0.1.0.9000 (development version)
 
+- `as_cal()` renamed to
+  [`as_cal_dist()`](https://c14.joeroe.io/reference/as_cal_dist.md)
+  ([\#56](https://github.com/joeroe/c14/issues/56))
+- New introductory vignette for package
+  ([`vignette("c14")`](https://c14.joeroe.io/articles/c14.md))
 - New individual functions for point summaries of calibrated radiocarbon
   dates, replacing
   [`cal_point()`](https://c14.joeroe.io/reference/cal_mode.md)
@@ -12,9 +17,9 @@
   [`cal_mean()`](https://c14.joeroe.io/reference/cal_mode.md),
   [`cal_local_mode()`](https://c14.joeroe.io/reference/cal_mode.md), and
   [`cal_central()`](https://c14.joeroe.io/reference/cal_mode.md).
-- Package no longer depends on checkmate (depends), mockery, readr,
-  readxl, usethis (suggests), or dplyr (suggests, but still required to
-  build website)
+- Package no longer depends on checkmate, curl (depends), mockery,
+  readr, readxl, usethis (suggests), or dplyr (suggests, but still
+  required to build website)
 - New
   [`cal_probability()`](https://c14.joeroe.io/reference/cal_probability.md)
   summary of the probability that a calibrated date lies in a specified

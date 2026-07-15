@@ -76,15 +76,15 @@ Other calibration curve functions:
 ## Examples
 
 ``` r
-read_14c("https://intcal.org/curves/intcal20.14c")
+read_14c(system.file("extdata", "intcal04.14c", package = "c14"))
 #> # custom curve <c14_curve_14c>
 #> # Conventional radiocarbon age calibration curve
-#> # Range: 0–55000 cal BP
+#> # Range: -5–26000 cal BP
 #>   cal_age c14_age c14_error  d14c d14c_error
-#> 1   55000   50100      1024 528.5      193.9
-#> 2   54980   50081      1018 528.3      192.7
-#> 3   54960   50063      1013 527.9      191.7
-#> 4   54940   50043      1007 527.8      190.6
-#> 5   54920   50027      1003 527.0      189.5
-#> # 9496 more rows 
+#> 1   26000   21341       108 629.9       21.9
+#> 2   25980   21348       103 624.5       20.8
+#> 3   25960   21354        98 619.4       19.8
+#> 4   25940   21360        93 614.3       18.7
+#> 5   25920   21366        88 609.2       17.6
+#> # 3297 more rows 
 ```

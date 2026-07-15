@@ -83,8 +83,8 @@ timescale
   : Calibrate radiocarbon dates
 - [`cal()`](https://c14.joeroe.io/reference/cal.md) : Calibrated
   radiocarbon dates
-- [`as_cal()`](https://c14.joeroe.io/reference/as_cal.md) : Convert a
-  foreign object to a cal object
+- [`as_cal_dist()`](https://c14.joeroe.io/reference/as_cal_dist.md) :
+  Convert a foreign object to a cal_dist object
 - [`cal_dist()`](https://c14.joeroe.io/reference/cal_dist.md) : Calendar
   probability distribution
 
