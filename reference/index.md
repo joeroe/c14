@@ -80,6 +80,13 @@ Functions for aggregating calibrated radiocarbon dates.
   [`sum(`*`<c14_cal>`*`)`](https://c14.joeroe.io/reference/cal_sum.md) :
   Sum calendar probability distributions
 
+## Plotting
+
+Plot calibrated radiocarbon dates.
+
+- [`plot(`*`<c14_cal>`*`)`](https://c14.joeroe.io/reference/plot.c14_cal.md)
+  : Plot calibrated radiocarbon dates
+
 ## cal class methods
 
 Methods for the `cal` class – vectors of calibrated radiocarbon dates.
