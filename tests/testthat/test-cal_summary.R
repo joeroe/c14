@@ -210,3 +210,75 @@ test_that("cal_hdi() is contained within cal_hdr()", {
   expect_gte(as.numeric(hdi_result[1]), as.numeric(hdr_min))
   expect_lte(as.numeric(hdi_result[2]), as.numeric(hdr_max))
 })
+
+# Probability within an interval -------------------------------------------
+
+test_that("cal_probability() returns numeric vector same length as x", {
+  x <- cal(c(5000, 6000), rep(10, 2), IntCal20)
+  result <- cal_probability(x, 4900, 5100)
+
+  expect_type(result, "double")
+  expect_length(result, 2)
+})
+
+test_that("cal_probability() values are between 0 and 1", {
+  x <- cal(5000, 10, IntCal20)
+  result <- cal_probability(x, 4900, 5100)
+
+  expect_gte(result, 0)
+  expect_lte(result, 1)
+})
+
+test_that("cal_probability() with to = NULL returns point probability", {
+  x <- cal(5000, 10, IntCal20)
+  result <- cal_probability(x, 5000)
+
+  expect_type(result, "double")
+  expect_length(result, 1)
+  expect_gte(result, 0)
+  expect_lte(result, 1)
+})
+
+test_that("cal_probability() with from == to matches to = NULL", {
+  x <- cal(5000, 10, IntCal20)
+  point <- cal_probability(x, 5000)
+  range_same <- cal_probability(x, 5000, 5000)
+
+  expect_equal(point, range_same)
+})
+
+test_that("cal_probability() probability increases with wider range", {
+  x <- cal(5000, 10, IntCal20)
+  narrow <- cal_probability(x, 5700, 5800)
+  wide <- cal_probability(x, 5650, 5850)
+
+  expect_lt(narrow, wide)
+})
+
+test_that("cal_probability() of HDI interval is at least its probability content", {
+  x <- cal(5000, 10, IntCal20)
+  hdi <- cal_hdi(x, interval = 0.954)[[1]]
+  prob <- cal_probability(x, hdi[1], hdi[2])
+
+  expect_gte(prob, 0.954)
+  expect_lte(prob, 1)
+})
+
+test_that("cal_probability() is accurate at coarse-grid ages", {
+  # c14_age = 20000 BP falls in the 10-year-resolution region of IntCal20
+  # (plausible cal BP range ~23440-24600). Without 1-year-resolution
+  # evaluation, queries at non-grid years would return 0 (no native-grid
+  # point in range) and range sums would underestimate the true mass.
+  x <- cal(20000, 50, IntCal20)
+
+  # Query at non-grid years within the plausible range — would be 0 without
+  # 1-year interpolation.
+  result <- cal_probability(x, 24005, 24015)
+  expect_gt(result, 0)
+  expect_lt(result, 1)
+
+  # Wider range contains more probability than narrower range.
+  narrow <- cal_probability(x, 24000, 24010)
+  wide <- cal_probability(x, 23500, 24500)
+  expect_lt(narrow, wide)
+})

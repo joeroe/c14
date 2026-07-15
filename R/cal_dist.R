@@ -64,6 +64,15 @@ cal_dist_ages <- function(cal, at = NULL) {
     indices <- cal_relevant_indices(cal)
     curve   <- cal_c14_curve(cal)
     purrr::map(indices, \(i) curve$cal_age[i])
+  } else if (is.list(at)) {
+    if (length(at) != length(cal)) {
+      rlang::abort(
+        sprintf("`at` must be NULL, a vector, or a list with one element per element of `x` (got %d ages for %d cal).",
+                length(at), length(cal)),
+        class = "c14_invalid_argument"
+      )
+    }
+    at
   } else {
     rep(list(at), length(cal))
   }

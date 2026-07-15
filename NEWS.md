@@ -1,5 +1,7 @@
 # v0.1.0.9000 (development version)
 
+* New `cal_probability()` summary of the probability that a calibrated date
+  lies in a specified range #38
 * New default `plot()` method for `cal` vectors (#32)
 * New `cal_hdi()` and `cal_hdr()` summaries of the highest density interval and
   region(s) of a calibrated radiocarbon dates

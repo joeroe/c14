@@ -339,3 +339,50 @@ cal_hdi_single <- function(dist, interval = 0.954) {
   
   c(min(threshold_ages), max(threshold_ages))
 }
+
+# Probability within an interval -------------------------------------------
+
+#' Probability that a calibrated date falls within an age range
+#'
+#' Calculates the probability that a calibrated radiocarbon date falls within a
+#' given calendar age range or a single year.
+#'
+#' @param x A [cal] vector of calibrated radiocarbon dates.
+#' @param from Numeric. Start of the age range (inclusive), in the same era as
+#'   the calibration (typically cal BP).
+#' @param to Numeric or `NULL`. End of the age range (inclusive). If `NULL`
+#'   (the default), returns the probability mass at the single year given by
+#'   `from`.
+#'
+#' @return
+#' Numeric vector of probabilities between 0 and 1, the same length as `x`.
+#'
+#' @family functions for summarising calibrated radiocarbon dates
+#' @seealso 
+#' This function is the inverse of [cal_hdi()] and [cal_hdr()], which find 
+#' intervals for a given probability mass.
+#'
+#' @source
+#' Rundkvist, Martin. 20 November 2024. Radiocarbon in the AD 900s on 
+#' Riddarholmen. *Aardvarchaeology*. <https://aardvarchaeology.wordpress.com/2024/11/20/radiocarbon-in-the-ad-900s-on-riddarholmen/>
+#'
+#' @export
+#'
+#' @examples
+#' x <- c14_calibrate(5000, 10)
+#'
+#' # Probability at a single year
+#' cal_probability(x, 5000)
+#'
+#' # Probability within an age range
+#' cal_probability(x, 4900, 5100)
+cal_probability <- function(x, from, to = NULL) {
+  if (is.null(to)) to <- from
+  ages_list <- purrr::map(cal_dist(x), function(d) {
+    seq(min(d$age), max(d$age), by = 1)
+  })
+  dists <- cal_dist_normalise(cal_dist(x, at = ages_list))
+  purrr::map_dbl(dists, function(d) {
+    sum(d$pdens[d$age >= from & d$age <= to], na.rm = TRUE)
+  })
+}

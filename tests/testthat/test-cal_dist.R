@@ -99,6 +99,24 @@ test_that("cal_dist() respects custom at parameter", {
   expect_true(nrow(el) == length(at))
 })
 
+test_that("cal_dist() supports per-element at when given as a list", {
+  x <- cal(c(1000, 5000), c(30, 40), IntCal20)
+  at1 <- era::yr(seq(900, 1100, by = 1), "cal BP")
+  at2 <- era::yr(seq(4900, 5100, by = 1), "cal BP")
+  d <- cal_dist(x, at = list(at1, at2))
+
+  expect_equal(nrow(d[[1]]), length(at1))
+  expect_equal(nrow(d[[2]]), length(at2))
+  expect_equal(d[[1]]$age, at1)
+  expect_equal(d[[2]]$age, at2)
+})
+
+test_that("cal_dist() errors when at list length doesn't match x", {
+  x <- cal(c(1000, 5000), c(30, 40), IntCal20)
+  at1 <- era::yr(seq(900, 1100, by = 1), "cal BP")
+  expect_error(cal_dist(x, at = list(at1)), "one element per")
+})
+
 # --- cal_dist_age_min / cal_dist_age_max ---
 
 test_that("cal_dist_age_min() returns correct minimum age", {
