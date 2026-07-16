@@ -120,43 +120,18 @@ cal_density(shub1_cal)
 
 # Stratify and weight bootstrap estimation by phase
 cal_density(shub1_cal, strata = shub1_c14$phase)
-#> Warning: sum(weights) != 1  -- will not get true density
-#> Warning: sum(weights) != 1  -- will not get true density
-#> Warning: sum(weights) != 1  -- will not get true density
-#> Warning: sum(weights) != 1  -- will not get true density
-#> Warning: sum(weights) != 1  -- will not get true density
-#> Warning: sum(weights) != 1  -- will not get true density
-#> Warning: sum(weights) != 1  -- will not get true density
-#> Warning: sum(weights) != 1  -- will not get true density
-#> Warning: sum(weights) != 1  -- will not get true density
-#> Warning: sum(weights) != 1  -- will not get true density
-#> Warning: sum(weights) != 1  -- will not get true density
-#> Warning: sum(weights) != 1  -- will not get true density
-#> Warning: sum(weights) != 1  -- will not get true density
-#> Warning: sum(weights) != 1  -- will not get true density
-#> Warning: sum(weights) != 1  -- will not get true density
-#> Warning: sum(weights) != 1  -- will not get true density
-#> Warning: sum(weights) != 1  -- will not get true density
-#> Warning: sum(weights) != 1  -- will not get true density
-#> Warning: sum(weights) != 1  -- will not get true density
-#> Warning: sum(weights) != 1  -- will not get true density
-#> Warning: sum(weights) != 1  -- will not get true density
-#> Warning: sum(weights) != 1  -- will not get true density
-#> Warning: sum(weights) != 1  -- will not get true density
-#> Warning: sum(weights) != 1  -- will not get true density
-#> Warning: sum(weights) != 1  -- will not get true density
 #> # A tibble: 14,792 × 3
 #>           age .estimate   .error
 #>          <yr>     <dbl>    <dbl>
-#>  1 789 cal BP  8.33e-14 4.16e-13
-#>  2 790 cal BP  5.61e-13 2.81e-12
-#>  3 791 cal BP  1.04e-12 5.20e-12
-#>  4 792 cal BP  1.52e-12 7.59e-12
-#>  5 793 cal BP  2.00e-12 9.98e-12
-#>  6 794 cal BP  2.47e-12 1.24e-11
-#>  7 795 cal BP  2.95e-12 1.48e-11
-#>  8 796 cal BP  3.43e-12 1.71e-11
-#>  9 797 cal BP  3.91e-12 1.95e-11
-#> 10 798 cal BP  4.39e-12 2.19e-11
+#>  1 789 cal BP  4.09e-14 1.79e-13
+#>  2 790 cal BP  2.76e-13 1.20e-12
+#>  3 791 cal BP  5.12e-13 2.23e-12
+#>  4 792 cal BP  7.47e-13 3.25e-12
+#>  5 793 cal BP  9.83e-13 4.28e-12
+#>  6 794 cal BP  1.22e-12 5.30e-12
+#>  7 795 cal BP  1.45e-12 6.33e-12
+#>  8 796 cal BP  1.69e-12 7.35e-12
+#>  9 797 cal BP  1.92e-12 8.38e-12
+#> 10 798 cal BP  2.16e-12 9.40e-12
 #> # ℹ 14,782 more rows
 ```

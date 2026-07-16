@@ -73,7 +73,5 @@ Other functions for tidying radiocarbon metadata:
 
 ``` r
 c14_control_lab_id(c("OxA-1234", "OxA 1234", "Oxa 1234"))
-#> Replaced values:
-#> ℹ Oxa → OxA
-#> [1] "OxA-1234" "OxA-1234" "OxA-1234"
+#> Error in validate_thesaurus(thesaurus): Variants (column 2 of `thesaurus`) must be unique.
 ```
