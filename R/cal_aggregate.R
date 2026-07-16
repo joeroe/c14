@@ -108,12 +108,17 @@ cal_density <- function(x, bw = 30, ..., times = 25, bootstrap = TRUE, strata = 
   # TODO: guard against character argument to bw?
 
   # Sampling
+  samplers <- purrr::map(x, cal_sample)
   if (isTRUE(bootstrap)) {
-    bootstraps <- cal_bootstraps(x, times = times, strata = strata)
-    age_sample <- purrr::map(bootstraps, \(x) do.call(c, cal_sample_vec(x, 1)))
+    boot_indices <- cal_bootstraps(x, times = times, strata = strata)
+    age_sample <- purrr::map(boot_indices, function(idx) {
+      samples <- purrr::map(idx, \(i) samplers[[i]](1))
+      do.call(c, samples)
+    })
   }
   else {
-    age_sample <- cal_sample_vec(x, times)
+    age_sample <- purrr::map(samplers, \(f) f(times))
+    age_sample <- do.call(c, age_sample)
   }
 
   # Weights
@@ -126,8 +131,18 @@ cal_density <- function(x, bw = 30, ..., times = 25, bootstrap = TRUE, strata = 
 
   # Density estimation
   age_grid <- cal_age_common(x)
-  kdes <- purrr::map(age_sample, stats::density, bw = bw, weights = weights,
+  if (isTRUE(bootstrap) && !is.null(strata)) {
+    # Reorder weights according to bootstrap indices for each iteration
+    kdes <- purrr::map2(age_sample, boot_indices, function(ages, idx) {
+      boot_weights <- weights[idx]
+      boot_weights <- boot_weights / sum(boot_weights)
+      stats::density(ages, bw = bw, weights = boot_weights,
                      from = min(age_grid), to = max(age_grid), ...)
+    })
+  } else {
+    kdes <- purrr::map(age_sample, stats::density, bw = bw, weights = weights,
+                       from = min(age_grid), to = max(age_grid), ...)
+  }
 
   # Combine results
   x <- kdes[[1]]$x # TODO: is it always safe to assume x are all equal?
@@ -160,7 +175,7 @@ cal_sample_vec <- function(x, times) {
   purrr::map(samplers, \(f) f(times))
 }
 
-#' Bootstrap sampling of calendar probability distributions
+#' Bootstrap indices for calendar probability distributions
 #'
 #' @param x A [cal] vector of calendar probability distributions.
 #' @param times Number of resamples to generate. Default: `25`.
@@ -168,17 +183,22 @@ cal_sample_vec <- function(x, times) {
 #' resampling. When not `NULL`, the generated bootstrap sample will have the
 #' same number of elements in each class as the original sample.
 #'
-#' @return A resampled [cal] vector of the same length as `x`.
+#' @return A list of integer vectors, each of length `length(x)`, giving the
+#'   indices of `x` included in each bootstrap sample.
 #'
 #' @noRd
 #' @keywords internal
-# TODO: Worth exporting?
 cal_bootstraps <- function(x, times = 25, strata = NULL) {
-  if (is.null(strata)) x <- list(x)
-  else x <- unname(split(x, strata))
-  replicate(
-    times,
-    do.call(c, lapply(x, sample, replace = TRUE)),
-    simplify = FALSE
-  )
+  if (is.null(strata)) {
+    indices <- rep(list(seq_along(x)), times)
+    lapply(indices, sample, replace = TRUE)
+  } else {
+    strata <- as.factor(strata)
+    strata_indices <- split(seq_along(x), strata)
+    replicate(
+      times,
+      unlist(lapply(strata_indices, \(idx) sample(idx, size = length(idx), replace = TRUE))),
+      simplify = FALSE
+    )
+  }
 }
