@@ -25,17 +25,20 @@ It was forked from
 
 ## Installation
 
-You can install the development version of c14 from GitHub with the
-[remotes](https://remotes.r-lib.org) package:
+You can install the latest release of c14 [from
+CRAN](https://cran.r-project.org/package=c14) with:
+
+``` r
+install.packages("c14")
+```
+
+Or the development version from GitHub using the
+[remotes](https://remotes.r-lib.org/) package:
 
 ``` r
 # install.packages("remotes")
-remotes::install_github(c("joeroe/controller", "joeroe/c14"))
+remotes::install_github("joeroe/c14")
 ```
-
-Note that the dependency
-[controller](https://github.com/joeroe/controller) is also not yet
-available on CRAN.
 
 ## Usage
 
@@ -54,15 +57,15 @@ ppnd |>
 #> # A tibble: 9 × 4
 #>   lab_id     cra error                cal
 #>   <chr>    <int> <int>              <cal>
-#> 1 GaK 807  10400   150 11755–12710 cal BP
-#> 2 OxA 2099  8840   110  9560–10190 cal BP
-#> 3 OxA 2100  9010   110  9750–10485 cal BP
-#> 4 OxA 2101  8850   100  9560–10195 cal BP
-#> 5 OxA 2102  8690   110  9490–10145 cal BP
-#> 6 SI 922    8570   210  9035–10180 cal BP
-#> 7 SI 923    8625   195  9145–10200 cal BP
-#> 8 SI 924    8640    90  9475–10105 cal BP
-#> 9 SI 925    8385    75   9145–9530 cal BP
+#> 1 GaK 807  10400   150 11751–12709 cal BP
+#> 2 OxA 2099  8840   110  9557–10193 cal BP
+#> 3 OxA 2100  9010   110  9748–10486 cal BP
+#> 4 OxA 2101  8850   100  9560–10197 cal BP
+#> 5 OxA 2102  8690   110  9490–10144 cal BP
+#> 6 SI 922    8570   210  9034–10181 cal BP
+#> 7 SI 923    8625   195  9142–10202 cal BP
+#> 8 SI 924    8640    90  9470–10106 cal BP
+#> 9 SI 925    8385    75   9141–9534 cal BP
 ```
 
 The resulting `cal`-class vector can be assigned to a new column,

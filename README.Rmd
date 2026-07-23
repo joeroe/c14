@@ -29,14 +29,18 @@ It was forked from [stratigraphr](https://github.com/joeroe/stratigraphr) v0.3.0
 
 ## Installation
 
-You can install the development version of c14 from GitHub with the [remotes](https://remotes.r-lib.org) package:
+You can install the latest release of c14 [from CRAN](https://cran.r-project.org/package=c14) with:
 
-```r
-# install.packages("remotes")
-remotes::install_github(c("joeroe/controller", "joeroe/c14"))
+```{r install, eval=FALSE}
+install.packages("c14")
 ```
 
-Note that the dependency [controller](https://github.com/joeroe/controller) is also not yet available on CRAN.
+Or the development version from GitHub using the [remotes](https://remotes.r-lib.org/) package:
+
+```{r install-dev, eval=FALSE}
+# install.packages("remotes")
+remotes::install_github("joeroe/c14")
+```
 
 ## Usage
 
