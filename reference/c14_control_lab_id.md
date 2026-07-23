@@ -73,5 +73,7 @@ Other functions for tidying radiocarbon metadata:
 
 ``` r
 c14_control_lab_id(c("OxA-1234", "OxA 1234", "Oxa 1234"))
-#> Error in controller::control(x[["lab_code"]], thesaurus, case_insensitive = FALSE,     fuzzy_boundary = FALSE, fuzzy_encoding = FALSE, quiet = quiet,     warn_unmatched = warn_unmatched, coalesce = TRUE): unused argument (coalesce = TRUE)
+#> Replaced values:
+#> ℹ Oxa → OxA
+#> [1] "OxA-1234" "OxA-1234" "OxA-1234"
 ```
