@@ -40,14 +40,15 @@ c14_control_lab_id <- function(x,
                                quiet = FALSE,
                                warn_unmatched = TRUE) {
   x <- c14_parse_lab_id(x, fix = TRUE)
-  x[["lab_code"]] <- controller::control(x[["lab_code"]],
-                                         thesaurus,
-                                         case_insensitive = FALSE,
-                                         fuzzy_boundary = FALSE,
-                                         fuzzy_encoding = FALSE,
-                                         quiet = quiet,
-                                         warn_unmatched = warn_unmatched,
-                                         coalesce = TRUE)
+  x[["lab_code"]] <- controller::control(
+    x[["lab_code"]],
+    thesaurus,
+    case_insensitive = FALSE,
+    fuzzy_boundary = FALSE,
+    fuzzy_encoding = FALSE,
+    quiet = quiet,
+    warn_unmatched = warn_unmatched
+  )
   paste(x[["lab_code"]], x[["lab_number"]], sep = sep)
 }
 
@@ -209,7 +210,6 @@ c14_control_material <- function(x,
     fuzzy_boundary = FALSE,
     fuzzy_encoding = FALSE,
     quiet = quiet,
-    warn_unmatched = warn_unmatched,
-    coalesce = TRUE
+    warn_unmatched = warn_unmatched
   )
 }
