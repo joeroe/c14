@@ -22,8 +22,9 @@ knitr::opts_chunk$set(
 [![Test coverage](https://codecov.io/gh/joeroe/c14/graph/badge.svg)](https://app.codecov.io/gh/joeroe/c14)
 <!-- badges: end -->
 
-**c14** provides basic classes and functions for radiocarbon data in R.
-It makes it easier to combine methods from several existing packages (e.g. rcarbon, Bchron, oxcAAR, c14bazAAR, ArchaeoPhases, stratigraphr) together and work with them in a tidy data workflow.
+**c14** makes it easy and intuitive to incorporate radiocarbon dating into tidy data analysis workflows in R. 
+It provides classes and functions for radiocarbon data that fit nicely in tables and work well with pipes and dplyr verbs.
+These include direct support for the most common tasks when working with radiocarbon data—calibrating, summarising, aggregating and plotting radiocarbon dates—as well as conversion methods for combining specialised methods provided by other packages (e.g. [rcarbon](https://cran.r-project.org/package=rcarbon), [BChron](https://andrewcparnell.github.io/Bchron/), [oxcAAR](https://cran.r-project.org/package=oxcAAR)) in the same analysis.
 
 It was forked from [stratigraphr](https://github.com/joeroe/stratigraphr) v0.3.0.
 
