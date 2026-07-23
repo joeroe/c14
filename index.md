@@ -1,5 +1,7 @@
 # c14
 
+[![DOI](https://zenodo.org/badge/334443504.svg)](https://doi.org/10.5281/zenodo.21361370)
+
 **c14** makes it easy and intuitive to incorporate radiocarbon dating
 into tidy data analysis workflows in R. It provides classes and
 functions for radiocarbon data that fit nicely in tables and work well
