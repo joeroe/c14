@@ -71,8 +71,6 @@ Suggests:
     testthat,
     tibble,
     tidyr
-Remotes:
-    joeroe/controller
 Config/Needs/website: dplyr
 Roxygen: list(markdown = TRUE)
 RdMacros: Rdpack, mathjaxr
