@@ -63,7 +63,7 @@ An object of class \code{c14_curve_14c} (inherits from \code{c14_curve}, \code{d
 An object of class \code{c14_curve_14c} (inherits from \code{c14_curve}, \code{data.frame}) with 1569 rows and 5 columns.
 }
 \source{
-\url{http://intcal.org/curves/} and \url{http://calib.org/CALIBomb/}
+\url{https://intcal.org/curves.html} and \url{http://calib.org/CALIBomb/}
 }
 \usage{
 IntCal20

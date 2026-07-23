@@ -63,7 +63,7 @@
 #' @family calibration curves
 #'
 #' @source
-#' <http://intcal.org/curves/> and <http://calib.org/CALIBomb/>
+#' <https://intcal.org/curves.html> and <http://calib.org/CALIBomb/>
 #'
 #' @references
 #' \insertAllCited{}
