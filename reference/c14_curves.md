@@ -152,7 +152,7 @@ An object of class `c14_curve_14c` (inherits from `c14_curve`,
 
 ## Source
 
-<http://intcal.org/curves/> and <http://calib.org/CALIBomb/>
+<https://intcal.org/curves.html> and <http://calib.org/CALIBomb/>
 
 ## References
 

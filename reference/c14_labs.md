@@ -56,7 +56,7 @@ case is all that distinguishes two labs:
 ## References
 
 List of known radiocarbon laboratories. *Radiocarbon*. Last updated 20
-July 2021. <http://radiocarbon.webhost.uits.arizona.edu/node/11>
+July 2021. <https://radiocarbon.arizona.edu/laboratories>
 
 Wang, C., Lu, H., Zhang, J., Gu, Z. and He, K., 2014. Prehistoric
 demographic fluctuations in China inferred from radiocarbon data and

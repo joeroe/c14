@@ -1,6 +1,12 @@
 # c14: Tidy Radiocarbon Data
 
-S3 classes and functions for tidy radiocarbon data.
+Incorporate radiocarbon dating into a tidy data analysis workflow.
+Provides classes and functions for radiocarbon data that fit nicely in
+tables and work well with pipes and dplyr verbs. These include direct
+support for the most common tasks when working with radiocarbon data—
+calibrating, summarising, aggregating and plotting radiocarbon dates—as
+well as conversion methods for combining specialised methods provided by
+other packages ('rcarbon', 'BChron', 'oxcAAR') in the same analysis.
 
 ## See also
 
@@ -15,12 +21,12 @@ Useful links:
 ## Author
 
 **Maintainer**: Joe Roe <joe@joeroe.io>
-([ORCID](https://orcid.org/0000-0002-1011-1244))
+([ORCID](https://orcid.org/0000-0002-1011-1244)) \[copyright holder\]
 
 Authors:
 
 - Joe Roe <joe@joeroe.io>
-  ([ORCID](https://orcid.org/0000-0002-1011-1244))
+  ([ORCID](https://orcid.org/0000-0002-1011-1244)) \[copyright holder\]
 
 Other contributors:
 
