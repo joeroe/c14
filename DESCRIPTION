@@ -31,7 +31,7 @@ Authors@R: c(
     )
 Description: Incorporate radiocarbon dating into a tidy data analysis workflow. 
     Provides classes and functions for radiocarbon data that fit nicely in 
-    tables and work well with pipes and dplyr verbs. These include direct 
+    tables and work well with pipes and 'dplyr' verbs. These include direct 
     support for the most common tasks when working with radiocarbon data—
     calibrating, summarising, aggregating and plotting radiocarbon dates—as 
     well as conversion methods for combining specialised methods provided by 
