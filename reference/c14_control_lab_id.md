@@ -12,7 +12,7 @@ format. Specifically, this `c14_control_lab_id()`:
 3.  Standardises lab codes against a thesaurus, by default
     [c14_lab_code_thesaurus](https://c14.joeroe.io/reference/c14_lab_code_thesaurus.md)
 
-4.  Reunites lab codes and numbers with a uniform seperator (default:
+4.  Reunites lab codes and numbers with a uniform separator (default:
     `"-"`)
 
 ## Usage
@@ -37,11 +37,11 @@ c14_control_lab_id(
 
   Thesaurus to use for lab codes. Defaults to the
   [c14_lab_code_thesaurus](https://c14.joeroe.io/reference/c14_lab_code_thesaurus.md)
-  thesaraus included in the package.
+  thesaurus included in the package.
 
 - sep:
 
-  Character to use to seperate lab codes and numbers in the result.
+  Character to use to separate lab codes and numbers in the result.
   Default: `"-"`.
 
 - quiet:

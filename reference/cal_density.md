@@ -67,7 +67,7 @@ error of the bootstrapped KDEs).
 estimation with bootstrapping (McLaughlin 2019) , where sampling error.
 `x` is estimated by randomly resampling `x` before each KDE calculation.
 
-See McLaughlin (2019) and Crema (2022) for discussions of bandwith
+See McLaughlin (2019) and Crema (2022) for discussions of bandwidth
 selection.
 
 ## References

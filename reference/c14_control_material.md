@@ -23,7 +23,7 @@ c14_control_material(
 
   Thesaurus to use for sample materials. Defaults to the
   [c14_material_thesaurus](https://c14.joeroe.io/reference/c14_material_thesaurus.md)
-  thesaraus included in the package.
+  thesaurus included in the package.
 
 - quiet:
 
