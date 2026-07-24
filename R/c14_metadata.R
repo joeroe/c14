@@ -13,12 +13,12 @@
 #' 1. Fixes malformed identifiers with [c14_fix_lab_id()]
 #' 2. Parses the lab code and lab number components ([c14_parse_lab_id()])
 #' 3. Standardises lab codes against a thesaurus, by default [c14_lab_code_thesaurus]
-#' 5. Reunites lab codes and numbers with a uniform seperator (default: `"-"`)
+#' 5. Reunites lab codes and numbers with a uniform separator (default: `"-"`)
 #'
 #' @param x Vector of radiocarbon laboratory identifiers.
 #' @param thesaurus Thesaurus to use for lab codes. Defaults to the [c14_lab_code_thesaurus]
-#'  thesaraus included in the package.
-#' @param sep Character to use to seperate lab codes and numbers in the result.
+#'  thesaurus included in the package.
+#' @param sep Character to use to separate lab codes and numbers in the result.
 #'  Default: `"-"`.
 #' @param quiet Passed to [controller::control()]. Set to `TRUE` to suppress
 #'  messages about replaced values. Default: `FALSE`.
@@ -187,7 +187,7 @@ c14_lab_delim_std <- function() "[ -\u2010\u2013_#\\.\\+]"
 #'
 #' @param x Vector of radiocarbon sample materials.
 #' @param thesaurus Thesaurus to use for sample materials. Defaults to the
-#'  [c14_material_thesaurus] thesaraus included in the package.
+#'  [c14_material_thesaurus] thesaurus included in the package.
 #' @param quiet Passed to [controller::control()]. Set to `TRUE` to suppress
 #'  messages about replaced values. Default: `FALSE`.
 #' @param warn_unmatched Passed to [controller::control()]. Set to `FALSE` to

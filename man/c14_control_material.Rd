@@ -15,7 +15,7 @@ c14_control_material(
 \item{x}{Vector of radiocarbon sample materials.}
 
 \item{thesaurus}{Thesaurus to use for sample materials. Defaults to the
-\link{c14_material_thesaurus} thesaraus included in the package.}
+\link{c14_material_thesaurus} thesaurus included in the package.}
 
 \item{quiet}{Passed to \code{\link[controller:control]{controller::control()}}. Set to \code{TRUE} to suppress
 messages about replaced values. Default: \code{FALSE}.}

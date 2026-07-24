@@ -85,7 +85,7 @@ sum.c14_cal <- function(x, ..., normalise = FALSE) {
 #'
 #' @details
 #' See \insertCite{McLaughlin2019;textual}{c14} and
-#' \insertCite{Crema2022;textual}{c14} for discussions of bandwith selection.
+#' \insertCite{Crema2022;textual}{c14} for discussions of bandwidth selection.
 #'
 #' @return
 #' The result as a data frame or [tibble::tibble] with three columns: `age`

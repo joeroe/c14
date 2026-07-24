@@ -16,9 +16,9 @@ c14_control_lab_id(
 \item{x}{Vector of radiocarbon laboratory identifiers.}
 
 \item{thesaurus}{Thesaurus to use for lab codes. Defaults to the \link{c14_lab_code_thesaurus}
-thesaraus included in the package.}
+thesaurus included in the package.}
 
-\item{sep}{Character to use to seperate lab codes and numbers in the result.
+\item{sep}{Character to use to separate lab codes and numbers in the result.
 Default: \code{"-"}.}
 
 \item{quiet}{Passed to \code{\link[controller:control]{controller::control()}}. Set to \code{TRUE} to suppress
@@ -37,7 +37,7 @@ format. Specifically, this \code{c14_control_lab_id()}:
 \item Fixes malformed identifiers with \code{\link[=c14_fix_lab_id]{c14_fix_lab_id()}}
 \item Parses the lab code and lab number components (\code{\link[=c14_parse_lab_id]{c14_parse_lab_id()}})
 \item Standardises lab codes against a thesaurus, by default \link{c14_lab_code_thesaurus}
-\item Reunites lab codes and numbers with a uniform seperator (default: \code{"-"})
+\item Reunites lab codes and numbers with a uniform separator (default: \code{"-"})
 }
 }
 \examples{

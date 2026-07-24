@@ -49,7 +49,7 @@ sampling error. \code{x} is estimated by randomly resampling \code{x} before eac
 calculation.
 
 See \insertCite{McLaughlin2019;textual}{c14} and
-\insertCite{Crema2022;textual}{c14} for discussions of bandwith selection.
+\insertCite{Crema2022;textual}{c14} for discussions of bandwidth selection.
 }
 \examples{
 data(shub1_c14)

@@ -68,6 +68,7 @@ Suggests:
     rcarbon,
     rmarkdown,
     roxygen2,
+    spelling,
     testthat,
     tibble,
     tidyr
@@ -76,3 +77,4 @@ Roxygen: list(markdown = TRUE)
 RdMacros: Rdpack, mathjaxr
 Config/roxygen2/version: 8.0.0
 VignetteBuilder: knitr
+Language: en-GB
