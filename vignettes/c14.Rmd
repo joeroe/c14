@@ -18,6 +18,14 @@ knitr::opts_chunk$set(
 **c14** makes it easy and intuitive to incorporate radiocarbon dating into tidy data analysis workflows in R. 
 It provides classes and functions for radiocarbon data that fit nicely in tables and work well with pipes and [dplyr](https://dplyr.tidyverse.org/) verbs.
 
+There are many existing packages that deal with radiocarbon data in R:
+
+* **Data retrieval and cleaning**: [c14bazAAR](https://docs.ropensci.org/c14bazAAR/)
+* **Calibration and modelling**: [rcarbon](https://github.com/ahb108/rcarbon), [oxcAAR](https://github.com/ISAAKiel/oxcAAR), [RChronoModel](https://cran.r-project.org/web/packages/RChronoModel/index.html), [BChron](https://andrewcparnell.github.io/Bchron/), [bacon](http://chrono.qub.ac.uk/blaauw/bacon.html)
+* **Analysis:** rcarbon (summed probability distributions, spatial analysis), [ArchaeoPhases](https://www.math.sciences.univ-nantes.fr/~philippe/ArchaeoPhases.html) (post-processing of Bayesian models)
+
+The idea is not to duplicate these packages, but to provide tools that make it easier to use them together and with other packages in the extended [tidyverse](https://www.tidyverse.org/).
+
 This vignette introduces functions for the most common tasks when working with radiocarbon data, including those for calibrating, summarising, aggregating and plotting radiocarbon dates.
 
 ```{r setup, message = FALSE}
@@ -27,9 +35,41 @@ library("tidyr")
 library("ggplot2")
 ```
 
+## Overview
+
+* Keep uncalibrated dates in a tidy, tabular format (e.g. a `tibble` or `data.frame`) together with contextual data associated with the sample.
+* Use `c14_*` functions to transform radiocarbon measurements; `c14_calibrate()` transforms them to a calendar timescale.
+* Use `cal_*` functions to summarise and aggregate calibrated radiocarbon dates.
+
+## Tidy radiocarbon data
+
+"Tidy data" [@Wickham2014] is a set of principles for organising datasets in a way that makes it easy to perform data analysis without tedious "data munging" between each step.
+In brief, tidy datasets are "rectangular" tables where:
+
+1. Every column is variable
+2. Every row is an observation
+3. Every cell is a single value
+
+Conventionally-reported uncalibrated radiocarbon dates [@Millard2014] are readily adapted into this format.
+Each row should represent a single sample, with the most important variables being the laboratory code, conventional radiocarbon age (CRA), and standard error.
+Further information about each sample, from the laboratory or about its context, should be stored in additional commons.
+The `shub1_c14` dataset [@Richter2017], including with this package, is an example of tidy radiocarbon data in a `tibble`:
+
+```{r shub1_c14}
+data("shub1_c14")
+head(shub1_c14)
+```
+
+Radiocarbon data from other sources might require some cleaning to get it into this format.
+[tidyr](https://tidyr.tidyverse.org/) is a useful package for this (see [shub1_c14.R](https://github.com/joeroe/c14/blob/master/data-raw/shub1_c14.R) for an example of how tidyr was used to clean the Shubayqa 1 dataset).
+Or if you are working with dates aggregated from multiple sources, [c14bazAAR](https://docs.ropensci.org/c14bazAAR/) package provides useful functions for automatically querying and combining multiple published databases.
+
+For this vignette, we will stick with the shub1 dataset.
+
 ## Calibrating radiocarbon dates
 
-`c14_calibrate()` calibrates conventional radiocarbon ages and their errors to a calendar timescale:
+The first step in any analysis of radiocarbon data is likely to be calibration.
+`c14_calibrate()` calibrates conventional radiocarbon ages and their errors to a calendar timescale using a *calibration curve*:
 
 ```{r calibrate-single}
 c14_calibrate(5000, 30)
@@ -51,15 +91,18 @@ c14_calibrate(ages, errors)
 ```
 
 This unlocks the real utility of the c14 package, which is embedding calibration in a tidy workflow.
-For example, the `shub1_c14` dataset (provided with the package) contains 27 radiocarbon dates from the Epipalaeolithic site of Shubayqa 1 in eastern Jordan.
-We can calibrate these dates within the data frame using dplyr's `mutate()` verb:
+In `dplyr`'s grammar, calibration is a *mutation* of the original (uncalibrated) data;
+it creates a new variable (the calibrated probability distribution) for each observation based on a transformation based on some of the original variables (`cra`, `error`) and a number of other, fixed parameters (e.g. the calibration curve).
+Performing calibration with `dplyr::mutate()` is useful because it allows us to keep the result of this transformation together with the input data and associated contextual information like the laboratory identifier:
 
 ```{r calibrate-pipe}
 shub1_c14 |>
-  mutate(cal = c14_calibrate(c14_age, c14_error))
+  mutate(calibrated = c14_calibrate(c14_age, c14_error)) |>
+  select(lab_id, c14_age, c14_error, calibrated)
 ```
 
-The `cal` column preserves the original data alongside the calibrated dates, so you can continue working with the full dataset.
+The `calibrated` column contains a `cal()` vector – a class provided by this package that represents a calibrated radiocarbon date by its parameters.
+This means that we can proceed to summarising, aggregating, or plotting the calibrated dates *alongside* their associated measurement and contextual data.
 
 ## Summarising calibrated dates
 
