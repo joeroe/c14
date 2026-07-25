@@ -56,7 +56,7 @@ Richter et al. (2017)
 ## Details
 
 `context` refers to the schematic stratigraphy included in
-stratigraphr::shub1; the real context number is described in `sample`.
+`stratigraphr::shub1`; the real context number is described in `sample`.
 
 ## References
 
