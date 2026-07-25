@@ -40,7 +40,7 @@
 #'
 #' @details
 #'
-#' `context` refers to the schematic stratigraphy included in [stratigraphr::shub1];
+#' `context` refers to the schematic stratigraphy included in `stratigraphr::shub1`;
 #' the real context number is described in `sample`.
 #'
 #' @source \insertCite{Richter2017;textual}{c14}

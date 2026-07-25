@@ -28,7 +28,7 @@ Radiocarbon dates from Shubayqa 1, an Epipalaeolithic site in eastern Jordan,
 from \insertCite{Richter2017;textual}{c14}.
 }
 \details{
-\code{context} refers to the schematic stratigraphy included in \link[stratigraphr:shub1]{stratigraphr::shub1};
+\code{context} refers to the schematic stratigraphy included in \code{stratigraphr::shub1};
 the real context number is described in \code{sample}.
 }
 \references{

@@ -1,5 +1,5 @@
 This is a resubmission. As requested, I have single-quoted 'dplyr' in the 
-package description.
+package description and removed the Rd link to a package not on CRAN.
 
 ## R CMD check results
 
