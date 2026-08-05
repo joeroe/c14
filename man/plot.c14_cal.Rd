@@ -45,11 +45,6 @@ distribution. Use \code{par(mfrow)} or \code{par(mfcol)} to arrange multiple plo
 x <- cal(c(1000, 2000, 3000), c(30, 40, 50), IntCal20)
 plot(x)
 
-# Arrange multiple plots
-par(mfrow = c(2, 2))
-plot(x)
-dev.off()
-
 # Use same fixed x axis limits for all plots
 plot(x, fixed_xlim = TRUE)
 

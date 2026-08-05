@@ -119,14 +119,11 @@ shub1_cal <- c14_calibrate(shub1_c14$c14_age, shub1_c14$c14_error)
 plot(shub1_cal[1])
 ```
 
-This default method plots all the calibrated dates passed to it.
+This method plots all the calibrated dates passed to it:
 ^[By default `plot(cal)` only draws up to 20 plots at a time; this can be controlled with `max.plot`.]
-You can arrange multiple plots with, for example, `par(mfrow)`:
 
-```{r plot-multi, fig.height = 10}
-par(mfrow = c(2, 1))
+```{r plot-multi}
 plot(shub1_cal[1:2])
-par(mfrow = c(1, 1))
 ```
 
 ### ggplot2
