@@ -1,5 +1,10 @@
-This is a resubmission. As requested, I have single-quoted 'dplyr' in the 
-package description and removed the Rd link to a package not on CRAN.
+This is a resubmission. 
+
+> Please make sure that you do not change the user's options, par or working 
+> directory.
+
+I have removed `par()` from the two examples in the package that used it 
+(man/plot.c14_cal.Rd and the vignette).
 
 ## R CMD check results
 
