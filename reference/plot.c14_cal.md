@@ -68,15 +68,11 @@ plot(x)
 
 
 
-# Arrange multiple plots
-par(mfrow = c(2, 2))
-plot(x)
-dev.off()
-#> null device 
-#>           1 
-
 # Use same fixed x axis limits for all plots
 plot(x, fixed_xlim = TRUE)
+
+
+
 
 # Hide calibration curve
 plot(x[1], show_curve = FALSE)
