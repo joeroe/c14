@@ -1,5 +1,6 @@
 AMS
 Aardvarchaeology
+ArchaeoPhases
 BChron
 CMD
 CRA
@@ -12,6 +13,7 @@ IntCal
 KDEs
 ORCID
 PPND
+RChronoModel
 Rdpack
 Riddarholmen
 Rundkvist
@@ -24,7 +26,6 @@ cKDE
 dist
 doi
 dplyr
-dplyr's
 ggplot
 ggplots
 oxcAAR
@@ -34,8 +35,11 @@ quascirev
 rcarbon
 readr
 readxl
+shub
 stratigraphr
 tibble
+tidyr
+tidyverse
 uncalibrated
 usethis
 vctrs
