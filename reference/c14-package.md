@@ -20,12 +20,12 @@ Useful links:
 
 ## Author
 
-**Maintainer**: Joe Roe <joe@joeroe.io>
+**Maintainer**: Joe Roe <joeroe@archaeo.dev>
 ([ORCID](https://orcid.org/0000-0002-1011-1244)) \[copyright holder\]
 
 Authors:
 
-- Joe Roe <joe@joeroe.io>
+- Joe Roe <joeroe@archaeo.dev>
   ([ORCID](https://orcid.org/0000-0002-1011-1244)) \[copyright holder\]
 
 Other contributors:
