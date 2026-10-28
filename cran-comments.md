@@ -5,6 +5,10 @@ This is a re-resubmission.
 
 I have also removed the modification of par in plot.R
 
+I have also changed the maintainer email to joeroe@archaeo.dev as in the 
+meantime I also changed this for my existing CRAN package era (can verify
+again if necessary).
+
 ## R CMD check results
 
 0 errors | 0 warnings | 1 note

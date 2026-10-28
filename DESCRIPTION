@@ -5,7 +5,7 @@ Version: 0.2.0
 Authors@R: c(
     person(family = "Roe", 
         given = "Joe", 
-        email = "joe@joeroe.io",
+        email = "joeroe@archaeo.dev",
         role = c("aut", "cre", "cph"), 
         comment = c(ORCID = "0000-0002-1011-1244")),
     person(family = "Huet",
