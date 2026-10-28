@@ -147,11 +147,6 @@ plot_cal_single <- function(dist,
   }
 
   if (show_curve) {
-    # Increase right margin for right y-axis label
-    old_mar <- par("mar")
-    par(mar = c(old_mar[1], old_mar[2], old_mar[3], old_mar[4] + 2))
-    on.exit(par(mar = old_mar))
-    
     # Plot calibration curve as main plot
     plot_cal_draw_curve_main(cal_single, xlim, ylab, xlab, main, rev_x, col)
     
