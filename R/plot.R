@@ -104,8 +104,6 @@ plot.c14_cal <- function(x, ..., max.plot = 20, resolution = NULL, fixed_xlim = 
 #' @param border Outline colour. Default: same as `col`.
 #' @param ... Additional arguments passed to [plot.default()].
 #'
-#' @importFrom graphics plot polygon segments lines axis mtext par abline
-#' @importFrom grDevices adjustcolor
 #' @noRd
 #' @keywords internal
 plot_cal_single <- function(dist,
@@ -155,8 +153,8 @@ plot_cal_single <- function(dist,
   } else {
     # Original behavior: probability distribution as main plot
     ylim <- c(0, max(pdens, na.rm = TRUE))
-    
-    plot(
+
+    graphics::plot(
       ages,
       pdens,
       type = "n",
@@ -170,16 +168,16 @@ plot_cal_single <- function(dist,
     )
 
     # Draw full distribution (transparent)
-    plot_cal_draw_polygon(ages, pdens, col = adjustcolor(col, 0), border = NA)
+    plot_cal_draw_polygon(ages, pdens, col = grDevices::adjustcolor(col, 0), border = NA)
 
     # Draw 99.7% HDI (33% opacity)
-    plot_cal_draw_hdr(ages, pdens, list(hdi_99), col = adjustcolor(col, 0.33))
+    plot_cal_draw_hdr(ages, pdens, list(hdi_99), col = grDevices::adjustcolor(col, 0.33))
 
     # Draw 95.4% HDI (33% opacity)
-    plot_cal_draw_hdr(ages, pdens, list(hdi_95), col = adjustcolor(col, 0.33))
+    plot_cal_draw_hdr(ages, pdens, list(hdi_95), col = grDevices::adjustcolor(col, 0.33))
 
     # Draw 68.2% HDI (33% opacity)
-    plot_cal_draw_hdr(ages, pdens, list(hdi_68), col = adjustcolor(col, 0.33))
+    plot_cal_draw_hdr(ages, pdens, list(hdi_68), col = grDevices::adjustcolor(col, 0.33))
 
     # Draw outline (without bottom border)
     plot_cal_draw_outline(ages, pdens, border = border)
@@ -200,7 +198,7 @@ plot_cal_single <- function(dist,
 #' @keywords internal
 plot_cal_draw_polygon <- function(ages, pdens, col, border) {
   n <- length(ages)
-  polygon(
+  graphics::polygon(
     c(ages[1], ages, ages[n]),
     c(0, pdens, 0),
     col = col,
@@ -261,7 +259,7 @@ plot_cal_draw_legend <- function(hdi_99, hdi_95, hdi_68, col) {
   graphics::legend(
     "topright",
     legend = c(label_99, label_95, label_68),
-    fill = c(adjustcolor(col, 0.3), adjustcolor(col, 0.6), adjustcolor(col, 0.9)),
+    fill = c(grDevices::adjustcolor(col, 0.3), grDevices::adjustcolor(col, 0.6), grDevices::adjustcolor(col, 0.9)),
     border = NA,
     bty = "n",
     xjust = 1
@@ -325,7 +323,7 @@ plot_cal_draw_curve_main <- function(cal_single, xlim, ylab, xlab, main, rev_x, 
   ylim <- ylim + c(-0.05, 0.05) * y_range
   
   # Plot main frame
-  plot(
+  graphics::plot(
     cal_ages, c14_ages,
     type = "n",
     main = main,
@@ -337,16 +335,16 @@ plot_cal_draw_curve_main <- function(cal_single, xlim, ylab, xlab, main, rev_x, 
   )
   
   # Draw ribbon (polygon) in red
-  polygon(
+  graphics::polygon(
     c(cal_ages, rev(cal_ages)),
     c(c14_upper, rev(c14_lower)),
-    col = adjustcolor("red", 0.3),
+    col = grDevices::adjustcolor("red", 0.3),
     border = NA
   )
   
   # Draw neatlines for ribbon bounds
-  lines(cal_ages, c14_upper, col = "red", lwd = 1)
-  lines(cal_ages, c14_lower, col = "red", lwd = 1)
+  graphics::lines(cal_ages, c14_upper, col = "red", lwd = 1)
+  graphics::lines(cal_ages, c14_lower, col = "red", lwd = 1)
   
   # Draw uncalibrated probability distribution as bell curve on left side
   # Create sequence of C14 ages for the bell curve
@@ -363,15 +361,15 @@ plot_cal_draw_curve_main <- function(cal_single, xlim, ylab, xlab, main, rev_x, 
   
   # Draw bell curve as filled polygon
   # Create closed polygon: curve on left, flat baseline on right
-  polygon(
+  graphics::polygon(
     c(bell_x, x_range[2], x_range[2]),
     c(c14_seq[1], c14_seq, c14_seq[length(c14_seq)]),
-    col = adjustcolor("blue", 0.3),
+    col = grDevices::adjustcolor("blue", 0.3),
     border = NA
   )
   
   # Draw bell curve outline (left side)
-  lines(bell_x, c14_seq, col = "blue", lwd = 1.5)
+  graphics::lines(bell_x, c14_seq, col = "blue", lwd = 1.5)
 }
 
 #' Overlay probability distribution on right y-axis
@@ -390,33 +388,24 @@ plot_cal_draw_curve_main <- function(cal_single, xlim, ylab, xlab, main, rev_x, 
 plot_cal_draw_dist_overlay <- function(ages, pdens, xlim, col, border, hdi_99, hdi_95, hdi_68) {
   # Set up overlay - scale distribution to 1/3 height
   ylim <- c(0, max(pdens, na.rm = TRUE) * 3)
-  
-  par(new = TRUE)
-  
-  plot(
-    ages, pdens,
-    type = "n",
-    axes = FALSE,
-    xlab = "",
-    ylab = "",
-    xlim = xlim,
-    ylim = ylim
-  )
-  
+
+  # Set up the overlay coordinate system without starting a new plot
+  graphics::plot.window(xlim = xlim, ylim = ylim)
+
   # Draw full distribution (transparent)
-  plot_cal_draw_polygon(ages, pdens, col = adjustcolor(col, 0), border = NA)
+  plot_cal_draw_polygon(ages, pdens, col = grDevices::adjustcolor(col, 0), border = NA)
   
   # Draw HDI shading
-  plot_cal_draw_hdr(ages, pdens, list(hdi_99), col = adjustcolor(col, 0.3))
-  plot_cal_draw_hdr(ages, pdens, list(hdi_95), col = adjustcolor(col, 0.3))
-  plot_cal_draw_hdr(ages, pdens, list(hdi_68), col = adjustcolor(col, 0.3))
+  plot_cal_draw_hdr(ages, pdens, list(hdi_99), col = grDevices::adjustcolor(col, 0.3))
+  plot_cal_draw_hdr(ages, pdens, list(hdi_95), col = grDevices::adjustcolor(col, 0.3))
+  plot_cal_draw_hdr(ages, pdens, list(hdi_68), col = grDevices::adjustcolor(col, 0.3))
   
   # Draw outline (without bottom border)
   plot_cal_draw_outline(ages, pdens, border = border)
   
   # Add right y-axis
-  axis(4)
-  mtext("Probability density", side = 4, line = 2.0, cex = par("cex.lab"))
+  graphics::axis(4)
+  graphics::mtext("Probability density", side = 4, line = 2.0, cex = graphics::par("cex.lab"))
   
   # Draw legend
   plot_cal_draw_legend(hdi_99, hdi_95, hdi_68, col)
