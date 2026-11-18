@@ -1,13 +1,10 @@
-This is a re-resubmission. 
+This is a re-re-resubmission. 
 
 > Please make sure that you do not change the user's options, par or working 
 > directory.
 
-I have also removed the modification of par in plot.R
-
-I have also changed the maintainer email to joeroe@archaeo.dev as in the 
-meantime I also changed this for my existing CRAN package era (can verify
-again if necessary).
+I have also removed the remaining use of `par()<-` in plot.R and grepped the
+whole package to ensure that it is not used elsewhere.
 
 ## R CMD check results
 
